@@ -4,8 +4,8 @@ on:
     Branches:
       - hugo-source
 
-if: github.repository == 'atsign-foundation/atsign.dev'
 jobs:
+  if: {{ github.repository == 'atsign-foundation/atsign.dev' }}
   deploy:
     runs-on: ubuntu-20.04
     steps:
