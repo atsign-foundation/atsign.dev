@@ -29,4 +29,4 @@ jobs:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          cname: 'https://devstaging.atsign.wtf'
+          cname: devstaging.atsign.wtf
