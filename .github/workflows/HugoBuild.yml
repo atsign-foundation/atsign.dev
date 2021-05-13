@@ -6,6 +6,7 @@ on:
 
 jobs:
   deploy:
+    if: ${{ github.repository == 'atsign-foundation/atsign.dev' }}
     runs-on: ubuntu-20.04
     steps:
       - name: Git checkout
@@ -29,4 +30,4 @@ jobs:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          cname: 'https://devstaging.atsign.wtf'
+          cname: devstaging.atsign.wtf
