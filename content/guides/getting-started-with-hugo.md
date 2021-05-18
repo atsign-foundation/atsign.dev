@@ -35,7 +35,7 @@ To show what your command prompt should look like:
 ![hugo-location](images/getting-started/hugo-location.png "cmd location")
 
 Once you are here, feel free to try the command ‘hugo version’:
-![hugo-version](images/getting-started/hugo-version.png "hugo version")
+![hugo-version](images/getting-started/hugo_ext_bin_version.png "hugo version")
 
 If your command prompt happily prints out the current version of Hugo you have on your machine, this means you have successfully installed and extracted Hugo onto your machine. However, you may notice that if you use the command ‘cd ..’ to move directories to the ‘Hugo’ folder rather than ‘bin’ and try the command ‘hugo version’ you will be hit with an error or Windows will tell you that hugo isn’t a recognized command.
 ![hugo-error](images/getting-started/hugo-not-recognized.png "hugo error")
