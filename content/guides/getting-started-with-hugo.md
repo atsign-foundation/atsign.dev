@@ -42,7 +42,6 @@ If your command prompt happily prints out the current version of Hugo you have o
 
 If you are like me, and wish to be capable of using the hugo command anywhere on your machine, maybe because you would like to create a web page with its own folder and its own content, there is an easy way to fix this. 
 
-
 What you will have to do is navigate to your ‘Search’ bar and type in ‘env’ or ‘environment’. Windows will suggest the ‘Edit the System Environment Variables’. Open it and a System Properties dialog box should appear and look something like this:
 ![env-variables](images/getting-started/env-variables.png "system properties")
 
@@ -52,14 +51,14 @@ Double-click on the button labeled ‘Environment Variables’ and this will ope
 
 Here’s what mine looks like after I have finished typing in where it exists (it is the one highlighted in blue). After you have done the same, you can now click ‘OK’ until all of the dialog boxes are closed. Now this is where the magic happens! After restarting your computer, try using the ‘hugo version’ command again outside of the ‘Hugo\bin’ folder and see if Windows recognizes it as a command! I simply started up my command prompt and immediately typed in ‘hugo version’ and it worked. If the command works, you are now ready to get started on a Hugo project.
 
- ![Hugo-Version-Outside-Bin](images/getting-started/Hugo-Version-Outside-Bin.png "hugo version outside bin")
+ [Hugo-Version-Outside-Bin](images/getting-started/hugo-version-extended.png "hugo version outside bin")
 
 
 ## Mac:
 ### Installing Hugo on Mac:
 The first step you will want to take is navigating to the website [Homebrew](https://brew.sh "Homebrew Installation"). This website is a package manager and allows you to install, download and manage packages. You can use [Homebrew](https://brew.sh "Homebrew Installation") to install Hugo easily on your computer. Once you are taken to the landing page, you should come across a terminal command that looks like: 
 
-```dart
+```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
