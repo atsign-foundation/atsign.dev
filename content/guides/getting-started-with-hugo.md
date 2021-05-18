@@ -19,7 +19,7 @@ You’re now ready to download Hugo on to your machine. As most projects which a
 
 Once you have found the matching release title for your machine, feel free to simply download the zip file. Where you download the zip file does not matter, however, where you extract it does. When your download is complete, select ‘Extract all’ and be sure that you extract the contents of what you downloaded into the ‘bin’ folder that exists within your Hugo folder. Once the extraction is complete, it should look something like this:
 
-![bin-folder](images/getting-started/bhugo_ext_file_location.png "bin folder")
+![bin-folder](images/getting-started/hugo_ext_file_location.PNG "bin folder")
 
 For the release that I have downloaded and extracted, there are three files. Perhaps in a later release of Hugo, there may be more files included, but for now, as long as you have the application file titled ‘hugo’, you will be fine. If, for whatever odd reason, the ‘hugo’ file is titled something else, be sure to rename it to ‘hugo’ (note the lowercase ‘h’). There is also a license file and a readme. It is completely up to you if you read the readme and license files. 
 
@@ -28,14 +28,14 @@ Determining if your Installation on Windows was successful:
 Apologies in advance for MacOS and Linux users as I will be demonstrating the following steps using a Windows 10 machine. A later edit with both MacOS and Linux will be created to cater those who wish to learn from a separate operating system. 
 To make sure that your Hugo was successfully installed and extracted, open your command prompt [Some ways in which this can be done => (Win key + r, type ‘cmd’, hit ‘enter’), (Go to your Search bar and the bottom of your taskbar and type in ‘cmd’ or ‘command prompt’ and hit ‘enter’)] and navigate to the directory where you extracted Hugo. For the above picture, my hugo.exe file’s location was D:\Hugo\bin\hugo.exe, so all I have to type is ‘cd D:\Hugo\bin’ and I will be taken to where the hugo.exe exists. If you’re not sure where you had saved your Hugo folder, you can either use the File Explorer you have presently open and simply highlight the path that is in the bar above your currently open Hugo folder. I have circled it below for your convenience.
 
-![file-location](images/getting-started/file-location.png "file location")
+![file-location](images/getting-started/hugo_ext_file_location_circled.PNG "file location")
 
 
 To show what your command prompt should look like:
-![hugo-location](images/getting-started/hugo-location.png "cmd location")
+![hugo-location](images/getting-started/hugo_ext_location.PNG "cmd location")
 
 Once you are here, feel free to try the command ‘hugo version’:
-![hugo-version](images/getting-started/hugo_ext_bin_version.png "hugo version")
+![hugo-version](images/getting-started/hugo_ext_bin_version.PNG "hugo version")
 
 If your command prompt happily prints out the current version of Hugo you have on your machine, this means you have successfully installed and extracted Hugo onto your machine. However, you may notice that if you use the command ‘cd ..’ to move directories to the ‘Hugo’ folder rather than ‘bin’ and try the command ‘hugo version’ you will be hit with an error or Windows will tell you that hugo isn’t a recognized command.
 ![hugo-error](images/getting-started/hugo-not-recognized.png "hugo error")
@@ -45,13 +45,13 @@ If you are like me, and wish to be capable of using the hugo command anywhere on
 What you will have to do is navigate to your ‘Search’ bar and type in ‘env’ or ‘environment’. Windows will suggest the ‘Edit the System Environment Variables’. Open it and a System Properties dialog box should appear and look something like this:
 ![env-variables](images/getting-started/env-variables.png "system properties")
 
-Double-click on the button labeled ‘Environment Variables’ and this will open the dialog box where you can edit the environment variables of your machine. You may be wondering what environment variables are and what they’re for. In simplest terms, just like how you noticed that your hugo command did not work outside of the bin folder, there are other applications that work the same way and will only work in the folder they exist in. Windows has the capability of allowing you to run the application from anywhere, which is exactly what we would like to do. You should see something in your ‘user variables’ called Path. Each Path that is listed, is more than likely an application, similar to your Hugo, that exists only in a folder but is used globally on your machine. Highlight ‘Path’ and click ‘Edit...’. This will open a new dialog box that will list the individual paths that already exist. Click ‘New’ and simply type (or paste) the location of your hugo.exe. If you may recall from my example, my hugo.exe was in the following location; D:\Hugo\bin\.
+Double-click on the button labeled ‘Environment Variables’ and this will open the dialog box where you can edit the environment variables of your machine. You may be wondering what environment variables are and what they’re for. In simplest terms, just like how you noticed that your hugo command did not work outside of the bin folder, there are other applications that work the same way and will only work in the folder they exist in. Windows has the capability of allowing you to run the application from anywhere, which is exactly what we would like to do. You should see something in your ‘user variables’ called Path. Each Path that is listed, is more than likely an application, similar to your Hugo, that exists only in a folder but is used globally on your machine. Highlight ‘Path’ and click ‘Edit...’. This will open a new dialog box that will list the individual paths that already exist. Click ‘New’ and simply type (or paste) the location of your hugo.exe. If you may recall from my example, my hugo.exe was in the following location; D:\hugo_ext\bin\.
 
  ![hugo-path-edit](images/getting-started/Hugo-Path-Edit.png "environment variables")
 
 Here’s what mine looks like after I have finished typing in where it exists (it is the one highlighted in blue). After you have done the same, you can now click ‘OK’ until all of the dialog boxes are closed. Now this is where the magic happens! After restarting your computer, try using the ‘hugo version’ command again outside of the ‘Hugo\bin’ folder and see if Windows recognizes it as a command! I simply started up my command prompt and immediately typed in ‘hugo version’ and it worked. If the command works, you are now ready to get started on a Hugo project.
 
- [Hugo-Version-Outside-Bin](images/getting-started/hugo-version-extended.png "hugo version outside bin")
+ ![Hugo-Version-Outside-Bin](images/getting-started/hugo-version-extended.PNG "hugo version outside bin")
 
 
 ## Mac:
