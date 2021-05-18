@@ -19,7 +19,7 @@ You’re now ready to download Hugo on to your machine. As most projects which a
 
 Once you have found the matching release title for your machine, feel free to simply download the zip file. Where you download the zip file does not matter, however, where you extract it does. When your download is complete, select ‘Extract all’ and be sure that you extract the contents of what you downloaded into the ‘bin’ folder that exists within your Hugo folder. Once the extraction is complete, it should look something like this:
 
-![bin-folder](images/getting-started/bin-folder.png "bin folder")
+![bin-folder](images/getting-started/bhugo_ext_file_location.png "bin folder")
 
 For the release that I have downloaded and extracted, there are three files. Perhaps in a later release of Hugo, there may be more files included, but for now, as long as you have the application file titled ‘hugo’, you will be fine. If, for whatever odd reason, the ‘hugo’ file is titled something else, be sure to rename it to ‘hugo’ (note the lowercase ‘h’). There is also a license file and a readme. It is completely up to you if you read the readme and license files. 
 
