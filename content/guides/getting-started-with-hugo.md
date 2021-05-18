@@ -15,7 +15,7 @@ There are a few ways in which you can get started with Hugo, however the easiest
 
 Create a directory in a location on your drive. For me, I have more storage capacity within my D: drive so I navigate to my D: drive within my File Explorer and simply right click and select ‘Folder’. This will create a new folder wherever you were within your drive. Next, rename this folder to ‘Hugo’. After this, navigate inside of your Hugo folder and create another folder within it, this time calling it ‘bin’. 
 
-You’re now ready to download Hugo on to your machine. As most projects which are open-source can be found on GitHub, so can Hugo’s releases. In any web browser, navigate to the [GoHugoIo](https://github.com/gohugoio/hugo/releases "GoHugo Resources") repository. Here, you will find a great list of all of the releases catered for Windows, Linux, and MacOS. Be sure to select a release that has your operating system in the title. For example, I am using a Windows 10 machine that runs a 64 bit processor. So I navigated to the zip file titled hugo_0.83.1_Windows-64bit.zip. (Note: the release number may be different from the one listed above due to the time at which I have written this article. 
+You’re now ready to download Hugo on to your machine. As most projects which are open-source can be found on GitHub, so can Hugo’s releases. In any web browser, navigate to the [GoHugoIo](https://github.com/gohugoio/hugo/releases "GoHugo Resources") repository. Here, you will find a great list of all of the releases catered for Windows, Linux, and MacOS. Be sure to select a release that has your operating system in the title. For example, I am using a Windows 10 machine that runs a 64 bit processor. So I navigated to the zip file titled hugo_extended_0.83.1_Windows-64bit.zip. (Note: the release number may be different from the one listed above due to the time at which I have written this document. You may also noticed that I have chosen the extended Hugo version. Hugo extended has more capabilities, especially for thematic purposes. Hugo's extension comes with a few advantages such as; SASS/SCSS support, Minify javascript and css, resource catenation, source mapping, image processing and so much more. A more in depth view of it can be found [here](https://www.npmjs.com/package/hugo-extended).
 
 Once you have found the matching release title for your machine, feel free to simply download the zip file. Where you download the zip file does not matter, however, where you extract it does. When your download is complete, select ‘Extract all’ and be sure that you extract the contents of what you downloaded into the ‘bin’ folder that exists within your Hugo folder. Once the extraction is complete, it should look something like this:
 
@@ -61,10 +61,11 @@ The first step you will want to take is navigating to the website [Homebrew](htt
 
 ```dart
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 // NOTE: 
 // This command may be updated depending on any new releases,
 // so be sure to check the website before copying the line of code above! 
-```
 
 Simply paste the line of code into your terminal. Once you click enter and input your password for administrative access, Homebrew will begin installing itself onto your machine. This can take a few minutes.	Once Homebrew is finished, you can then type the command:
  
@@ -158,17 +159,15 @@ theme = “hugo-theme-dream”
 
 After adding this line, save the document and to make sure that you have properly called this theme into your site use the following command in your command prompt/terminal to start up your Hugo local server:
 
-```dart
-hugo server -D
-// The -D will launch all of the draft pages that
-// exist within your project folder
 ```
+hugo server -D
+```
+
+The -D will launch all of the draft pages that exist within your project folder.
 
 After this, you can now open any web browser and type in the URL:
 
-```
-localhost:1313 
-```
+[localhost:1313](http://localhost:1313)
 
 You should now see your website and the theme you installed! From here, if you wish to contrbute, I recommend reading through our 'Contributing to an Open-Source Project' document!
 
