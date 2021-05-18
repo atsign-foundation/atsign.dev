@@ -2,7 +2,7 @@ name: HugoBuild
 on:
   push:
     Branches:
-      - hugo-source
+      - trunk
 
 jobs:
   deploy:
@@ -20,7 +20,22 @@ jobs:
         with:
           hugo-version: "0.83.1"
           extended: true  # MemE theme needs Hugo Extended
+          
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Prepare postcss-cli
+        run: npm ci
       - name: Build
         run: hugo --minify
 
