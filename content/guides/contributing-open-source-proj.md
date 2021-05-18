@@ -36,9 +36,9 @@ Now, you can do whatever your heart so desires with the project! Depending on wh
 
 We recommend git cloning the repository using the SSH key option. You can set up your own public keys on GitHub quite easily. If you see below, you will see the Clone options, 'HTTPS, SSH, and GitHub CLI'. Select the 'SSH' option and this will provide you a password-protected SSH key to git clone the repository. 
 
-![GitHub-Code-Options](images/getting-started/Github-Code-Options.png "download theme options")
+![GitHub-Code-Options](images/getting-started/GitHub-Code-Options.png "download theme options")
 
-In order to create a public key on your machine, open any terminal and type the command:
+In order to create a public key on your machine, open any UNIX terminal and type the command:
 
 ```
 ssh-keygen
@@ -46,12 +46,8 @@ ssh-keygen
 
 From here, it will ask you to choose a lcoation to store the key. We suggest just clicking 'enter' on whatever location is chosen for you. It will then ask for a passphrase, we STRONGLY recommend clicking 'enter' again to not input a passphrase. After doing this, it will ask you to input the passphrase again and click 'enter' without inputting anything. After having successully creating the key, enter the command:
 
-```dart
-// Depending on what type of terminal you are using
-// you will need to either use a forward or backslash
-// forward slash / for anything related to UNIX
-// backslash \ for Windows
-cat ~ \.ssh\id_rsa.pub
+```
+cat ~\.ssh\id_rsa.pub
 ```
 
 This will print out your public key. Copy the entire thing, including the ssh in the beginning and whatever the final character is and navigate to your GitHub settings page. Within your settings, you will see a tab titled, 'SSH and GPG keys'. Once you navigate to this page, you should see a green bottom near the top-left titled, 'New SSH key'. Once you have clciked this and navigated to the new SSH Key page, you will have to input a name for the key as well as pasting the retrieved key copied from the above command. After you have done both of these things, you can finish with the 'Add SSH key' button and you will now be able to git clone in your terminal with the SSH URL.  
@@ -81,7 +77,5 @@ This will now change the base and head repositories that will be compared. Be su
 
 From here, you will see all of the modifications that will occur if your pull request is accepted. Once you double check all of these modifications and are confident in it, you may now select ‘Create pull request’. You may notice that mine says ‘View pull request’ but that is because I have already gone through this process and have successfully created one. 
 
-```
 Side note: 
 Be sure that your contribution will be useful for those who utilize the project! If you do end up creating a pull request with your modifications, make sure that those modifications are properly documented in both the code and/or the comment section of the pull request itself. 
-```
