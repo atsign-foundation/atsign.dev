@@ -12,14 +12,14 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
         with:
-          submodules: recursive  # To get theme
+          submodules: recursive  # To get theme and theme deps
           fetch-depth: 0
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.83.1"
-          extended: true  # MemE theme needs Hugo Extended
+          extended: true  # Complex themes need Hugo Extended
           
       - name: Setup Node
         uses: actions/setup-node@v2
