@@ -183,17 +183,17 @@ enable = true
     pre = "<i class='fab fa-github'></i>"
     # post = "<span class='alert'>New!</span>" 
 
-[[params.versions]]
-  version = "master"
-  url = "https://master.kubeflow.org"
+# [[params.versions]]
+#   version = "master"
+#   url = "https://master.kubeflow.org"
 
-[[params.versions]]
-  version = "v0.2"
-  url = "https://v0-2.kubeflow.org"
+# [[params.versions]]
+#   version = "v0.2"
+#   url = "https://v0-2.kubeflow.org"
 
-[[params.versions]]
-  version = "v0.3"
-  url = "https://v0-3.kubeflow.org"
+# [[params.versions]]
+#   version = "v0.3"
+#   url = "https://v0-3.kubeflow.org"
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.

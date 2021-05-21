@@ -1,5 +1,5 @@
 public/
 .DS_Store
-.idea
+.idea/
 node_modules/
 resources/_gen/
