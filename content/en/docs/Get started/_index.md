@@ -1,6 +1,6 @@
 ---
-title: "Getting Started"
-linkTitle: "Getting Started"
+title: "Get Started"
+linkTitle: "Get Started"
 weight: 2
 date: 2017-01-05
 description: >

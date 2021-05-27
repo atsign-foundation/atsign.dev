@@ -1,7 +1,7 @@
 ---
-title: "Examples"
-linkTitle: "Examples"
-weight: 4
+title: "Sample Apps"
+linkTitle: "Sample Apps"
+weight: 3
 date: 2017-01-05
 description: >
   See your project in action!

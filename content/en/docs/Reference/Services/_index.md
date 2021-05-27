@@ -1,7 +1,7 @@
 ---
-title: "Reference"
-linkTitle: "Reference"
-weight: 3
+title: "Libraries"
+linkTitle: "Libraries"
+weight: 1
 description: >
   Low level reference docs for your project.
 ---
