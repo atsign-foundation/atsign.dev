@@ -13510,7 +13510,7 @@ readers do not read off random characters that represent icons */
   opacity: inherit; }
 
 .td-navbar {
-  background: #30638E;
+  background: #F05E3E;
   min-height: 4rem;
   margin: 0;
   z-index: 32; }
