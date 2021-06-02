@@ -13,12 +13,12 @@ Demonstrates some of the most common verbs and methods that can be found on the 
 [Learn more](/docs/sample-apps/at_hello_world/)
 
 ### at_chats:
-Demonstrates the peer to peer chatting capabilities and just how easy it is to implement into nay project!
+Demonstrates the peer to peer chatting capabilities and just how easy it is to implement into any project!
 
 [Learn more](/docs/sample-apps/at_chats/)
 
 ### at_cookbook:
-Demonstrates some of the more complex verbs and methods that the @platform has to offer. Similar to at_chats in the sense of sending information to a separate @signs. At_cookbook builds upon this allowing you to send objects such as recipes to a separate @signs!
+Demonstrates some of the more complex verbs and methods that the @platform has to offer. Similar to at_chats in the sense of sending information from one @sign to another. At_cookbook builds upon this allowing you to send objects such as recipes from one @sign to another!
 
 [Learn more](/docs/sample-apps/at_cookbook/)
 
