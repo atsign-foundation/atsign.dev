@@ -10,9 +10,8 @@ description: >
 If you have gone through the steps of setting up the virtual environment and wish to learn how to implement a few common verbs and methods of the @platform, we highly recommend walking through the at_hello_world application. 
 
 Below, you can see a small demonstration of how the at_hello_world application works.
-
 <p align="center">
-<img src="https://github.com/atsign-foundation/at_demos/raw/master/at_hello_world/assets/hello_world_demo.gif" height= "520px" width= "300px">
+  <img src="/Sample_Apps/hello_world_demo.gif" alt="at_hello_world" height= "520px" width= "300px"/>
 </p>
 
 <div style= "background-color:#F05F3E;color:white; min-height:100px;width:200px;position:relative; float:right;padding:10px;margin-bottom:20px;margin-left: 20px;">

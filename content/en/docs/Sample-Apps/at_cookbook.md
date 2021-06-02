@@ -6,9 +6,8 @@ date: 2021-06-01
 description: >
   This is an intermediate-level @platform based application that uses the verbs we learned in the at_hello_world application to make a working cookbook for the chef inside of us all!
 ---
-
 <p align="center">
-<img src="https://github.com/atsign-foundation/at_demos/blob/master/at_cookbook/Complete_Version/assets/at_cookbook_demo.gif?raw=true" height= "520px" width= "300px">
+  <img src="/Sample_Apps/at_cookbook_demo.gif" alt="at_cookbook" height= "520px" width= "300px"/>
 </p>
 
 

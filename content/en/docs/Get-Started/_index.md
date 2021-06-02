@@ -25,8 +25,38 @@ Just like the rest of the @protocol, Flutter is free and open-source! There are 
 
 
 ### Android Studio
+
+Android Studio is an incredible Integrated Development Environment (IDE) that not only allows you to create projects with a seemingly endless number of programming languages, but also allows you to create what is called an Android Virtual Device (or AVD). If you're looking for an easy IDE to get started on, this is the one we recommend! Most of our code, documentation and tutorials are created using Android Studio, so you'll feel right at home! 
+
+{{% pageinfo color="primary" %}}
+Important Links for Android Studio
++ Download Android Studio [here](https://developer.android.com/studio)
++ Read an article on how to set up an AVD [here](https://blog.atsign.dev/running-one-or-more-emulators-through-cli-using-android-studio-ckm2kuryy00v5mss16f1agh7m)
+{{% /pageinfo %}}
+
+
+
 ### Intellij
+
+IntelliJ is another IDE you will commonly find among developers of all sorts. It has a similar feel to Android Studio and offers just about the same you can get from the other two IDE's recommended here.
+
+{{% pageinfo color="primary" %}}
+Important Links for IntelliJ
++ Download IntelliJ [here](https://www.jetbrains.com/idea/download/#section=windows)
+{{% /pageinfo %}}
+
+
+
 ### Visual Studio Code
+
+Visual Studio Code, compared to IntelliJ and Android Studio can be seen as the IDE which has the most flexibility customization wise. You will commonly hear developers call this IDE; VS Code (because who has time to say entire words anyway?). If you have watched any of the tutorials that currently exist on atsign.dev, you may notice that VS Code is the other IDE of choice amongst our devs here!
+
+{{% pageinfo color="primary" %}}
+Important Links for Visual Studio Code
++ Download Visual Studio Code [here](https://code.visualstudio.com/download)
+{{% /pageinfo %}}
+
+
 
 ### Docker Desktop
 
@@ -38,7 +68,7 @@ Be sure that your machines operating system is completley up-to-date.
 
 ## Where should I go next?
 
-* [The Virtual Environment](/docs/get-started/the-virtual-environment/): Get started with setting up your machine!
+* [The Virtual Environment](/docs/get-started/the-virtual-environment/): Get started with setting up your machine using Docker!
 
 
 

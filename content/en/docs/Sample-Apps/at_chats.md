@@ -12,7 +12,7 @@ The at_chat_flutter widget offers a messaging experience that is unique to the @
 Below, you can see a small demonstration of how the at_hello_world application works.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/atsign-foundation/at_demos/master/at_chats/assets/at_chats_demo.gif" height= "520px" width= "300px">
+  <img src="/Sample_Apps/at_chats_demo.gif" alt="at_chats" height= "520px" width= "300px"/>
 </p>
 
 <div style= "background-color:#F05F3E;color:white; min-height:100px;width:200px;position:relative; float:right;padding:10px;margin-bottom:20px;margin-left: 20px;">

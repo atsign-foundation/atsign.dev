@@ -7,6 +7,10 @@ description: >
   This page displays the proper steps in which developers can follow to successfully create and run their own virtual enviornment to utilize the @platform on their own machine.
 ---
 
+First, why is there a virtual environment to set up and what does it do? Jumping directly into the deep-end and creating projects on top of the @platform can be overwhelming for some. To combat this overwhelming feeling, we've created a simple way to have you, the developer, run the @protocol from your very own machine! 
+
+This will allow you to run both a root server and secondary servers of testable @signs. As a way to ease you into developing on the @platform, we have created demo applications that go over specific verbs/methods that exist.
+
 ## Setup Virtual Environment
 
 <!-- Cards for different OS-->
@@ -51,11 +55,11 @@ description: >
 </div>
 
 ### Windows
-Though, your machine's BIOS already may have virtualization enabled, you can check 
+Though, your machine's BIOS already may have virtualization enabled, you can check [here](https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=Press%20the%20F10%20key%20for,to%20save%20changes%20and%20Reboot).
 
-[here](https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=Press%20the%20F10%20key%20for,to%20save%20changes%20and%20Reboot).
-
-*Note*: Please ensure that you have Docker up and running before you proceed.
+{{% alert title="Note" color="warning" %}}
+Please ensure that you have Docker up and running before you proceed.
+{{% /alert %}}
 
 **Loopback adapter**
 
@@ -124,7 +128,9 @@ Not sure what to do now? Try [here](/docs/get-started/the-virtual-environment/#w
 
 **Configure Network Adapter**
 
-*Note*: Please ensure that you have Docker up and running before you proceed.
+{{% alert title="Note" color="warning" %}}
+Please ensure that you have Docker up and running before you proceed.
+{{% /alert %}}
 
 
 Open the Terminal window and enter this command. This permanently puts the Virtual IP address in place. You only need to run this once!
