@@ -7,9 +7,10 @@ description: >
   Not sure where to start? Take a look at our at_hello_world app to see how some of the common verbs and methods of the @protocol are applied and implemented!
 ---
 
-If you have gone through the steps of setting up the virtual environment and wish to learn how to implement a few common verbs and methods of the @platform, we highly recommend walking through the at_hello_world application. 
+If you have gone through the steps of setting up the virtual environment and wish to learn how to implement a few common verbs and methods of the @protocol, we highly recommend walking through the at_hello_world application. 
 
 Below, you can see a small demonstration of how the at_hello_world application works.
+
 ![hello_world_walkthrough](https://github.com/atsign-foundation/at_demos/raw/master/at_hello_world/assets/hello_world_demo.gif)
 
 ## Overview of the at_hello_world app
