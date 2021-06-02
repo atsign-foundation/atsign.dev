@@ -4,17 +4,18 @@ linkTitle: "Docs"
 # weight: 20
 menu:
   main:
-    weight: 20
+    weight: 1
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+As the heart of the @platform, we developed the @protocol in Dart, a powerful language that can be used to develop mobile apps with Flutter, Google’s increasingly popular UI software framework. If you are new to Flutter or Dart, no problem! Many of our first developers knew nothing about these languages coming in. For guidance on Flutter installation and development, please visit flutter.dev. Regardless of your coding knowledge, we recommend that you begin with “Getting Started.”
 
-This section is where the user documentation for your project lives - all the information your users need to understand and successfully use your project. 
 
-For large documentation sets we recommend adding content under the headings in this section, though if some or all of them don’t apply to your project feel free to remove them or add your own. You can see an example of a smaller Docsy documentation site in the [Docsy User Guide](https://docsy.dev/docs/), which lives in the [Docsy theme repo](https://github.com/google/docsy/tree/master/userguide) if you'd like to copy its docs section. 
+## Welcome to the @protocol:
+Our Co-Founder and CTO, Colin Constable, has a message for you!
 
-Other content such as marketing material, case studies, and community updates should live in the [About](/about/) and [Community](/community/) pages.
+<iframe src="https://player.vimeo.com/video/472448831?title=0&amp;byline=0&amp;portrait=0" class="video-frame" style="position:relative;top:0;left:-20px;width:750px;height:400px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
 
-Find out how to use the Docsy theme in the [Docsy User Guide](https://docsy.dev/docs/). You can learn more about how to organize your documentation (and how we organized this site) in [Organizing Your Content](https://docsy.dev/docs/best-practices/organizing-content/).
+
+## Where should I go next?
+
+* [Getting Started](/docs/get-started/): Get started with setting up your machine!

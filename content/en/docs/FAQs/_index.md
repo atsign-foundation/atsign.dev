@@ -1,7 +1,7 @@
 ---
 title: "Frequently asked questions"
 linkTitle: "FAQs"
-weight: 3
+weight: 4
 date: 2017-01-05
 description: >
   The fastest way to get going developing with the @platform!

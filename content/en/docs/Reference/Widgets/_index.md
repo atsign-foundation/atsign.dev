@@ -1,7 +1,7 @@
 ---
-title: "Reference"
-linkTitle: "Reference"
-weight: 3
+title: "Widgets"
+linkTitle: "Widgets"
+weight: 5
 description: >
   Low level reference docs for your project.
 ---
