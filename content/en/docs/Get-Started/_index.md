@@ -11,11 +11,11 @@ We’re excited to help you get your very own @platform environment up and runni
 
 ## Prerequisites
 
-You will need Flutter/Dart installed on your machine. If you haven’t already, please follow the “Getting started” steps on [flutter.dev](https://flutter.dev) before you proceed. Flutter works best with [Android Studio](https://developer.android.com/studio), but you can also use [Intellij](https://www.jetbrains.com/idea/download/#section=windows)or [Visual Studio Code](https://code.visualstudio.com/download) as your IDE. 
+You will need Flutter/Dart installed on your machine. If you haven’t already, please follow the “Getting started” steps on [flutter.dev](https://flutter.dev) before you proceed. Flutter works best with [Android Studio](https://developer.android.com/studio), but you can also use [Intellij](https://www.jetbrains.com/idea/download/#section=windows) or [Visual Studio Code](https://code.visualstudio.com/download) as your IDE. 
 
 If you wish to develop with testable, dummy @signs, you will also need to install [Docker Desktop](https://www.docker.com/products/docker-desktop) on your machine. 
 
-Be sure that your machines operating system is completley up-to-date.
+Ensure that your machine's operating system is completely up-to-date.
 
 
 
