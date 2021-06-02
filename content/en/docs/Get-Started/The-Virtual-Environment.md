@@ -163,7 +163,7 @@ Okay, you're up. Now you can check the [http://localhost:9001/](http://localhost
 
 Not sure what to do now? Try [here](/docs/get-started/the-virtual-environment/#where-should-i-go-next)!
 
-### To Pull Latest Virtual Environment Version
+### To Pull The Latest Virtual Environment Version
 ```
 docker-compose down
 docker-compose pull
