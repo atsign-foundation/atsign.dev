@@ -13618,7 +13618,7 @@ readers do not read off random characters that represent icons */
       color: #495057;
       font-weight: 300; }
   .td-sidebar-nav a:hover {
-    color: #72A1E5;
+    color: #F05F3E;
     text-decoration: none; }
   .td-sidebar-nav a.active {
     font-weight: 700; }
@@ -13706,7 +13706,7 @@ readers do not read off random characters that represent icons */
   .td-toc #TableOfContents a {
     color: #797676; }
     .td-toc #TableOfContents a:hover {
-      color: #72A1E5;
+      color: #F05F3E;
       text-decoration: none; }
   .td-toc ul {
     padding-left: 0; }
