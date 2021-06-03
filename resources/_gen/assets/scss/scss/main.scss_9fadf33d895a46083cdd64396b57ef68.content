@@ -13526,7 +13526,7 @@ readers do not read off random characters that represent icons */
       height: 30px; }
   .td-navbar .nav-link {
     text-transform: none;
-    font-weight: 700; }
+    font-weight: 300; }
   .td-navbar .td-search-input {
     border: none; }
     .td-navbar .td-search-input::-webkit-input-placeholder {
@@ -13712,11 +13712,11 @@ readers do not read off random characters that represent icons */
     padding-left: 0; }
 
 .btn {
-  border-radius: 1rem; }
+  border-radius: .4rem; }
   .btn-lg, .btn-group-lg > .btn {
-    border-radius: 2rem; }
+    border-radius: .8rem; }
   .btn-sm, .btn-group-sm > .btn {
-    border-radius: 1rem; }
+    border-radius: .4rem; }
 
 .breadcrumb {
   background: none;
