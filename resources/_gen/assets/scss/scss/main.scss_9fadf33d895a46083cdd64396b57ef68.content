@@ -13637,8 +13637,8 @@ readers do not read off random characters that represent icons */
       min-width: 1em; }
   .td-sidebar-nav .td-sidebar-link.tree-root {
     font-weight: 700;
-    color: #ffad00;
-    border-bottom: 1px #ffad00 solid;
+    color: #F05F3E;
+    border-bottom: 1px #F05F3E solid;
     margin-bottom: 1rem; }
 
 .td-sidebar {
