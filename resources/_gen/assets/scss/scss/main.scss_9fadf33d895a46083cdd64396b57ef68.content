@@ -13494,13 +13494,17 @@ readers do not read off random characters that represent icons */
   background: #ffad00; }
   @media (min-width: 768px) {
     .td-navbar-cover {
-      background: transparent !important; }
+      background: black !important; }
       .td-navbar-cover .nav-link {
         text-shadow: 1px 1px 2px #403F4C; } }
   .td-navbar-cover.navbar-bg-onscroll .nav-link {
     text-shadow: none; }
 
 .navbar-bg-onscroll {
+  background: #ffad00 !important;
+  opacity: inherit; }
+
+.td-navbar {
   background: #ffad00 !important;
   opacity: inherit; }
 
@@ -13526,7 +13530,7 @@ readers do not read off random characters that represent icons */
       height: 30px; }
   .td-navbar .nav-link {
     text-transform: none;
-    font-weight: 700; }
+    font-weight: 300; }
   .td-navbar .td-search-input {
     border: none; }
     .td-navbar .td-search-input::-webkit-input-placeholder {
@@ -13618,7 +13622,7 @@ readers do not read off random characters that represent icons */
       color: #495057;
       font-weight: 300; }
   .td-sidebar-nav a:hover {
-    color: #72A1E5;
+    color: #F05F3E;
     text-decoration: none; }
   .td-sidebar-nav a.active {
     font-weight: 700; }
@@ -13637,8 +13641,8 @@ readers do not read off random characters that represent icons */
       min-width: 1em; }
   .td-sidebar-nav .td-sidebar-link.tree-root {
     font-weight: 700;
-    color: #ffad00;
-    border-bottom: 1px #ffad00 solid;
+    color: #F05F3E;
+    border-bottom: 1px #F05F3E solid;
     margin-bottom: 1rem; }
 
 .td-sidebar {
@@ -13706,17 +13710,17 @@ readers do not read off random characters that represent icons */
   .td-toc #TableOfContents a {
     color: #797676; }
     .td-toc #TableOfContents a:hover {
-      color: #72A1E5;
+      color: #F05F3E;
       text-decoration: none; }
   .td-toc ul {
     padding-left: 0; }
 
 .btn {
-  border-radius: 1rem; }
+  border-radius: .4rem; }
   .btn-lg, .btn-group-lg > .btn {
-    border-radius: 2rem; }
+    border-radius: .8rem; }
   .btn-sm, .btn-group-sm > .btn {
-    border-radius: 1rem; }
+    border-radius: .4rem; }
 
 .breadcrumb {
   background: none;
@@ -13817,11 +13821,11 @@ readers do not read off random characters that represent icons */
 .td-search-input {
   background: transparent;
   max-width: 90%;
-  border-radius: 1rem;
+  border-radius: .4rem;
   font-family: "Font Awesome 5 Free", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
   .td-search-input.form-control:focus {
     border-color: white;
-    box-shadow: 0 0 0 2px #ffde99; }
+    box-shadow: 0 0 0 2px #fbd5cc; }
 
 .popover.offline-search-result {
   max-width: 90%; }
