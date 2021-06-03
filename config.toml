@@ -183,10 +183,7 @@ enable = true
     pre = "<i class='fab fa-github'></i>"
     # post = "<span class='alert'>New!</span>" 
 
-[[menu.main]]
-    name = "Get Started"
-    weight = 70
-    url = "docs/get-started/"
+
 	
 
 # [[params.versions]]

@@ -4,7 +4,7 @@ linkTitle: "The Virtual Environment"
 weight: 1
 date: 2017-01-05
 description: >
-  This page displays the proper steps in which developers can follow to successfully create and run their own virtual environment to utilize the @platform on their own machine.
+  This page displays the proper steps in which developers can follow to successfully create and run their own virtual enviornment to utilize the @platform on their own machine.
 ---
 
 First, why is there a virtual environment to set up and what does it do? Jumping directly into the deep-end and creating projects on top of the @platform can be overwhelming for some. To combat this overwhelming feeling, we've created a simple way to have you, the developer, run the @protocol from your very own machine! 
@@ -61,16 +61,15 @@ Though, your machine's BIOS already may have virtualization enabled, you can che
 Please ensure that you have Docker up and running before you proceed.
 {{% /alert %}}
 
-**Loopback Adapter**
+**Loopback adapter**
 
-Install the Microsoft loopback adapter and configure it. For instructions on how to do this, please watch the video below:
+Install the Microsoft loopback adapter and configure it. The video showing how to do that is here:
 
 <iframe src="https://player.vimeo.com/video/506374699?title=0&amp;byline=0&amp;portrait=0" class="video-frame" style="position:relative;top:0;left:-20px;width:750px;height:400px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
 
+**Start up the at_virtual_enviroment**
 
-**Start up the at_virtual_environment**
-
-Run cmd and enter the following commands. You can run cmd by using the <kbd>windows</kbd> key and the <kbd>r</kbd> key then typing cmd.
+Run cmd and enter the following commands. You can run cmd by using the windows key and the r key then typing cmd.
             
 ```
 mkdir ve
@@ -91,7 +90,7 @@ Not sure what to do now? Try [here](/docs/get-started/the-virtual-environment/#w
 
 ### MacOS
 
-**Configure Network Adapter**
+#### Configure Network Adapter
 
 Open the Terminal window and enter this command. This permanently puts the Virtual IP address in place. You only need to run this once!            
 ```
@@ -108,7 +107,7 @@ sudo launchctl load /Library/LaunchDaemons/atloop.plist
           
 The command line may ask you to enter your password. Go ahead and fill it in if this happens.
 
-** Start up the Virtual Environment**
+#### Start up the Virtual Environment
 Make a new directory called “ve” and run the curl command inside of it:             
 ``` 
 mkdir ve
@@ -171,7 +170,7 @@ Okay, you're up. Now you can check the [http://localhost:9001/](http://localhost
 
 Not sure what to do now? Try [here](/docs/get-started/the-virtual-environment/#where-should-i-go-next)!
 
-### To Pull The Latest Virtual Environment Version
+### To Pull Latest Virtual Environment Version
 ```
 docker-compose down
 docker-compose pull
@@ -180,7 +179,7 @@ docker-compose up -d
 
 Congratulations! You’ve set up your virtual environment and can now experiment with the hello_world app. Now you can start building your very own privacy-conscious apps.
 
-When writing code, the only change needed to run in the virtual environment is changing the ROOT_DOMAIN to point to <code>vip.ve.atsign.zone</code>. The production value is <code>root.atsign.org</code>.
+When writing code, the only change needed to run in the virtual environment is changing the ROOT_DOMAIN to point to vip.ve.atsign.zone. The production value is root.atsign.org.
 
 ## Where should I go next?
 
