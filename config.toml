@@ -266,15 +266,3 @@ enable = true
 	url = "https://www.meetup.com/Ektogamant-Open-Source-Developers-for-Internet-Optimism"
 	icon = "fab fa-meetup"
         desc = "Ecto Gammat: Open Source Developers for Internet Optimism"
-
-# Doks theme experiment
-baseurl = "/"
-canonifyURLs = false
-disableAliases = true
-disableHugoGeneratorInject = true
-enableEmoji = true
-enableGitInfo = false
-enableRobotsTXT = true
-languageCode = "en-US"
-paginate = 7
-rssLimit = 10
