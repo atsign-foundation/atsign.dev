@@ -3,7 +3,7 @@
 Bootstrap variables overrides for theme.
 See https://github.com/twbs/bootstrap/pull/23260
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=poppins:300,300i,400,400i,700,700i&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.0.1/dist/font-face.css");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap");
@@ -41,7 +41,7 @@ See https://github.com/twbs/bootstrap/pull/23260
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: "poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -60,7 +60,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -3570,11 +3570,16 @@ input.btn-block[type="button"] {
 
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem; }
+  .breadcrumb-item + .breadcrumb-item .a {
+    color: #F05F3E; }
   .breadcrumb-item + .breadcrumb-item::before {
     float: left;
     padding-right: 0.5rem;
     color: #797676;
     content: "/"; }
+
+.breadcrumb-item a {
+  color: #F05F3E; }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: underline; }
@@ -4368,7 +4373,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4453,7 +4458,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -11917,7 +11922,18 @@ readers do not read off random characters that represent icons */
     z-index: 1; }
 
 @media (min-width: 992px) {
-  .td-max-width-on-larger-screens, .td-content > pre, .td-content > .highlight, .td-content > .lead, .td-content > h1, .td-content > h2, .td-content > ul, .td-content > ol, .td-content > p, .td-content > blockquote, .td-content > dl dd, .td-content .footnotes, .td-content > .alert {
+  .td-max-width-on-larger-screens, .td-content > pre,
+  .td-content > .highlight,
+  .td-content > .lead,
+  .td-content > h1,
+  .td-content > h2,
+  .td-content > ul,
+  .td-content > ol,
+  .td-content > p,
+  .td-content > blockquote,
+  .td-content > dl dd,
+  .td-content .footnotes,
+  .td-content > .alert {
     max-width: 80%; } }
 
 .-bg-blue {
@@ -13491,7 +13507,7 @@ readers do not read off random characters that represent icons */
   font-size: 0; }
 
 .td-navbar-cover {
-  background: #ffad00; }
+  background: black; }
   @media (min-width: 768px) {
     .td-navbar-cover {
       background: black !important; }
@@ -13501,15 +13517,11 @@ readers do not read off random characters that represent icons */
     text-shadow: none; }
 
 .navbar-bg-onscroll {
-  background: #ffad00 !important;
+  background: black !important;
   opacity: inherit; }
 
 .td-navbar {
-  background: #ffad00 !important;
-  opacity: inherit; }
-
-.td-navbar {
-  background: #ffad00;
+  background: black;
   min-height: 4rem;
   margin: 0;
   z-index: 32; }
@@ -13622,7 +13634,7 @@ readers do not read off random characters that represent icons */
       color: #495057;
       font-weight: 300; }
   .td-sidebar-nav a:hover {
-    color: #F05F3E;
+    color: #72A1E5;
     text-decoration: none; }
   .td-sidebar-nav a.active {
     font-weight: 700; }
@@ -13706,7 +13718,8 @@ readers do not read off random characters that represent icons */
   .td-toc li li {
     margin-left: 0.5rem; }
   .td-toc .td-page-meta a {
-    font-weight: 500; }
+    font-weight: 500;
+    color: #F05F3E; }
   .td-toc #TableOfContents a {
     color: #797676; }
     .td-toc #TableOfContents a:hover {
@@ -13783,7 +13796,9 @@ readers do not read off random characters that represent icons */
 
 .td-content {
   order: 1; }
-  .td-content p, .td-content li, .td-content td {
+  .td-content p,
+  .td-content li,
+  .td-content td {
     font-weight: 400; }
   .td-content > h1 {
     font-weight: 700;
@@ -13794,7 +13809,10 @@ readers do not read off random characters that represent icons */
     margin-top: 3rem; }
   .td-content > h2 + h3 {
     margin-top: 1rem; }
-  .td-content > h3, .td-content > h4, .td-content > h5, .td-content > h6 {
+  .td-content > h3,
+  .td-content > h4,
+  .td-content > h5,
+  .td-content > h6 {
     margin-bottom: 1rem;
     margin-top: 2rem; }
   .td-content > blockquote {
@@ -13802,7 +13820,8 @@ readers do not read off random characters that represent icons */
     margin-bottom: 1rem;
     color: #797676;
     border-left: 6px solid white; }
-  .td-content > ul li, .td-content > ol li {
+  .td-content > ul li,
+  .td-content > ol li {
     margin-bottom: .25rem; }
   .td-content strong {
     font-weight: 700; }
@@ -13822,7 +13841,7 @@ readers do not read off random characters that represent icons */
   background: transparent;
   max-width: 90%;
   border-radius: .4rem;
-  font-family: "Font Awesome 5 Free", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+  font-family: "Font Awesome 5 Free", "poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
   .td-search-input.form-control:focus {
     border-color: white;
     box-shadow: 0 0 0 2px #fbd5cc; }

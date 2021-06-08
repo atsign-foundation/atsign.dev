@@ -175,15 +175,6 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 # add "hide_readingtime: true" to the page's front matter
 [params.ui.readingtime]
 enable = true
-
-[[menu.main]]
-    name = "GitHub"
-    weight = 50
-    url = "https://github.com/atsign-foundation/"
-    pre = "<i class='fab fa-github'></i>"
-    # post = "<span class='alert'>New!</span>" 
-
-
 	
 
 # [[params.versions]]
