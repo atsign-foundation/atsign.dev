@@ -12,11 +12,8 @@ description: >
 To see a demonstration of @mosphere, refer to the GIF below:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/atsign-foundation/atmosphere/dev_env/atmosphere.gif" alt="atmosphere-walkthrough" />
+  <img src="/Sample_Apps/atmosphere_walkthrough.gif" alt="atmosphere-walkthrough" />
 </p>
-
-
-
 
 ## Creating your own @platform data-streaming application
 
