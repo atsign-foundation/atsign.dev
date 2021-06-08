@@ -170,7 +170,26 @@ After this, you can now open any web browser and type in the URL:
 
 You should now see your website and the theme you installed! From here, if you wish to contrbute, I recommend reading through our 'Contributing to an Open-Source Project' document!
 
+### Steps for Setting up our hugo dev site on your machine
 
+1. Since I have already created a fork of the atsign.dev repo, all I simply have to do is fetch the upstream for any recent changes made.
 
+2. I then proceed to git pull the updated forked repo (or if you haven't already simply git clone it).
+
+3. You now need to edit the config.toml file so that your theme = "at_docsy"
+
+4. Get the https:// link from the at_docsy repo on our [GitHub](https://github.com/atsign-foundation/at_docsy.git)
+
+5. If you are using Git Bash all you have to do is navigate within the atsign.dev folder that contains the folders; content, archetypes, assets, etc. and use the command:
+```
+git submodule add "https://github.com/atsign-foundation/at_docsy.git" themes/at_docsy
+```
+
+This command will pull the at_docsy repo's contents and add them to a created folder titled at_docsy under your themes folder
+
+6. Finally, use the command below and you will be ready to use the hugo commands:
+```
+git submodule update --init --recursive 
+```
 
 

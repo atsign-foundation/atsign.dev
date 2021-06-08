@@ -13491,7 +13491,7 @@ readers do not read off random characters that represent icons */
   font-size: 0; }
 
 .td-navbar-cover {
-  background: black; }
+  background: #ffad00; }
   @media (min-width: 768px) {
     .td-navbar-cover {
       background: black !important; }
@@ -13501,11 +13501,15 @@ readers do not read off random characters that represent icons */
     text-shadow: none; }
 
 .navbar-bg-onscroll {
-  background: black !important;
+  background: #ffad00 !important;
   opacity: inherit; }
 
 .td-navbar {
-  background: black;
+  background: #ffad00 !important;
+  opacity: inherit; }
+
+.td-navbar {
+  background: #ffad00;
   min-height: 4rem;
   margin: 0;
   z-index: 32; }
