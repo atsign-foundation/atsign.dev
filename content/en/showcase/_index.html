@@ -6,59 +6,11 @@ menu:
   main:
     weight: 30
 ---
-<style>
 
-  @media (min-width: 768px)
-    .showcase__featured-company-cases .card-footer {
-      padding: 0 24px 12px;
-    }
-    .card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      word-wrap: break-word;
-      background-color: #fff;
-      background-clip: border-box;
-      border-radius: 4px
-
-    }
-      .showcase__featured-company-cases{
-      margin-right: 3rem;
-      margin-left: 3rem;
-      }
-    .showcase__featured-company-cases .card-img-top, .showcase__company-cases .card-img-top {
-      height: 150px;
-      -o-object-fit: cover;
-      object-fit: cover;
-
-    }
+{{< blocks/showcasecover title="Inspiring Showcase Headline" subtitle="Sub heading with other magical language" image_anchor="bottom" height="min" >}}
 
 
-
-    img {
-      vertical-align: middle;
-      border-style: none;
-    }
-    .card-footer.card-footer--transparent {
-      border: none;
-      background-color: transparent;
-    }
-    .card-footer:last-child {
-      border-radius: 0 0 3px 3px;
-    }
-    .fa-external-link-alt:before {
-      font-size: 16px;
-      margin-left: 8px;
-      opacity: .8;
-      vertical-align: initial;
-    }
-</style>
-
-{{< blocks/cover title="Showcase" subtitle="Dude" image_anchor="bottom" height="min" >}}
-
-
-{{< /blocks/cover >}}
+{{< /blocks/showcasecover >}}
 
 
 <section class="showcase__featured-company-cases showcase__section">
