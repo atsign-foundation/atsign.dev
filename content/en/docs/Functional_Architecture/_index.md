@@ -3,6 +3,9 @@ title: "Functional Architecture"
 linkTitle: "Functional Architecture"
 weight: 3
 date: 2021-06-02
+nav_children: section
+notoc: true
+simple_list: true
 description: >
   The @ Company provides both a new Internet protocol and a platform to assist developers easily create ground-breaking applications that provide privacy focused, peer-to-peer services.
 ---
