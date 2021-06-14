@@ -1,6 +1,7 @@
 ---
 title: "Libraries"
 linkTitle: "Libraries"
+parent: /Functional_Architecture/
 weight: 2
 description: >
   Find the list of libraries the @platform has to offer here!
