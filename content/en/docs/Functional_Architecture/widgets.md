@@ -1,7 +1,10 @@
 ---
 title: "Widgets"
 linkTitle: "Widgets"
-weight: 5
+weight: 3
+nav_children: section
+notoc: true
+simple_list: true
 description: >
   Low level reference docs for your project.
 ---
