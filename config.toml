@@ -4,7 +4,7 @@ title = "@platform - creating a network of trust"
 enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["docsy"]
+theme = ["at_docsy"]
 
 # Will give values to .Lastmod etc.
 enableGitInfo = true
@@ -154,7 +154,7 @@ sidebar_menu_compact = false
 #  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
 #  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = true
+sidebar_search_disable = false
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
 navbar_logo = true
 # Set to true to disable the About link in the site footer
@@ -175,18 +175,6 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 # add "hide_readingtime: true" to the page's front matter
 [params.ui.readingtime]
 enable = true
-
-[[menu.main]]
-    name = "GitHub"
-    weight = 50
-    url = "https://github.com/atsign-foundation/"
-    pre = "<i class='fab fa-github'></i>"
-    # post = "<span class='alert'>New!</span>" 
-
-[[menu.main]]
-    name = "Get Started"
-    weight = 70
-    url = "docs/get-started/"
 	
 
 # [[params.versions]]
@@ -270,14 +258,5 @@ enable = true
 	icon = "fab fa-meetup"
         desc = "Ecto Gammat: Open Source Developers for Internet Optimism"
 
-# Doks theme experiment
-baseurl = "/"
-canonifyURLs = false
-disableAliases = true
-disableHugoGeneratorInject = true
-enableEmoji = true
-enableGitInfo = false
-enableRobotsTXT = true
-languageCode = "en-US"
-paginate = 7
-rssLimit = 10
+
+
