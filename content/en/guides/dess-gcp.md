@@ -40,11 +40,11 @@ This topic is already well documents. Please follow guidance of https://atsign.c
 
 If you are new to cloud like me and need to create new GCP account, I have good news! The creation is for free. As promotion all new customer will also receive 300$ as credit. That is more than enough to run multiple DESS’s for 3 months of offer validity.
 
-![gcp-dicount](atsign.dev/content/en/guides/images/dess-gcp/gcp-dicount.png)
+![gcp-dicount](images/dess-gcp/gcp-dicount.png)
 
 You can register with your gmail account or create new one by clicking “Get started for free” and follow instructions to register
 
-![Get Started](atsign.dev/content/en/guides/images/dess-gcp/gcp-get-started.png)
+![Get Started](images/dess-gcp/gcp-get-started.png)
 
 Once done with registration you will be able to login to your https://console.cloud.google.com/
 And voila you have your GCP account up and running.
