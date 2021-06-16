@@ -148,39 +148,37 @@ Now since I am new to GCP the easiest way to start using it is with prebuild sol
 
 We can use pre-build “Ubuntu 20”.
 
-**Make sure to use “Ubuntu 20” and not “Hardened Ubuntu 20”. Although the Hardened version will work as well it requires additional manual steps to make work.**
+![gcp-search-ubuntu20](images/dess-gcp/gcp-search-ubuntu20.png)
+
+&#x1F534; **Make sure to use “Ubuntu 20” and not “Hardened Ubuntu 20”. Although the Hardened version will work as well it requires additional manual steps to make work.**&#x1F534; 
 
 ​                               
 
 This will take you to this prebuild solution overview page:
 
- 
+ ![gcp-ubuntu20](images/dess-gcp/gcp-ubuntu20.png)
 
 Select launch
 
- 
+  ![gcp-ubuntu20-api-enable](images/dess-gcp/gcp-ubuntu20-api-enable.png)
 
 And press enable all required API’s
 
- 
+![gcp-ubuntu20-api-enabled](images/dess-gcp/gcp-ubuntu20-api-enabled.png)
 
 Once all API’s are activated you are taken to configuration page:
 
- 
+ ![gcp-ubuntu20-type](images/dess-gcp/gcp-ubuntu20-type.png)
 
 Prices are based on region and power of selected Virtual Machine (VM). To cost optimize you can select US region / N1 / g1-small at cost of $15/Month.
 
 Next up is boot disk which we can leave as is.
 
-
-
-To be able to assign our domain to this Virtual Machine we need to select static IP address
-
- 
+![gcp-ubuntu20-disk](images/dess-gcp/gcp-ubuntu20-disk.png)
 
 This will deploy your Ubuntu 20.04 virtual machine.
 
-
+![gcp-ubuntu20-confirmation](images/dess-gcp/gcp-ubuntu20-confirmation.png)
 
 
 
@@ -192,11 +190,11 @@ Next up our list of activities is providing our instance with static IP and link
 
 GCP assigned ephemeral IP address to our newly created VM. We need to change it to static IP. In search bar look for external IP addresses.
 
-​                               
+![gcp-search-networking](images/dess-gcp/gcp-search-networking.png)
 
 You should see your external IP address assigned to your VM
 
- 
+![gcp-networking-overview](images/dess-gcp/gcp-networking-overview.png)
 
 In column Type select ephemeral and change it to Static
 
