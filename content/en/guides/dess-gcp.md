@@ -198,15 +198,15 @@ You should see your external IP address assigned to your VM
 
 In column Type select ephemeral and change it to Static
 
- 
+ ![gcp-networking-type](images/dess-gcp/gcp-networking-type.png)
 
 Give your static IP name and some description.
 
- 
+ ![gcp-networking-static](images/dess-gcp/gcp-networking-static.png)
 
 Type should now say Static
 
-  
+  ![gcp-networking-type-change](images/dess-gcp/gcp-networking-type-change.png)
 
 #### b) Assignment of Domain name to your static IP <a name="domain2IP"></a>
 
@@ -238,19 +238,31 @@ At this point we have created DNS record we will use to link our DESS, we create
 
 #### c) Setting up Firewall <a name="firewall"></a>
 
+Search for Firewall in search bar.
+
+![gcp-search-firewall](images/dess-gcp/gcp-search-firewall.png)
+
+Click on Create firewall rule
+
+![gcp-firewall-create](images/dess-gcp/gcp-firewall-create.png)
+
 Lets create firewall rule that will enable the @sign root server communicate with our DESS.
 
-   
+   ![gcp-networking-firewall-settings](images/dess-gcp/gcp-networking-firewall-settings.png)
 
 Important things to note:
 
 1)   Ingress / egress translates to incoming and outgoing traffic. 
 
-2)   Selecting IP range as 0.0.0.0/0 will allow traffic from anywhere on the internet.
+2)   Selecting IP range as `0.0.0.0/0` will allow traffic from anywhere on the internet.
 
 3)   For my use case I will enable port range 8000 – 8010 allowing me to register up to 10 @signs.
 
- 
+ ![gcp-firewall-ranges](images/dess-gcp/gcp-firewall-ranges.png)
+
+Press `create` and validate that your new rule appears in list of firewall rules.
+
+![gcp-firewall-status](C:\Users\sherif\Documents\GitHub\atsign.dev\content\en\guides\images\dess-gcp\gcp-firewall-status.png)
 
 ### 6. Instance setup and DESS deployment <a name="deployment"></a>
 
