@@ -14,11 +14,12 @@ description: >
 ## Frequently Asked Questions Table Format
 
 | General | Android | Flutter | Virtual Environment |
-| --- | --- | --- | --- |
-| [Get Started](/docs/get-started/) | Dependencies | Flutter Doctor | Buffer |
-| [Contributing](/docs/resources/#contribution-guidelines) | Emulator | Buffer | Buffer |
-| Developer Commissions | Android SDK | Flutter SDK | Buffer |
-| Cookbook | Text | Buffer | Buffer |
+| ---     | ---     | ---     |        ---          |
+| [Get Started](/docs/get-started/) | [Set-Up](/docs/get-started/#android-studio) | [Flutter Doctor]() | Buffer |
+| [Contributing](/docs/resources/#contribution-guidelines) | [Emulator](https://blog.atsign.dev/running-one-or-more-emulators-through-cli-using-android-studio-ckm2kuryy00v5mss16f1agh7m) | Buffer | Buffer |
+| [Developer Commissions](/dev_tools/commissions/) |[ Android SDK]() | [Flutter SDK]() | Buffer |
+| [@Client SDK Cookbook](https://docs.google.com/document/d/19A0g0AIJU3x2MiwgRgcguGmimrNLr03CdmZg0RdnU_Y/edit?usp=sharing) | [Gradle](https://blog.atsign.dev/handling-gradle-exceptions-within-a-flutter-project-utilizing-the-platform-ckmqteej102lrm1s13piq393f)  | Buffer | Buffer |
+
 
 ## Frequently Asked Questions Dropdown Format
 <details>
@@ -57,28 +58,5 @@ description: >
      * With some
      * Sub bullets
 </details>
-
-## Frequently Asked Questions General Issue Sections Form
-
-### Flutter Issues
-
-Flutter doctor says that Android Studio is not installed but it is
-
-Android Studio (not installed) , when run flutter doctor while Android Studio installed on machine - [Stack Overflow](https://stackoverflow.com/questions/59647791/tag-android-studio-not-installed-when-run-flutter-doctor-while-android)
-
-
-Flutter doctor says that java needs to be installed
-
-Install Java
-
-Java SE Development Kit 16 - [Downloads (oracle.com)](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html)
-
-
-Flutter Doctor says you have to agree to licenses
-
-But when you run ‘flutter doctor --android-licenses’ you get a load of errors that is fixed with :-
-
-windows - Flutter Doctor --android-licenses : Exception in thread "main" 
-
 
 
