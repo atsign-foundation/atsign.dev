@@ -390,7 +390,7 @@ If you have already activated your @sign you will be prompted to erase all your 
 
  
 
-Once done you are able to link y0our @sign with your private DESS. Use your domain and port number with which you have created service on your cloud instance and press Activate
+Once done you are able to link your @sign with your private DESS. Use your domain and port number with which you have created service on your cloud instance and press Activate
 
  
 
@@ -408,4 +408,4 @@ Once the activation process completes you are welcomed by green Activated.
 
 You can now open your @buzz or @wavi and register your atsign via QR code and generate your keys!
 
-**CONGRATULATION**
+**CONGRATULATIONS**
