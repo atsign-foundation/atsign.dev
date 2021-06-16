@@ -3,25 +3,22 @@
 In this step-by-step guide I will walk you through all steps required to setup your own private DESS in GCP cloud from scratch. Please use index to skip some steps in case you have done them in other way.
 
 
+## Table of contents
 
-
-
-# Table of contents
-[Pre-requisites](#pre-requisites)
-    1. [Registering your @sign](#Registering)
-        2. [Sign-up for GCP account](#sign_up)
-           a) [Account creation](#create_account)
-           b) [Setting up billing ](#billing)
-        3. [Register your own fully qualified domain name](#FQDN)](#FQDN)
-           a) [Register domain name with GCP.](#cloud_domain)
-           b) [Create Cloud DNS zone](#DNS_zone)
-        4. [Preparing GCP instance](#prep_instance)
-        5. [Preparing your instance for network access](#networking)
-           a) [Assignment of Static IP](#static_IP)
-           b) [Assignment of Domain name to your static IP](#domain2IP)
-           c) [Setting up Firewall](#firewall)
-        6. [Instance setup and DESS deployment](#deployment)
-        7. [Registration of @sign in your private DESS](#DESS2@sign)
+- [Pre-requisites](#pre-requisites)
+    + [ Registering your @sign](#Registering)
+        - [ Sign-up for GCP account](#sign_up)
+        - [Account creation](#create_account)
+    + [Register your own fully qualified domain name](#FQDN)](#FQDN)
+        - [Register domain name with GCP.](#cloud_domain)
+        - [Create Cloud DNS zone](#DNS_zone)
++ [Preparing GCP instance](#prep_instance)
++ [Preparing your instance for network access](#networking)
+    - [Assignment of Static IP](#static_IP)
+    - [Assignment of Domain name to your static IP](#domain2IP)
+    - [Setting up Firewall](#firewall)
++ [Instance setup and DESS deployment](#deployment)
++ [Registration of @sign in your private DESS](#DESS2@sign)
 
 
 
