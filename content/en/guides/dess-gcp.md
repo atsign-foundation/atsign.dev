@@ -76,7 +76,7 @@ This step can be performed at range of different sites with different pricing mo
 
 #### a) Register domain name with GCP. <a name="cloud_domain"></a>
 
-In your GCP console search for “Domain” in top search bar and select ”Cloud Domain”.
+In your GCP console search for `Cloud Domain`.
 
 ![gcp-search-domain](images/dess-gcp/gcp-search-domain.png)
 
@@ -118,7 +118,7 @@ Once you verify your email your domain should be ready to use
 
 #### b) Create Cloud DNS zone <a name="DNS_zone"></a>
 
-Next step is to enable Cloud DNS service. Search for DNS in search bar and select “Cloud DNS”
+Next step is to enable Cloud DNS service. Search for DNS in search bar and select `Cloud DNS`
 
 ![gcp-search-dns](images/dess-gcp/gcp-search-dns.png)
 
@@ -146,7 +146,7 @@ Now since I am new to GCP the easiest way to start using it is with prebuild sol
 
  
 
-We can use pre-build “Ubuntu 20”.
+We can use pre-build “Ubuntu 20”. In Search bar look for `Ubuntu20`
 
 ![gcp-search-ubuntu20](images/dess-gcp/gcp-search-ubuntu20.png)
 
@@ -188,7 +188,9 @@ This will deploy your Ubuntu 20.04 virtual machine.
 
 Next up our list of activities is providing our instance with static IP and linking our domain to it.
 
-GCP assigned ephemeral IP address to our newly created VM. We need to change it to static IP. In search bar look for external IP addresses.
+GCP assigned ephemeral IP address to our newly created VM. We need to change it to static IP. 
+
+In search bar look for `External IP addresses`.
 
 ![gcp-search-networking](images/dess-gcp/gcp-search-networking.png)
 
@@ -212,27 +214,35 @@ Type should now say Static
 
 Next step is to point your domain to your virtual machine running DESS. 
 
+Search for `Cloud DNS` 
+
+![gcp-search-dns](images/dess-gcp/gcp-search-dns.png)
+
+Open zone you have created in step [3.b Create Cloud DNS zone](#DNS_zone)
+
+![gcp-dns-status](images/dess-gcp/gcp-dns-status.png)
+
 We now need to link A type record to your domain linking it to IP address of your Virtual machine.
 
 This is done simply press “Add record set”  
 
-  
+  ![gcp-dns-add-record](images/dess-gcp/gcp-dns-add-record.png)
 
 Select Resource record type “A” and IPv4 address the address of your DESS virtual machine.
 
-  
+  ![gcp-dns-a](images/dess-gcp/gcp-dns-a.png)
 
 If everything goes well you should see following in your domain dashboard:
 
- 
+ ![gcp-dns-status-final](images/dess-gcp/gcp-dns-status-final.png)
 
-Next step is to update Google Name servers. You can follow googles guide step 5.
+Next step is to update Google Name servers. You can follow Googles guide - step 5.
 
 https://cloud.google.com/dns/docs/tutorials/create-domain-tutorial#register-domain
 
 To test if you are successful open command line and ping your domain. You should see your instance static IP address. 
 
- 
+ ![gcp-dns-test](images/dess-gcp/gcp-dns-test.png)
 
 At this point we have created DNS record we will use to link our DESS, we created instance name which will be running our DESS and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.
 
@@ -256,7 +266,7 @@ Important things to note:
 
 2)   Selecting IP range as `0.0.0.0/0` will allow traffic from anywhere on the internet.
 
-3)   For my use case I will enable port range 8000 – 8010 allowing me to register up to 10 @signs.
+3)   For my use case I will enable port range `8000 – 8010` allowing me to register up to 10 @signs.
 
  ![gcp-firewall-ranges](images/dess-gcp/gcp-firewall-ranges.png)
 
@@ -264,15 +274,23 @@ Press `create` and validate that your new rule appears in list of firewall rules
 
 ![gcp-firewall-status](C:\Users\sherif\Documents\GitHub\atsign.dev\content\en\guides\images\dess-gcp\gcp-firewall-status.png)
 
+
+
 ### 6. Instance setup and DESS deployment <a name="deployment"></a>
 
-Open your GCP console at https://console.cloud.google.com/compute/instances
+Open your GCP console at https://console.cloud.google.com/compute/instances and search for `VM instances`
+
+![gcp-search-vm](images/dess-gcp/gcp-search-vm.png)
 
  By now you should see your instance in “Running state”
+
+![gcp-vm-status](images/dess-gcp/gcp-vm-status.png)
 
 Click on the SSH button and connect to your instance.
 
 You should be presented by new window with command line:
+
+![gcp-vm-connected](images/dess-gcp/gcp-vm-connected.png)
 
  Before we do anything we run update:
 
@@ -292,7 +310,7 @@ Run to download fresh copy of the DESS
 
 ```git clone --branch dess.0.0.1-release.1 https://github.com/atsign-foundation/dess.git```
 
- 
+ ![gcp-vm-git](images/dess-gcp/gcp-vm-git.png)
 
 Lets navigate to dess folder that was created and run installation scripts:
 
@@ -300,11 +318,11 @@ Lets navigate to dess folder that was created and run installation scripts:
 
 ```./install_software.sh```
 
-
+![gcp-vm-install](images/dess-gcp/gcp-vm-install.png)
 
 At the end you should be presented with message:
 
- 
+ ![gcp-vm-install-done](images/dess-gcp/gcp-vm-install-done.png)
 
 At this point we are good to go with registering our first @sign in our private DESS running in cloud with our own FQDN!
 
@@ -314,37 +332,37 @@ At this point we are good to go with registering our first @sign in our private 
 
 At this step you should already have your at sign registered at http://atsign.com. If not **go do it!**
 
-I have registered my own free @sign @44likelycanary which I will link to my GCP cloud private DESS.
+I have registered my own free @sign` @44likelycanary` which I will link to my GCP cloud private DESS.
 
 In your instance console navigate to dess folder. If you were following this guide it will be located in:
 
-```/home/ubuntu/dess```
+```cd /home/<username>/dess``` where username is your email address without domain. In my case atsigntest
 
-​                               
+![gcp-vm-atsign-cd](images/dess-gcp/gcp-vm-atsign-cd.png)
 
-We now need to create service hosting our @sign on our dess by executing ./create.sh script
+We now need to create service hosting our @sign on our DESS by executing `./create.sh` script
 
- 
+![gcp-vm-atsign-create-help](images/dess-gcp/gcp-vm-atsign-create-help.png)
 
 In my case the command will look as following:
 
-```atsigntest@dess-vm:~/dess$ ./create.sh @44likelycanary atsign.pw 8000 <email address> likelycanary```
+```./create.sh @44likelycanary atsign.pw 8000 <email address> likelycanary```
 
 To make it more understandable:
 
-I will be registering my @sing **@44likelycanary** 
+I will be registering my @sing `@44likelycanary `
 
-I will be using my domain **atsign.pw** which I have registered through GCP
+I will be using my domain `atsign.pw` which I have registered through GCP
 
-I am using port **8000** which I have opened in my instance firewall
+I am using port `8000` which I have opened in my instance firewall
 
-My registration email address is **<email address>**.
+My registration email address is `<email address>`.
 
-The last **likelycanary** is name which will be used by docker to register my service.
+The last `likelycanary` is name which will be used by docker to register my service.
 
 If everything is successful you should see output like this:
 
- 
+ ![gcp-vm-atsign-create](images/dess-gcp/gcp-vm-atsign-create.png)
 
 At this moment your atsign is registered on your DESS. 
 
