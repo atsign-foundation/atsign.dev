@@ -3,22 +3,40 @@
 In this step-by-step guide I will walk you through all steps required to setup your own private DESS in GCP cloud from scratch. Please use index to skip some steps in case you have done them in other way.
 
 
+## Table of contents
 
-[TOC]
+- [Pre-requisites](#pre-requisites)
+    + [ Registering your @sign](#Registering)
+        - [ Sign-up for GCP account](#sign_up)
+        - [Account creation](#create_account)
+    + [Register your own fully qualified domain name](#FQDN)](#FQDN)
+        - [Register domain name with GCP.](#cloud_domain)
+        - [Create Cloud DNS zone](#DNS_zone)
++ [Preparing GCP instance](#prep_instance)
++ [Preparing your instance for network access](#networking)
+    - [Assignment of Static IP](#static_IP)
+    - [Assignment of Domain name to your static IP](#domain2IP)
+    - [Setting up Firewall](#firewall)
++ [Instance setup and DESS deployment](#deployment)
++ [Registration of @sign in your private DESS](#DESS2@sign)
 
-## Pre-requisites
+
+
+
+
+## Pre-requisites <a name="pre-requisites"></a>
 
 - Register Atsign at http://atsign.com
 - Have google account
 - Have registered Fully Qualified Domain Name (FQDN)
 
-### 1. Registering your @sign.
+### 1. Registering your @sign <a name="Registering"></a>
 
 This topic is already well documents. Please follow guidance of https://atsign.com/faqs/ and register via https://atsign.com/get-an-sign/.
 
-### 2.Create GCP account
+### 2. Sign-up for GCP account <a name="sign_up"></a>
 
-#### a) Account creation
+#### a) Account creation <a name="create_account"></a>
 
 If you are new to cloud like me and need to create new GCP account, I have good news! The creation is for free. As promotion all new customer will also receive 300$ as credit. That is more than enough to run multiple DESS’s for 3 months of offer validity.
 
@@ -31,7 +49,7 @@ You can register with your gmail account or create new one by clicking “Get st
 Once done with registration you will be able to login to your https://console.cloud.google.com/
 And voila you have your GCP account up and running.
 
-#### b) Setting up billing
+#### b) Setting up billing  <a name="billing"></a>
 
 To be able to run some services you have to maintain billing account. Navigation Menu -> Billing 
 
@@ -45,11 +63,11 @@ We are all setup and ready to go deploy!
 
 
 
-### 3. Register your own fully qualified domain name (FQDN)
+### 3. Register your own fully qualified domain name (FQDN) <a name="FQDN"></a>
 
 This step can be performed at range of different sites with different pricing models. You can use sites like http://www.godaddy.com; https://www.namecheap.com/; and many others. Since we have GCP account we can use it to register our domain through Cloud Domain.
 
-#### a) Register domain name with GCP.
+#### a) Register domain name with GCP. <a name="cloud_domain"></a>
 
 In your GCP console search for “Domain” in top search bar and select ”Cloud Domain”.
 
@@ -91,7 +109,7 @@ Once you verify your email your domain should be ready to use
 
  
 
-#### b) Create Cloud DNS zone
+#### b) Create Cloud DNS zone <a name="DNS_zone"></a>
 
 Next step is to enable Cloud DNS service. Search for DNS in search bar and select “Cloud DNS”
 
@@ -127,7 +145,7 @@ You should receive following message:
 
 
 
-### 4. Preparing GCP instance 
+### 4. Preparing GCP instance <a name="prep_instance"></a>
 
 Now since I am new to GCP the easiest way to start using it is with prebuild solutions. This way you will deploy small system which is more then capable of handling DESS at pre-set price. 
 
@@ -171,9 +189,9 @@ This will deploy your Ubuntu 20.04 virtual machine.
 
 
 
-### 5. Preparing your instance for network access
+### 5. Preparing your instance for network access <a name="networking"></a>
 
-#### a) Assignment of Static IP
+#### a) Assignment of Static IP <a name="static_IP"></a>
 
 Next up our list of activities is providing our instance with static IP and linking our domain to it.
 
@@ -197,7 +215,7 @@ Type should now say Static
 
   
 
-#### b) Assignment of Domain name to your static IP
+#### b) Assignment of Domain name to your static IP <a name="domain2IP"></a>
 
 Next step is to point your domain to your virtual machine running DESS. 
 
@@ -225,7 +243,7 @@ To test if you are successful open command line and ping your domain. You should
 
 At this point we have created DNS record we will use to link our DESS, we created instance name which will be running our DESS and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.
 
-#### c) Setting up Firewall
+#### c) Setting up Firewall <a name="firewall"></a>
 
 Lets create firewall rule that will enable the @sign root server communicate with our DESS.
 
@@ -241,9 +259,7 @@ Important things to note:
 
  
 
-### 6. Instance setup and DESS deployment
-
-#### a) Setup of Git
+### 6. Instance setup and DESS deployment <a name="deployment"></a>
 
 Open your GCP console at https://console.cloud.google.com/compute/instances
 
@@ -289,7 +305,7 @@ At this point we are good to go with registering our first @sign in our private 
 
 
 
-### 7.  Registration of @sign in your private DESS
+### 7.  Registration of @sign in your private DESS <a name="DESS2@sign"></a>
 
 At this step you should already have your at sign registered at http://atsign.com. If not **go do it!**
 
