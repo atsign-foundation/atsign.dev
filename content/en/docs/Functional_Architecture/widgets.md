@@ -372,7 +372,6 @@ initService() {
 }
 ```
 
-
 As is the case with most @platform widgets, you can call this initialization function in the initState() function of your class. 
 
 Once our location service is ready to go, you can let the authenticated individual freely send and request locations to/from other @sign customers. These capabilities are made possible with the “sendShareLocationNotification” and “send RequestLocationNotification” functions (which exist in the init_location_service.dart file).
@@ -436,3 +435,134 @@ That’s all for the “Location” widget! If you want to test the at_location_
 
 
 </details>
+
+<!-- End Location Widget-->
+
+<!-- Events Widget-->
+
+### The Events Widget
+
+Like how we regularly share calendar items between our friends, family, and colleagues, it would be very convenient to have a data structure for events that works with the @platform. This is where the at_events_flutter dependency comes into play.
+
+
+<details>
+<summary style="color: #F05F3E"> Learn more about the events widget here! </summary>
+
+{{% alert title="Note" color="warning" %}}
+This dependency value may not be up-to-date so be sure to check it out on our [pub.dev](https://pub.dev/packages/at_events_flutter)!
+{{% /alert %}}
+
+#### Use this package as a library
+```
+at_events_flutter: ^1.0.0
+```
+
+The first step, as you very well may have guessed, is the initialization of the event service. Like the previous few widgets discussed above, we’ll be examining snippets from the [example app](https://github.com/atsign-foundation/at_widgets/tree/trunk/at_events_flutter/example) in the at_event_flutter Github directory throughout this subsection. 
+
+```dart
+initService() {
+ activeAtSign =
+     clientSdkService.atClientServiceInstance.atClient.currentAtSign;
+ /// Unlike most of the initialization functions, our event 
+ /// initializer only needs an AtClientImpl instance and an optional 
+ /// argument for the root domain.
+initialiseEventService(clientSdkService.atClientServiceInstance.atClient,
+     rootDomain: MixedConstants.ROOT_DOMAIN);
+}
+
+```
+
+The most important function in the at_event_flutter library is CreateEvent(), which builds an instance of a CreateEvent that can be customized and shared across different @signs:
+
+```dart
+TextButton(
+ onPressed: () {
+   /// bottomSheet will return a pop up screen that takes up 90%
+   /// of the screen height. 
+   bottomSheet(
+       CreateEvent(), MediaQuery.of(context).size.height * 0.9);
+ },
+ child: Container(
+   height: 40,
+   child:
+       Text('Create event', style: TextStyle(color: Colors.black)),
+ ),
+```
+
+CreateEvent() is a separate screen in the application that guides an individual through a list of fields they can populate to provide information about their event. If you look into the CreateEvent class, you’ll see that these fields are stored in an object called “eventData”, which is an instance of an [EventNotificationModel](https://github.com/atsign-foundation/at_widgets/blob/trunk/at_events_flutter/lib/models/event_notification.dart). It’s full list of attributes is below (the ones with comments are used in the CreateEvent class):
+
+```dart
+class EventNotificationModel {
+ EventNotificationModel();
+ String atsignCreator;
+ bool isCancelled;
+ /// The title of the event.
+ String title;
+ /// A location serving as the event's venue.
+ Venue venue;
+ /// An object that stores info like event date, start time, and repeat duration.
+ Event event;
+ String key;
+ AtGroup group;
+ bool isSharing;
+ bool isUpdate; //when an event data is being updated , this should be true.
+ ...
+}
+```
+
+“eventData” is a crucial data structure that’s used not just in creating an event but updating and deleting events as well. The init_events_service.dart file illustrates a variety of functions that can be used to perform useful actions on these objects. 
+
+One important feature of the example app is its EventList class, which doesn’t come directly with the at_events_flutter dependency:
+
+```dart
+TextButton(
+ onPressed: () {
+   Navigator.push(
+     context,
+     MaterialPageRoute(
+       builder: (context) => EventList(),
+     ),
+   );
+ },
+```
+
+This seemingly harmless class is actually doing quite a bit of work behind the scenes! EventList listens to an event stream that comes from an EventService object (a class within the at_event_flutter dependency) and displays them in a ListView format. Clicking on one of these events, you’ll be navigated to a popup of a CreateEvent instance with its “isUpdate” parameter set to true. This allows you to edit and save any event of your choice!
+
+</details>
+
+### The Backup Keys Widget
+
+When someone uses their @sign for the first time with an @platform app, it is important to have them authenticate with their generated QR code and create a set of backup keys just in case the ones in the keychain manager are lost or if you want to use the same @sign on a different device. The backup keys widget occurs during the “Onboarding” widget. 
+
+<details>
+<summary style="color: #F05F3E"> Learn more about the events widget here! </summary>
+
+{{% alert title="Note" color="warning" %}}
+This dependency value may not be up-to-date so be sure to check it out on our [pub.dev](https://pub.dev/packages/at_backupkey_flutter)!
+{{% /alert %}}
+
+#### Use this package as a library
+```
+at_onboarding_flutter: ^1.0.0+4
+```
+
+You may notice that in order to get the at_backupKeys_flutter package, you can simply pull from the at_onboarding_flutter widget which houses the at_backupkeys_flutter widget! See below the process of at_onboarding_flutter to see where at_backupkeys_flutter comes into play!
+
+<div class="row">
+  <div class="column" style="float: left;
+  width: 33.33%; padding-left: 50px">
+    <img src="/Widgets/enterAtsign.png" alt="at_cookbook"style="width:89%;">
+  </div>
+  <div class="column" style="float: left;
+  width: 33.33%; padding-left: 25px">
+    <img src="/Widgets/qrCodeUpload.png" alt="at_cookbook" style="width:82%;">
+  </div>
+  <div class="column"style="float: left;
+  width: 33.33%;">
+     <img src="/Widgets/backupKeys_save.png" alt="at_cookbook"style="width:75%;">
+  </div>
+</div>
+
+After inputting what @sign you wish to pair, you will need to upload the QR code retrieved from atsign.com. The emulator in the picture is not hooked up to a camera, so a small GIF of a house is there to fill where the camera would be. After successfully uploading and authenticating with the QR code, the backup key widget will be introduced to you! From the save option, you will be prompted to either save your keys to the files folder of the device or upload the keys to an associated Google Drive.  
+
+Fortunately, implementing the backup key widget is painless as it is a part of the onboarding widget! If you have already implemented the onboarding widget, there’s no code you need to write!
