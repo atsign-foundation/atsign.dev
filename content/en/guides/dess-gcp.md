@@ -53,11 +53,18 @@ And voila you have your GCP account up and running.
 
 To be able to run some services you have to maintain billing account. Navigation Menu -> Billing 
 
+![gcp-navigation-billing](images\dess-gcp\gcp-navigation-billing.png)
+
 By default GCP creates “My Billing Account” which you can link to your project.
+
+![gcp-billing_project](images\dess-gcp\gcp-billing_project.png)
+
+
 
 Click “Link Billing account” and select “My billing account” from drop down
 
-**Its important to note that this account holds your 300$ free credits!**
+
+&#x1F534; Its important to note that this account holds your 300$ free credits! &#x1F534;
 
 We are all setup and ready to go deploy!
 
