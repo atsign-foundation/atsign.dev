@@ -272,7 +272,7 @@ Important things to note:
 
 Press `create` and validate that your new rule appears in list of firewall rules.
 
-![gcp-firewall-status](C:\Users\sherif\Documents\GitHub\atsign.dev\content\en\guides\images\dess-gcp\gcp-firewall-status.png)
+![gcp-firewall-status](images/dess-gcp/gcp-firewall-status.png)
 
 
 
