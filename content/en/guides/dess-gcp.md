@@ -53,11 +53,11 @@ And voila you have your GCP account up and running.
 
 To be able to run some services you have to maintain billing account. Navigation Menu -> Billing 
 
-![gcp-navigation-billing](images\dess-gcp\gcp-navigation-billing.png)
+![gcp-navigation-billing](images/dess-gcp/gcp-navigation-billing.png)
 
 By default GCP creates “My Billing Account” which you can link to your project.
 
-![gcp-billing_project](images\dess-gcp\gcp-billing_project.png)
+![gcp-billing_project](images/dess-gcp/gcp-billing_project.png)
 
 
 
@@ -78,13 +78,13 @@ This step can be performed at range of different sites with different pricing mo
 
 In your GCP console search for “Domain” in top search bar and select ”Cloud Domain”.
 
-​                               
-
- 
+![gcp-search-domain](images/dess-gcp/gcp-search-domain.png)
 
 We first need to enable this service.
 
- 
+ ![gcp-domain-api](images/dess-gcp/gcp-domain-api.png)
+
+
 
 Once the service activates you will be presented with its dashboard. 
 
