@@ -92,63 +92,51 @@ Lets register our fully qualified domain name (FQDN) that will be used for regis
 
 Click on “Register Domain” and look for suitable name.
 
-  
+![gcp-domain-register](images/dess-gcp/gcp-domain-register.png)
 
 Reviewing pricing options of GCP .pw is their cheapest option which will work for testing. For my test case I am selecting atsign.pw with price $0.75 / month by clicking add to cart button and continue.
 
- 
+ ![gcp-domain-lookup](images/dess-gcp/gcp-domain-lookup.png)
 
  
 
 Next we can select where will our DNS record be hosted. Simply select “Use Google Domains” and DNSSEC “Enabled” and click continue.
 
- 
+ ![gcp-domain-config](images/dess-gcp/gcp-domain-config.png)
 
 We have no options with Privacy protection so simply click continue.
 
- 
+ ![gcp-domain-privacy](images/dess-gcp/gcp-domain-privacy.png)
 
 Fill out contact details and click register. This will trigger registration email you will have to verify.
 
- 
+ ![gcp-domain-contacts](images/dess-gcp/gcp-domain-contacts.png)
 
 Once you verify your email your domain should be ready to use
 
- 
+ ![gcp-domain-status](images/dess-gcp/gcp-domain-status.png)
 
 #### b) Create Cloud DNS zone <a name="DNS_zone"></a>
 
 Next step is to enable Cloud DNS service. Search for DNS in search bar and select “Cloud DNS”
 
-​                               
+![gcp-search-dns](images/dess-gcp/gcp-search-dns.png)
 
- 
+If its your first time activating this service you will have to enable the API. Press enable and wait for the activation to finish.
 
-If its your first time activating this service you will have to enable the API.
-
- 
-
-Press enable and wait for the activation to finish.
-
- 
+ ![gcp-dns-api](images/dess-gcp/gcp-dns-api.png)
 
 Lets crate new DNS zone by clicking “Create Zone”
 
- 
-
- 
-
- 
+ ![gcp-dns-create](images/dess-gcp/gcp-dns-create.png)
 
 We will select zone type as Public since we will be connecting to our DNS from internet and provide your registered DNS name. In my case atsign.pw. DNSSEC will be set to off and provide some meaningful Description. Once you filled all your details press create.
 
- 
+ ![gcp-dns-create-details](images/dess-gcp/gcp-dns-create-details.png)
 
- 
+ You should receive following message:
 
-You should receive following message:
-
- 
+ ![gcp-dns-confirm](images/dess-gcp/gcp-dns-confirm.png)
 
 
 
