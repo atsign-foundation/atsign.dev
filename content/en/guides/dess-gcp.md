@@ -9,7 +9,7 @@ In this step-by-step guide I will walk you through all steps required to setup y
     + [ Registering your @sign](#Registering)
         - [ Sign-up for GCP account](#sign_up)
         - [Account creation](#create_account)
-    + [Register your own fully qualified domain name](#FQDN)](#FQDN)
+    + [Register your own fully qualified domain name](#FQDN)
         - [Register domain name with GCP.](#cloud_domain)
         - [Create Cloud DNS zone](#DNS_zone)
 + [Preparing GCP instance](#prep_instance)
@@ -19,6 +19,7 @@ In this step-by-step guide I will walk you through all steps required to setup y
     - [Setting up Firewall](#firewall)
 + [Instance setup and DESS deployment](#deployment)
 + [Registration of @sign in your private DESS](#DESS2@sign)
++ [Activation of @sign](#activation)
 
 
 
@@ -366,9 +367,9 @@ If everything is successful you should see output like this:
 
 At this moment your atsign is registered on your DESS. 
 
-**It is VERY important that you save your QR code. It is impossible to re-create it later.**
 
- 
+
+## 8. Activation of @sign<a name="activation"></a>
 
 Next up we need to activate it
 
@@ -376,36 +377,34 @@ Login to your dashboard at https://my.atsign.com/dashboard
 
 Open “my @signs”
 
- 
+ ![gcp-atsign-dashboard](images/dess-gcp/gcp-atsign-dashboard.png)
 
 Open “managed” of @sign you are registering”
 
- 
+ ![gcp-atsign-nonactive](images/dess-gcp/gcp-atsign-nonactive.png)
 
 Navigate to Advance settings:
 
- 
+ ![gcp-atsign-active](images/dess-gcp/gcp-atsign-active.png)
 
 If you have already activated your @sign you will be prompted to erase all your data first
 
- 
+ ![gcp-atsign-erase](images/dess-gcp/gcp-atsign-erase.png)
 
 Once done you are able to link your @sign with your private DESS. Use your domain and port number with which you have created service on your cloud instance and press Activate
 
- 
+ ![image-20210617111907819](images/dess-gcp/gcp-atsign-advance.png)
 
 You should see that your @sign is being activated in your dashboard:
 
- 
+ ![gcp-atsign-activating](images/dess-gcp/gcp-atsign-activating.png)
 
  
 
-This can take several minutes so go get cup of coffee, some tea maybe, stretch your body and pray you haven’t made any mistakes! 
+The activation will be completed once you have used your QR code from DESS and retrieved your keys.
 
 Once the activation process completes you are welcomed by green Activated.
 
- 
-
-You can now open your @buzz or @wavi and register your atsign via QR code and generate your keys!
+ ![gcp-atsign-activated](images/dess-gcp/gcp-atsign-activated.png)
 
 **CONGRATULATIONS**
