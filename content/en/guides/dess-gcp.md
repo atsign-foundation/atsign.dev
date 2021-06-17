@@ -263,7 +263,7 @@ Lets create firewall rule that will enable the @sign root server communicate wit
 
 Important things to note:
 
-1)   Ingress / egress translates to incoming and outgoing traffic. 
+1)   Ingress translates to incoming traffic. 
 
 2)   Selecting IP range as `0.0.0.0/0` will allow traffic from anywhere on the internet.
 
@@ -276,6 +276,24 @@ Press `create` and validate that your new rule appears in list of firewall rules
 ![gcp-firewall-status](images/dess-gcp/gcp-firewall-status.png)
 
 
+
+Second we need to create firewall rule that will enable your DESS server to communicate with certification authority.
+
+![gcp-networking-firewall-80](images/dess-gcp/gcp-networking-firewall-80.png)
+
+Important things to note:
+
+1)   Ingress translates to incoming traffic. 
+
+2)   Selecting IP range as `0.0.0.0/0` will allow traffic from anywhere on the internet.
+
+3)   You need to enable port `80` for communication with Certification authority.
+
+![gcp-networking-firewall-range-80](images/dess-gcp/gcp-networking-firewall-range-80.png)
+
+Press `create` and validate that your new rule appears in list of firewall rules.
+
+![gcp-firewall-status](images/dess-gcp/gcp-firewall-status-both.png)
 
 ### 6. Instance setup and DESS deployment <a name="deployment"></a>
 
@@ -313,7 +331,7 @@ Run to download fresh copy of the DESS
 
  ![gcp-vm-git](images/dess-gcp/gcp-vm-git.png)
 
-Lets navigate to dess folder that was created and run installation scripts:
+Lets navigate to DESS folder that was created and run installation scripts:
 
  ```cd dess```
 
@@ -335,7 +353,7 @@ At this step you should already have your at sign registered at http://atsign.co
 
 I have registered my own free @sign` @44likelycanary` which I will link to my GCP cloud private DESS.
 
-In your instance console navigate to dess folder. If you were following this guide it will be located in:
+In your instance console navigate to DESS folder. If you were following this guide it will be located in:
 
 ```cd /home/<username>/dess``` where username is your email address without domain. In my case atsigntest
 
@@ -407,4 +425,5 @@ Once the activation process completes you are welcomed by green Activated.
 
  ![gcp-atsign-activated](images/dess-gcp/gcp-atsign-activated.png)
 
-**CONGRATULATIONS**
+<u>**CONGRATULATIONS**</u>
+
