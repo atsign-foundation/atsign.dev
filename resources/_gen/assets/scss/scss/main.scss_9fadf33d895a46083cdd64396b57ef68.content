@@ -20206,18 +20206,6 @@ assets/scss/_styles_project.scss
   .featurette-heading {
     margin-top: 7rem; } }
 
-.footer__links {
-  width: 40%;
-  margin: auto;
-  padding-bottom: .5rem; }
-  .footer__links nav a {
-    display: block;
-    text-align: center; }
-  @media only screen and (min-width: 768px) {
-    .footer__links nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around; } }
 .atsign-video {
   max-width: 1200px;
   margin-top: 50px;
