@@ -1,6 +1,6 @@
 ---
-title: "General Questions/Issues"
-linkTitle: "General Questions/Issues"
+title: "General"
+linkTitle: "General"
 nav_children: section
 notoc: true
 simple_list: true

@@ -1,6 +1,6 @@
 ---
-title: "Virtual Environment Questions/Issues"
-linkTitle: "Virtual Environment Questions/Issues"
+title: "Virtual Environment"
+linkTitle: "Virtual Environment"
 nav_children: section
 notoc: true
 simple_list: true

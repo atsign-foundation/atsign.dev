@@ -1,6 +1,6 @@
 ---
-title: "Flutter Questions/Issues"
-linkTitle: "Flutter Questions/Issues"
+title: "Flutter"
+linkTitle: "Flutter"
 nav_children: section
 notoc: true
 simple_list: true

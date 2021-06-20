@@ -13613,8 +13613,8 @@ readers do not read off random characters that represent icons */
       padding: 0;
       margin: 0; }
     @media (min-width: 768px) {
-      .td-sidebar-nav__section > ul {
-        padding-left: .5rem; } }
+      .td-sidebar-nav__section .ul-1 ul {
+        padding-left: 1.5em; } }
   .td-sidebar-nav__section-title {
     display: block;
     font-weight: 500; }
@@ -13640,6 +13640,17 @@ readers do not read off random characters that represent icons */
   .td-sidebar-nav > .td-sidebar-nav__section {
     padding-top: .5rem;
     padding-left: 1.5rem; }
+  .td-sidebar-nav li i {
+    padding-right: 0.5em; }
+    .td-sidebar-nav li i:before {
+      display: inline-block;
+      text-align: center;
+      min-width: 1em; }
+  .td-sidebar-nav .td-sidebar-link.tree-root {
+    font-weight: 700;
+    color: #F05F3E;
+    border-bottom: 1px #F05F3E solid;
+    margin-bottom: 1rem; }
 
 .td-sidebar {
   padding-bottom: 1rem; }
@@ -20206,18 +20217,6 @@ assets/scss/_styles_project.scss
   .featurette-heading {
     margin-top: 7rem; } }
 
-.footer__links {
-  width: 40%;
-  margin: auto;
-  padding-bottom: .5rem; }
-  .footer__links nav a {
-    display: block;
-    text-align: center; }
-  @media only screen and (min-width: 768px) {
-    .footer__links nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around; } }
 .atsign-video {
   max-width: 1200px;
   margin-top: 50px;
