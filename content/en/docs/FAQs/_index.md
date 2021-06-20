@@ -1,6 +1,6 @@
 ---
 title: "Frequently asked questions"
-linkTitle: "FAQs"
+linkTitle: "FAQs/Issues seen before"
 nav_children: section
 notoc: true
 simple_list: true

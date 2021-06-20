@@ -1,6 +1,6 @@
 ---
-title: "The Virtual Environment"
-linkTitle: "The Virtual Environment"
+title: "Setup the Virtual Environment "
+linkTitle: "Setup the Virtual Environment"
 weight: 1
 date: 2017-01-05
 description: >
