@@ -1,6 +1,6 @@
 ---
-title: "Android"
-linkTitle: "Android"
+title: "Android Questions/Issues"
+linkTitle: "Android Questions/Issues"
 nav_children: section
 notoc: true
 simple_list: true
