@@ -1,7 +1,7 @@
 ---
 title: "App Privacy Policy"
 linkTitle: "App Privacy Policy"
-weight: 3
+weight: 6
 description: >
 
   If you need help adding a privacy policy to your apps built on the @platform,here is draft for you to get started.
