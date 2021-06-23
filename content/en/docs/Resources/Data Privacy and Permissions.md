@@ -1,7 +1,7 @@
 ---
 title: "Data Privacy & Permissions Guide"
 linkTitle: "Data Privacy & Permissions Guide"
-weight: 2
+weight: 3
 description: >
 
   In familiar data models, sharing data online is often disadvantageous for its owner. But by upholding data privacy principles, the @platform ensures that people will always have control over their data, even if they decide to share it with others. Naturally, this also applies to data shared by others. With the @platform, features like data access, ownership, and permissioning look very different from what most developers are used to. This page explains how ownership and permissions affect access to data. 

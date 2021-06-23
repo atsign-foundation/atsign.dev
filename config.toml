@@ -53,7 +53,7 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "the @platform"
+title = ""
 description = "@platform docs"
 languageName ="English"
 # Weight used for sorting.

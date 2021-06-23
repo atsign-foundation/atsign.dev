@@ -566,3 +566,54 @@ You may notice that in order to get the at_backupKeys_flutter package, you can s
 After inputting what @sign you wish to pair, you will need to upload the QR code retrieved from atsign.com. The emulator in the picture is not hooked up to a camera, so a small GIF of a house is there to fill where the camera would be. After successfully uploading and authenticating with the QR code, the backup key widget will be introduced to you! From the save option, you will be prompted to either save your keys to the files folder of the device or upload the keys to an associated Google Drive.  
 
 Fortunately, implementing the backup key widget is painless as it is a part of the onboarding widget! If you have already implemented the onboarding widget, there’s no code you need to write!
+
+</details>
+
+
+### at_onboarding_flutter
+
+A flutter plugin project for onboarding any @sign in @protocol apps with ease. Provides QRscanner and upload key file option to authenticate.
+
+[Learn more](https://pub.dev/packages/at_onboarding_flutter)
+
+### at_chat_flutter
+
+A flutter plugin project to provide chat feature using atsigns and atprotocol.
+
+[Learn more](https://pub.dev/packages/at_chat_flutter)
+
+### at_common_flutter
+
+A flutter package to provide common widgets used by other atsign flutter packages.
+
+[Learn more](https://pub.dev/packages/at_common_flutter)
+
+### at_backupkey_flutter
+A flutter plugin project for saving backup key of any @sign that is being onboarded with @protocol apps. Backup key can used to authenticate in any @protocol apps.
+
+[Learn more](https://pub.dev/packages/at_backupkey_flutter)
+
+### at_contacts_flutter
+
+A flutter plugin project to provide ease of managing contacts for an atsign using atprotocol.
+
+[Learn more](https://pub.dev/packages/at_contacts_flutter)
+
+### at_contacts_group_flutter
+
+A flutter plugin project to provide the group functionality with contacts using atprotocol.
+
+[Learn more](https://pub.dev/packages/at_contacts_group_flutter)
+
+### at_location_flutter
+
+A flutter plugin project to share location between two atsigns and track them on OSM (open street maps).
+
+[Learn more](https://pub.dev/packages/at_location_flutter)
+
+
+### at_events_flutter
+
+A flutter plugin project to manage events using the atprotocol.
+
+[Learn more](https://pub.dev/packages/at_events_flutter)
