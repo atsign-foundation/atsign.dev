@@ -1,27 +1,28 @@
 ---
-title: "Developer Tools"
-linkTitle: "Dev Tools"
+title: "Be part of our Developer Program"
+linkTitle: "@Dev Program"
 weight: 60
 menu:
   main:
     weight: 60
 type: docs
 description: >
-    Our developer tools.
+   Build apps that respect people’s privacy by design, thanks to the @platform. 
 ---
 
 {{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-Certification
-Commissions
-Publisher tools
-
+Our Developer program is designed to bring our community to developers the best possible tools, templates and help needed to build and launch your apps. 
+We also help you with certifications and a commission program where you will receive a 20% commission on all @sign sales that come through your app. 
 {{% /pageinfo %}}
 
-This section is where the user documentation for your project lives - all the information your users need to understand and successfully use your project. 
 
-For large documentation sets we recommend adding content under the headings in this section, though if some or all of them don’t apply to your project feel free to remove them or add your own. You can see an example of a smaller Docsy documentation site in the [Docsy User Guide](https://docsy.dev/docs/), which lives in the [Docsy theme repo](https://github.com/google/docsy/tree/master/userguide) if you'd like to copy its docs section. 
+## Program Goals
+- Create excellent, private, surveillance-free apps on the @platform
+- Review and endorse apps via the @ certification process
+- Provide developers with a set and forget revenue stream
 
-Other content such as marketing material, case studies, and community updates should live in the [About](/about/) and [Community](/community/) pages.
-
-Find out how to use the Docsy theme in the [Docsy User Guide](https://docsy.dev/docs/). You can learn more about how to organize your documentation (and how we organized this site) in [Organizing Your Content](https://docsy.dev/docs/best-practices/organizing-content/).
+## How to join?
+- [Get an @ sign](https://atsign.com/get-an-sign/), free or custom.
+- Apply to the @dev program [here.]()
+- We’ll contact you to schedule a meeting to discuss the program.
+- Read and agree to the [@dev program Agreement](). You can view a copy of it here. 
