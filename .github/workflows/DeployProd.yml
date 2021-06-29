@@ -1,0 +1,26 @@
+name: DeployProd
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  deploy:
+    if: ${{ github.repository == 'atsign-foundation/atsign.dev' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive  # To get theme and theme deps
+          fetch-depth: 0
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.REPO_TOKEN }}
+          external_repository: atsign-foundation/atsign.dev-prod
+          publish_dir: ./public
+          publish_branch: gh-pages
+          cname: devtestprod.atsign.wtf
