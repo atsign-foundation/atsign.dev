@@ -1,0 +1,50 @@
+name: DeployProd
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  deploy:
+    if: ${{ github.repository == 'atsign-foundation/atsign.dev' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive  # To get theme and theme deps
+          fetch-depth: 0
+
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.83.1"
+          extended: true  # Complex themes need Hugo Extended
+          
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2.1.6
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Prepare postcss-cli
+        run: npm ci
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.REPO_TOKEN }}
+          external_repository: atsign-foundation/atsign.dev-prod
+          publish_dir: ./public
+          publish_branch: gh-pages
+          cname: devtestprod.atsign.wtf
