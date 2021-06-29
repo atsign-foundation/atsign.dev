@@ -7,6 +7,8 @@ description: >
   The fastest way to get going developing with the @platform!
 ---
 
+The @platform was open-sourced not too long ago (November  of 2020 to be exact!), and we’ve been working hard to make your onboarding experience as smooth as possible since. 
+
 We’re excited to help you get your very own @platform environment up and running!
 
 ## Prerequisites
