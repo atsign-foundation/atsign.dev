@@ -17,7 +17,7 @@ jobs:
           python-version: 3.9 #install the python needed
       - name: execute detail_at.py
         run: |
-          pip3 install requests
+          pip3 install requests yaml
           git config --global user.name 'Library Action'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git pull
