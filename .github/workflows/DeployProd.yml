@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.repository == 'atsign-foundation/atsign.dev' }}
+    #if: ${{ github.repository == 'atsign-foundation/atsign.dev' }}
     runs-on: ubuntu-20.04
     steps:
       - name: Git checkout
