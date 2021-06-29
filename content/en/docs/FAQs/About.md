@@ -38,11 +38,13 @@ Notionally the blockchain cohort making similar claims would be the main ones, b
 
 ### What is the @platform?
 
+The @platform is an umbrella term for the different libraries, widgets, and dependencies that The @ Company has open-sourced. It is meant to be a robust toolkit for developers who are looking to create applications that are safe, privacy-conscious, and intuitive to those who use them.
 
-#### What is the underlying tech stack?
-
-#### Can I build a desktop app on the @platform?
+The @platform encompasses the @protocol, a decentralized internet protocol (and it’s really a protocol as opposed to application-level software) that is paving the way for an internet that values people’s data and privacy before corporate interests—something that we like to call the Alternative Internet.
 
 #### What is an @sign?
 
+The @sign: your unique digital identifier for the Privacy-First App Ecosystem. At the root level, every person, entity, and thing has its string or unique digital identity on the internet: @alice, @bmw, @device.
+
+We are internet optimists. We believe in the internet and all it has to offer. And, we want to make the internet better. How? Well, tech luminaries Kevin Nickels (our CPO) and Colin Constable (our CTO) decided to go to the core. They developed an open-source technology at the protocol level. No more client-server thinking, no more authentication nightmares and walled gardens, no more entering the same data ad nauseam into a data center owned by somebody else. With the @platform and your personal @sign, you get your own keys to your own datadom, your own micro-server, and a world of lego-style apps where you mix and match them using your @sign to seamlessly move around the internet without being surveilled.
 
