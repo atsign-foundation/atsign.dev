@@ -57,7 +57,7 @@ You are responsible for all taxes and reporting requirements stemming from your 
 ### Dashboard
 You’ll have access to our Partner Dashboard that will display your revenue and upcoming payment information, along with reporting that shows the transaction details for all your commissions. 
 
-
+<!-->
 ### Additional Guidelines
 
 In addition to the disclosure requirement mentioned above, there are some other advertising guidelines you must follow. 
@@ -76,4 +76,4 @@ In addition to the disclosure requirement mentioned above, there are some other 
 - Please do not reproduce content from our site or social channels without our permission.
 - If you’re posting on any social platforms, you’ll need to disclose our partnership. (Always, always disclose.) Acceptable hashtag disclosures are #sponsored #ad #affiliate #paid
 - Referral links may be posted on your social channels, and not on anyone else’s. Please do not post your referral link on any of The @ Company’s social channels or other properties. 
-- You may not create a social media account that includes our trademark(s) in the page name and/or username.
+- You may not create a social media account that includes our trademark(s) in the page name and/or username. -->
