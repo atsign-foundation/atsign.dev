@@ -7,13 +7,13 @@ description: >
   The fastest way to get going developing with the @platform!
 ---
 
-The @platform was open-sourced not too long ago (November  of 2020 to be exact!), and we’ve been working hard to make your onboarding experience as smooth as possible since. 
+The [@platform](/docs/resources/glossary/#@platform) was open-sourced not too long ago (November  of 2020 to be exact!), and we’ve been working hard to make your onboarding experience as smooth as possible since. 
 
 We’re excited to help you get your very own @platform environment up and running!
 
 ## Prerequisites
 
-You will need Flutter/Dart installed on your machine. If you haven’t already, please follow the “Getting started” steps on [flutter.dev](https://flutter.dev) before you proceed. Flutter works best with [Android Studio](https://developer.android.com/studio), but you can also use [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows)or [Visual Studio Code](https://code.visualstudio.com/download) as your IDE. 
+You will need Flutter/Dart installed on your machine. If you haven’t already, please follow the “Getting started” steps on [flutter.dev](https://flutter.dev) before you proceed. Flutter works best with [Android Studio](https://developer.android.com/studio), but you can also use [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) or [Visual Studio Code](https://code.visualstudio.com/download) as your IDE. 
 
 ### Flutter
 
