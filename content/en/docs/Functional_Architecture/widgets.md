@@ -136,7 +136,7 @@ That’s all for the “Onboarding” widget. Before moving on from this subsect
 
 Update your Android Studio, Flutter SDK, and Dart SDK to their latest versions. Place the at_onboarding_flutter dependency in pubspec.yaml.
 Follow the setup procedure for the “Onboarding” widget in the “AndroidManifest” (android -> app -> src -> main -> AndroidManifest.xml) and “gradle” file (android -> app -> build.gradle) of the at_hello_world project. You may also need to update the “classpath” of the android gradle build tool to 3.5.4 (this can be done by going to android -> gradle -> build.gradle and editing the first classpath in the “dependencies” brackets). This must be completed in order to set up the permission for the QR code scanner to access your camera. Find those steps on the pub.dev site for at_onboarding_flutter here.
-Get a free @sign from atsign.com. Generate its QR code and drag/drop the created file directly into the emulator. Confirm that the QR code image appears in the “Files” or “Drive” app of the emulator you’re using (assuming that it is an Android emulator).
+Get a free @sign from atsign.com. Generate its QR code, and drag/drop the created file directly into the emulator. Confirm that the QR code image appears in the “Files” or “Drive” app of the emulator you’re using (assuming that it is an Android emulator).
 In “at_conf.dart”, update the “root” variable from 'vip.ve.atsign.zone' to 'root.atsign.org'. This ensures that the project points to the domain that is used in production as opposed to the one for the virtual environment.
 Replace the existing code in the _login() function with what we wrote above. Double-check that no errors arise (you’ll likely have to tweak the names of a couple of methods in the service file, because some of them begin with the “_” private designation). 
 Fire the app on your emulator. Although the dropdown menu will still appear (since we didn’t change any of that code), we will not be authenticating with any of the testable @signs. If you’d like, simply remove the “DropdownButton” widget so that we can eliminate the list of testable @signs. Click on the “Login” button.
@@ -275,7 +275,7 @@ at_contacts_flutter: ^1.0.0
 
 In order to implement the at_contacts_flutter widget, you must first, of course, create an AtClientService instance and authenticate an @sign.
 
-After you have successfully onboarded an @sign, you can add a page where you may choose to show your contacts or show your blocked contacts. On load of this page, you will want to initialize the contacts service, similar to initializing the at_chats service. The contacts service needs to be initialized with the atClient from the AtClientService, current @sign, and the root domain.
+After you have successfully onboarded an @sign, you can add a page where you may choose to show your contacts or show your blocked contacts. On load of this page, you will want to initialize the contacts service, similar to initializing the at_chats service. The contacts service needs to be initialised with the atClient from the AtClientService, current @sign, and the root domain.
 
 ```dart 
 initializeContactsService(
