@@ -275,7 +275,7 @@ at_contacts_flutter: ^1.0.0
 
 In order to implement the at_contacts_flutter widget, you must first, of course, create an AtClientService instance and authenticate an @sign.
 
-After you have successfully onboarded an @sign, you can add a page where you may choose to show your contacts or show your blocked contacts. On load of this page, you will want to initialize the contacts service, similar to initializing the at_chats service. The contacts service needs to be initialised with the atClient from the AtClientService, current @sign, and the root domain.
+After you have successfully onboarded an @sign, you can add a page where you may choose to show your contacts or show your blocked contacts. On load of this page, you will want to initialize the contacts service, similar to initializing the at_chats service. The contacts service needs to be initialized with the atClient from the AtClientService, current @sign, and the root domain.
 
 ```dart 
 initializeContactsService(
