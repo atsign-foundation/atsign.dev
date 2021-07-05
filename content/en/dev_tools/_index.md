@@ -11,8 +11,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-Our Developer program is designed to bring our community to developers the best possible tools, templates and help needed to build and launch your apps. 
-We also help you with certifications and a commission program where you will receive a 20% commission on all @sign sales that come through your app. 
+We created the @dev Program to foster a new generation of privacy-respecting, surveillance-free mobile apps developed on the @protocol, and to help developers create a hassle-free revenue stream. To ensure that the apps we promote are of the highest quality, we’ve created the @certificaion process. Certified apps will earn our @certified badge and be eligible to join @affiliates.  
 {{% /pageinfo %}}
 
 
