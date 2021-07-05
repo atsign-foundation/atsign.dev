@@ -7,7 +7,7 @@ menu:
     weight: 1
 ---
 
-As the heart of the @platform, we developed the @protocol in [Dart](https://dart.dev/), a powerful language that can be used to develop mobile apps with [Flutter](https://flutter.dev/), Google’s increasingly popular UI software framework. If you are new to Flutter or Dart, no problem! Many of our first developers knew nothing about these languages coming in. For guidance on Flutter installation and development, please visit [flutter.dev](https://flutter.dev). Regardless of your coding knowledge, we recommend that you begin with “[Getting Started](/docs/get-started/).”
+At the heart of the @platform is the @protocol developed in [Dart](https://dart.dev/), a powerful language that can be used to create mobile apps with [Flutter](https://flutter.dev/), Google’s increasingly popular UI software framework. If you are new to Flutter or Dart, no problem! Many of our first developers knew nothing about these languages coming in. For guidance on Flutter installation and development, please visit [flutter.dev](https://flutter.dev). Regardless of your coding knowledge, we recommend that you begin with “[Getting Started](/docs/get-started/).”
 
 
 ## Welcome to the @protocol:
@@ -18,4 +18,4 @@ Our Co-Founder and CTO, [Colin Constable](https://www.linkedin.com/in/colinconst
 
 ## Where should I go next?
 
-* [Getting Started](/docs/get-started/): Get started with setting up your machine!
+* [Getting Started](/docs/get-started/): Start setting up your machine.
