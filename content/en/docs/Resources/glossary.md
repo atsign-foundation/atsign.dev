@@ -4,7 +4,7 @@ linkTitle: "@Glossary"
 weight: 2
 description: >
 
- List of keywords,acronyms and terminology used across the @platform
+ List of keywords, acronyms and terminology used across the @platform
 ---
 
 
