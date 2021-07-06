@@ -9,6 +9,12 @@ description: >
 
 Why is there a virtual environment to set up and what does it do? Jumping directly into the deep end and creating projects on top of the @platform can be overwhelming, so we've created a simple way for you to run the @platform from your own machine. 
 
+First, why is there a virtual environment to set up and what does it do? 
+
+The virtual environment has two main benefits: you can monitor the status of your test secondary servers (by visiting localhost:9001), and you can bypass the traditional onboarding process completely.
+
+Jumping directly into the deep-end and creating projects on top of the @platform can be overwhelming for some. To combat this overwhelming feeling, we've created a simple way to have you, the developer, run the @protocol from your very own machine! 
+
 This will allow you to run both a [root server](/docs/resources/glossary/#root-server) and [secondary servers](/docs/resources/glossary/#secondary-server) of testable @signs. We've created demo apps that go over specific verbs and methods to help you get oriented. 
 
 ## Setup Virtual Environment
@@ -180,6 +186,12 @@ docker-compose up -d
 Congratulations! You’ve set up your virtual environment and can now experiment with the hello_world app. Now you can start building your very own privacy-conscious apps.
 
 When writing code, the only change needed to run in the virtual environment is changing the ROOT_DOMAIN to point to vip.ve.atsign.zone. The production value is root.atsign.org.
+
+### To Authenticate with Demo QR Codes
+
+You will need the PKAM and CRAM Key QR codes in order to properly authenticate your testable atsigns. 
+
+You will find the group of these keys on our GitHub [here](https://github.com/atsign-foundation/at_demos/tree/trunk/at_demo_data/lib/assets)
 
 ## Where should I go next?
 
