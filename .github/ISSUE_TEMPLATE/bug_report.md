@@ -30,7 +30,7 @@ If applicable, add screenshots to help explain your problem.
  - Version [e.g. 59]
 
 **Were you using an @application when the bug was found?**
-  - [e.g. @buzz, @tmosphere]
+  - [e.g. @wavi, @mosphere]
 
 **Additional context**
 Add any other context about the problem here.
