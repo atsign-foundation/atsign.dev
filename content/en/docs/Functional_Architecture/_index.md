@@ -1,6 +1,6 @@
 ---
-title: "Functional Architecture"
-linkTitle: "Functional Architecture"
+title: "Platform Architecture"
+linkTitle: "Platform Architecture"
 weight: 3
 date: 2021-06-02
 nav_children: section

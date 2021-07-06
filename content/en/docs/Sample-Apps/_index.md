@@ -1,7 +1,7 @@
 ---
 title: "Sample Apps"
 linkTitle: "Sample Apps"
-weight: 2
+weight: 3
 date: 2017-01-05
 description: >
   A running list of demo applications showing off the incredible usabilities of the @platform across varying difficulty levels.
