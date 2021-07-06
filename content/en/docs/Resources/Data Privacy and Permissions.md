@@ -38,7 +38,7 @@ hidden: publicly readable data that is not listed in a scan of the keystore.
 
 Naturally, the owner of an @persistence keystore has access to any and all data that is contained therein. After being authorised, your application can read the data that it needs from the keystore as well. Applications that prefer to rely on data within its own namespace can also store read data from the @persistence keystore with approval of the owner. As always, all data stored is owned and controlled by the owner of the @persistence keystore.
 
-For more information on how your application can create, update, or delete data, see the [@Persistence Keystore Guide](https://pub.dev/packages/at_persistence_spec) and the [@Protocol Verbs](/docs/functional_architecture/verbs/).
+For more information on how your application can create, update, or delete data, see the [@Persistence Keystore Guide](https://pub.dev/packages/at_persistence_spec) and the [@Protocol Verbs](verbs).
 
 #### Accessing data shared by others
 
