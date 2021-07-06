@@ -58,7 +58,7 @@ This will allow you to run both a [root server](/docs/resources/glossary/#root-s
 Though, your machine's BIOS already may have virtualization enabled, you can check [here](https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=Press%20the%20F10%20key%20for,to%20save%20changes%20and%20Reboot).
 
 {{% alert title="Note" color="warning" %}}
-Please ensure that you have [Docker](https://www.docker.com/) up and running before you proceed.
+Please ensure that you have [Docker](/docs/get-started/#docker-desktop) up and running before you proceed.
 {{% /alert %}}
 
 **Loopback adapter**
