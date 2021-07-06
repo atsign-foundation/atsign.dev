@@ -57,4 +57,4 @@ If you would like to store application data, you are free to use the @persistenc
 If your application does not require data persistence on behalf of the person using it; for example, if you just want to make sure that your application is licensed to the person using it, then you do not need to get it certified. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps. 
 
 
-For more information about getting your application certified, see the [Certification page]().
+For more information about getting your application certified, please see the [Certification](/dev_tools/certification) page.
