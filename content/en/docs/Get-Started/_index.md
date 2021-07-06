@@ -1,7 +1,7 @@
 ---
 title: "Get Started"
 linkTitle: "Get Started"
-weight: 2
+weight: 1
 date: 2017-01-05
 description: >
   The fastest way to get going developing with the @platform!
