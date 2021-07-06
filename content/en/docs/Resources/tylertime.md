@@ -7,7 +7,7 @@ description: >
 ---
 
 
-### Episode 1: Coding the Hello World Application on the @ platform 
+### Episode 1: Coding the Hello World Application on the @platform 
 
 <div id="CenterPNG">
    <iframe width="560" height="315" src="https://www.youtube.com/embed/4VZKuLiHsbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -15,7 +15,7 @@ description: >
   </div>
 
 
-### Episode 2: Coding the at_chats application on the @ platform 
+### Episode 2: Coding the at_chats application on the @platform 
 
 <div id="CenterPNG">
    <iframe width="560" height="315" src="https://www.youtube.com/embed/yJ1tYsIbvq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -23,7 +23,7 @@ description: >
   </div>
 
 
-### Episode 3: The @ platform at_cookbook walkthrough
+### Episode 3: The @platform at_cookbook walkthrough
 
 <div id="CenterPNG">
    <iframe width="560" height="315" src="https://www.youtube.com/embed/wmUxgqrutlQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -39,7 +39,7 @@ description: >
   </div>
 
 
-  ### Episode 5: Onboarding Production Level @signs with the Hello World App on the @ platform
+  ### Episode 5: Onboarding Production Level @signs with the Hello World App on the @platform
 
 <div id="CenterPNG">
    <iframe width="560" height="315" src="https://www.youtube.com/embed/-OJ88mXdf78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
