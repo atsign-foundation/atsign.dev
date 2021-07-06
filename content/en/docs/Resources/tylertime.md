@@ -3,7 +3,7 @@ title: "Tyler Time ⏰"
 linkTitle: "Tyler Time ⏰"
 weight: 1
 description: >
-  At The @ Company, we have been really lucky with anyone named Tyler - [Tyler Trott](https://www.linkedin.com/in/tyler-t-b307b0107/) and [Tyler McNierney](https://www.linkedin.com/in/tyler-mcnierney/) are two of our awesome student ambassadors and techonology consultants who have made the company a better place besides making great tutorials about the @platform.
+  At The @ Company, we have been really lucky with anyone named Tyler - [Tyler Trott](https://www.linkedin.com/in/tyler-t-b307b0107/) and [Tyler McNierney](https://www.linkedin.com/in/tyler-mcnierney/) are two of our awesome student ambassadors and technology consultants who have made the company a better place besides making great tutorials about the @platform.
 ---
 
 
