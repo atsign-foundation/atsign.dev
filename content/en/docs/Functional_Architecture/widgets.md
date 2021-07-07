@@ -150,7 +150,7 @@ If no errors form, the “Onboarding” widget should take you seamlessly to the
 
 ### The Chatting Widget
 
-One of the many things you can do after successfully authenticating an @sign is providing one-to-one text messaging! To do this, you’ll need the at_chat_flutter dependency.
+One of the many things you can do after successfully authenticating an @sign is providing one-to-one text messaging! To do this, you’ll need the at_chat_flutter widget.
 
 The at_chat_flutter widget offers a messaging experience that is unique to the @platform. In a traditional messaging application, your texts are stored in a remote database and the person you’re pinging pulls the texts from there (a bit unsettling if you think about it). Of course, there is no such thing as a remote database in the @platform, so we had to be a bit clever coming up with a messaging scheme. In a nutshell, your text messages are not “sent” but rather “shared” with another @sign. All your texts are stored securely in your secondary server and never leave; if you decide to send a message to someone, that person is given permission to view that text via the notify verb, which will be covered in the next section on advanced @platform verbs. 
 
