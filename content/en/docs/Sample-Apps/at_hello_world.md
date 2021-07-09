@@ -4,7 +4,7 @@ linkTitle: "at_hello_world"
 weight: 1
 date: 2017-01-05
 description: >
-  Not sure where to start? Take a look at our at_hello_world app to see how some of the common verbs and methods of the @protocol are applied and implemented!
+  Not sure where to start? Take a look at our at_hello_world app to see how some of the common verbs and methods of the @protocol are applied and implemented.
 ---
 
 If you have gone through the steps of setting up the virtual environment and wish to learn how to implement a few common verbs and methods of the @platform, we highly recommend walking through the at_hello_world application. 
@@ -22,9 +22,9 @@ Overview too long for you? Watch the <u>
 
 ## Overview of the at_hello_world app
 
-The at_hello_world application is a bit of a misnomer. Beyond the fact that this app does a lot more than printing “Hello World!” on the console of your IDE, if you lift its hood, you’ll find a tremendous amount of stuff going on (tracing all the functions called in the server_demo_service.dart file will get you several abstraction layers deep into the @protocol!). By no means do you have to understand everything that is happening behind the scenes in the at_hello_world application, but it’ll definitely help to grasp the basics. 
+"at_hello_world" is a bit of a misnomer. Beyond the fact that this app does a lot more than printing “Hello World!” on the console of your IDE, if you lift its hood, you’ll find a tremendous amount of stuff going on (tracing all the functions called in the server_demo_service.dart file will get you several abstraction layers deep into the @protocol!). By no means do you have to understand everything that is happening behind the scenes in the at_hello_world application, but it’ll definitely help to grasp the basics. 
 
-Just like the rest of the @platform, all of our demo applications are open source! Feel free to download the at_hello_world code from our GitHub repository [here](https://github.com/atsign-foundation/at_demos)! 
+Just like the rest of the @platform, all of our demo applications are open source. Feel free to download the at_hello_world code from our GitHub repository [here](https://github.com/atsign-foundation/at_demos). 
 
 Upon downlaoding and booting up the app on an emulator, you are met with the Login screen where you can login after selecting a testable @sign to authenticate with from the dropdown menu. 
 
@@ -34,7 +34,7 @@ After successfully authenticating, you will be taken to the home screen where yo
 
 ### Update
 
-The update section as you may see within the code, actually only involves a single if statement (to ensure information is actually passed!) and four lines of code within it! 
+The update section, as you see within the code, actually only involves a single if statement (to ensure information is actually passed) and four lines of code within it.
 
 ```dart
   _update() async {
@@ -58,7 +58,7 @@ While this is certainly an impressive feat (after all, these few seemingly unass
 
 ### Scan
 
-Now that we've "put" information on our secondary, we'd now like to retrieve that key in order to read the information associated with it. In order to display values that we’ve stored, we first need to scan a secondary server for relevant AtKey objects (i.e. those that belong to the “namespace” of the application) and retrieve the values corresponding to those AtKeys. 
+Now that we've "put" information on our secondary, we'd like to retrieve that key in order to read the information associated with it. In order to display values that we’ve stored, we first need to scan a secondary server for relevant AtKey objects (i.e. those that belong to the “namespace” of the application) and retrieve the values corresponding to those AtKeys. 
 
 ```dart
 _scan() async {
@@ -94,11 +94,11 @@ An individual on the at_hello_world app is given a list of keys, and they select
   }
 ```
 
-In the first line of the if statement, we are creating a new AtKey object called “lookup.” The reason for this is we need a dummy AtKey object that can be passed into the @protocol for looking up the correct value. For the at_hello_world app, this dummy AtKey just needs its “key” and “sharedWith” attributes populated before it can be passed into the “get” verb. 
+In the first line of the if statement, we are creating a new AtKey object called “lookup.” The reason for this is we need a stand-in AtKey object that can be passed into the @protocol for looking up the correct value. For the at_hello_world app, this stand-in AtKey just needs its “key” and “sharedWith” attributes populated before it can be passed into the “get” verb. 
 
-(If you think creating a copy of an AtKey object is a hassle, that’s totally valid! In a typical @platform application, you have the _scan and _lookup functions merged to some degree so that you can just pass in the AtKey objects we retrieved with the “getAtKeys” verb to the “get” verb. The point of having two separate functions in the at_hello_world project is to define the “scanning” and “getting” steps more concretely).
+By the way, if you think creating a copy of an AtKey object is a hassle, that’s totally valid! In a typical @platform application, you have the _scan and _lookup functions merged to some degree so that you can just pass in the AtKey objects we retrieved with the “getAtKeys” verb to the “get” verb. The point of having two separate functions in the at_hello_world project is to define the “scanning” and “getting” steps more concretely.
 
-“Get” is a very straightforward verb: it gets the value corresponding to a specified AtKey! 
+“Get” is a very straightforward verb: it gets the value corresponding to a specified AtKey. 
 
 Once we retrieve the value paired with the “lookup” AtKey, all that’s left is calling “setState” to display the “_lookupValue” on screen. 
 
