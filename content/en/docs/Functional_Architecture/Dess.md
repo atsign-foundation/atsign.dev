@@ -1,30 +1,30 @@
 ---
-title: "Dess"
-linkTitle: "Dess"
+title: "dess"
+linkTitle: "dess"
 weight: 4
 description: >
-  Dess enables you to run your own secondary server wherever you like and on any compatible infrastructure you would like to use.
+  dess enables you to run your own secondary server wherever you like and on any compatible infrastructure you would like to use.
 ---
 
-## 1. What is Dess?
+## 1. What is dess?
 
-Dess is an acronymn for:  
-> D. Distributed  
-> E. Edge  
-> S. Secondary  
-> S. Server  
+dess is an acronymn for:  
+> d. Distributed  
+> e. Edge  
+> s. Secondary  
+> s. Server  
 
-Dess is used to host your own secondary server for your @sign(s).
+dess is used to host your own secondary server for your @sign(s).
 
 ## 2. How to get started
 
-The first thing you need to know is that there are two parts to setting up Dess.  
+The first thing you need to know is that there are two parts to setting up dess.  
 1. First time setup (run once)  
 1. Setup an @sign (run for each @sign)  
 
 ## 3. First Time Setup
   
-Dess will install everything you need to get up and running.  
+dess will install everything you need to get up and running.  
 Run the following command and dess will be installed:
 
 `curl -fsSL https://getdess.atsign.com | sudo bash`
@@ -40,7 +40,7 @@ The script will be saved as <span>getdess.sh</span>
 
 ## 4. Setup an @sign
 
-Dess will show you the steps to setup an atsign.
+dess will show you the steps to setup an atsign.
 ```bash
 sudo dess-create
 > Usage sudo dess-create <@sign> <fqdn> <port> <email> <service>
@@ -63,7 +63,7 @@ sudo dess-create
 
 ## 5. Oops! I forgot to save my QR
 
-Don't worry! Dess includes a command to recover lost QR codes.  
+Don't worry! dess includes a command to recover lost QR codes.  
 Simply run the following:
 
 `dess-reshowqr <@sign>`
