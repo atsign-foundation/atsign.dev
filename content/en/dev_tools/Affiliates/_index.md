@@ -12,7 +12,7 @@ type: docs
 True to our mission, we do not track people using our site, which is how most referral programs operate. Instead, we use the following methods to discover your referrals and give you credit:
  
 ### New @ signs Paired With Your App
-After someone downloads your app, they must pair an @ sign with it so they can use it. New @signs aren’t functional until they’ve been activated by the owner. The last step for @sign activation is to pair the new @sign with an app. Whenever someone pairs their new, paid @sign with your app, you’ll receive referral credit. (We’ll talk more about this on our call when you’re ready to start earning commissions. If you’ve got questions in the meantime, feel free to ask!)
+After someone downloads your app, they must pair an @sign with it so they can use it. New @signs aren’t functional until they’ve been activated by the owner. The last step for @sign activation is to pair the new @sign with an app. Whenever someone pairs their new, paid @sign with your app, you’ll receive referral credit. (We’ll talk more about this on our call when you’re ready to start earning commissions. If you’ve got questions in the meantime, feel free to ask!)
 
 
 ### Referral Link and Code
