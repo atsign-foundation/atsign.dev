@@ -94,7 +94,7 @@ An individual on the at_hello_world app is given a list of keys, and they select
   }
 ```
 
-In the first line of the if statement, we are creating a new AtKey object called “lookup.” The reason for this is we need a stand-in AtKey object that can be passed into the @protocol for looking up the correct value. For the at_hello_world app, this stand-in AtKey just needs its “key” and “sharedWith” attributes populated before it can be passed into the “get” verb. 
+In the first line of the if statement, we are creating a new AtKey object called “lookup.” The reason for this is we need a dummy AtKey object that can be passed into the @protocol for looking up the correct value. For the at_hello_world app, this dummy AtKey just needs its “key” and “sharedWith” attributes populated before it can be passed into the “get” verb. 
 
 By the way, if you think creating a copy of an AtKey object is a hassle, that’s totally valid! In a typical @platform application, you have the _scan and _lookup functions merged to some degree so that you can just pass in the AtKey objects we retrieved with the “getAtKeys” verb to the “get” verb. The point of having two separate functions in the at_hello_world project is to define the “scanning” and “getting” steps more concretely.
 
