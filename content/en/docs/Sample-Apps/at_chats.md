@@ -9,7 +9,7 @@ description: >
 
 The at_chat_flutter widget offers a messaging experience that is unique to the @platform. In a traditional messaging application, your texts are stored in a remote database and the person you’re pinging pulls the texts from there (a bit unsettling if you think about it). Of course, there is no such thing as a remote database in the @platform, so we had to be a bit clever coming up with a messaging scheme. In a nutshell, your text messages are not “sent” but rather “shared” with another @sign. All your texts are stored securely in your secondary server and never leave; if you decide to send a message to someone, that person is given permission to view that text via the notify verb, which will be covered in the next section on advanced @platform verbs. 
 
-Below, you can see a small demonstration of how the at_hello_world application works.
+Below, you can see a small demonstration of how the at_chats application works.
 
 <p align="center">
   <img src="/Sample_Apps/at_chats_demo.gif" alt="at_chats" height= "520px" width= "300px"/>
