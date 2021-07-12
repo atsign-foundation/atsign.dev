@@ -11,7 +11,7 @@ As the heart of the @platform, we developed the @protocol in [Dart](https://dart
 
 
 ## Welcome to the @protocol:
-Our Co-Founder and CTO, [Colin Constable](https://www.linkedin.com/in/colinconstable/), has a message for you!
+Our Co-FOUNDER and CTO, [Colin Constable](https://www.linkedin.com/in/colinconstable/), has a message for you!
 
 <iframe src="https://player.vimeo.com/video/472448831?title=0&amp;byline=0&amp;portrait=0" class="video-frame" style="position:relative;top:0;left:-20px;width:750px;height:400px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
 
