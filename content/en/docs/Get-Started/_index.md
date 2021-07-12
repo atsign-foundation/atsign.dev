@@ -4,7 +4,7 @@ linkTitle: "Get Started"
 weight: 1
 date: 2017-01-05
 description: >
-  The fastest way to start developing on the @platform!
+  The fastest way to start developing super fast on the @platform!
 ---
 
 The [@platform](/docs/resources/glossary/#@platform) was open-sourced in November of 2020 and we’ve been working hard to make your onboarding experience as smooth as possible ever since. 
