@@ -12,15 +12,15 @@ type: docs
 True to our mission, we do not track people using our site, which is how most referral programs operate. Instead, we use the following methods to discover your referrals and give you credit:
  
 ### New @ signs Paired With Your App
-After someone downloads your app, they must pair an @ sign with it so they can use it. New @ signs aren’t functional until they’ve been activated by the owner. The last step for @ sign activation is to pair the new @ sign with an app. Whenever someone pairs their new, paid @ sign with your app, you’ll receive referral credit. (We’ll talk more about this on our call when you’re ready to start earning commissions. If you’ve got questions in the meantime, feel free to ask!)
+After someone downloads your app, they must pair an @sign with it so they can use it. New @signs aren’t functional until they’ve been activated by the owner. The last step for @sign activation is to pair the new @sign with an app. Whenever someone pairs their new, paid @sign with your app, you’ll receive referral credit. (We’ll talk more about this on our call when you’re ready to start earning commissions. If you’ve got questions in the meantime, feel free to ask!)
 
 
 ### Referral Link and Code
-We will provide you with a unique referral link that brings people to our site where they can get a free or paid @ sign.  You can use this link on your blog or website, in your newsletter, on your social channels, and wherever you connect with your community. When someone clicks on your referral link, we’ll automagically add a unique code, connected to your account, to their shopping cart at checkout. If they purchase an @ sign, you’ll receive credit. 
+We will provide you with a unique referral link that brings people to our site where they can get a free or paid @sign.  You can use this link on your blog or website, in your newsletter, on your social channels, and wherever you connect with your community. When someone clicks on your referral link, we’ll automagically add a unique code, connected to your account, to their shopping cart at checkout. If they purchase an @sign, you’ll receive credit. 
 
-We will also provide you with the same unique code we add via the link, so you can share it verbally (excellent for when you’re a guest on a podcast, or are speaking at an event), on printed materials, or anytime a clickable link isn’t convenient. In order to receive referral credit in these cases, people must enter your code in the promo box when they purchase their @ sign.  
+We will also provide you with a unique promo code. You can share it verbally (excellent for when you’re a guest on a podcast, or are speaking at an event), on printed materials, or anytime a clickable link isn’t convenient. In order to receive referral credit in these cases, people must enter your promo code in the promo box when they purchase their @sign.  
 
-Please carefully read the Additional Guidelines below for important information about properly implementing your link and code. 
+Please continue reading for important information about required disclosure and how commissions work. 
 
 
 ## Disclosure
@@ -32,12 +32,12 @@ You can update the “I” in “...I will earn a commission…” with “we”
 
 “Disclosure: If you purchase an @sign after clicking on this link, I will earn a commission. You will never be charged any fee or incur any additional costs for being referred.”
 
-To ensure both clarity for the consumer and compliance with this U.S. law, we will also provide disclosure on our site for anyone purchasing an @ sign. 
+To ensure both clarity for the consumer and compliance with this U.S. law, we will also provide disclosure on our site for anyone purchasing an @sign. 
 
 
 
 ## Earnings
-When people pair their new @ sign with your app, or use your referral link or code to purchase an @sign (or several!), you’ll earn a 20% commission. 
+When people pair their new @sign with your app, or use your referral link or code to purchase an @sign (or several!), you’ll earn a 20% commission. 
 
 A few notes about this:
 

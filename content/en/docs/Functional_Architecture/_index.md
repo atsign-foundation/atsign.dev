@@ -1,13 +1,13 @@
 ---
-title: "Functional Architecture"
-linkTitle: "Functional Architecture"
+title: "Platform Architecture"
+linkTitle: "Platform Architecture"
 weight: 3
 date: 2021-06-02
 nav_children: section
 notoc: true
 simple_list: true
 description: >
-  The @ Company provides both a new Internet protocol and a platform to assist developers easily create ground-breaking applications that provide privacy focused, peer-to-peer services.
+  The @ Company provides both a new Internet protocol and a platform to assist developers easily in creating ground-breaking applications that provide privacy focused, peer-to-peer services.
 ---
 
 The picture below provides a great way to visualize just how much thought has gone into making the life of a developer on the @platform that much easier!

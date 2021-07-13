@@ -1,15 +1,21 @@
 ---
-title: "Setup the Virtual Environment "
-linkTitle: "Setup the Virtual Environment"
+title: "Set Up the Virtual Environment "
+linkTitle: "Set Up the Virtual Environment"
 weight: 1
 date: 2017-01-05
 description: >
- Get to know the foundational steps to successfully create and run their your own virtual environment(on your machine) to utilize the @platform.
+ How to successfully create and run your own virtual environment, on your machine, to utilize the @platform.
 ---
 
-First, why is there a virtual environment to set up and what does it do? Jumping directly into the deep-end and creating projects on top of the @platform can be overwhelming for some. To combat this overwhelming feeling, we've created a simple way to have you, the developer, run the @platform from your very own machine! 
+Why is there a virtual environment to set up and what does it do? Jumping directly into the deep end and creating projects on top of the @platform can be overwhelming, so we've created a simple way for you to run the @platform from your own machine. 
 
-This will allow you to run both a [root server](/docs/resources/glossary/#root-server) and [secondary servers](/docs/resources/glossary/#secondary-server) of testable @signs. As a way to ease you into developing on the @platform, we have created demo applications that go over specific verbs and methods that exist.
+First, why is there a virtual environment to set up and what does it do? 
+
+The virtual environment has two main benefits: you can monitor the status of your test secondary servers (by visiting localhost:9001), and you can bypass the traditional onboarding process completely.
+
+Jumping directly into the deep-end and creating projects on top of the @platform can be overwhelming for some. To combat this overwhelming feeling, we've created a simple way to have you, the developer, run the @protocol from your very own machine! 
+
+This will allow you to run both a [root server](/docs/resources/glossary/#root-server) and [secondary servers](/docs/resources/glossary/#secondary-server) of testable @signs. We've created demo apps that go over specific verbs and methods to help you get oriented. 
 
 ## Setup Virtual Environment
 
@@ -55,7 +61,7 @@ This will allow you to run both a [root server](/docs/resources/glossary/#root-s
 </div>
 
 ### Windows
-Though, your machine's BIOS already may have virtualization enabled, you can check [here](https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=Press%20the%20F10%20key%20for,to%20save%20changes%20and%20Reboot).
+Your machine's BIOS may already have virtualization enabled. You can check [here](https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=Press%20the%20F10%20key%20for,to%20save%20changes%20and%20Reboot).
 
 {{% alert title="Note" color="warning" %}}
 Please ensure that you have [Docker](/docs/get-started/#docker-desktop) up and running before you proceed.
@@ -63,7 +69,7 @@ Please ensure that you have [Docker](/docs/get-started/#docker-desktop) up and r
 
 **Loopback adapter**
 
-Install the Microsoft loopback adapter and configure it. The video showing how to do that is here:
+Install the Microsoft loopback adapter and configure it. Here's a video showing how:
 
 <iframe src="https://player.vimeo.com/video/506374699?title=0&amp;byline=0&amp;portrait=0" class="video-frame" style="position:relative;top:0;left:-20px;width:750px;height:400px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
 
@@ -129,7 +135,7 @@ Not sure what to do now? Try [here](/docs/get-started/the-virtual-environment/#w
 **Configure Network Adapter**
 
 {{% alert title="Note" color="warning" %}}
-Please ensure that you have Docker up and running before you proceed.
+Please ensure that you have [Docker](https://www.docker.com/) up and running before you proceed.
 {{% /alert %}}
 
 
@@ -180,6 +186,12 @@ docker-compose up -d
 Congratulations! You’ve set up your virtual environment and can now experiment with the hello_world app. Now you can start building your very own privacy-conscious apps.
 
 When writing code, the only change needed to run in the virtual environment is changing the ROOT_DOMAIN to point to vip.ve.atsign.zone. The production value is root.atsign.org.
+
+### To Authenticate with Demo QR Codes
+
+You will need the PKAM and CRAM Key QR codes in order to properly authenticate your testable atsigns. 
+
+You will find the group of these keys on our GitHub [here](https://github.com/atsign-foundation/at_demos/tree/trunk/at_demo_data/lib/assets)
 
 ## Where should I go next?
 
