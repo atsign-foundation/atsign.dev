@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "@platform - creating a network of trust"
+title = "Build end-to-end encrypted apps quickly on the @platform"
 
 enableRobotsTXT = true
 
@@ -53,8 +53,8 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = ""
-description = "@platform docs"
+title = "Build end-to-end encrypted apps quickly on the @platform"
+description = "The @platform is the fastest and easiest way to develop peer-to-peer, end-to-end encrypted apps"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
