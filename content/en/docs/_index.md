@@ -1,5 +1,5 @@
 ---
-title: "Before you start your @platform journey"
+title: "The @platform documentation"
 linkTitle: "Docs"
 # weight: 20
 menu:
