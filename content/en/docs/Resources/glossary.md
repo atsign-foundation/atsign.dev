@@ -21,24 +21,22 @@ description: >
 
 ##### @sign
 
-testable @sign
+##### testable @sign
 
 ##### @protocol verbs/methods
 
 ##### AtKey
 
-virtual environment
+##### virtual environment
 
-open-source
+##### at_hello_world
 
-at_hello_world
+##### at_chats (application)
 
-at_chats (application)
+##### at_cookbook (application)
 
-at_cookbook (application)
+##### @mosphere
 
-@mosphere
+##### server_demo_service
 
-server_demo_service
-
-clientSDK
+##### clientSDK
