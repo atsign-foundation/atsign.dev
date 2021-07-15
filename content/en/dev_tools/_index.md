@@ -1,13 +1,13 @@
 ---
-title: "Be part of our Developer Program"
+title: "Be a part of the @platform Developer Program"
 linkTitle: "@Dev Program"
 weight: 60
 menu:
   main:
     weight: 60
 type: docs
-description: >
-   Build apps that respect people’s privacy by design, thanks to the @platform. 
+content : Build apps that respect peoples privacy by design with the @platform
+description: Build apps that respect peoples privacy by design with the @platform
 ---
 
 {{% pageinfo %}}

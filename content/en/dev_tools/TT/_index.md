@@ -1,10 +1,10 @@
 ---
-title: "Tools & Templates"
+title: "Tools and Templates for @platform Developer Program"
 linkTitle: "Tools & Templates"
 weight: 1
 date: 2017-01-05
-description: >
-  Everything you need to build your app and go to market quickly
+description: All the tools and templates that to go to market with your @platform privacy app
+content: All the tools and templates that to go to market with your @platform privacy app
 type: docs
 ---
 

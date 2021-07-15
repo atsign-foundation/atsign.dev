@@ -1,10 +1,9 @@
 ---
-title: "@Glossary"
+title: "@The @platform Glossary of Terms"
 linkTitle: "@Glossary"
+content : Definitions of terms and acryonms often used with the @platform
 weight: 2
-description: >
-
-  List of keywords, acronyms and terminology used across the @platform
+description: Definitions of terms and acryonms often used with the @platform
 ---
 
 ##### @platform

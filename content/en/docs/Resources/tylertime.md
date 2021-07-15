@@ -1,9 +1,9 @@
 ---
-title: "Tyler Time ⏰"
+title: "Tyler Time ⏰  on the @platform"
 linkTitle: "Tyler Time ⏰"
 weight: 1
-description: >
-  At The @ Company, we have been really lucky with anyone named Tyler - [Tyler Trott](https://www.linkedin.com/in/tyler-t-b307b0107/) and [Tyler McNierney](https://www.linkedin.com/in/tyler-mcnierney/) are two of our awesome student ambassadors and technology consultants who have made the company a better place besides making great tutorials about the @platform.
+content : The Tylers will help you quickly build your end-to-end encrypted app in this video collection
+description: The Tylers will help you develop your app on the @platform in this video collection
 ---
 
 

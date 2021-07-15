@@ -1,10 +1,10 @@
 ---
-title: "@certification"
+title: "@Certification for @platform apps"
 linkTitle: "@certification"
 weight: 2
 date: 2017-01-05
-description: >
-  Get your @app certified and enjoy the benefits the providing game changing Privacy-First experiences brings to the table.
+description: How to have your app certified as a privacy respecting app on the @platform
+content : How to have your app certified as a privacy respecting app on the @platform
 type: docs
 ---
 

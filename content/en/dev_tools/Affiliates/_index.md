@@ -1,10 +1,10 @@
 ---
-title: "Earn while growing the @ecosystem"
+title: "The @platform affiliate program"
 linkTitle: "@affiliates"
 weight: 3
 date: 2017-01-05
-description: >
- Earn a 20% commission when people you refer purchase a new @sign. 
+description: Earn affiliate commission for @sign sales on the @platform
+content: Earn affiliate commission for @sign sales on the @platform
 type: docs
 ---
 
