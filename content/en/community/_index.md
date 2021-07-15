@@ -1,5 +1,8 @@
 ---
-title: Community
+title: The @platform community
+linktitle : Community
+description : Community resources for the @platform including GitHub, Discord, Hashnode, and Reddit
+content : The @platform community resources, including GitHub, Discord, Hashnode, and Reddit
 menu:
   main:
     weight: 40

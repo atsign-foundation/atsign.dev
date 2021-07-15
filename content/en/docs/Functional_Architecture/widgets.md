@@ -1,10 +1,11 @@
 ---
-title: "Widgets"
+title: "The @platform widgets"
 linkTitle: "Widgets"
 parent: Functional_Architecture
 weight: 4
+content : Build your app more quickly with these @platform widgets
 description: >
-  Low level reference docs for your project.
+  Build your app more quickly with these @platform widgets
 ---
 
 <!-- Onboarding Widget -->

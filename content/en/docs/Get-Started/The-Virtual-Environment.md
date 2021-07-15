@@ -1,10 +1,12 @@
 ---
-title: "Set Up the Virtual Environment "
-linkTitle: "Set Up the Virtual Environment"
+title: "Set up the @platform virtual environment"
+linkTitle: "Set up the Virtual Environment"
+Description: "Create and run your own @platform virtual environment on your machine"
+content: "Create and run your own @platform virtual environment on your machine"
+
 weight: 1
 date: 2017-01-05
-description: >
- How to successfully create and run your own virtual environment, on your machine, to utilize the @platform.
+
 ---
 
 Why is there a virtual environment to set up and what does it do? Jumping directly into the deep end and creating projects on top of the @platform can be overwhelming, so we've created a simple way for you to run the @platform from your own machine. 

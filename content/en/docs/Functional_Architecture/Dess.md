@@ -1,9 +1,10 @@
 ---
-title: "dess"
+title: "dess : distributed edge secondary server  - @platform"
 linkTitle: "dess"
 weight: 4
+content : Run your own secondary server for the @platform with dess
 description: >
-  dess enables you to run your own secondary server wherever you like and on any compatible infrastructure you would like to use.
+  Run your own secondary server for the @platform with dess
 ---
 
 ## 1. What is dess?

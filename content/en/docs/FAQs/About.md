@@ -1,5 +1,5 @@
 ---
-title: "About the @Platform"
+title: "The @platform FAQs"
 linkTitle: "About the @Platform"
 weight: 1
 date: 2021-06-02

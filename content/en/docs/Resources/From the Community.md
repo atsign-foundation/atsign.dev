@@ -1,10 +1,10 @@
 ---
-title: "Contributions from the community"
+title: "Contributions from the @platform Community"
 linkTitle: "Community Contributions"
 weight: 2
-description: >
+content : Tips, tricks, and scripts from the @platform developer community
+description: Tips, tricks, and scripts from the @platform developer community
 
-  Our awesome developer community has come up with really cool tips, tricks & scripts to make your lives easier.
 ---
 
 

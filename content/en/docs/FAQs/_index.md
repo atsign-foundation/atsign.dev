@@ -1,13 +1,14 @@
 ---
-title: "Frequently asked questions"
+title: "The @platform FAQs"
 linkTitle: "FAQs/Issues seen before"
 nav_children: section
 notoc: true
 simple_list: true
 weight: 4
 date: 2017-01-05
+content : FAQs and issues reported for the @platform
 description: >
-  Have questions? It's more than likely you'll find the answer here!
+ FAQs and issues reported for the @platform
 ---
 
 ## Frequently Asked Questions Table
