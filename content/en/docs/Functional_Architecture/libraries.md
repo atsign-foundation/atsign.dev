@@ -16,7 +16,7 @@ at_persistence_spec is the Specification for the persistence layer implementatio
 
 ### at_commons
 
-at_commons library will be used for commonly used components in implementation of the @protocol.
+The at_commons library will be used for commonly used components in implementation of the @protocol.
 
 [Learn more](https://pub.dev/packages/at_commons)
 
