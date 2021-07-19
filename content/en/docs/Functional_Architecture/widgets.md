@@ -1,6 +1,6 @@
 ---
 title: "The @platform widgets"
-SEOtitle: "The  @platform(at_platform or AtPlatform) widgets"
+SEOtitle: "The  @platform (at_platform or AtPlatform) widgets"
 linkTitle: "Widgets"
 parent: Functional_Architecture
 weight: 3

@@ -1,6 +1,6 @@
 ---
 title: "The @platform FAQs"
-SEOtitle: "The @platform(at_platform or AtPlatform) FAQs"
+SEOtitle: "The @platform (at_platform or AtPlatform) FAQs"
 linkTitle: "FAQs/Issues seen before"
 nav_children: section
 notoc: true

@@ -1,6 +1,6 @@
 ---
 title: "Tyler Time ⏰  on the @platform"
-SEOtitle: "Tyler Time ⏰  on the @platform(AtPlatform or at_platform)"
+SEOtitle: "Tyler Time ⏰  on the @platform (AtPlatform or at_platform)"
 linkTitle: "Tyler Time ⏰"
 weight: 3
 content : The Tylers will help you quickly build your end-to-end encrypted app in this video collection

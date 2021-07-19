@@ -1,6 +1,6 @@
 ---
 title: "Setup dess in GCP(Google Cloud Platform)"
-SEOtitle: "Setup @platform(at_platform or AtPlatform) dess in GCP(Google Cloud Platform)"
+SEOtitle: "Setup @platform (at_platform or AtPlatform) dess in GCP(Google Cloud Platform)"
 linkTitle: "Setup dess in GCP"
 weight: 1
 date: 2021-06-02

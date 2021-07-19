@@ -1,5 +1,6 @@
 ---
 title: "The @platform documentation"
+title: "The @platform (AtPlatform or at_platform) documentation"
 linkTitle: "Docs"
 content: "The @platform docs for building end-to-end encrypted apps"
 Description: "All the documentation you need for building apps on the @platform"

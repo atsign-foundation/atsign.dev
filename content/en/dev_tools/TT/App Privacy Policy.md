@@ -1,6 +1,6 @@
 ---
 title: "App Privacy Policy"
-SEOtitle: "Privacy policy for apps built on the @platform(at_platform or AtPlatform)"
+SEOtitle: "Privacy policy for apps built on the @platform (at_platform or AtPlatform)"
 linkTitle: "App Privacy Policy"
 weight: 1
 description: >

@@ -1,6 +1,6 @@
 ---
 title: "How to get started with the @platform"
-SEOtitle: "How to get started with the @platform(at_platform or AtPlatform)"
+SEOtitle: "How to get started with the @platform (at_platform or AtPlatform)"
 linkTitle: "Get Started"
 Description: "The fastest way to get started developing your privacy-first app on the @platform"
 content: "Everything you need to get started developing apps on the @platform"

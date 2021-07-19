@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-SEOtitle : "atsign(AtSign)-foundation Overview"
+SEOtitle : "atsign (@Sign or at_sign)-foundation Overview"
 linkTitle: "Overview"
 weight: 2
 date: 2021-06-02

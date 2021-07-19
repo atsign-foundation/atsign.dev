@@ -1,6 +1,6 @@
 ---
 title: "@platform Additional Resources"
-SEOtitle: "@platform(at_platform or AtPlatform) Additional Resources"
+SEOtitle: "@platform (at_platform or AtPlatform) Additional Resources"
 linkTitle: "Guides"
 weight: 6
 date: 2021-06-02

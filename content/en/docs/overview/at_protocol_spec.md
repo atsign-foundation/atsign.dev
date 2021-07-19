@@ -1,6 +1,6 @@
 ---
 title: "Specification"
-SEOtitle: "AtProtocol(at_protocol) Specification"
+SEOtitle: "AtProtocol (at_protocol or @protocol) Specification"
 linkTitle: "Specification"
 weight: 1
 description: >

@@ -1,6 +1,6 @@
 ---
 title: "The @platform persistence keystore guide"
-SEOtitle: "The @platform(AtPlatform or at_platform) persistence keystore guide"
+SEOtitle: "The @platform (AtPlatform or at_platform) persistence keystore guide"
 linkTitle: "Persistence Keystore Guide"
 weight: 3
 description: How to use the @platform encrypted key/value store
