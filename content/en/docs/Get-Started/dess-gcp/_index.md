@@ -1,8 +1,8 @@
 ---
 title: "Setup dess in GCP(Google Cloud Platform)"
 SEOtitle: "Setup @platform (at_platform or AtPlatform) dess in GCP(Google Cloud Platform)"
-linkTitle: "Setup dess in GCP"
-weight: 1
+linkTitle: "Option 2 : dess"
+weight: 2
 date: 2021-06-02
 content : The @platform resources will help you quickly build your end-to-end encrypted app
 description: Step-by-Step setup of dess in Google Cloud Platform (GCP)
