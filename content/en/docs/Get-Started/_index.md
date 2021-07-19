@@ -1,7 +1,7 @@
 ---
 title: "How to get started with the @platform"
 SEOtitle: "How to get started with the @platform (at_platform or AtPlatform)"
-linkTitle: "Get Started"
+linkTitle: "Options to get started"
 Description: "The fastest way to get started developing your privacy-first app on the @platform"
 content: "Everything you need to get started developing apps on the @platform"
 weight: 2
@@ -68,7 +68,7 @@ Your machine's operating system must be completely up to date.
 
 ## Where should I go next?
 
-- [The Virtual Environment](/docs/get-started/the-virtual-environment/): Set up your machine using Docker.
+There are three ways to get going with your journey on the @platform. You may choose any of the three options listed below.
 
 ### <br><br>
 

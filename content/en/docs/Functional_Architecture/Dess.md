@@ -72,7 +72,7 @@ Simply run the following:
 
 ## 6. dess on GCP
 
-If you are ready to get started, please refer to [the dess on GCP Setup Guide.](/docs/guides/dess-gcp/)
+If you are ready to get started, please refer to [the dess on GCP Setup Guide.](/docs/get-started/dess-gcp/) 
 
 
 
