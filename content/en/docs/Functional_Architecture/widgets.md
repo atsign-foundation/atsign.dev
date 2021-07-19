@@ -1,8 +1,9 @@
 ---
 title: "The @platform widgets"
+SEOtitle: "The  @platform (at_platform or AtPlatform) widgets"
 linkTitle: "Widgets"
 parent: Functional_Architecture
-weight: 4
+weight: 3
 content : Build your app more quickly with these @platform widgets
 description: >
   Build your app more quickly with these @platform widgets

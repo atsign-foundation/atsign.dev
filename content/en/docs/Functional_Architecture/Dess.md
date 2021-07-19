@@ -1,5 +1,6 @@
 ---
 title: "dess : distributed edge secondary server  - @platform"
+SEOtitle: "dess : distributed edge secondary server  - @platform(at_platform or AtPlatform)"
 linkTitle: "dess"
 weight: 4
 content : Run your own secondary server for the @platform with dess
@@ -69,6 +70,12 @@ Simply run the following:
 
 `dess-reshowqr <@sign>`
 
-## 6. OS Support
+## 6. dess on GCP
+
+If you are ready to get started, please refer to [the dess on GCP Setup Guide.](/docs/guides/dess-gcp/)
+
+
+
+## 7. OS Support
 
 (Work in progress - to be updated soon)

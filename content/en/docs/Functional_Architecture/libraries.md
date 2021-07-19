@@ -1,5 +1,6 @@
 ---
 title: "Libraries offered on the @platform"
+SEOtitle: "Libraries offered on the @platform (at_platform or AtPlatform)"
 linkTitle: "Libraries"
 parent: /Functional_Architecture/
 weight: 2

@@ -1,5 +1,6 @@
 ---
 title: The @platform community
+SEOtitle: The @platform (at_platform or AtPlatform) community
 linktitle : Community
 description : Community resources for the @platform including GitHub, Discord, Hashnode, and Reddit
 content : The @platform community resources, including GitHub, Discord, Hashnode, and Reddit

@@ -1,6 +1,16 @@
-# Step-by-Step setup of DESS in Google Cloud Platform (GCP).
+---
+title: "Setup dess in GCP(Google Cloud Platform)"
+SEOtitle: "Setup @platform (at_platform or AtPlatform) dess in GCP(Google Cloud Platform)"
+linkTitle: "Setup dess in GCP"
+weight: 1
+date: 2021-06-02
+content : The @platform resources will help you quickly build your end-to-end encrypted app
+description: Step-by-Step setup of dess in Google Cloud Platform (GCP)
+---
 
-In this step-by-step guide I will walk you through all steps required to setup your own private DESS in GCP cloud from scratch. Please use index to skip some steps in case you have done them in other way.
+
+
+In this step-by-step guide we will walk you through all steps required to setup your own private DESS in GCP cloud from scratch. Please use index to skip some steps in case you have done them in other way.
 
 
 ## Table of contents

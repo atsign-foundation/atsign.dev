@@ -1,5 +1,6 @@
 ---
 title: "Tools and Templates for @platform Developer Program"
+SEOtitle: "Tools and Templates for @platform (at_platform or AtPlatform) Developer Program"
 linkTitle: "Tools & Templates"
 weight: 1
 date: 2017-01-05

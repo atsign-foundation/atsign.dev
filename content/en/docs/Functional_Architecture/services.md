@@ -1,5 +1,6 @@
 ---
 title: "Services provided by the @platform"
+SEOtitle: "Services provided by the  @platform (at_platform or AtPlatform)"
 linkTitle: "Services"
 content : Important services provided by the @platform
 description : Important services provided by the @platform

@@ -1,7 +1,8 @@
 ---
 title: "The @platform data privacy & permissions guide"
+SEOtitle: "The @platform (at_platform or AtPlatform) data privacy & permissions guide"
 linkTitle: "Data Privacy & Permissions Guide"
-weight: 3
+weight: 2
 content : The @platform data privacy and principles which assure that people always have control over their data
 description: The @platform data privacy and principles which assure that people always have control over their data
 

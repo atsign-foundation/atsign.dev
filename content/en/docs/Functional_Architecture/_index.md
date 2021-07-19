@@ -1,5 +1,6 @@
 ---
 title: "Architecture of the @platform"
+SEOtitle: "Architecture of the @platform (at_platform or AtPlatform)"
 linkTitle: "Platform Architecture"
 weight: 3
 date: 2021-06-02
