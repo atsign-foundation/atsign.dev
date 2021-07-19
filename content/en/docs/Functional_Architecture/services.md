@@ -2,19 +2,17 @@
 title: "Services provided by the @platform"
 SEOtitle: "Services provided by the  @platform (at_platform or AtPlatform)"
 linkTitle: "Services"
-content : Important services provided by the @platform
-description : Important services provided by the @platform
+content: Important services provided by the @platform
+description: Important services provided by the @platform
 parent: /Functional_Architecture/
 weight: 1
-
 ---
 
 ### Data Caching & Encryption
 
-Data that others have shared with an @sign owner is cached on the @sign owner's device’s local keystore if permitted. 
+Data that others have shared with an @sign owner is cached on the @sign owner's device’s local keystore if permitted.
 
 [Learn more](https://atsigncompany.medium.com/data-encryption-caching-with-the-protocol-debe9efc0f49)
-
 
 ### Notification
 
@@ -22,7 +20,7 @@ Data that others have shared with an @sign owner is cached on the @sign owner's 
 
 ### Onboarding
 
-[Learn more](https://pub.dev/packages/at_contact)
+[Learn more](https://pub.dev/packages/at_onboarding_flutter)
 
 ### Peer-to-Peer Streams
 
@@ -30,7 +28,7 @@ Data that others have shared with an @sign owner is cached on the @sign owner's 
 
 ### Persistence
 
-[Learn more](https://pub.dev/packages/at_contact)
+[Learn more](https://pub.dev/packages/at_persistence_spec)
 
 ### Synchronization
 
