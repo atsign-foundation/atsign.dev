@@ -1,8 +1,8 @@
 ---
 title: "The @platform FAQs"
 SEOtitle: "The @platform (at_platform or AtPlatform) FAQs"
-linkTitle: "About the @Platform"
-weight: 1
+linkTitle: "About the @platform"
+weight: 2
 date: 2021-06-02
 description: >
   Have a question revolving around the @platform? Here you will find those answers!
