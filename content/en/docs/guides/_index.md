@@ -1,7 +1,7 @@
 ---
 title: "@platform Additional Resources"
 SEOtitle: "@platform(at_platform or AtPlatform) Additional Resources"
-linkTitle: "Resources"
+linkTitle: "Guides"
 weight: 6
 date: 2021-06-02
 content : The @platform resources will help you quickly build your end-to-end encrypted app

@@ -1,5 +1,6 @@
 ---
 title: "Be a part of the @platform Developer Program"
+SEOtitle: "Be a part of the @platform(at_platform or AtPlatform) Developer Program"
 linkTitle: "@Dev Program"
 weight: 60
 menu:

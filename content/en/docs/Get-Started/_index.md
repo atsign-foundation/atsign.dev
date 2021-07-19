@@ -1,5 +1,6 @@
 ---
 title: "How to get started with the @platform"
+SEOtitle: "How to get started with the @platform(at_platform or AtPlatform)"
 linkTitle: "Get Started"
 Description: "The fastest way to get started developing your privacy-first app on the @platform"
 content: "Everything you need to get started developing apps on the @platform"
@@ -19,7 +20,7 @@ You will need Flutter/Dart installed on your machine. If you haven’t already, 
 
 Why did we choose Flutter? Here are some of our favorite reasons:
 
-• Beautiful U.I.'s that allow you to control every pixel in your app, bring your brand to life, and provide flawless People experiences.
+• Beautiful User Interface that allows you to control every pixel in your app, bring your brand to life, and provide flawless People experiences.
 
 • Apps directly compile to native ARM code for screaming fast and efficient project builds that house buttery-smooth animations that allow GPU acceleration.
 

@@ -1,5 +1,6 @@
 ---
 title: "@Certification for @platform apps"
+SEOtitle: "@Certification for @platform(at_platform or AtPlatform) apps"
 linkTitle: "@certification"
 weight: 2
 date: 2017-01-05

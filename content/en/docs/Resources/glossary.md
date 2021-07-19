@@ -1,8 +1,9 @@
 ---
-title: "@The @platform Glossary of Terms"
+title: "The @platform Glossary of Terms"
+SEOtitle: "The @platform(at_platform or AtPlatform) Glossary of Terms"
 linkTitle: "@Glossary"
 content : Definitions of terms and acryonms often used with the @platform
-weight: 2
+weight: 1
 description: Definitions of terms and acryonms often used with the @platform
 ---
 

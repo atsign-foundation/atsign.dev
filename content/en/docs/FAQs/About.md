@@ -1,5 +1,6 @@
 ---
 title: "The @platform FAQs"
+SEOtitle: "The @platform(at_platform or AtPlatform) FAQs"
 linkTitle: "About the @Platform"
 weight: 1
 date: 2021-06-02
