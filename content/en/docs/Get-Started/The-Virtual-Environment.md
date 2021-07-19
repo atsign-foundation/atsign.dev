@@ -1,7 +1,7 @@
 ---
-title: "Set up the @platform virtual environment"
+title: "Option 3 : Set up the @platform virtual environment"
 SEOtitle: "Set up the  @platform (at_platform or AtPlatform) virtual environment"
-linkTitle: "Option 3 : Virtual Environment"
+linkTitle: "3 : Virtual Environment"
 Description: "Create and run your own @platform virtual environment on your machine"
 content: "Create and run your own @platform virtual environment on your machine"
 
