@@ -21,7 +21,7 @@ Why did we choose Flutter? Here are some of our favorite reasons:
 
 • Beautiful U.I.'s that allow you to control every pixel in your app, bring your brand to life, and provide flawless People experiences.
 
-• Apps directly compile to native ARM code for screaming fast and efficient project builds that house buttery-smooth animations that allow GPU acceleration.
+• Apps directly compile to native ARM code for screaming fast and efficient project builds housing buttery-smooth animations that allow GPU acceleration.
 
 • Hot Reload. Make an edit to your code and Flutter will update your source code files and automatically rebuild the widget tree, allowing you to see your edits almost immediately. No more rebuilding your application time and time again.
 
