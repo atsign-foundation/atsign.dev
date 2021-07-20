@@ -69,15 +69,18 @@ allows you to run the full @platform stack locally, with no dependence on Intern
 
 There are three ways to get going with your journey on the @platform. You may choose any of the three options listed below depending on your interest and particular needs. 
 
-###(Option 1) Recommended for Flutter Developers
+### (Option 1) Recommended for Flutter Developers
 If you just want to get going and fast, then the best solution is to get some free @signs and start coding. Here we will show you how to get a couple of free @signs 
 and activate them. This option uses The @ Companies infrastructure to host a secondary server microservice for each @sign you activate.
 
-###(Option 2) Recommended for DevOps or Security/Privacy Developers and Engineers
+### (Option 2) Recommended for DevOps or Security Engineers
 Dess (distributed edge secondary server) is the right place to start if you would like to run your own infrastructure, for your @sign. Or perhaps you are developing 
 an IoT solution and would like to see the log files of the secondary server microservice, then using dess, is the perfect starting place.
 
-###(Option 3) Recommended for those offline moments or if you want to be completely independent (Option 3)
+### (Option 3) The Virtual Environment
+Recommended for those offline moments or if you want to be completely independent. The virtual environment (VE) provides all the components of the @platform
+in a single docker image. Complete with full control and logging of everything, VE requires no Internet connection and comes with some predefined @signs. 
+
 
 
 ### <br><br>
