@@ -1,12 +1,12 @@
 ---
+type: docs
 title: "App Privacy Policy"
+SEOtitle: "Privacy policy for apps built on the @platform (at_platform or AtPlatform)"
 linkTitle: "App Privacy Policy"
 weight: 1
 description: >
-
   If you need help adding a privacy policy to your apps built on the @platform,here is draft template for you to get started.
 ---
-
 
 This application contains private data either created by you or created by others and shared with you. It also may contain data that you or others have chosen to share publicly. 
 

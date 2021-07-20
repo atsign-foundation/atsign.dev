@@ -1,10 +1,10 @@
 ---
-title: "Persistence Keystore Guide"
+title: "The @platform persistence keystore guide"
+SEOtitle: "The @platform (AtPlatform or at_platform) persistence keystore guide"
 linkTitle: "Persistence Keystore Guide"
-weight: 4
-description: >
-
-  With the @protocol, a person’s data may be stored in the @persistence keystore, an encrypted key/value store which is managed by the at_client_sdk. Get to know how it works.
+weight: 3
+description: How to use the @platform encrypted key/value store
+content : How to use the @platform encrypted key/value store
 
 ---
 
@@ -54,7 +54,7 @@ If you would like to store application data, you are free to use the @persistenc
 
 #### Authentication only, no need to use the @persistence keystore (certification not required)
 
-If your application does not require data persistence on behalf of the person using it; for example if you just want to make sure that your application is licensed to the person using it, then you do not need to get it certified. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps. 
+If your application does not require data persistence on behalf of the person using it; for example, if you just want to make sure that your application is licensed to the person using it, then you do not need to get it certified. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps. 
 
 
-For more information about getting your application certified, see the [Certification page]().
+For more information about getting your application certified, please see the [Certification](/dev_tools/certification) page.

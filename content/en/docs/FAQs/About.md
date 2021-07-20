@@ -1,7 +1,8 @@
 ---
-title: "About the @Platform"
-linkTitle: "About the @Platform"
-weight: 1
+title: "The @platform FAQs"
+SEOtitle: "The @platform (at_platform or AtPlatform) FAQs"
+linkTitle: "About the @platform"
+weight: 2
 date: 2021-06-02
 description: >
   Have a question revolving around the @platform? Here you will find those answers!
@@ -36,13 +37,5 @@ Our strategy for preventing a malicious app from screwing with data at the momen
 
 Notionally the blockchain cohort making similar claims would be the main ones, but we believe that they are more likely to become adopters over time to provide non-repudiation and to eliminate username/password authentication which has proven to be so risky. Technically, Solid/Inrupt is somewhat similar with their data pods, but they curiously have no built-in encryption at all and are enterprise focused where we are developer/apps/consumer focused.
 
-### What is the @platform?
-
-
-#### What is the underlying tech stack?
-
-#### Can I build a desktop app on the @platform?
-
-#### What is an @sign?
 
 

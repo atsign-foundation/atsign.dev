@@ -1,13 +1,14 @@
 ---
-title: "Functional Architecture"
-linkTitle: "Functional Architecture"
+title: "Architecture of the @platform"
+SEOtitle: "Architecture of the @platform (at_platform or AtPlatform)"
+linkTitle: "Platform Architecture"
 weight: 3
 date: 2021-06-02
 nav_children: section
 notoc: true
 simple_list: true
-description: >
-  The @ Company provides both a new Internet protocol and a platform to assist developers easily create ground-breaking applications that provide privacy focused, peer-to-peer services.
+content: The components of the @platform architecture
+description :  The components of the @platform architecture
 ---
 
 The picture below provides a great way to visualize just how much thought has gone into making the life of a developer on the @platform that much easier!
