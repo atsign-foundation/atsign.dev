@@ -23,6 +23,10 @@ If this is your first time here, we strongly recommend navigating through our �
 If you’d like to see what an @platform application looks like, feel free to visit our ‘[sample apps](https://atsign.dev/samples.html)’ page! Here, you will find a list of demonstrative applications showing off the many verbs/methods that exist on the @platform. The most basic of this list is ‘[at_hello_world](https://github.com/atsign-foundation/at_demos/tree/master/at_hello_world)’ and the most advanced are ‘[at_cookbook](https://github.com/atsign-foundation/at_demos/tree/master/at_cookbook)’ and ‘[@mosphere](https://github.com/atsign-foundation/atmosphere)’
 
 ## How can you contribute?
-If you think there should be a change made, or think there could be anything done better, feel free to raise a pull request to the trunk branch!
+
+If you think there should be a change made, or think there could be anything
+done better, feel free to raise a pull request to the trunk branch!
+
+Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) for further instructions.
 
 
