@@ -9,7 +9,7 @@ description: Step-by-Step setup of dess on GCP (Google Cloud Platform)
 ---
 
 
-dess stands for "Distributed Edge Secondary Server" and it is used to host your @signs on your own secondary server. Refer to the [dess](/docs/get-started/dess/) under Platform architecture to learn more.
+dess stands for "Distributed Edge Secondary Server" and it is used to host your @signs on your own secondary server. Refer to the [Setup dess guide](/docs/get-started/dess/) under Options to get started to learn more.
 
 
 In this step-by-step guide we will walk you through all steps required to setup your own private dess in GCP cloud from scratch. Please use index to skip some steps in case you have done them in another way.
