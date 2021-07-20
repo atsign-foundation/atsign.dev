@@ -37,8 +37,11 @@ jobs:
 
       - name: Prepare postcss-cli
         run: npm ci
+        
       - name: Build
         run: hugo --minify
+        env:
+          HUGO_ENV: production
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -47,4 +50,4 @@ jobs:
           external_repository: atsign-foundation/atsign.dev-prod
           publish_dir: ./public
           publish_branch: gh-pages
-          cname: devtestprod.atsign.wtf
+          cname: atsign.dev

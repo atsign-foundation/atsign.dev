@@ -1,10 +1,10 @@
 ---
-title: "Persistence Keystore Guide"
+title: "The @platform persistence keystore guide"
+SEOtitle: "The @platform (AtPlatform or at_platform) persistence keystore guide"
 linkTitle: "Persistence Keystore Guide"
-weight: 4
-description: >
-
-  With the @protocol, a person’s data may be stored in the @persistence keystore, an encrypted key/value store which is managed by the at_client_sdk. Get to know how it works.
+weight: 3
+description: How to use the @platform encrypted key/value store
+content : How to use the @platform encrypted key/value store
 
 ---
 

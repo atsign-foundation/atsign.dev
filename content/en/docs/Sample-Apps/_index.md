@@ -1,10 +1,11 @@
 ---
-title: "Sample Apps"
+title: "Sample apps created on the @platform"
 linkTitle: "Sample Apps"
+description : "Sample @platform apps, from simple to complex"
+content : "Sample @platform apps, from simple to complex"
 weight: 3
 date: 2017-01-05
-description: >
-  A running list of demo applications showing off the incredible usabilities of the @platform across varying difficulty levels.
+
 ---
 
 ### at_hello_world:

@@ -56,6 +56,10 @@ id = "UA-00000000-0"
 title = "Build end-to-end encrypted apps quickly on the @platform"
 description = "The @platform is the fastest and easiest way to develop peer-to-peer, end-to-end encrypted apps"
 languageName ="English"
+social_logo_path = "/landing_page/logo.svg"
+twitter_logo_path = "/landing_page/logo.svg"
+twitter="atsigncompany"
+
 # Weight used for sorting.
 weight = 1
 [languages.no]
@@ -65,6 +69,7 @@ languageName ="Norsk"
 contentDir = "content/no"
 time_format_default = "02.01.2006"
 time_format_blog = "02.01.2006"
+
 
 [languages.sp]
 title = "the @plataforma"
@@ -103,7 +108,7 @@ copyright = "The @ Company"
 privacy_policy = "https://atsign.com/privacy-policy"
 
 # First one is picked as the Twitter card image if not set on page.
-# images = ["images/project-illustration.png"]
+# images = ["/landing_page/logo.svg"]
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.
@@ -216,16 +221,6 @@ enable = true
 	url = "https://twitter.com/atsigncompany"
 	icon = "fab fa-twitter"
         desc = "Follow us on Twitter to get the latest news!"
-[[params.links.user]]
-	name ="Facebook"
-	url = "https://facebook.com/atsigncompany"
-	icon = "fab fa-facebook"
-        desc = "Join us on Facebook find out what's happening!"
-[[params.links.user]]
-	name = "Instagram"
-	url = "https://instagram.com/atsigncompany"
-	icon = "fab fa-instagram"
-        desc = "See our posts on Instagram"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
