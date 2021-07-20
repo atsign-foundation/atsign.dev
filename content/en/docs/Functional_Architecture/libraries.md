@@ -1,12 +1,10 @@
 ---
-title: "Libraries offered on the @platform"
-SEOtitle: "Libraries offered on the @platform (at_platform or AtPlatform)"
+title: "Libraries"
 linkTitle: "Libraries"
 parent: /Functional_Architecture/
 weight: 2
-content: A list of plug-and-play libraries for the @platform
 description: >
- A list of plug-and-play libraries for the @platform
+  Find the list of libraries the @platform has to offer here!
 ---
 
 
