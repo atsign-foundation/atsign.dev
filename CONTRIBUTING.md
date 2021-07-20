@@ -25,20 +25,17 @@ describe.
 
 ## Development Environment Setup
 
-
-### Prerequisites
-
-   ``` sh
-   # show how to install the tools needed to work with the code here
-   ```
-
+Take a look at the [Working With Hugo](./content/en/docs/guides/getting-started-with-hugo.md)
+guide for some background on the Hugo static site generator used to build this
+site.
 
 ### GitHub Repository Clone
 
 To prepare your dedicated GitHub repository:
 
 1. Fork in GitHub https://github.com/atsign-foundation/atsign.dev
-2. Clone *your forked repository* (e.g., `git clone git@github.com:yourname/atsign.dev`)
+2. Clone *your forked repository* (e.g., `git clone --recursive git@github.com:yourname/atsign.dev`).
+NB the `--recursive` flag is used to ensure that the theme submodules are also downloaded.
 3. Set your remotes as follows:
 
    ```sh
