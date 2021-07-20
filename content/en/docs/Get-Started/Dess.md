@@ -130,9 +130,15 @@ sudo dess-create
 | Rocky Linux  | 8            | ✔   | ✔     |       |
 | Ubuntu       | 20.04-21.04  | ✔   | ✔     |       |
 
-## 6. dess on GCP
+## 6. dess Setup Guides
 
-If you are ready to get started, please refer to [the dess on GCP Setup Guide.](/docs/get-started/dess-gcp/)
+If you are ready to get started, please check to see if we have a [specific guide](/docs/guides/dess-setup/) available for your platform of choice.
+
+We have guides available for the following platforms:
+
+- [GCP (Google Cloud Platform)](/docs/guides/dess-setup/dess-gcp/)
+- AWS (Coming soon)
+- IONOS (Coming soon)
 
 ## 7. Tips & Tricks
 
