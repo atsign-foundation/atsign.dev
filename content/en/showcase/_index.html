@@ -10,9 +10,6 @@ menu:
     weight: 30
 ---
 
-{{< blocks/showcasecover title="New experiences powered by the @platform"
-subtitle="From the worldwide developer community" image_anchor="bottom"
-height="min" >}} {{< /blocks/showcasecover >}}
 
 <style>
   .wavi_title {
@@ -142,8 +139,74 @@ height="min" >}} {{< /blocks/showcasecover >}}
     margin: 20px 20px;
   }
 
+  .div_box_text {
+    background-color: white;
+    height:137px;
+    width:296px;
+    margin-left: -44px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .div_box_text_buzz {
+    background-color: white;
+    height:140px;
+    width:296px;
+    margin-left: -44px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .div_box_text_space {
+    background-color: white;
+    height:130px;
+    width:296px;
+    margin-left: -44px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .div_box_text_atmosphere {
+    background-color: white;
+    height:130px;
+    width:296px;
+    margin-left: -44px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .div_box_text_vote {
+    background-color: white;
+    height:130px;
+    width:296px;
+    margin-left: -44px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .div_box_text_arrive {
+    background-color: white;
+    height:130px;
+    width:296px;
+    margin-left: -44px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
   .dev_contr_div {
-    background-color: #f2f2f2;
+    background-color: white;
     font-size: 22px;
     display: block;
     width: 100vw;
@@ -162,7 +225,7 @@ height="min" >}} {{< /blocks/showcasecover >}}
     height: 600px;
     left: 0;
   }
-
+/* 
   @media only screen and (max-width: 1019px) {
     .dev_contr_div{
       height: 900px;
@@ -170,9 +233,27 @@ height="min" >}} {{< /blocks/showcasecover >}}
     .dev_contr_wrapper{
       height: 900px;
     }
+  } */
+
+  @media only screen and (max-width: 715px) {
+    .dev_contr_div{
+      height: 1150px;
+    }
+    .dev_contr_wrapper{
+      height: 1150px;
+    }
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 1000px) {
+    .dev_contr_div{
+      height: 1150px;
+    }
+    .dev_contr_wrapper{
+      height: 1150px;
+    }
+  }
+
+  @media only screen and (max-width: 675px) {
     .dev_contr_div{
       height: 1750px;
     }
@@ -200,7 +281,14 @@ height="min" >}} {{< /blocks/showcasecover >}}
     margin-top: 70px;
   }
 </style>
-
+<div style="margin-top: -100px;">
+<div style="margin-top:200px;margin-bottom: -50px;">
+  <center>
+    <h2><strong>New experiences powered by the @platform</strong></h2>
+  <h4>From the worldwide developer community</h4>
+    
+  </center>
+  </div>
 
 <section class="showcase__featured-company-cases showcase__section">
   <div class="dev_contr_wrapper">
@@ -218,6 +306,7 @@ height="min" >}} {{< /blocks/showcasecover >}}
               </div>
               </p>
               <p></p>
+              <div class="div_box_text">
               <h7>
                 Your space on the Privacy-First web.
               </h7>
@@ -236,6 +325,7 @@ height="min" >}} {{< /blocks/showcasecover >}}
                 </a>
               </span>
             </div>
+            </div>
           </div>
         </div>
         <!--/wavi-->
@@ -247,6 +337,7 @@ height="min" >}} {{< /blocks/showcasecover >}}
             <div class="div_boxes_logo">
               <div class="buzz_title"><h4>@Buzz</h4></div>
               <p></p>
+              <div class="div_box_text_buzz">
               <p>
                 <h7> An entirely new way to connect</h7>
               </p>
@@ -256,6 +347,7 @@ height="min" >}} {{< /blocks/showcasecover >}}
                   <span class="fas fa-external-link-alt"></span>
                 </a>
               </span>
+              </div>
             </div>
           </div>
         </div>
@@ -267,21 +359,27 @@ height="min" >}} {{< /blocks/showcasecover >}}
             <div class="div_boxes_logo">
               <div class="spacesignal_title"><h4>@spacesignal</h4></div>
               <p></p>
+              <div class="div_box_text_space">
               <p>
                 <h7> Have conversations with like-minded people. </h7>
               </p>
              <i>Coming soon!</i>
+             </div>
             </div>
           </div>
         </div>
         <!--/spacesignal-->
 
+        </div>
+
+        <div class="row">
         <!--atmosphere-->
         <div class="column">
           <div class="div_contr_boxes">
             <div class="div_boxes_logo">
               <div class="atmosphere_title"><h4>@mosphere</h4></div>
               <p></p>
+              <div class="div_box_text_atmosphere">
               <p>
                 <h7>P2P file sharing hasn't been easier.</h7>
               </p>
@@ -300,6 +398,7 @@ height="min" >}} {{< /blocks/showcasecover >}}
                   <span class="fas fa-external-link-alt"></span>
                 </a>
               </span>
+              </div>
             </div>
           </div>
         </div>
@@ -313,10 +412,12 @@ height="min" >}} {{< /blocks/showcasecover >}}
               <div class="div_boxes_logo">
                 <div class="takevote_title"><h3>Take@vote</h3></div>
                 <p></p>
+                <div class="div_box_text_vote">
                 <p>
                   <h7> A private and secure voting platform. </h7>
                 </p>
                 <i>Coming soon!</i>
+                </div>
               </div>
             </div>
           </div>
@@ -329,17 +430,21 @@ height="min" >}} {{< /blocks/showcasecover >}}
               <div class="div_boxes_logo">
                 <div class="arrive_title"><h3>@arrive</h3></div>
                 <p></p>
+                <div class="div_box_text_arrive">
                 <p>
                   <h7> Securely share locations with people you trust! </h7>
                 </p>
                 <i>Coming soon!</i>
+                </div>
               </div>
             </div>
           </div>
           <!--/arrive-->
+</div>
 
+        </div>
 </section>
-</section>
+</div>
 
 {{< blocks/section color="dark" >}}
 
