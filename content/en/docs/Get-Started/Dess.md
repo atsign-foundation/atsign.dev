@@ -1,12 +1,13 @@
 ---
-title: "dess : distributed edge secondary server  - @platform"
-SEOtitle: "dess : distributed edge secondary server  - @platform(at_platform or AtPlatform)"
-linkTitle: "dess"
-weight: 4
-content : Run your own secondary server for the @platform with dess
+title: 'Option 2: Setup your own secondary server with dess'
+SEOtitle: 'dess : distributed edge secondary server  - @platform(at_platform or AtPlatform)'
+linkTitle: '2: Setup dess'
+weight: 2
+content: Create and run your own @platform secondary server with dess
 description: >
-  Run your own secondary server for the @platform with dess
+  Create and run your own @platform secondary server with dess
 ---
+
 ## 1. What is dess?
 
 dess is the self-hosted option for secondary servers,
@@ -128,7 +129,6 @@ sudo dess-create
 | Raspbian     | Coming Soon! |     |       |       |
 | Rocky Linux  | 8            | ✔   | ✔     |       |
 | Ubuntu       | 20.04-21.04  | ✔   | ✔     |       |
-
 
 ## 6. dess on GCP
 
