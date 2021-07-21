@@ -57,6 +57,7 @@ title = "Build end-to-end encrypted apps quickly on the @platform"
 description = "The @platform is the fastest and easiest way to develop peer-to-peer, end-to-end encrypted apps"
 languageName ="English"
 social_logo_path = "/landing_page/logo.svg"
+social_image_path = "/landing_page/logo.svg"
 twitter_logo_path = "/landing_page/logo.svg"
 twitter="atsigncompany"
 
