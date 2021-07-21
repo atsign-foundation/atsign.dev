@@ -1,5 +1,6 @@
 ---
 title: "The @platform documentation"
+SEOTitle: "The @platform(at_platform or AtPlatform) documentation"
 linkTitle: "Docs"
 content: "The @platform docs for building end-to-end encrypted apps"
 Description: "All the documentation you need for building apps on the @platform"
