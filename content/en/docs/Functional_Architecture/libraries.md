@@ -1,12 +1,10 @@
 ---
-title: "Libraries offered on the @platform"
-SEOtitle: "Libraries offered on the @platform (at_platform or AtPlatform)"
+title: "Libraries"
 linkTitle: "Libraries"
 parent: /Functional_Architecture/
 weight: 2
-content: A list of plug-and-play libraries for the @platform
 description: >
- A list of plug-and-play libraries for the @platform
+  Find the list of libraries the @platform has to offer here!
 ---
 
 
@@ -114,7 +112,7 @@ Provides methods to encode/decode strings to/from the utf7 format as defined in 
 
 ### at_contact
 
-A starting point for Dart libraries or applications.
+A Dart library for managing contact data that developers can use for their applications.
 
 [Learn more](https://pub.dev/packages/at_contact)
 
