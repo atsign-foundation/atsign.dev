@@ -36,6 +36,10 @@ jobs:
 
       - name: Prepare postcss-cli
         run: npm ci
+
+      - name: Set staging baseURL
+        run: sed -i s/atsign.dev/devstaging.atsign.wtf/ config.toml
+
       - name: Build
         run: hugo --minify
 

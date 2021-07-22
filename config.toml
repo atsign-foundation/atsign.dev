@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://atsign.dev/"
 title = "Build end-to-end encrypted apps quickly on the @platform"
 
 enableRobotsTXT = true
