@@ -16,6 +16,8 @@ Data that others have shared with an @sign owner is cached on the @sign owner's 
 
 ### Notification
 
+Notification is a mechanism which enables an @sign to share data with another @sign. The data shared is end to end encrypted. @sign owner can query the status of the notification.
+
 [Learn more](https://blog.atsign.dev/part-1-the-notify-verb-cko97bv8f00l5gws13umb0nvz)
 
 ### Onboarding
@@ -24,12 +26,18 @@ Data that others have shared with an @sign owner is cached on the @sign owner's 
 
 ### Peer-to-Peer Streams
 
+Streams enable transferring of files between the @sign's through a secure and dedicated socket between sender and receiver. The files can be a text documents, images, audio-video files etc. The stream transfers are end to end encrypted.
+
 [Learn more](https://blog.atsign.dev/the-stream-verb-protocol-ckmwi28is01aqd2s184bien2q)
 
 ### Persistence
 
+The persistence defines the interfaces on how the data in @protocol is stored.
+
 [Learn more](https://pub.dev/packages/at_persistence_spec)
 
 ### Synchronization
+
+Synchronization is a process to keep the data in mobile apps and @sign server identical.
 
 [Learn more](https://atsigncompany.medium.com/the-protocol-synchronization-77b00ca5341b)
