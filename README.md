@@ -11,11 +11,13 @@ The atsign.dev repo is home to the code of our very own developer site! Because 
 We hope that this site has the A -> Z of everything you will need to develop with the @platform.
 
 If you are a developer, this is your site -  come join us and help us improve the content and the experience. We are always learning from you!
+
 ## What can you find in atsign.dev?
 
 If you are new to the @platform, learn about how the platform works and how this can make such a big difference for you by cutting down on time to develop and market applications.
 
 The site gives you all the tools, samples, examples and documentation needed to get started on the @platform and SDK. The site also provides access to the various communities where you can collaborate and talk to other developers working on the platform.
+
 ##  Pages we recommend visiting:
 
 If this is your first time here, we strongly recommend navigating through our ‘[getting started](https://atsign.dev/gettingstarted.html)’ page. There, you will find all of the steps you will need to take in order to start developing your very own @platform application. 
@@ -29,4 +31,12 @@ done better, feel free to raise a pull request to the trunk branch!
 
 Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) for further instructions.
 
+## How does stuff get from here to the production site?
 
+When changes are merged to trunk they get published to the staging site [devstaging.atsign.wtf](https://devstaging.atsign.wtf/) by running the [HugoBuild](https://github.com/atsign-foundation/atsign.dev/blob/trunk/.github/workflows/HugoBuild.yml) GitHub Action, which publishes to the gh-pages branch in this repo.
+
+When a [release](https://github.com/atsign-foundation/atsign.dev/releases) is tagged with a semanic version number (e.g. 1.0.8) the [DeployProd](https://github.com/atsign-foundation/atsign.dev/blob/trunk/.github/workflows/DeployProd.yml) Action runs, which publishes to the gh-pages branch in the [atsign.dev-prod](https://github.com/atsign-foundation/atsign.dev-prod) repo.
+
+### Automated scraping from pub.dev
+
+Some of the content here is taken from [pub.dev](https://pub.dev/publishers/atsign.org/packages), which is the authorative source for API docs. The [UpdateLibraries](https://github.com/atsign-foundation/atsign.dev/blob/trunk/.github/workflows/UpdateLibraries.yml) Action is set to run at 1415 daily to check for any updates to API docs for our packages.
