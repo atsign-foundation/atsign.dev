@@ -1,5 +1,5 @@
 ---
-title: "atsign (@Sign or at_sign)-foundation Overview"
+title: "The @sign foundation overview"
 SEOtitle : "atsign (@Sign or at_sign)-foundation Overview"
 linkTitle: "Overview"
 weight: 2
