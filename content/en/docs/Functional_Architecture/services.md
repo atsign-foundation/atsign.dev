@@ -22,6 +22,8 @@ Notification is a mechanism which enables an @sign to share data with another @s
 
 ### Onboarding
 
+The onboarding process is responsible for creating the authenticating keys for a new @sign or retrieving the authenticating keys of an existing @sign from the keys file provided by the @sign owner. It also synchronizes the data between mobile apps and the cloud secondary server.
+
 [Learn more](https://pub.dev/packages/at_onboarding_flutter)
 
 ### Peer-to-Peer Streams
