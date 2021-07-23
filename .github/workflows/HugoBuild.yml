@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Set staging baseURL
-        run: sed -i s/atsign.dev/devstaging.atsign.wtf/ config.toml
+        run: sed -i s#https://atsign.dev#https://devstaging.atsign.wtf# config.toml
 
       - name: Build
         run: hugo --minify
