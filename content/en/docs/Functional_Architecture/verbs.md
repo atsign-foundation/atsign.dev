@@ -29,7 +29,7 @@ The @sign should be authenticated using the cram verb prior to use the lookup ve
 The "plookup" verb, provides a proxied public lookups for a resolver that perhaps is behind a firewall. This will allow a resolver to contact a @ server and have the @ server lookup both public @ handles information. This will be useful in large enterprise environments where they would want all lookups going through a single secondary server for the entity or where a single port needs to be opened through a firewall to lookup @ handles.
 The @sign should be authenticated using cram verb prior to use the plookup verb.
 [Learn more](https://pub.dev/documentation/at_server_spec/latest/verbs/ProxyLookup-class.html)
-### lloookup
+### llookup
 The "llookup" verb can be used to locally lookup keys stored on our secondary server. To perform local look up, the user should be successfully authenticated via the "cram" verb.
 [Learn more](https://pub.dev/documentation/at_server_spec/latest/verbs/LocalLookup-class.html)
 ### update
