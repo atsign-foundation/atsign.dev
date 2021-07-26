@@ -121,14 +121,14 @@ sudo dess-create
 
 ## 5. OS Support
 
-| Distribution | Version      | x86 | arm64 | armv7 |
-| ------------ | ------------ | --- | ----- | ----- |
-| Amazon Linux | 2            | ✔   | ✔     |       |
-| Centos       | 7,8          | ✔   | ✔     |       |
-| Debian       | 10           | ✔   | ✔     |       |
-| Raspbian     | Coming Soon! |     |       |       |
-| Rocky Linux  | 8            | ✔   | ✔     |       |
-| Ubuntu       | 20.04-21.04  | ✔   | ✔     |       |
+| Distribution | Version     | x86 | arm64 | armv7 |
+| ------------ | ----------- | --- | ----- | ----- |
+| Amazon Linux | 2           | ✔   | ✔     |       |
+| Centos       | 7,8         | ✔   | ✔     |       |
+| Debian       | 10          | ✔   | ✔     |       |
+| Raspbian     | 10          |     |       | ✔     |
+| Rocky Linux  | 8           | ✔   | ✔     |       |
+| Ubuntu       | 20.04-21.04 | ✔   | ✔     |       |
 
 ## 6. dess Setup Guides
 
