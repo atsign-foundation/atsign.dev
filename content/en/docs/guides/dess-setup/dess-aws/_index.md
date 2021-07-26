@@ -10,7 +10,7 @@ description: Step-by-Step setup of dess on AWS (Amazon Web Services)
 
 # Step-by-Step setup of dess in AWS
 
-In this step-by-step guide I will walk you through all steps required to setup your own private DESS in AWS cloud from scratch. Please use index to skip some steps in case you have done them in other way.
+In this step-by-step guide I will walk you through all steps required to setup your own private dess in AWS cloud from scratch. Please use index to skip some steps in case you have done them in other way.
 
 ## Table of contents
 
@@ -26,8 +26,8 @@ In this step-by-step guide I will walk you through all steps required to setup y
   - [Assignment of Static IP](#static_IP)
   - [Assignment of Domain name to your static IP](#domain2IP)
   - [Setting up Firewall](#firewall)
-* [Instance setup and DESS deployment](#deployment)
-* [Registration of @sign in your private DESS](#DESS2@sign)
+* [Instance setup and dess deployment](#deployment)
+* [Registration of @sign in your private dess](#dess2@sign)
 * [Activation of @sign](#activation)
 
 ## Pre-requisites <a name="pre-requisites"></a>
@@ -42,7 +42,7 @@ This topic is already well documents. Please follow guidance of https://atsign.c
 
 ### 2. Sign-up for GCP account <a name="sign_up"></a>
 
-If you are new to cloud like me and need to create new AWS account, I have good news! The creation is for free and the cost of running your @sing DESS costs about 10$/month. You can create your free account at https://aws.amazon.com/ at date of writing 6-Jun-2021 there is “free tier” available and was used for this setup.
+If you are new to cloud like me and need to create new AWS account, I have good news! The creation is for free and the cost of running your @sing dess costs about 10$/month. You can create your free account at https://aws.amazon.com/ at date of writing 6-Jun-2021 there is “free tier” available and was used for this setup.
 
 ![aws-free-trial](images/aws-free-trial.png)
 
@@ -58,7 +58,7 @@ Make sure that you select right region in top right corner.
 
 Select region that is geographically closest to where you are located to get best performance.
 
-You are now all setup and good to go to prepare your first cloud DESS.
+You are now all setup and good to go to prepare your first cloud dess.
 
 ### 3. Register your own fully qualified domain name (FQDN) <a name="FQDN"></a>
 
@@ -94,7 +94,7 @@ This can take some time so why don’t we move on to next step!
 
 ### 4. Preparing AWS instance <a name="prep_instance"></a>
 
-Now since I am new to AWS the easiest way to start is using the LightSail service from service catalog. This will enable you to deploy small system which is more then capable of handling DESS at pre-set price.
+Now since I am new to AWS the easiest way to start is using the LightSail service from service catalog. This will enable you to deploy small system which is more then capable of handling dess at pre-set price.
 
 ![img](images/clip_image002-16272842283471.jpg)
 
@@ -108,7 +108,7 @@ There are several options we are presented at this moment. Since I am living in 
 
 ![img](images/clip_image006-16272842283483.jpg)
 
-Next up will be selection of operating system we want to deploy. We know that DESS works well with Ubuntu 20.04 LTS so lets select just that.
+Next up will be selection of operating system we want to deploy. We know that dess works well with Ubuntu 20.04 LTS so lets select just that.
 
 ![img](images/clip_image008.jpg)
 
@@ -116,7 +116,7 @@ You are presented with couple more options, but unless you know what you are doi
 
 ![img](images/clip_image010.jpg)
 
-Now let’s select instance plan. DESS is relatively light weight so for testing purposes I will select first instance plan for 3.5$/Month. This will provide us with 512 MB of RAM, 1vCPU, 20GB of storage and 1TB of data transfer. This is more then enough to run our DESS.
+Now let’s select instance plan. dess is relatively light weight so for testing purposes I will select first instance plan for 3.5$/Month. This will provide us with 512 MB of RAM, 1vCPU, 20GB of storage and 1TB of data transfer. This is more then enough to run our dess.
 
 ![img](images/clip_image012.jpg)
 
@@ -208,11 +208,11 @@ To test if you are successful open command line and ping your domain. You should
 
 ![img](images/clip_image014.png)
 
-At this point we have created DNS record we will use to link our DESS, we created instance name which will be running our DESS and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.
+At this point we have created DNS record we will use to link our dess, we created instance name which will be running our dess and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.
 
 #### c) Setting up Firewall <a name="firewall"></a>
 
-Next up we need to make sure we have ports open for our DESS to communicate with root server and our apps. In Section networking go to section “IPv4 Firewall” and click “+ Add rule” Our rule will be “Custom” on TCP protocol with Port range in number higher then 1024. In my case I have selected port range 8000-8010. This will enable me to run up to 10 @signs in parallel.
+Next up we need to make sure we have ports open for our dess to communicate with root server and our apps. In Section networking go to section “IPv4 Firewall” and click “+ Add rule” Our rule will be “Custom” on TCP protocol with Port range in number higher then 1024. In my case I have selected port range 8000-8010. This will enable me to run up to 10 @signs in parallel.
 
 ![img](images/clip_image002-16272854074665.jpg)
 
@@ -220,7 +220,7 @@ Click create and verify that your new rule is in list:
 
 ![img](images/clip_image002-16272854074665.jpg)
 
-### 6. Instance setup and DESS deployment <a name="deployment"></a>
+### 6. Instance setup and dess deployment <a name="deployment"></a>
 
 Open your LightSail console at https://lightsail.aws.amazon.com/
 
@@ -246,11 +246,11 @@ Next up we need to make sure Git is installed. This can be done with following c
 
 sudo apt install git
 
-We are now set to download latest copy of the DESS through Git. I am following guide prepared by Colin
+We are now set to download latest copy of the dess through Git. I am following guide prepared by Colin
 
 https://github.com/atsign-foundation/dess/tree/dess.0.0.1-release.1
 
-Run to download fresh copy of the DESS
+Run to download fresh copy of the dess
 
 git clone --branch dess.0.0.1-release.1 https://github.com/atsign-foundation/dess.git
 
@@ -264,13 +264,13 @@ At the end you should be presented with message:
 
 ![img](images/clip_image009.png)
 
-At this point we are good to go with registering our first @sign in our private DESS running in cloud with our own FQDN!
+At this point we are good to go with registering our first @sign in our private dess running in cloud with our own FQDN!
 
-### 7. Registration of @sign in your private DESS <a name="DESS2@sign"></a>
+### 7. Registration of @sign in your private dess <a name="dess2@sign"></a>
 
 At this step you should already have your at sign registered at http://atsign.com. If not **go do it!**
 
-I have registered my own free @sign @44likelycanary which I will link to my AWS cloud private DESS.
+I have registered my own free @sign @44likelycanary which I will link to my AWS cloud private dess.
 
 In your instance console navigate to dess folder. If you were following this guide it will be located in:
 
@@ -302,7 +302,7 @@ If everything is successful you should see output like this:
 
 ![img](images/clip_image004-162728549379914.jpg)
 
-At this moment your atsign is registered on your DESS.
+At this moment your atsign is registered on your dess.
 
 ## 8. Activation of @sign<a name="activation"></a>
 
@@ -326,7 +326,7 @@ If you have already activated your @sign you will be prompted to erase all your 
 
 ![img](images/clip_image007-162728550968118.jpg)
 
-Once done you are able to link your @sign with your private DESS. Use your domain and port number with which you have created service on your cloude instance and press Activate
+Once done you are able to link your @sign with your private dess. Use your domain and port number with which you have created service on your cloude instance and press Activate
 
 ![img](images/clip_image009-162728550968119.jpg)
 
