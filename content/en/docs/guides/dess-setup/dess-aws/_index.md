@@ -1,30 +1,34 @@
-# Step-by-Step setup of DESS in AWS
+---
+title: "Setup dess on AWS (Amazon Web Services) Platform"
+SEOtitle: "Setup @platform (at_platform or AtPlatform) dess in AWS (Amazon Web Services)"
+linkTitle: "AWS"
+weight: 2
+date: 2021-07-26
+content: The @platform resources will help you quickly build your end-to-end encrypted app
+description: Step-by-Step setup of dess on AWS (Amazon Web Services)
+---
 
- 
+# Step-by-Step setup of dess in AWS
 
 In this step-by-step guide I will walk you through all steps required to setup your own private DESS in AWS cloud from scratch. Please use index to skip some steps in case you have done them in other way.
-
 
 ## Table of contents
 
 - [Pre-requisites](#pre-requisites)
-    + [ Registering your @sign](#Registering)
-      + [ Sign-up for AWS account](#sign_up)
-    + [Register your own fully qualified domain name](#FQDN)
-        - [Register domain name with AWS](#cloud_domain)
-        - [Create Cloud DNS zone](#DNS_zone)
-+ [Preparing AWS instance](#prep_instance)
-+ [Preparing your instance for network access](#networking)
-    - [Assignment of Static IP](#static_IP)
-    - [Assignment of Domain name to your static IP](#domain2IP)
-    - [Setting up Firewall](#firewall)
-+ [Instance setup and DESS deployment](#deployment)
-+ [Registration of @sign in your private DESS](#DESS2@sign)
-+ [Activation of @sign](#activation)
+  - [ Registering your @sign](#Registering)
+    - [ Sign-up for AWS account](#sign_up)
+  - [Register your own fully qualified domain name](#FQDN)
+    - [Register domain name with AWS](#cloud_domain)
+    - [Create Cloud DNS zone](#DNS_zone)
 
-
-
-
+* [Preparing AWS instance](#prep_instance)
+* [Preparing your instance for network access](#networking)
+  - [Assignment of Static IP](#static_IP)
+  - [Assignment of Domain name to your static IP](#domain2IP)
+  - [Setting up Firewall](#firewall)
+* [Instance setup and DESS deployment](#deployment)
+* [Registration of @sign in your private DESS](#DESS2@sign)
+* [Activation of @sign](#activation)
 
 ## Pre-requisites <a name="pre-requisites"></a>
 
@@ -56,8 +60,6 @@ Select region that is geographically closest to where you are located to get bes
 
 You are now all setup and good to go to prepare your first cloud DESS.
 
-
-
 ### 3. Register your own fully qualified domain name (FQDN) <a name="FQDN"></a>
 
 This step can be performed at range of different sites with different pricing models. You can use sites like http://www.godaddy.com; https://www.namecheap.com/; and many others. Since we have AWS account we can use it to register our domain through Route 53 service.
@@ -73,8 +75,6 @@ In your AWS console search for `Route 53`.
 You can start looking for your domain directly from here:
 
 ![image-20210726083635919](images/image-20210726083635919.png)
-
-
 
 Based on the name you selected and the domain AWS will give you options of free domains and their pricing. As I am looking for best deal .link domain seems like good option at cost of 5$ / year.
 
@@ -92,11 +92,9 @@ Continue review details and order. At this point if all is fine you should see y
 
 This can take some time so why don’t we move on to next step!
 
-
-
 ### 4. Preparing AWS instance <a name="prep_instance"></a>
 
-Now since I am new to AWS the easiest way to start is using the LightSail service from service catalog. This will enable you to deploy small system which is more then capable of handling DESS at pre-set price. 
+Now since I am new to AWS the easiest way to start is using the LightSail service from service catalog. This will enable you to deploy small system which is more then capable of handling DESS at pre-set price.
 
 ![img](images/clip_image002-16272842283471.jpg)
 
@@ -118,10 +116,6 @@ You are presented with couple more options, but unless you know what you are doi
 
 ![img](images/clip_image010.jpg)
 
-
-
- 
-
 Now let’s select instance plan. DESS is relatively light weight so for testing purposes I will select first instance plan for 3.5$/Month. This will provide us with 512 MB of RAM, 1vCPU, 20GB of storage and 1TB of data transfer. This is more then enough to run our DESS.
 
 ![img](images/clip_image012.jpg)
@@ -137,8 +131,6 @@ Last but not least is to press “Create instance”
 Couple seconds later you should be re-routed to your dashboard and see you instance up and running:
 
 ![img](images/clip_image016.png)
-
-
 
 ### 5. Preparing your instance for network access <a name="networking"></a>
 
@@ -230,7 +222,7 @@ Click create and verify that your new rule is in list:
 
 ### 6. Instance setup and DESS deployment <a name="deployment"></a>
 
-Open your LightSail console at https://lightsail.aws.amazon.com/ 
+Open your LightSail console at https://lightsail.aws.amazon.com/
 
 By now you should see your instance in “Running state”
 
@@ -274,9 +266,7 @@ At the end you should be presented with message:
 
 At this point we are good to go with registering our first @sign in our private DESS running in cloud with our own FQDN!
 
-
-
-### 7.  Registration of @sign in your private DESS <a name="DESS2@sign"></a>
+### 7. Registration of @sign in your private DESS <a name="DESS2@sign"></a>
 
 At this step you should already have your at sign registered at http://atsign.com. If not **go do it!**
 
@@ -298,7 +288,7 @@ ubuntu@ip-172-26-10-58:~/dess$ ./create.sh @44likelycanary 4atsign.link 8000 <em
 
 To make it more understandable:
 
-I will be registering my @sing **@44likelycanary** 
+I will be registering my @sing **@44likelycanary**
 
 I will be using my domain **4atsign.link** which I have registered through AWS
 
@@ -312,9 +302,7 @@ If everything is successful you should see output like this:
 
 ![img](images/clip_image004-162728549379914.jpg)
 
-At this moment your atsign is registered on your DESS. 
-
-
+At this moment your atsign is registered on your DESS.
 
 ## 8. Activation of @sign<a name="activation"></a>
 
@@ -346,9 +334,7 @@ You should see that your @sign is being activated in your dashboard:
 
 ![img](images/clip_image011-162728550968120.jpg)
 
- 
-
-This can take several minutes so go get cup of coffee, some tea maybe, stretch your body and pray you haven’t made any mistakes! 
+This can take several minutes so go get cup of coffee, some tea maybe, stretch your body and pray you haven’t made any mistakes!
 
 Once the activation process completes you are welcomed by green Activated.
 
