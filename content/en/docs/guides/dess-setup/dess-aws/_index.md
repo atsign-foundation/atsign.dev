@@ -285,7 +285,7 @@ I will be using my domain **4atsign.link** which I have registered through AWS.
 
 I am using port **8000** which I have opened in my instance firewall.
 
-My registration email address is **<email address>** (this email is used to sign the SSL certificates).
+My registration email address is **\<email address\>** (this email is used to sign the SSL certificates).
 
 The last **likelycanary** is the name that docker will use to track the service.
 
