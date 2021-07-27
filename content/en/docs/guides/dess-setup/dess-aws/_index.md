@@ -10,7 +10,7 @@ description: Step-by-Step setup of dess on AWS (Amazon Web Services)
 
 # Step-by-Step setup of dess in AWS
 
-In this step-by-step guide I will walk you through all steps required to setup your own private dess in AWS cloud from scratch. Please use index to skip some steps in case you have done them in other way.
+In this step-by-step guide I will walk you through all steps required to setup your own private dess using AWS. Please use the index to skip some steps in case you have already completed them.
 
 ## Table of contents
 
@@ -32,39 +32,39 @@ In this step-by-step guide I will walk you through all steps required to setup y
 
 ## Pre-requisites <a name="pre-requisites"></a>
 
-- Register Atsign at http://atsign.com
-- Have AWS account
-- Have registered Fully Qualified Domain Name (FQDN)
+- Registered @sign(s) to setup
+- An AWS account
+- A Fully Qualified Domain Name (FQDN)
 
 ### 1. Registering your @sign <a name="Registering"></a>
 
-This topic is already well documents. Please follow guidance of https://atsign.com/faqs/ and register via https://atsign.com/get-an-sign/.
+This topic is already well documented. Please follow the guidance of [Our FAQs](https://atsign.com/faqs/) and register via [the registrar site](https://atsign.com/get-an-sign/).
 
-### 2. Sign-up for GCP account <a name="sign_up"></a>
+### 2. Sign-up for AWS account <a name="sign_up"></a>
 
-If you are new to cloud like me and need to create new AWS account, I have good news! The creation is for free and the cost of running your @sing dess costs about 10$/month. You can create your free account at https://aws.amazon.com/ at date of writing 6-Jun-2021 there is “free tier” available and was used for this setup.
+If you are new to AWS, signing up for an account is free! The cost of running dess is about 10$/month. You can create your account at https://aws.amazon.com/ and as of June 6th, 2021 there is a “free tier” available which was used during the making of this guide.
 
 ![aws-free-trial](images/aws-free-trial.png)
 
-Follow instruction on screen
+Follow the instructions on screen.
 
 ![aws-sign-up](images/aws-sign-up.png)
 
-Once done with registration you will be able to login to your http://aws.amazon.com/console.
+Once you are done with registration, you will be able to login to your [aws console](http://aws.amazon.com/console).
 
-Make sure that you select right region in top right corner.
+Make sure that you select the correct region in the top right corner.
 
 ![aws-region](images/aws-region.png)
 
-Select region that is geographically closest to where you are located to get best performance.
+Select the region that is geographically closest to your location for best performance.
 
-You are now all setup and good to go to prepare your first cloud dess.
+You are now setup on AWS and ready to prepare dess.
 
 ### 3. Register your own fully qualified domain name (FQDN) <a name="FQDN"></a>
 
-This step can be performed at range of different sites with different pricing models. You can use sites like http://www.godaddy.com; https://www.namecheap.com/; and many others. Since we have AWS account we can use it to register our domain through Route 53 service.
+This step can be performed at a variety of sites, all with different pricing models. You can use sites like [Go Daddy](http://www.godaddy.com), [Namecheap](https://www.namecheap.com/), and many others. However, since we have AWS account, we can use it to register our domain through the Route 53 service.
 
-In your AWS console navigate to services in top left corner and select Route 53 service.
+In your AWS console navigate to services in top left corner and select `Route 53`.
 
 #### a) Register domain name with AWS. <a name="cloud_domain"></a>
 
@@ -76,7 +76,7 @@ You can start looking for your domain directly from here:
 
 ![image-20210726083635919](images/image-20210726083635919.png)
 
-Based on the name you selected and the domain AWS will give you options of free domains and their pricing. As I am looking for best deal .link domain seems like good option at cost of 5$ / year.
+Based on the domain name you search, AWS will give you similar options, and their pricing. As I am looking for the best deal, the .link domain seems like a good option at a cost of 5$ / year.
 
 In my case 4atsign.link is free and I will register it by clicking “Add to cart” and continue.
 
@@ -94,7 +94,7 @@ This can take some time so why don’t we move on to next step!
 
 ### 4. Preparing AWS instance <a name="prep_instance"></a>
 
-Now since I am new to AWS the easiest way to start is using the LightSail service from service catalog. This will enable you to deploy small system which is more then capable of handling dess at pre-set price.
+Now since I am new to AWS, the easiest way to get started is by using the LightSail service from service catalog. This will enable you to deploy small system which is more then capable of handling dess at pre-set price.
 
 ![img](images/clip_image002-16272842283471.jpg)
 
@@ -120,7 +120,7 @@ Now let’s select instance plan. dess is relatively light weight so for testing
 
 ![img](images/clip_image012.jpg)
 
-Lastly we have to name our instance. This is name you will be presented with in your dashboard.
+Lastly we have to name our instance. This is the name you will be presented with in your dashboard.
 
 ![img](images/clip_image014.jpg)
 
@@ -128,7 +128,7 @@ Last but not least is to press “Create instance”
 
 ![img](images/clip_image015.png)
 
-Couple seconds later you should be re-routed to your dashboard and see you instance up and running:
+After a couple of seconds you should be re-routed to your dashboard and see your instance up and running:
 
 ![img](images/clip_image016.png)
 
@@ -136,19 +136,19 @@ Couple seconds later you should be re-routed to your dashboard and see you insta
 
 #### a) Assignment of Static IP <a name="static_IP"></a>
 
-Next up our list of activities is providing our instance with static IP and linking our domain to it.
+Next up, is to provide our instance with a static IP and linking our domain to it.
 
-When you click on your instance name it will take you to management console of it which should look like this:
+When you click on your instance name, it will take you to the management console, which should look like this:
 
 ![img](images/clip_image002-16272853840264.jpg)
 
 This is where you control hardware, connectivity and if needed can delete your instance.
 
-Lets configure static IP address for your new instance. Navigate to Networking and click on Create static IP:
+Lets configure a static IP address for your new instance. Navigate to Networking and click on Create static IP:
 
 ![img](images/clip_image003.png)
 
-Our region and instance is selected so the only thing left is to name our static IP. I selected name atsign-static, but it can be any name you like.
+Our region and instance is selected, so the only thing left is to name our static IP. I selected the name atsign-static, but it can be any name you like.
 
 ![img](images/clip_image005.jpg)
 
@@ -156,17 +156,17 @@ Lets hit create:
 
 ![img](images/clip_image007.jpg)
 
-And voila we now have static IP address on the internet that will not change and we can link our domain name with it.
+And voila, we now have a static IP address on the internet and it will not change. Now we can link our domain name with it.
 
 ![img](images/clip_image009.jpg)
 
-When you click on your instance name and navigate to Networking static IP is now assigned
+When you click on your instance name and navigate to Networking, the static IP is now assigned.
 
 ![img](images/clip_image011.jpg)
 
 #### b) Assignment of Domain name to your static IP <a name="domain2IP"></a>
 
-We can now move on to linking our static IP address to our domain. This is done via AWS console which can be accessed top right in Lightsail.
+We can now move on to linking our static IP address to our domain. This is done via the AWS console which can be accessed in the top right of Lightsail.
 
 ![img](images/clip_image001.png)
 
@@ -180,7 +180,7 @@ Lets navigate to “Route 53” from Services menu.
 
 ![img](images/clip_image003.jpg)
 
-From your dashboard click on “Domain” which will take you to “Registered Domains” tab
+From your dashboard click on “Domain” which will take you to the “Registered Domains” tab.
 
 ![img](images/clip_image005-16272854399076.jpg)
 
@@ -222,7 +222,7 @@ Click create and verify that your new rule is in list:
 
 ### 6. Instance setup and dess deployment <a name="deployment"></a>
 
-Open your LightSail console at https://lightsail.aws.amazon.com/
+Open your [LightSail console](https://lightsail.aws.amazon.com/)
 
 By now you should see your instance in “Running state”
 
@@ -232,77 +232,68 @@ Open it and on tab Connect click on “Connect using SSH”
 
 ![img](images/clip_image003-162728546025211.png)
 
-You should be presented by new window with command line:
+You should be presented by a new window with command line:
 
 ![img](images/clip_image005-162728546025212.jpg)
 
-Before we do anything we run update:
+Before we do anything else, we should update the system:
 
+```
 sudo apt update && sudo apt upgrade
+```
 
-This might take some time, but it will make sure we have latest repository information and the system is up to date and secure.
+This might take some time, but it will make sure we have latest repository information and the system is up to date.
 
-Next up we need to make sure Git is installed. This can be done with following command:
+Next make sure curl is installed, we will use curl to pull the dess installation file:
 
-sudo apt install git
+```
+sudo apt install curl
+```
 
-We are now set to download latest copy of the dess through Git. I am following guide prepared by Colin
+Finally, run the dess installer:
 
-https://github.com/atsign-foundation/dess/tree/dess.0.0.1-release.1
+```
+curl -fsSL https://getdess.atsign.com | sudo bash
+```
 
-Run to download fresh copy of the dess
+Once the installer is finished you should be prompted like so:
 
-git clone --branch dess.0.0.1-release.1 https://github.com/atsign-foundation/dess.git
+```
+Dess installed, please move on to the sudo dess-create command.
+```
 
-![img](images/clip_image007.png)
-
-Lets navigate to dess folder that was created and run installation scripts:
-
-![img](images/clip_image008.png)
-
-At the end you should be presented with message:
-
-![img](images/clip_image009.png)
-
-At this point we are good to go with registering our first @sign in our private dess running in cloud with our own FQDN!
 
 ### 7. Registration of @sign in your private dess <a name="dess2@sign"></a>
 
-At this step you should already have your at sign registered at http://atsign.com. If not **go do it!**
+At this step you should already have your @sign registered at http://atsign.com. If not **go do it!**
 
-I have registered my own free @sign @44likelycanary which I will link to my AWS cloud private dess.
+I have registered my own free @sign (@44likelycanary) which I will link to my dess.
 
-In your instance console navigate to dess folder. If you were following this guide it will be located in:
+In your instance console, navigate to dess folder. If you were following this guide it will be located in:
 
-/home/ubuntu/dess
+We now need to create the service that will host our @sign by executing the dess-create command:
 
-![img](images/clip_image001-162728549379113.png)
-
-We now need to create service hosting our @sign on our dess by executing ./create.sh script
-
-![img](images/clip_image002.png)
-
-In my case the command will look as following:
-
-ubuntu@ip-172-26-10-58:~/dess$ ./create.sh @44likelycanary 4atsign.link 8000 <email address> likelycanary
+```
+$ sudo dess-create @44likelycanary 4atsign.link 8000 <email address> likelycanary
+```
 
 To make it more understandable:
 
-I will be registering my @sing **@44likelycanary**
+I will be registering my @sign **@44likelycanary**.
 
-I will be using my domain **4atsign.link** which I have registered through AWS
+I will be using my domain **4atsign.link** which I have registered through AWS.
 
-I am using port **8000** which I have opened in my instance firewall
+I am using port **8000** which I have opened in my instance firewall.
 
-My registration email address is **<email address>**.
+My registration email address is **<email address>** (this email is used to sign the SSL certificates).
 
-The last **likelycanary** is name which will be used by docker to register my service.
+The last **likelycanary** is the name that docker will use to track the service.
 
 If everything is successful you should see output like this:
 
 ![img](images/clip_image004-162728549379914.jpg)
 
-At this moment your atsign is registered on your dess.
+At this moment your @sign is registered on your dess.
 
 ## 8. Activation of @sign<a name="activation"></a>
 
@@ -326,7 +317,7 @@ If you have already activated your @sign you will be prompted to erase all your 
 
 ![img](images/clip_image007-162728550968118.jpg)
 
-Once done you are able to link your @sign with your private dess. Use your domain and port number with which you have created service on your cloude instance and press Activate
+Once done you are able to link your @sign with your private dess. Use your domain and port number with which you have created service on your cloude instance and press Activate.
 
 ![img](images/clip_image009-162728550968119.jpg)
 
@@ -340,6 +331,6 @@ Once the activation process completes you are welcomed by green Activated.
 
 ![img](images/clip_image013-162728550968121.jpg)
 
-You can now open your @buzz or @wavi and register your atsign via QR code and generate your keys!
+You can now open @buzz or @wavi and register your @sign via QR code and generate your keys!
 
-**CONGRATULATION**
+**CONGRATULATIONS**
