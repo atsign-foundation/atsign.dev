@@ -137,7 +137,7 @@ If you are ready to get started, please check to see if we have a [specific guid
 We have guides available for the following platforms:
 
 - [GCP (Google Cloud Platform)](/docs/guides/dess-setup/dess-gcp/)
-- AWS (Coming soon)
+- [AWS (Amazon Web Services)](/docs/guides/dess-setup/dess-aws/)
 - IONOS (Coming soon)
 
 ## 7. Tips & Tricks
