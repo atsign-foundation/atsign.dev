@@ -27,8 +27,8 @@ In this step-by-step guide we will walk you through all steps required to setup 
   - [Assignment of Static IP](#static_IP)
   - [Assignment of Domain name to your static IP](#domain2IP)
   - [Setting up Firewall](#firewall)
-* [Instance setup and DESS deployment](#deployment)
-* [Registration of @sign in your private DESS](#DESS2@sign)
+* [Instance setup and dess deployment](#deployment)
+* [Registration of @sign in your private dess](#dess2@sign)
 * [Activation of @sign](#activation)
 
 ## Pre-requisites <a name="pre-requisites"></a>
@@ -45,7 +45,7 @@ This topic is already well documents. Please follow guidance of https://atsign.c
 
 #### a) Account creation <a name="create_account"></a>
 
-If you are new to cloud like me and need to create new GCP account, I have good news! The creation is for free. As promotion all new customer will also receive 300$ as credit. That is more than enough to run multiple DESS’s for 3 months of offer validity.
+If you are new to cloud like me and need to create new GCP account, I have good news! The creation is for free. As promotion all new customer will also receive 300$ as credit. That is more than enough to run multiple dess’s for 3 months of offer validity.
 
 ![gcp-discount](/docs/guides/dess-setup/dess-gcp/images/gcp-discount.png)
 
@@ -88,7 +88,7 @@ We first need to enable this service.
 
 Once the service activates you will be presented with its dashboard.
 
-Lets register our fully qualified domain name (FQDN) that will be used for registration of our DESS.
+Lets register our fully qualified domain name (FQDN) that will be used for registration of our dess.
 
 Click on “Register Domain” and look for suitable name.
 
@@ -138,7 +138,7 @@ You should receive following message:
 
 ### 4. Preparing GCP instance <a name="prep_instance"></a>
 
-Now since I am new to GCP the easiest way to start using it is with prebuild solutions. This way you will deploy small system which is more then capable of handling DESS at pre-set price.
+Now since I am new to GCP the easiest way to start using it is with prebuild solutions. This way you will deploy small system which is more then capable of handling dess at pre-set price.
 
 We can use pre-build “Ubuntu 20”. In Search bar look for `Ubuntu20`
 
@@ -204,7 +204,7 @@ Type should now say Static
 
 #### b) Assignment of Domain name to your static IP <a name="domain2IP"></a>
 
-Next step is to point your domain to your virtual machine running DESS.
+Next step is to point your domain to your virtual machine running dess.
 
 Search for `Cloud DNS`
 
@@ -220,7 +220,7 @@ This is done simply press “Add record set”
 
 ![gcp-dns-add-record](/docs/guides/dess-setup/dess-gcp/images/gcp-dns-add-record.png)
 
-Select Resource record type “A” and IPv4 address the address of your DESS virtual machine.
+Select Resource record type “A” and IPv4 address the address of your dess virtual machine.
 
 ![gcp-dns-a](/docs/guides/dess-setup/dess-gcp/images/gcp-dns-a.png)
 
@@ -236,7 +236,7 @@ To test if you are successful open command line and ping your domain. You should
 
 ![gcp-dns-test](/docs/guides/dess-setup/dess-gcp/images/gcp-dns-test.png)
 
-At this point we have created DNS record we will use to link our DESS, we created instance name which will be running our DESS and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.
+At this point we have created DNS record we will use to link our dess, we created instance name which will be running our dess and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.
 
 #### c) Setting up Firewall <a name="firewall"></a>
 
@@ -248,7 +248,7 @@ Click on Create firewall rule
 
 ![gcp-firewall-create](/docs/guides/dess-setup/dess-gcp/images/gcp-firewall-create.png)
 
-Lets create firewall rule that will enable the @sign root server communicate with our DESS.
+Lets create firewall rule that will enable the @sign root server communicate with our dess.
 
 ![gcp-networking-firewall-settings](/docs/guides/dess-setup/dess-gcp/images/gcp-networking-firewall-settings.png)
 
@@ -266,7 +266,7 @@ Press `create` and validate that your new rule appears in list of firewall rules
 
 ![gcp-firewall-status](/docs/guides/dess-setup/dess-gcp/images/gcp-firewall-status.png)
 
-Second we need to create firewall rule that will enable your DESS server to communicate with certification authority.
+Second we need to create firewall rule that will enable your dess server to communicate with certification authority.
 
 ![gcp-networking-firewall-80](/docs/guides/dess-setup/dess-gcp/images/gcp-networking-firewall-80.png)
 
@@ -284,7 +284,7 @@ Press `create` and validate that your new rule appears in list of firewall rules
 
 ![gcp-firewall-status](/docs/guides/dess-setup/dess-gcp/images/gcp-firewall-status-both.png)
 
-### 6. Instance setup and DESS deployment <a name="deployment"></a>
+### 6. Instance setup and dess deployment <a name="deployment"></a>
 
 Open your GCP console at https://console.cloud.google.com/compute/instances and search for `VM instances`
 
@@ -300,77 +300,64 @@ You should be presented by new window with command line:
 
 ![gcp-vm-connected](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-connected.png)
 
-Before we do anything we run update:
+Before we do anything else, we should update the system:
 
-`sudo apt update && sudo apt upgrade`
+```
+sudo apt update && sudo apt upgrade
+```
 
-This might take some time, but it will make sure we have latest repository information and the system is up to date and secure.
+This might take some time, but it will make sure we have latest repository information and the system is up to date.
 
-Next up we need to make sure Git is installed. This can be done with following command:
+Next make sure curl is installed, we will use curl to pull the dess installation file:
 
-`sudo apt install git`
+```
+sudo apt install curl
+```
 
-We are now set to download latest copy of the DESS through Git. I am following guide prepared by Colin
+Finally, run the dess installer:
 
-https://github.com/atsign-foundation/dess/tree/dess.0.0.1-release.1
+```
+curl -fsSL https://getdess.atsign.com | sudo bash
+```
 
-Run to download fresh copy of the DESS
+Once the installer is finished you should be prompted like so:
 
-`git clone --branch dess.0.0.1-release.1 https://github.com/atsign-foundation/dess.git`
+```
+Dess installed, please move on to the sudo dess-create command.
+```
 
-![gcp-vm-git](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-git.png)
 
-Lets navigate to DESS folder that was created and run installation scripts:
+### 7. Registration of @sign in your private dess <a name="dess2@sign"></a>
 
-`cd dess`
+At this step you should already have your @sign registered at http://atsign.com. If not **go do it!**
 
-`./install_software.sh`
+I have registered my own free @sign (@44likelycanary) which I will link to my dess.
 
-![gcp-vm-install](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-install.png)
+In your instance console, navigate to dess folder. If you were following this guide it will be located in:
 
-At the end you should be presented with message:
+We now need to create the service that will host our @sign by executing the dess-create command:
 
-![gcp-vm-install-done](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-install-done.png)
-
-At this point we are good to go with registering our first @sign in our private DESS running in cloud with our own FQDN!
-
-### 7. Registration of @sign in your private DESS <a name="DESS2@sign"></a>
-
-At this step you should already have your at sign registered at http://atsign.com. If not **go do it!**
-
-I have registered my own free @sign` @44likelycanary` which I will link to my GCP cloud private DESS.
-
-In your instance console navigate to DESS folder. If you were following this guide it will be located in:
-
-`cd /home/<username>/dess` where username is your email address without domain. In my case atsigntest
-
-![gcp-vm-atsign-cd](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-atsign-cd.png)
-
-We now need to create service hosting our @sign on our DESS by executing `./create.sh` script
-
-![gcp-vm-atsign-create-help](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-atsign-create-help.png)
-
-In my case the command will look as following:
-
-`./create.sh @44likelycanary atsign.pw 8000 <email address> likelycanary`
+```
+$ sudo dess-create @44likelycanary 4atsign.link 8000 <email address> likelycanary
+```
 
 To make it more understandable:
 
-I will be registering my @sing `@44likelycanary `
+I will be registering my @sign **@44likelycanary**.
 
-I will be using my domain `atsign.pw` which I have registered through GCP
+I will be using my domain **4atsign.link** which I have registered through AWS.
 
-I am using port `8000` which I have opened in my instance firewall
+I am using port **8000** which I have opened in my instance firewall.
 
-My registration email address is `<email address>`.
+My registration email address is **<email address>** (this email is used to sign the SSL certificates).
 
-The last `likelycanary` is name which will be used by docker to register my service.
+The last **likelycanary** is the name that docker will use to track the service.
 
 If everything is successful you should see output like this:
 
-![gcp-vm-atsign-create](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-atsign-create.png)
+![img](images/clip_image004-162728549379914.jpg)
 
-At this moment your atsign is registered on your DESS.
+At this moment your @sign is registered on your dess.
 
 ## 8. Activation of @sign<a name="activation"></a>
 
@@ -394,7 +381,7 @@ If you have already activated your @sign you will be prompted to erase all your 
 
 ![gcp-atsign-erase](/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-erase.png)
 
-Once done you are able to link your @sign with your private DESS. Use your domain and port number with which you have created service on your cloud instance and press Activate
+Once done you are able to link your @sign with your private dess. Use your domain and port number with which you have created service on your cloud instance and press Activate
 
 ![image-20210617111907819](/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-advance.png)
 
@@ -402,7 +389,7 @@ You should see that your @sign is being activated in your dashboard:
 
 ![gcp-atsign-activating](/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-activating.png)
 
-The activation will be completed once you have used your QR code from DESS and retrieved your keys.
+The activation will be completed once you have used your QR code from dess and retrieved your keys.
 
 Once the activation process completes you are welcomed by green Activated.
 
