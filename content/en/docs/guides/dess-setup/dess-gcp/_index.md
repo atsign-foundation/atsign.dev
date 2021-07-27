@@ -326,7 +326,6 @@ Once the installer is finished you should be prompted like so:
 Dess installed, please move on to the sudo dess-create command.
 ```
 
-
 ### 7. Registration of @sign in your private dess <a name="dess2@sign"></a>
 
 At this step you should already have your @sign registered at http://atsign.com. If not **go do it!**
