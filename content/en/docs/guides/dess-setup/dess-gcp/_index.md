@@ -300,77 +300,63 @@ You should be presented by new window with command line:
 
 ![gcp-vm-connected](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-connected.png)
 
-Before we do anything we run update:
+Before we do anything else, we should update the system:
 
-`sudo apt update && sudo apt upgrade`
+```
+sudo apt update && sudo apt upgrade
+```
 
-This might take some time, but it will make sure we have latest repository information and the system is up to date and secure.
+This might take some time, but it will make sure we have latest repository information and the system is up to date.
 
-Next up we need to make sure Git is installed. This can be done with following command:
+Next make sure curl is installed, we will use curl to pull the dess installation file:
 
-`sudo apt install git`
+```
+sudo apt install curl
+```
 
-We are now set to download latest copy of the dess through Git. I am following guide prepared by Colin
+Finally, run the dess installer:
 
-https://github.com/atsign-foundation/dess/tree/dess.0.0.1-release.1
+```
+curl -fsSL https://getdess.atsign.com | sudo bash
+```
 
-Run to download fresh copy of the dess
+Once the installer is finished you should be prompted like so:
 
-`git clone --branch dess.0.0.1-release.1 https://github.com/atsign-foundation/dess.git`
-
-![gcp-vm-git](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-git.png)
-
-Lets navigate to dess folder that was created and run installation scripts:
-
-`cd dess`
-
-`./install_software.sh`
-
-![gcp-vm-install](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-install.png)
-
-At the end you should be presented with message:
-
-![gcp-vm-install-done](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-install-done.png)
-
-At this point we are good to go with registering our first @sign in our private dess running in cloud with our own FQDN!
+```
+Dess installed, please move on to the sudo dess-create command.
+```
 
 ### 7. Registration of @sign in your private dess <a name="dess2@sign"></a>
 
-At this step you should already have your at sign registered at http://atsign.com. If not **go do it!**
+At this step you should already have your @sign registered at http://atsign.com. If not **go do it!**
 
-I have registered my own free @sign` @44likelycanary` which I will link to my GCP cloud private dess.
+I have registered my own free @sign (@44likelycanary) which I will link to my dess.
 
-In your instance console navigate to dess folder. If you were following this guide it will be located in:
+In your instance console, navigate to dess folder. If you were following this guide it will be located in:
 
-`cd /home/<username>/dess` where username is your email address without domain. In my case atsigntest
+We now need to create the service that will host our @sign by executing the dess-create command:
 
-![gcp-vm-atsign-cd](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-atsign-cd.png)
-
-We now need to create service hosting our @sign on our dess by executing `./create.sh` script
-
-![gcp-vm-atsign-create-help](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-atsign-create-help.png)
-
-In my case the command will look as following:
-
-`./create.sh @44likelycanary atsign.pw 8000 <email address> likelycanary`
+```
+$ sudo dess-create @44likelycanary 4atsign.link 8000 <email address> likelycanary
+```
 
 To make it more understandable:
 
-I will be registering my @sing `@44likelycanary `
+I will be registering my @sign **@44likelycanary**.
 
-I will be using my domain `atsign.pw` which I have registered through GCP
+I will be using my domain **4atsign.link** which I have registered through AWS.
 
-I am using port `8000` which I have opened in my instance firewall
+I am using port **8000** which I have opened in my instance firewall.
 
-My registration email address is `<email address>`.
+My registration email address is **\<email address\>** (this email is used to sign the SSL certificates).
 
-The last `likelycanary` is name which will be used by docker to register my service.
+The last **likelycanary** is the name that docker will use to track the service.
 
 If everything is successful you should see output like this:
 
-![gcp-vm-atsign-create](/docs/guides/dess-setup/dess-gcp/images/gcp-vm-atsign-create.png)
+![img](images/clip_image004-162728549379914.jpg)
 
-At this moment your atsign is registered on your dess.
+At this moment your @sign is registered on your dess.
 
 ## 8. Activation of @sign<a name="activation"></a>
 
