@@ -511,7 +511,7 @@ await atClient.notify(atKey, '+1 987 986 2233', OperationEnum.update,
 
 
 
-### 9.3 Execute the notify status verb using AtClient
+#### 9.3 Execute the notify status verb using AtClient
 
 
 ```
@@ -543,7 +543,7 @@ Following are the steps to run the notify verb using the @Client SDK
 2. Execute the monitor using the AtClient
 
 
-### 10.1 Get an instance of AtClient
+#### 10.1 Get an instance of AtClient
 
 To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.
 
@@ -566,7 +566,7 @@ void main() async  {
 
 
 
-### 10.2 Execute the monitor verb using AtClient
+#### 10.2 Execute the monitor verb using AtClient
 
 
 ```
