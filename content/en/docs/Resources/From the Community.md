@@ -9,6 +9,4 @@ description: Tips, tricks, and scripts from the @platform developer community
 ---
 
 
-### Script from Phillipe
-
-### Tips from Xavier
+### Under construction - Coming Soon
