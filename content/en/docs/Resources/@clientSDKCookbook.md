@@ -407,8 +407,7 @@ Following are the steps to run the scan verb using the @Client SDK
 
 
 1. Get an instance of AtClient
-2. Set up a ConfigVerbBuilder
-3. Execute the verb using the AtClient
+2. Set up a ConfigVerbBuilder & execute the verb using the AtClient
 
 
 #### 8.1 Get an instance of AtClient
@@ -434,7 +433,7 @@ void main() async  {
 
 
 
-#### 8.2 Execute the config verb using the AtClient
+#### 8.2 Set up a ConfigVerbBuilder & execute the verb using the AtClient
 
 
 ```
