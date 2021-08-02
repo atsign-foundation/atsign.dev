@@ -193,7 +193,7 @@ var atClient = await AtClientImpl.getClient('@bob');
 // Ex: stats:1,2,5
 await atClient.getRemoteSecondary().executeCommand('stats:1');
 
-</code></pre><h2 id=8-config>8. Config</h2><p>The “config” verb is used to configure block list entries in the @server. If an @sign is added to the block list then connections to the @server will not be accepted.</p><p>Following are the steps to run the scan verb using the @Client SDK</p><ol><li>Get an instance of AtClient</li><li>Set up a ConfigVerbBuilder</li><li>Execute the verb using the AtClient</li></ol><h4 id=81-get-an-instance-of-atclient>8.1 Get an instance of AtClient</h4><p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.</p><pre><code>import 'package:at_client/at_client.dart';
+</code></pre><h2 id=8-config>8. Config</h2><p>The “config” verb is used to configure block list entries in the @server. If an @sign is added to the block list then connections to the @server will not be accepted.</p><p>Following are the steps to run the scan verb using the @Client SDK</p><ol><li>Get an instance of AtClient</li><li>Set up a ConfigVerbBuilder & execute the verb using the AtClient</li></ol><h4 id=81-get-an-instance-of-atclient>8.1 Get an instance of AtClient</h4><p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.</p><pre><code>import 'package:at_client/at_client.dart';
 import 'package:at_client/src/client/at_client_impl.dart';
 
 void main() async  {
@@ -206,7 +206,7 @@ void main() async  {
   var atClient = await AtClientImpl.getClient('@bob', preference);
 }
 
-</code></pre><h4 id=82-execute-the-config-verb-using-the-atclient>8.2 Execute the config verb using the AtClient</h4><pre><code>// Get an instance of AtClient for @bob
+</code></pre><h4 id=82-set-up-a-configverbbuilder--execute-the-verb-using-the-atclient>8.2 Set up a ConfigVerbBuilder & execute the verb using the AtClient</h4><pre><code>// Get an instance of AtClient for @bob
 var atClient = await AtClientImpl.getClient('@bob, AtClientPreference());
 var builder = ConfigVerbBuilder()..block = '@rachel';
 // Execute the verb
