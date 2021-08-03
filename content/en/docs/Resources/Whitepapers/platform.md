@@ -352,6 +352,11 @@ A Flutter plugin project to share locations between two @signs and track them on
 A Flutter plugin project to manage events (time, place and attendees) using the @platform.
 
 
+#### at_follows_flutter
+
+A Flutter plugin project that provides a basic social “follows” functionality for any @sign. Provides a list of @asigns that follow you (followers) as well as the @signs that you follow (following) with the option to unfollow them.
+
+
 ### Libraries ([at_libraries](https://github.com/atsign-foundation/at_libraries))
 
 In addition to the Flutter widgets listed above, there are a number of Dart libraries that provide useful functionality that can be used with the @platform as well.
