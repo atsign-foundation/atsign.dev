@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  secondary:
+    image: cconstab/secondary:x86
+    command: '-a @colin-x866 -p 6464 -s 540f1b5fa05b40a58ea7ef82d3cfcde9bb72db8baf4bc863f552f82695837b9fee631f773ab3e34dde05b51e900220e6ae6f7240ec9fc1d967252e1aea4064ba'
+    ports:
+      - '6464:6464'
+    depends_on:
+      - 'certbot'
+    volumes:
+      - ~/atsign/etc/live/${DOMAIN}:/atsign/certs
+      - ~/atsign/etc/archive/${DOMAIN}:/archive/${DOMAIN}
+
+  certbot:
+    image: cconstab/mycert
+    volumes:
+      - ~/atsign/etc:/etc/letsencrypt
+      - ~/atsign/var:/var/lib/letsencrypt
+      - ~/atsign/logs:/var/log/letsencrypt
+    ports:
+      - '80:80'
+    command: certonly --logs-dir /var/log/letsencrypt --standalone --domains ${DOMAIN} --non-interactive --agree-tos -m ${EMAIL}

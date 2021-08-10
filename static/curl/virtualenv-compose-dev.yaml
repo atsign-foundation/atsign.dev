@@ -1,0 +1,14 @@
+virtualenv:
+  image: atsigncompany/virtualenv:dev
+  ports:
+    - '6379:6379'
+    - '64:64'
+    - '9001:9001'
+    - '25000-25017:25000-25017'
+  extra_hosts:
+    - 'test.do-sf2.atsign.zone:127.0.0.1'
+masqdns:
+  image: atsigncompany/masqdns:dev
+  ports:
+    - '5380:8080'
+    - '53:53/udp'

@@ -1,0 +1,2 @@
+#!/bin/sh
+ip addr add 10.64.64.64/32 dev lo

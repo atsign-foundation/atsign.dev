@@ -1,0 +1,17 @@
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+            <string>Your Label</string>
+        <key>ProgramArguments</key>
+            <array>
+                <string>/sbin/ifconfig</string>
+                <string>lo0</string>
+                <string>alias</string>
+                <string>10.64.64.64</string>
+                <string>netmask</string>
+                <string>255.255.255.255</string>
+            </array>
+        <key>RunAtLoad</key>
+            <true/>
+    </dict>
+</plist>

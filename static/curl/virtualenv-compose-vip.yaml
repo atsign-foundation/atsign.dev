@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  virtualenv:
+    image: atsigncompany/virtualenv:prodvip
+    ports:
+      - '127.0.0.1:6379:6379'
+      - '64:64'
+      - '127.0.0.1:9001:9001'
+      - '25000-25017:25000-25017'
+    extra_hosts:
+      - 'vip.ve.atsign.zone:127.0.0.1'
+# You can remove these comments and run a DNS Masq service locally
+# This enables you to code and test offline and use physical devices
+# connecting to your Virtual Environment
+# masqdns:
+#   image: atsigncompany/masqdns:prodvip
+#   ports:
+#     - "127.0.0.1:5380:8080"
+#     - "53:53/udp"
