@@ -22,12 +22,25 @@ jobs:
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git pull
           ./.github/@automation/detail_at.py
-          if [ -z "$(git status --porcelain)" ]; then 
-            echo 'No changes to commit on this run'
-            exit 0
-          else
-            git commit -am 'Automated libraries.md update from pub.dev'
-            git push
-          fi
         env:
           GITHUB_API_TOKEN: ${{ secrets.REPO_TOKEN }}
+          
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
+          commit-message: Automated libraries.md update from pub.dev
+          committer: library-action[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: library-action[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          signoff: false
+          branch: library-patches
+          delete-branch: true
+          title: 'Automated libraries.md update'
+          body: |
+            New descriptions for libraries have been scraped from pub.dev
+          labels: |
+            atsign.dev 2.0
+          assignees: anthonyvprakash
+          reviewers: anthonyvprakash
+          draft: false
