@@ -16,13 +16,13 @@ at_persistence_spec is the Specification for the persistence layer implementatio
 
 ### at_commons
 
-The at_commons library will be used for commonly used components in implementation of the @protocol.
+A library of Dart and Flutter utility classes that are used across other components of the @‎platform.
 
 [Learn more](https://pub.dev/packages/at_commons)
 
 ### at_common_flutter
 
-A flutter package to provide common widgets used by other atsign flutter packages.
+A Flutter package to provide common widgets used by other @‎platform Flutter packages.
 
 [Learn more](https://pub.dev/packages/at_common_flutter)
 
@@ -34,25 +34,25 @@ at_client is the Client SDK which provides the essential methods for building an
 
 ### at_lookup
 
-Library for executing at commands on a secondary server. Example - scan. update, lookup, llookup, plookup etc.
+A Dart library that contains the core commands that can be used with a secondary server (scan, update, lookup, llookup, plookup, etc.). This library is also used for building command line tools.
 
 [Learn more](https://pub.dev/packages/at_lookup)
 
 ### at_persistence_secondary_server
 
-at_persistence_secondary_server is the Persistence layer implementation for @protocol secondary server.
+A Dart library with the implementation classes for the persistence layer of the secondary server.
 
 [Learn more](https://pub.dev/packages/at_persistence_secondary_server)
 
 ### at_server_status
 
-The at_server_status library provides an easy means to check on the status of the @root server as well as the @server for a particular @sign.
+A Dart library that provides a means to check on the status of the @‎root server as well as the secondary server for any particular @‎sign.
 
 [Learn more](https://pub.dev/packages/at_server_status)
 
 ### at_utils
 
-This is the Utility library for @protocol projects. It contains utility classes for atsign, atmetadata, configuration and logger.
+A Dart library that contains various utility classes such as atSign, atmetadata, configuration, and logger.
 
 [Learn more](https://pub.dev/packages/at_utils)
 
@@ -64,7 +64,7 @@ A flutter plugin project for saving backup key of any @sign that is being onboar
 
 ### at_onboarding_flutter
 
-A flutter plugin project for onboarding any @sign in @protocol apps with ease. Provides QRscanner and upload key file option to authenticate.
+A Flutter plugin project for onboarding any @‎sign in @‎platform apps with ease. Provides a QRscanner option and an upload key file option to authenticate.
 
 [Learn more](https://pub.dev/packages/at_onboarding_flutter)
 
@@ -76,13 +76,13 @@ Library for mobile app onboarding.
 
 ### at_contacts_flutter
 
-A flutter plugin project to provide ease of managing contacts for an atsign using atprotocol.
+A Flutter package to provide ease of managing contacts for an @sign using @platform.
 
 [Learn more](https://pub.dev/packages/at_contacts_flutter)
 
 ### at_chat_flutter
 
-A flutter plugin project to provide chat feature using atsigns and atprotocol.
+A Flutter package to provide chat feature between @signs using the @platform.
 
 [Learn more](https://pub.dev/packages/at_chat_flutter)
 
@@ -94,13 +94,13 @@ A library of data that contains demo enviroment variables and @sign credentials 
 
 ### at_contacts_group_flutter
 
-A flutter plugin project to provide the group functionality with contacts using atprotocol.
+A Flutter package to provide the group functionality with contacts using @protocol.
 
 [Learn more](https://pub.dev/packages/at_contacts_group_flutter)
 
 ### at_location_flutter
 
-A flutter plugin project to share location between two atsigns and track them on OSM (open street maps).
+A Flutter package to share location between two @signs and track them on OSM (open street maps).
 
 [Learn more](https://pub.dev/packages/at_location_flutter)
 
@@ -118,7 +118,7 @@ A Dart library for managing contact data that developers can use for their appli
 
 ### at_events_flutter
 
-A flutter plugin project to manage events using the atprotocol.
+A Flutter package to manage events (time, place and attendees) using the @platform.
 
 [Learn more](https://pub.dev/packages/at_events_flutter)
 
@@ -131,13 +131,13 @@ binary-to-text encoding schemes that represent binary data in an unicode string 
 
 ### at_follows_flutter
 
-A new flutter plugin project to integrate follows functionality for any @sign. Provides list of followers, following and options to follow, unfollow any @sign.
+A Flutter plugin project that provides a basic social “follows” functionality for any @‎sign. Provides a list of @‎signs that follow you (followers) as well as the @‎signs that you follow (following) with the option to unfollow them.
 
 [Learn more](https://pub.dev/packages/at_follows_flutter)
 
 ### at_server_spec
 
-Specification for root and secondary server
+A Dart library containing abstract classes that defines what implementations of the root and secondary servers are responsible for.
 
 [Learn more](https://pub.dev/packages/at_server_spec)
 
