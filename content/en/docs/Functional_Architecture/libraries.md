@@ -76,7 +76,7 @@ Library for mobile app onboarding.
 
 ### at_contacts_flutter
 
-A Flutter package to provide ease of managing contacts for an @sign using @platform.
+A Flutter plugin project to provide ease of managing contacts for an @‎sign using @p‎latform.
 
 [Learn more](https://pub.dev/packages/at_contacts_flutter)
 
@@ -94,13 +94,13 @@ A library of data that contains demo enviroment variables and @sign credentials 
 
 ### at_contacts_group_flutter
 
-A Flutter package to provide the group functionality with contacts using @protocol.
+A Flutter plugin project to provide group functionality with contacts using @‎platform.
 
 [Learn more](https://pub.dev/packages/at_contacts_group_flutter)
 
 ### at_location_flutter
 
-A Flutter package to share location between two @signs and track them on OSM (open street maps).
+A Flutter plugin project to share locations between two @‎signs and track them on OSM (OpenStreetMap).
 
 [Learn more](https://pub.dev/packages/at_location_flutter)
 
@@ -118,7 +118,7 @@ A Dart library for managing contact data that developers can use for their appli
 
 ### at_events_flutter
 
-A Flutter package to manage events (time, place and attendees) using the @platform.
+A Flutter plugin project to manage events (time, place and attendees) using the @‎platform.
 
 [Learn more](https://pub.dev/packages/at_events_flutter)
 
