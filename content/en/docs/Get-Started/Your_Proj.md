@@ -24,12 +24,21 @@ As of now, the only way to use this toolkit is via the command line. In the futu
 flutter pub global activate at_app
 ```
 
-When you run the command above, it may prompt you that the pub cache bin is missing from the system PATH variable. The prompts will tell you the appropriate steps to add it to the PATH variable. Please complete those steps before continuing.
+{{% pageinfo color="primary" %}}
+Verify your system PATH variable
+
+- When you run the command above, it may prompt you that the pub cache bin is missing from the system PATH variable.
+- The prompts will tell you the appropriate steps to add it to the PATH variable.
+- Please complete those steps before continuing.
+  {{% /pageinfo %}}
 
 ### Create your @platform application
 
-Note for Windows users:  
-In the following commands you will see the `at_app` command, please replace it with `at_app.bat`.
+{{% pageinfo color="primary" %}}
+Note for Windows users
+
+- In the following commands you will see the `at_app` command, please replace it with `at_app.bat`.
+  {{% /pageinfo %}}
 
 #### Command Format
 
@@ -45,13 +54,13 @@ at_app create --namespace=myatsign myproject
 
 In addition to the same options available for flutter create, at_app create includes three new ones to help you automatically configure your application.
 
-| Flag          | Shorthand | Description                                             | Value                |
-| ------------- | --------- | ------------------------------------------------------- | -------------------- |
-| --namespace   | -n        | The @protocol app namespace to use for the application. | (defaults to "")     |
-| --root-domain | -r        | The @protocol root domain to use for the application.   | [prod (default), ve] |
-| --api-key     | -k        | The api key for at_onboarding_flutter.                  | (defaults to "")     |
+| Flag           | Shorthand | Description                                             | Value                |
+| -------------- | --------- | ------------------------------------------------------- | -------------------- |
+| -‎-namespace   | -n        | The @protocol app namespace to use for the application. | (defaults to "‎")    |
+| -‎-root-domain | -r        | The @protocol root domain to use for the application.   | [prod (default), ve] |
+| -‎-api-key     | -k        | The api key for at_onboarding_flutter.                  | (defaults to "‎")    |
 
-Note: at_app create *does not* include --template, --sample, or --list-samples (Coming soon).
+Note: at_app create **does not** include `--template`, `--sample`, or `--list-samples` (Coming soon).
 
 Okay great, we know what the flags are but what do they do?
 
@@ -80,7 +89,7 @@ You can specify this with `--api-key=YOUR_API_KEY_HERE`.
 
 If you would like to update your environment at any point in time, it is safe to do so. Just specify the options you would like to change.
 
-Note: *Do not* use the `--overwrite` flag when doing so, or it will overwrite the changes you have made to `lib/main.dart`
+Note: _Do not_ use the `--overwrite` flag when doing so, or it will overwrite the changes you have made to `lib/main.dart`
 
 #### Congratulations!
 
