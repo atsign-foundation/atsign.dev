@@ -10,8 +10,6 @@ date: 2021-7-26
 
 # Create Your Own @platform Project
 
-If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a skeleton app may look like. We've decided to create our own skeleton app here on the @platform to make your 'Getting Started' experience that much smoother!
-
 If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a fresh application should look like. We've decided to create our own toolkit here on the @platform to make your 'Getting Started' experience that much smoother!
 
 As of now, the only way to use this toolkit is via the command line. In the future we plan on supporting IDE extensions, be sure to check for when those come out!
