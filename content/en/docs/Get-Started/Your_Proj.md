@@ -1,9 +1,9 @@
 ---
-title: "Create Your Own @platform Project"
-SEOtitle: "How to create an @platform (at_platform or AtPlatform) project"
-linkTitle: "Create Your Own @platform Project"
-Description: "Taking one step closer to developing your privacy-first app on the @platform"
-content: "What to do after creating your own @sign"
+title: 'Create Your Own @platform Project'
+SEOtitle: 'How to create an @platform (at_platform or AtPlatform) project'
+linkTitle: 'Create Your Own @platform Project'
+Description: 'Taking one step closer to developing your privacy-first app on the @platform'
+content: 'What to do after creating your own @sign'
 weight: 3
 date: 2021-7-26
 ---
@@ -69,7 +69,7 @@ Okay great, we know what the flags are but what do they do?
 The namespace is the most important flag to include when creating your application.
 
 When storing keys on the secondary server, the namespace is used to filter the data produced by your app from the other @platform applications.
-To create a namespace for your app, make sure to register an @sign from atsign.com and use that as your namespace. By owning the @sign, you can ensure that you also own the namespace.
+To create a namespace for your app, make sure to register an @sign from [atsign.com](https://atsign.com) and use that as your namespace. By owning the @sign, you can ensure that you also own the namespace.
 
 You can specify the namespace with `--namespace=YOUR_NAMESPACE_HERE`.
 
