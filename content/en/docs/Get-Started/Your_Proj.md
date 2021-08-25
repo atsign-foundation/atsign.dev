@@ -1,16 +1,14 @@
 ---
-title: "Create Your Own @platform Project"
-SEOtitle: "How to create an @platform (at_platform or AtPlatform) project"
-linkTitle: "Create Your Own @platform Project"
-Description: "Taking one step closer to developing your privacy-first app on the @platform"
-content: "What to do after creating your own @sign"
+title: 'Create Your Own @platform Project'
+SEOtitle: 'How to create an @platform (at_platform or AtPlatform) project'
+linkTitle: 'Create Your Own @platform Project'
+Description: 'Taking one step closer to developing your privacy-first app on the @platform'
+content: 'What to do after creating your own @sign'
 weight: 3
 date: 2021-7-26
 ---
 
 # Create Your Own @platform Project
-
-If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a skeleton app may look like. We've decided to create our own skeleton app here on the @platform to make your 'Getting Started' experience that much smoother!
 
 If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a fresh application should look like. We've decided to create our own toolkit here on the @platform to make your 'Getting Started' experience that much smoother!
 
@@ -26,12 +24,21 @@ As of now, the only way to use this toolkit is via the command line. In the futu
 flutter pub global activate at_app
 ```
 
-When you run the command above, it may prompt you that the pub cache bin is missing from the system PATH variable. The prompts will tell you the appropriate steps to add it to the PATH variable. Please complete those steps before continuing.
+{{% pageinfo color="primary" %}}
+Verify your system PATH variable
+
+- When you run the command above, it may prompt you that the pub cache bin is missing from the system PATH variable.
+- The prompts will tell you the appropriate steps to add it to the PATH variable.
+- Please complete those steps before continuing.
+  {{% /pageinfo %}}
 
 ### Create your @platform application
 
-Note for Windows users:  
-In the following commands you will see the `at_app` command, please replace it with `at_app.bat`.
+{{% pageinfo color="primary" %}}
+Note for Windows users
+
+- In the following commands you will see the `at_app` command, please replace it with `at_app.bat`.
+  {{% /pageinfo %}}
 
 #### Command Format
 
@@ -47,13 +54,13 @@ at_app create --namespace=myatsign myproject
 
 In addition to the same options available for flutter create, at_app create includes three new ones to help you automatically configure your application.
 
-| Flag          | Shorthand | Description                                             | Value                |
-| ------------- | --------- | ------------------------------------------------------- | -------------------- |
-| --namespace   | -n        | The @protocol app namespace to use for the application. | (defaults to "")     |
-| --root-domain | -r        | The @protocol root domain to use for the application.   | [prod (default), ve] |
-| --api-key     | -k        | The api key for at_onboarding_flutter.                  | (defaults to "")     |
+| Flag           | Shorthand | Description                                             | Value                |
+| -------------- | --------- | ------------------------------------------------------- | -------------------- |
+| -‎-namespace   | -n        | The @protocol app namespace to use for the application. | (defaults to "‎")    |
+| -‎-root-domain | -r        | The @protocol root domain to use for the application.   | [prod (default), ve] |
+| -‎-api-key     | -k        | The api key for at_onboarding_flutter.                  | (defaults to "‎")    |
 
-Note: at_app create *does not* include --template, --sample, or --list-samples (Coming soon).
+Note: at_app create **does not** include `--template`, `--sample`, or `--list-samples` (Coming soon).
 
 Okay great, we know what the flags are but what do they do?
 
@@ -62,7 +69,7 @@ Okay great, we know what the flags are but what do they do?
 The namespace is the most important flag to include when creating your application.
 
 When storing keys on the secondary server, the namespace is used to filter the data produced by your app from the other @platform applications.
-To create a namespace for your app, make sure to register an @sign from atsign.com and use that as your namespace. By owning the @sign, you can ensure that you also own the namespace.
+To create a namespace for your app, make sure to register an @sign from [atsign.com](https://atsign.com) and use that as your namespace. By owning the @sign, you can ensure that you also own the namespace.
 
 You can specify the namespace with `--namespace=YOUR_NAMESPACE_HERE`.
 
@@ -82,7 +89,11 @@ You can specify this with `--api-key=YOUR_API_KEY_HERE`.
 
 If you would like to update your environment at any point in time, it is safe to do so. Just specify the options you would like to change.
 
-Note: *Do not* use the `--overwrite` flag when doing so, or it will overwrite the changes you have made to `lib/main.dart`
+{{% pageinfo color="primary" %}}
+Warning
+
+- Do not use the `--overwrite` flag when doing so, or it will overwrite the changes you have made to `lib/main.dart`
+  {{% /pageinfo %}}
 
 #### Congratulations!
 
