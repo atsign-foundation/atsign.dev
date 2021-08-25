@@ -89,7 +89,11 @@ You can specify this with `--api-key=YOUR_API_KEY_HERE`.
 
 If you would like to update your environment at any point in time, it is safe to do so. Just specify the options you would like to change.
 
-Note: _Do not_ use the `--overwrite` flag when doing so, or it will overwrite the changes you have made to `lib/main.dart`
+{{% pageinfo color="primary" %}}
+Warning
+
+- Do not use the `--overwrite` flag when doing so, or it will overwrite the changes you have made to `lib/main.dart`
+  {{% /pageinfo %}}
 
 #### Congratulations!
 
