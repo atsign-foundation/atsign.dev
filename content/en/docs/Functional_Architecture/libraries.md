@@ -28,7 +28,7 @@ A Flutter package to provide common widgets used by other @‎platform Flutter p
 
 ### at_client
 
-at_client is the Client SDK which provides the essential methods for building an app using the @protocol.
+The at_client library is the non-platform specific Client SDK which provides the essential methods for building an app using the @protocol.
 
 [Learn more](https://pub.dev/packages/at_client)
 
@@ -70,7 +70,7 @@ A Flutter plugin project for onboarding any @‎sign in @‎platform apps with e
 
 ### at_client_mobile
 
-Library for mobile app onboarding.
+A Flutter extension to the at_client library which adds support for mobile, desktop and IoT devices.
 
 [Learn more](https://pub.dev/packages/at_client_mobile)
 
@@ -88,7 +88,7 @@ A Flutter package to provide chat feature between @signs using the @platform.
 
 ### at_demo_data
 
-A library of data that contains demo enviroment variables and @sign credentials that can used for demo apps and testing
+A Dart library that contains test data, testable @‎sign credentials and demo environment variables that can be used for writing demo apps and testing with the local test environment.
 
 [Learn more](https://pub.dev/packages/at_demo_data)
 
