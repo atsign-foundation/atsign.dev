@@ -16,7 +16,7 @@ We’re excited to help you get your very own @platform environment up and runni
 
 You will need Flutter/Dart installed on your machine. If you haven’t already, please follow the “Get started” steps on [flutter.dev](https://flutter.dev) before you proceed. Flutter works best with [Android Studio](https://developer.android.com/studio), but you can also use [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) or [Visual Studio Code](https://code.visualstudio.com/download) as your IDE.
 
-###  <a href="https://flutter.dev/"><img src="https://flutter.dev/assets/flutter-lockup-1caf6476beed76adec3c477586da54de6b552b2f42108ec5bc68dc63bae2df75.png" alt="Flutter" height="10%" width="15%"></a>
+### <a href="https://flutter.dev/"><img src="https://flutter.dev/assets/images/shared/brand/flutter/logo/flutter-lockup.png" alt="Flutter" height="10%" width="15%"></a>
 
 Why did we choose Flutter? Here are some of our favorite reasons:
 
@@ -61,29 +61,28 @@ Important Links for Visual Studio Code
 
 ### <a href="https://docs.docker.com/docker-for-mac/install/"><img src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" alt="Docker Desktop" height="10%" width="20%"></a>
 
-
-If you wish to develop offline,  you will also need to install [Docker Desktop](https://www.docker.com/products/docker-desktop) on your machine. Using Docker Desktop 
-allows you to run the full @platform stack locally, with no dependence on Internet connectivity, we call this the Virtual Environment.  
+If you wish to develop offline, you will also need to install [Docker Desktop](https://www.docker.com/products/docker-desktop) on your machine. Using Docker Desktop
+allows you to run the full @platform stack locally, with no dependence on Internet connectivity, we call this the Virtual Environment.
 
 ## Where should I go next?
 
-There are three ways to get going with your journey on the @platform. You may choose any of the three options listed below depending on your interest and particular needs. 
+There are three ways to get going with your journey on the @platform. You may choose any of the three options listed below depending on your interest and particular needs.
 
 ### (Option 1) Recommended for Flutter Developers
-If you just want to get going and fast, then the best solution is to get some free @signs and start coding. Here we will show you how to get a couple of free @signs 
+
+If you just want to get going and fast, then the best solution is to get some free @signs and start coding. Here we will show you how to get a couple of free @signs
 and activate them. This option uses The @ Companies infrastructure to host a secondary server microservice for each @sign you activate.
 
 ### (Option 2) Recommended for DevOps or Security Engineers
-Dess (distributed edge secondary server) is the right place to start if you would like to run your own infrastructure, for your @sign. Or perhaps you are developing 
+
+Dess (distributed edge secondary server) is the right place to start if you would like to run your own infrastructure, for your @sign. Or perhaps you are developing
 an IoT solution and would like to see the log files of the secondary server microservice, then using dess, is the perfect starting place.
 
 ### (Option 3) The Virtual Environment
+
 Recommended for those offline moments or if you want to be completely independent. The virtual environment (VE) provides all the components of the @platform
-in a single docker image. Complete with full control and logging of everything, VE requires no Internet connection and comes with some predefined @signs. 
-
-
+in a single docker image. Complete with full control and logging of everything, VE requires no Internet connection and comes with some predefined @signs.
 
 ### <br><br>
-
 
 ( Please note that all the logos listed on this page are registered trademarks of the respective products.We have used them here only for reference purposes.)
