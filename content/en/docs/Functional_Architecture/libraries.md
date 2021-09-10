@@ -34,7 +34,7 @@ The at_client library is the non-platform specific Client SDK which provides the
 
 ### at_lookup
 
-A Dart library that contains the core commands that can be used with a secondary server (scan, update, lookup, llookup, plookup, etc.). This library is also used for building command line tools.
+A Dart library that contains the core commands that can be used with a secondary server (scan, update, lookup, llookup, plookup, etc.)
 
 [Learn more](https://pub.dev/packages/at_lookup)
 
