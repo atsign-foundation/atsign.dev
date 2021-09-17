@@ -75,14 +75,11 @@ and activate them. This option uses The @ Companies infrastructure to host a sec
 
 ### (Option 2) Recommended for DevOps or Security Engineers
 
-Dess (distributed edge secondary server) is the right place to start if you would like to run your own infrastructure, for your @sign. Or perhaps you are developing
+Dess (distributed edge secondary server) is the right place to start if you would like to run your own infrastructure for your @sign. Or perhaps you are developing
 an IoT solution and would like to see the log files of the secondary server microservice, then using dess, is the perfect starting place.
 
 ### (Option 3) The Virtual Environment
 
-Recommended for those offline moments or if you want to be completely independent. The virtual environment (VE) provides all the components of the @platform
-in a single docker image. Complete with full control and logging of everything, VE requires no Internet connection and comes with some predefined @signs.
+This option is recommended for those offline moments or if you want to be completely independent. The virtual environment (VE) provides all the components of the @platform in a single docker image. This option comes complete with full control and logging of everything. The Virtual Environment requires no Internet connection and comes with some predefined @signs.
 
-### <br><br>
-
-( Please note that all the logos listed on this page are registered trademarks of the respective products.We have used them here only for reference purposes.)
+( Please note that all the logos listed on this page are registered trademarks of the respective products. We have used them here only for reference purposes.)
