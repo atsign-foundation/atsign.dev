@@ -58,7 +58,7 @@ A Dart library that contains various utility classes such as atSign, atmetadata,
 
 ### at_backupkey_flutter
 
-A flutter plugin project for saving backup key of any @sign that is being onboarded with @protocol apps. Backup key can used to authenticate in any @protocol apps.
+A Flutter plugin project for saving the backup key of any @‎sign that is being onboarded with @‎platform apps. The backup key can be used to authenticate in other @‎platform apps.
 
 [Learn more](https://pub.dev/packages/at_backupkey_flutter)
 
@@ -131,7 +131,7 @@ binary-to-text encoding schemes that represent binary data in an unicode string 
 
 ### at_follows_flutter
 
-A Flutter plugin project that provides a basic social “follows” functionality for any @‎sign. Provides a list of @‎signs that follow you (followers) as well as the @‎signs that you follow (following) with the option to unfollow them.
+A Flutter plugin project that provides a basic social "follows" functionality for any @sign. Provides a list of @signs that follow you (followers) as well as the @signs that you follow (following) with the option to unfollow them.
 
 [Learn more](https://pub.dev/packages/at_follows_flutter)
 
