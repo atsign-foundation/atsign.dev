@@ -82,7 +82,7 @@ A Flutter plugin project to provide ease of managing contacts for an @‎sign us
 
 ### at_chat_flutter
 
-A Flutter package to provide chat feature between @signs using the @platform.
+A Flutter plugin project to provide a chat feature between @‎signs built on the @‎platform to any Flutter application.
 
 [Learn more](https://pub.dev/packages/at_chat_flutter)
 
