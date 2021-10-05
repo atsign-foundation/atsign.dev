@@ -4,13 +4,13 @@
 
 # atsign.dev
 
-The atsign.dev repo is home to the code of our very own developer site! Because everything we have to offer is open-source, why not make our website open-source too, to prove that we aren't using cookies or anything that tracks your presence! 
+The atsign.dev repo is home to the code behind developer site. As everything we have to offer is open-source, why not make our website open-source too, to prove that we aren't using cookies or anything that tracks your presence.  
 
 ## Why is there an atsign.dev?
 
 We hope that this site has the A -> Z of everything you will need to develop with the @platform.
 
-If you are a developer, this is your site -  come join us and help us improve the content and the experience. We are always learning from you!
+If you are a developer, this is your site -  come join us and help us improve the content and the experience. We are always learning from you.
 
 ## What can you find in atsign.dev?
 
