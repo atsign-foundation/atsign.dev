@@ -20,7 +20,7 @@ The site gives you all the tools, samples, examples and documentation needed to 
 
 ##  Pages we recommend visiting:
 
-If this is your first time here, we strongly recommend navigating through our ‘[getting started](https://atsign.dev/gettingstarted.html)’ page. There, you will find all of the steps you will need to take in order to start developing your very own @platform application. 
+If this is your first time here, we strongly recommend navigating through our ‘[getting started](https://atsign.dev/docs/get-started/)’ page. There, you will find all of the steps you will need to take in order to start developing your very own @platform application. 
 
 If you’d like to see what an @platform application looks like, feel free to visit our ‘[sample apps](https://atsign.dev/samples.html)’ page! Here, you will find a list of demonstrative applications showing off the many verbs/methods that exist on the @platform. The most basic of this list is ‘[at_hello_world](https://github.com/atsign-foundation/at_demos/tree/master/at_hello_world)’ and the most advanced are ‘[at_cookbook](https://github.com/atsign-foundation/at_demos/tree/master/at_cookbook)’ and ‘[@mosphere](https://github.com/atsign-foundation/atmosphere)’
 
