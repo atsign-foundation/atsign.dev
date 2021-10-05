@@ -4,7 +4,7 @@
 
 # atsign.dev
 
-The atsign.dev repo is home to the code behind developer site. As everything we have to offer is open-source, why not make our website open-source too, to prove that we aren't using cookies or anything that tracks your presence.  
+The atsign.dev repo is home to the code behind our developer site. As everything we have to offer is open-source, why not make our website open-source too, to prove that we aren't using cookies or anything that tracks your presence.  
 
 ## Why is there an atsign.dev?
 
@@ -27,7 +27,7 @@ If you’d like to see what an @platform application looks like, feel free to vi
 ## How can you contribute?
 
 If you think there should be a change made, or think there could be anything
-done better, feel free to raise a pull request to the trunk branch!
+done better, feel free to raise a pull request to the trunk branch.
 
 Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) for further instructions.
 
