@@ -83,6 +83,7 @@ to achieve the same outcome.
 
    **IMPORTANT**: Do this only once, when you start working on new feature as
    the commands above will completely overwrite any local changes in `trunk` content.
+   
 1. Edit, edit, edit, and commit your changes to Git:
 
    ```sh
