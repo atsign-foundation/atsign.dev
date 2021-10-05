@@ -84,10 +84,4 @@ NB the `--recursive` flag is used to ensure that the theme submodules are also d
    git push
    ```
 
-1. How to run tests:
-
-   ``` sh
-   # explain tests here
-   ```
-
 1. Open a new Pull Request to the main repository using your `trunk` branch
