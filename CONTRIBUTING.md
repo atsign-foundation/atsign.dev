@@ -36,6 +36,8 @@ To prepare your dedicated GitHub repository:
 1. Fork in GitHub https://github.com/atsign-foundation/atsign.dev
 2. Clone *your forked repository* (e.g., `git clone --recursive git@github.com:yourname/atsign.dev`).
 NB the `--recursive` flag is used to ensure that the theme submodules are also downloaded.
+If you've already made a clone without that flag then run `git submodule update --init --recursive`
+to achieve the same outcome.
 3. Set your remotes as follows:
 
    ```sh
@@ -65,6 +67,12 @@ NB the `--recursive` flag is used to ensure that the theme submodules are also d
    git fetch upstream
    ```
 
+1. Check that submodules are up to date:
+
+   ```sh
+   git submodule update --remote --merge
+   ```
+
 1. Reset your fork's `trunk` branch to exactly match upstream `trunk`:
 
    ```sh
@@ -75,6 +83,7 @@ NB the `--recursive` flag is used to ensure that the theme submodules are also d
 
    **IMPORTANT**: Do this only once, when you start working on new feature as
    the commands above will completely overwrite any local changes in `trunk` content.
+   
 1. Edit, edit, edit, and commit your changes to Git:
 
    ```sh
@@ -82,12 +91,6 @@ NB the `--recursive` flag is used to ensure that the theme submodules are also d
    git add *
    git commit -m 'A useful commit message'
    git push
-   ```
-
-1. How to run tests:
-
-   ``` sh
-   # explain tests here
    ```
 
 1. Open a new Pull Request to the main repository using your `trunk` branch
