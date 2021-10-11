@@ -162,7 +162,7 @@ device, then those changes will be also synced at periodic intervals.
     syncService = atClientManager.syncService;
     ```
     
-    -  Optionally register to onDone callbacks to get SyncResult when run asynchronously.
+    -  Optionally, Register to onDone callbacks to get SyncResult when run asynchronously.
 
     ```dart
     syncService.sync(onDone: _onSuccessCallback);
@@ -171,7 +171,7 @@ device, then those changes will be also synced at periodic intervals.
     }
     ```
 
-4. Optionally call `setOnDone` for global onDone callback. Call this method
+4. Optionally, Call `setOnDone` for global onDone callback. Call this method
 to set the Global onDone callback. This method will be called when a sync is
 completed. When a specific onDone function is passed to the sync function, 
 then the specific onDone is called.
