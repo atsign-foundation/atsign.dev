@@ -2,7 +2,7 @@
 title: "What are the changes?"
 SEOtitle: "What did we migrate rSDK changes."
 linkTitle: "Changes"
-Description: "Refernce odcumentation for rSDK changes."
+Description: "Refernce documentation for rSDK changes."
 content: "Everything you need to know before migrating your apps to latest rSDK changes."
 parent: /rSDK_migration/
 weight: 1
