@@ -9,7 +9,9 @@ weight: 2
 date: 2021-10-05
 ---
 
-If you have gone through the [rSDK changes](/docs/rsdk_migration/changes), Migrating your app will be easy. If you are ready to migrate your project to latest rSDK changes, then you are good to go.
+If you have gone through the [rSDK changes](/docs/rsdk_migration/changes),
+migrating your app will be easy. If you are ready to migrate your project to
+latest rSDK changes, then you are good to go.
 
 
 ## Get instance of atClient.
@@ -70,11 +72,13 @@ void _notificationCallBack(AtNotification atNotification) {
 
 ## Send notifications.
 
-- To send notification, you must use `AtClientManager` instance's `NotificationService` to access `notify` method.
+- To send notification, you must use `AtClientManager` instance's
+`NotificationService` to access `notify` method.
 
 - `notify` method takes a positional parameter `NotificationParams`.
 
-- The `NotificationParams` has all the methods depending to the operation you do.
+- The `NotificationParams` has all the methods depending to the operation you
+do.
 
     - `forUpdate()` - To send update notification.
     - `forDelete()` - To send delete notification.
@@ -108,9 +112,11 @@ NotificationResult result  = await atClientManager.notificationService
 
 ## Check whether local and remote server are in sync.
 
-- Instead of using `SyncManager`, use `SyncService` to access `isInSync` method.
+- Instead of using `SyncManager`, use `SyncService` to access `isInSync`
+method.
 
-- You must use `AtClientManager` instance's `SyncService` to access `isInSync` method.
+- You must use `AtClientManager` instance's `SyncService` to access
+`isInSync` method.
 
 ```dart
 /// **SDK 2.X**
@@ -128,7 +134,8 @@ bool isInSync = await syncService.isInSync();
 
 ## Calling on demand sync.
 
-- This may not be needed by all apps with new SDK changes. sync is performed automatically on any update/delete operation on atClient.
+- This may not be needed by all apps with new SDK changes. sync is performed
+automatically on any update/delete operation on atClient.
 
 ```dart
 /// **SDK 2.X**

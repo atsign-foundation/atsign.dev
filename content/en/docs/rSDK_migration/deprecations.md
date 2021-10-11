@@ -11,15 +11,21 @@ date: 2021-10-05
 
 ## **isDedicated** flag
 
-Apps no longer have to use the `isDedicated` flag on `at_client` methods. Sync will be called on a separate connection with the new SDK implementation. App developers can remove references to the `isDedicated` flag.
+Apps no longer have to use the `isDedicated` flag on `at_client` methods. Sync
+will be called on a separate connection with the new SDK implementation. App
+developers can remove references to the `isDedicated` flag.
 
 ## SyncStrategy
 
-Apps no longer have to set `SyncStrategy` in the preferences. Sync will be called automatically after any update or delete operation on the `at_client`; Refer to the Sync section below for more details.
+Apps no longer have to set `SyncStrategy` in the preferences. Sync will be
+called automatically after any update or delete operation on the `at_client`;
+Refer to the Sync section below for more details.
 
 ## **notify** method
 
-The method `notify` from `AtClient` is deprecated. Use `AtClientManager.notificationService` instance to call `notify` method instead. This method will be taking a positional argument of type `NotificationParams`.
+The method `notify` from `AtClient` is deprecated. Use
+`AtClientManager.notificationService` instance to call `notify` method instead.
+This method will be taking a positional argument of type `NotificationParams`.
 
 **Usage :**
 ```dart
@@ -40,7 +46,9 @@ atClientManager.notificationService.notify(
 
 ## **getSyncManager** method
 
-The method `getSyncManager` used to get the instance of `SynaManager` is deprecated in favor of `SyncService`; Can be able to access from `AtClientManager` instance.
+The method `getSyncManager` used to get the instance of `SynaManager` is
+deprecated in favor of `SyncService`; Can be able to access from
+`AtClientManager` instance.
 
 **Usage :**
 ```dart
@@ -55,7 +63,10 @@ SyncService _syncServcie = atClientManager.syncService;
 
 ## **startMonitor** method
 
-The method `startMonitor()` from `AtClient` has been deprecated in favor of `subscribe()` from `NotificationService`. This method gives a back stream of notifications from the server to the subscribing client. Optionally pass a regex to filter notification keys matching the regex.
+The method `startMonitor()` from `AtClient` has been deprecated in favor
+of `subscribe()` from `NotificationService`. This method gives a back stream
+of notifications from the server to the subscribing client. Optionally pass a
+regex to filter notification keys matching the regex.
 
 **Usage :** 
 ```dart

@@ -2,7 +2,7 @@
 title: "What are the changes?"
 SEOtitle: "What did we migrate rSDK changes."
 linkTitle: "Changes"
-Description: "Documentation referring what are the latest rSDK changes."
+Description: "Refernce odcumentation for rSDK changes."
 content: "Everything you need to know before migrating your apps to latest rSDK changes."
 parent: /rSDK_migration/
 weight: 1
@@ -11,31 +11,39 @@ date: 2021-10-05
 
 ## Get instances of AtClient and other services.
 
-1. To initialize AtClient Instance call setCurrentAtSign method on `AtClientManager.getInstance()`.
+1. To initialize AtClient Instance call setCurrentAtSign method on 
+`AtClientManager.getInstance()`.
     
-    - `setCurrentAtSign` accepts the following arguments: currentAtSign, namespace and the preferences.
+- `setCurrentAtSign` accepts the following arguments: currentAtSign,
+namespace and the preferences.
 
     ```dart
     AtClientManager.getInstance().setCurrentAtSign('@alice', 'wavi', <preferences>);
     ```
 
-2. The `AtClientManger` Instance has getter `atClient` which returns an instance of `AtClient`.
+2. The `AtClientManger` Instance has getter `atClient` which returns an
+instance of `AtClient`.
 
     ```dart
     AtClient atClient = atClientManager.atClient;
     ```
 
-3. The `AtClientManager` instance has a late initialized variable `notificationService` which is for accessing notification service methods.
+3. The `AtClientManager` instance has a late initialized variable
+`notificationService` which is for accessing notification service methods.
+
     ```dart
     NotificationService notificationService = atClientManager.notificationService;
     ```
 
-4. The `AtClientManager` instance has a late initialized variable `syncService` which is for invoking the sync.
+4. The `AtClientManager` instance has a late initialized variable `syncService`
+which is for invoking the sync.
+
     ```dart
     SyncService syncService = atClientManager.syncService;
     ```
 
-**Note**: Above code should be executed every time when the @sign is switched to get the right instances representing the new @sign.
+**Note**: Above code should be executed every time when the @sign is switched to
+get the right instances representing the new @sign.
 
 ## Sending and receiving notifications.
 
@@ -43,7 +51,8 @@ date: 2021-10-05
 
 2. Access the `notificationService` variable using atClientManager instance.
 
-3. Listen to notifications via callback and no filter. Ideally you don't want to do this.
+3. Listen to notifications via callback and no filter. Ideally you don't
+want to do this.
 
     ```dart
     /// AtClientManager instance.
@@ -58,7 +67,9 @@ date: 2021-10-05
     });
     ```
 
-4. Listen to notifications via callback and filter notification key by regex. You can also come up with regexes that match other types of keys. Ex: 'wavi | buzz' or alternatively multiple listeners can also be registered.
+4. Listen to notifications via callback and filter notification key by regex.
+You can also come up with regexes that match other types of keys. Ex: 
+'wavi | buzz' or alternatively multiple listeners can also be registered.
     
     ```dart
     notificationService.subscribe(regex: '.wavi').listen((notification) {
@@ -127,7 +138,8 @@ date: 2021-10-05
 
 ## Syncing the data.
 
-1. The `atClientManger` instance has getter `atClient` which returns an instance of `AtClient`.
+1. The `atClientManger` instance has getter `atClient` which returns an instance
+of `AtClient`.
 
     ```dart
     final AtClient atClient = atClientManager.atClient;
@@ -140,7 +152,11 @@ date: 2021-10-05
     atClient.delete(<params>)
     ```
     
-3. Syncing the data. Apps no longer have to use `SyncStrategy` or `isDedicated` flag or manually call `sync`. All sync requests will be internally kept in a queue and synced to the server at periodic time interval(approx. 15 seconds). If remote server is updated from some other device, then those changes will be also synced at periodic intervals.
+3. Syncing the data. Apps no longer have to use `SyncStrategy` or 
+`isDedicated` flag or manually call `sync`. All sync requests will be
+internally kept in a queue and synced to the server at periodic time
+interval (approx. 15 seconds). If remote server is updated from some other
+device, then those changes will be also synced at periodic intervals.
     
     ```dart
     syncService = atClientManager.syncService;
@@ -155,7 +171,10 @@ date: 2021-10-05
     }
     ```
 
-4. Optionally call `setOnDone` for global onDone callback. Call this method to set the Global onDone callback. This method will be called when a sync is completed. When a specific onDone function is passed to the sync function, Then the specific onDone is called.
+4. Optionally call `setOnDone` for global onDone callback. Call this method
+to set the Global onDone callback. This method will be called when a sync is
+completed. When a specific onDone function is passed to the sync function, 
+then the specific onDone is called.
 
     ```dart
     syncService.setOnDone(onDone: _onSuccessCallback);
