@@ -75,7 +75,7 @@ call and fulfills it when the conditions are right for the data transfer.
 SDK initiates a Sync process without any apps requesting when SDK detects
 that the local and the cloud secondaries are out of sync. 
 
-lease look at [SyncService dart code docs](https://github.com/atsign-foundation/at_client_sdk/blob/trunk/at_client/lib/src/service/sync_service.dart) for more details on the usage.
+Please look at [SyncService dart code docs](https://github.com/atsign-foundation/at_client_sdk/blob/trunk/at_client/lib/src/service/sync_service.dart) for more details on the usage.
 
 
 ## Sync trigger conditions
