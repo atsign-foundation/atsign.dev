@@ -1,7 +1,7 @@
 name: HugoBuild
 on:
   push:
-    Branches:
+    branches:
       - trunk
 
 jobs:

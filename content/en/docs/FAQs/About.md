@@ -22,7 +22,7 @@ The only thing that we have centralized is the verified location of where to go 
 
 We do not want to be the Google of identity. We want each person to be able to own and control access to their own data. The first principle for us is:
 
-“It is provably true that The @ Company cannot access your private information without your explicit permission.”
+“It is probably true that The @ Company cannot access your private information without your explicit permission.”
 
 The owners of @signs hold the keys for both access and encryption, and nobody else—including The @ Company—has access to them. Thus, only two entities in the universe — the entity that shares information and the entity that receives it — can access private information that is shared between them. 
 
