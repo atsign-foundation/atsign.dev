@@ -25,14 +25,16 @@
     "oderwat.indent-rainbow",
     "vincaslt.highlight-matching-tag",
     "formulahendry.auto-rename-tag",
-    "formulahendry.auto-close-tag"
+    "formulahendry.auto-close-tag",
+    "streetsidesoftware.code-spell-checker",
+    "stylelint.vscode-stylelint"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [1313],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "uname -a",
+  "postCreateCommand": "hugo server -D --watch=true --bind 0.0.0.0",
 
   // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "node"
