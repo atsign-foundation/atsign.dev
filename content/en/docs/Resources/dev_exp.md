@@ -59,13 +59,6 @@ date: 2017-01-05
   background: #f1f1f1f1;
 }
 
-/* Slides */
-.mySlides {
-  display: none;
-  padding: 80px;
-  text-align: center;
-}
-
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
