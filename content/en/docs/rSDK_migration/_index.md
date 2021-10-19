@@ -1,5 +1,5 @@
 ---
-title: "What and Why is rSDK?"
+title: "What is rSDK?"
 SEOtitle: "How to migrate your project to latest rSDK changes."
 linkTitle: "rSDK Migration"
 content: "Everything you need to know before migrating your apps to latest rSDK changes."
