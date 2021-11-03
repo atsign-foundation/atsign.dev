@@ -1,11 +1,10 @@
 ---
-title: 'Option 2: Setup your own secondary server with dess'
+title: 'Option 2: Host your own @sign with dess'
 SEOtitle: 'dess : distributed edge secondary server  - @platform(at_platform or AtPlatform)'
-linkTitle: '2: Setup dess'
+linkTitle: '2 : Self hosted'
 weight: 2
-content: Create and run your own @platform secondary server with dess
-description: >
-  Create and run your own @platform secondary server with dess
+content: Run your @platform secondary server on your own infrastructure
+description: Run your @platform secondary server on your own infrastructure
 ---
 
 ## 1. What is dess?
@@ -175,3 +174,9 @@ docker service logs -f wolverine_secondary
 ```
 
 While this is running, you will be able to see the secondary in action.
+
+## Where should I go next?
+
+First, if you haven't setup Flutter, do that [here](/docs/get-started/setup-your-env/).
+
+Otherwise, continue to building your first app [here](/docs/get-started/create-a-project/).
