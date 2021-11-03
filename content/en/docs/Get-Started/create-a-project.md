@@ -1,7 +1,7 @@
 ---
 title: 'Create your own @platform project'
 SEOtitle: 'How to create an @platform (at_platform or AtPlatform) project'
-linkTitle: 'Create your own @platform project'
+linkTitle: 'Create an app'
 Description: 'Taking one step closer to developing your privacy-first app on the @platform'
 content: 'What to do after creating your own @sign'
 weight: 3
