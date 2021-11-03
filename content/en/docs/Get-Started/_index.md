@@ -1,7 +1,7 @@
 ---
 title: "How to get started with the @platform"
 SEOtitle: "How to get started with the @platform (at_platform or AtPlatform)"
-linkTitle: "Options to get started"
+linkTitle: "Getting started"
 Description: "The fastest way to get started developing your privacy-first app on the @platform"
 content: "Everything you need to get started developing apps on the @platform"
 weight: 2
@@ -12,11 +12,11 @@ The [@platform](/docs/resources/glossary/#@platform) was open-sourced in Novembe
 
 We’re excited to help you get your very own @platform environment up and running!
 
-## Prerequisites
+### Overview
 
-You will need Flutter/Dart installed on your machine. If you haven’t already, please follow the “Get started” steps on [flutter.dev](https://flutter.dev) before you proceed. Flutter works best with [Android Studio](https://developer.android.com/studio), but you can also use [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) or [Visual Studio Code](https://code.visualstudio.com/download) as your IDE.
+As a developer on the @platform, there is some additional information you may want to know before getting started. This page will guide you through some of the decisions we've made when building the @platform, and some basic information on how it works.
 
-### <a href="https://flutter.dev/"><img src="https://flutter.dev/assets/images/shared/brand/flutter/logo/flutter-lockup.png" alt="Flutter" height="10%" width="15%"></a>
+#### <a href="https://flutter.dev/"><img src="https://flutter.dev/assets/images/shared/brand/flutter/logo/flutter-lockup.png" alt="Flutter" height="10%" width="15%"></a>
 
 Why did we choose Flutter? Here are some of our favorite reasons:
 
@@ -28,58 +28,19 @@ Why did we choose Flutter? Here are some of our favorite reasons:
 
 • It's free and open-source, just like the rest of the @protocol, and there are countless numbers of packages on [pub.dev](https://pub.dev) that any developer is free to use. The Flutter community is growing fast and would love to welcome you!
 
-### <a href="https://developer.android.com/studio"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Android_Studio_Trademark.svg/256px-Android_Studio_Trademark.svg.png" alt="Android Studio" height="10%" width="15%"></a>
+#### What is an @sign?
 
-Android Studio is an incredible Integrated Development Environment (IDE) you can use to create projects for Android devices, and to ease this process,it allows you set up an Android Virtual Device (or AVD). If you’re looking for an easy IDE to get started on, this is the one we recommend. Most of our code, documentation, and tutorials are created with Android Studio, so you’ll feel right at home!
+Check out [here](https://atsign.com/what-is-an-sign) for a basic overview.
 
-{{% pageinfo color="primary" %}}
-Important Links for Android Studio
+An @sign in technical terms is a digital identifier. When you pair your @sign with an @platform application, your device will spin up a small [Hive database](https://pub.dev/packages/hive) to store your information. Along with the @sign you get your own private "secondary server" which can be hosted by us, or on your own infrastructure. This secondary server is completely private and controlled by the owner of the @sign, it enables you to backup and synchronize your information across all of your devices. The secondary server is also used to share information to other @signs. For more information on how this works, please read our [whitepaper](https://atsign.com/resources/white-papers/the-platform-white-paper/) which covers the @platform and the underlying @protocol in full detail.
 
-- Download Android Studio [here](https://developer.android.com/studio)
-- Read an article on how to set up an AVD [here](https://blog.atsign.dev/running-one-or-more-emulators-through-cli-using-android-studio-ckm2kuryy00v5mss16f1agh7m)
-  {{% /pageinfo %}}
+#### Pricing
 
-### <a href="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/64px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ" width="5%" ></a>
+On the @platform, infrastructure costs for most applications are free! Since every @sign has its own secondary server, the cost is based on the @sign you choose. On our [registrar site](https://my.atsign.com/) you can choose to get a free @sign, which is free forever! However if you would like a custom @sign, they are available at different prices depending on the @sign you choose. All custom @signs have a renewal fee of $10 per year.
 
-IntelliJ is another commonly used IDE. It has a similar feel to Android Studio and is comparable to the other two IDE's recommended here.
+The only time you will need to pay for infrastructure costs beyond custom @signs, is if you decide to self host it using [dess](/docs/get-started/get-an-atsign/dess), it will be up to you to maintain the server.
 
-{{% pageinfo color="primary" %}}
-Important Links for IntelliJ
-
-- Download IntelliJ [here](https://www.jetbrains.com/idea/download/#section=windows)
-  {{% /pageinfo %}}
-
-### <a href="https://code.visualstudio.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/150px-Visual_Studio_Code_1.35_icon.svg.png" alt="Visual Studio Code" height="10%" width="5%"></a>
-
-Visual Studio Code, when compared to IntelliJ and Android Studio, is the most customizable with a seemingly endless number of programming languages to utilize. Developers commonly call this IDE ‘VS Code’ (who has time to say entire words anyway?). If you have watched our tutorials on atsign.dev, you’ll notice that VS Code is the other IDE of choice with our devs!
-
-{{% pageinfo color="primary" %}}
-Important Links for Visual Studio Code
-
-- Download Visual Studio Code [here](https://code.visualstudio.com/download)
-  {{% /pageinfo %}}
-
-### <a href="https://docs.docker.com/docker-for-mac/install/"><img src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" alt="Docker Desktop" height="10%" width="20%"></a>
-
-If you wish to develop offline, you will also need to install [Docker Desktop](https://www.docker.com/products/docker-desktop) on your machine. Using Docker Desktop
-allows you to run the full @platform stack locally, with no dependence on Internet connectivity, we call this the Virtual Environment.
 
 ## Where should I go next?
 
-There are three ways to get going with your journey on the @platform. You may choose any of the three options listed below depending on your interest and particular needs.
-
-### (Option 1) Recommended for Flutter Developers
-
-If you just want to get going and fast, then the best solution is to get some free @signs and start coding. Here we will show you how to get a couple of free @signs
-and activate them. This option uses The @ Companies infrastructure to host a secondary server microservice for each @sign you activate.
-
-### (Option 2) Recommended for DevOps or Security Engineers
-
-Dess (distributed edge secondary server) is the right place to start if you would like to run your own infrastructure for your @sign. Or perhaps you are developing
-an IoT solution and would like to see the log files of the secondary server microservice, then using dess, is the perfect starting place.
-
-### (Option 3) The Virtual Environment
-
-This option is recommended for those offline moments or if you want to be completely independent. The virtual environment (VE) provides all the components of the @platform in a single docker image. This option comes complete with full control and logging of everything. The Virtual Environment requires no Internet connection and comes with some predefined @signs.
-
-( Please note that all the logos listed on this page are registered trademarks of the respective products. We have used them here only for reference purposes.)
+*To get started, follow through the guides listed below*

@@ -1,9 +1,9 @@
 ---
-title: "Option 1 : Set up the @platform with free @signs"
+title: "Option 1 : Set up an @sign(preferred)"
 SEOtitle: "Set up the  @platform (at_platform or AtPlatform) with free @signs (AtSign or at_sign)"
-linkTitle: "1 : With Free @signs(preferred)"
-Description: "Create and run your own @platform with free @signs"
-content: "Create and run your own @platform with free @signs"
+linkTitle: "1 : Get free @signs"
+Description: "Easily setup your own @platform secondary server for free!"
+content: "Easily setup your own @platform secondary server for free!"
 
 weight: 1
 date: 2017-01-05
@@ -21,12 +21,12 @@ Go to [atsign.com](https://atsign.com) and clicking [Get an @sign](https://atsig
 this route then you have more influence on your free @sign or pay for one of your choosing. Once you have your @signs,
 do not forget to activate them. 
 
-![activate @sign](/docs/Get-Started/images/activate-ui.png)
+![activate @sign](/docs/Get-Started/get-an-atsign/images/activate-ui.png)
 
 Activating creates a microservice (we call the secondary server) and once 
 that is spun up on The @ Company infrastructure you will see a QR-Code to scan with an @ enabled application. 
 
-![activated @sign](/docs/Get-Started/images/activated.png)
+![activated @sign](/docs/Get-Started/get-an-atsign/images/activated.png)
 
 The pairing consists of your device creating cryptographic
 keys and sharing the public keys to the secondary server, you will be asked to store your private keys.
@@ -37,12 +37,12 @@ The experience of getting a @sign via the website is great for developers as you
 @signs and to point your @sign to your own infrastructure. For getting people onboarded quickly, a better experience would
 be to get a free @sign within the app itself, this is option 2.
 
-![generate @sign](/docs/Get-Started/images/generate-free-@sign.png)
+![generate @sign](/docs/Get-Started/get-an-atsign/images/generate-free-@sign.png)
 
 The [onboarding widget](https://pub.dev/packages/at_onboarding_flutter) together with an API key provides a button
 marked "Generate Free @sign". 
 
-![generate @sign-pair](/docs/Get-Started/images/generate-free-@sign-pair.png)
+![generate @sign-pair](/docs/Get-Started/get-an-atsign/images/generate-free-@sign-pair.png)
 
 When selected a number of free @signs given to chose from, once selected it is quickly activated,
 then once again you will be asked to store the cryptographic keys for the @sign.
@@ -56,7 +56,7 @@ chat app using the @platform. It is a nice example to follow as it uses the [con
 combined with the [at_chat_flutter](https://pub.dev/packages/at_chat_flutter) widgets to create a simple chat app between
 @signs.
 
-![ChitCh@t](/docs/Get-Started/images/ChitCh@t-low.png)
+![ChitCh@t](/docs/Get-Started/get-an-atsign/images/ChitCh@t-low.png)
 
 Each @ enabled application will ask you once for your @sign and then your keys, so it can synchronize with your secondary server.
 This means you might like to store your keys on a personal network drive or service (e.g. gdrive/idrive/onedrive) so

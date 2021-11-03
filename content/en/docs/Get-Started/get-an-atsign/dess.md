@@ -1,11 +1,10 @@
 ---
-title: 'Option 2: Setup your own secondary server with dess'
+title: 'Option 2: Host your own @sign with dess'
 SEOtitle: 'dess : distributed edge secondary server  - @platform(at_platform or AtPlatform)'
-linkTitle: '2: Setup dess'
+linkTitle: '2 : Self hosted'
 weight: 2
-content: Create and run your own @platform secondary server with dess
-description: >
-  Create and run your own @platform secondary server with dess
+content: Run your @platform secondary server on your own infrastructure
+description: Run your @platform secondary server on your own infrastructure
 ---
 
 ## 1. What is dess?
