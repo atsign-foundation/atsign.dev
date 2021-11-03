@@ -13,8 +13,8 @@ services:
 # You can remove these comments and run a DNS Masq service locally
 # This enables you to code and test offline and use physical devices
 # connecting to your Virtual Environment
-# masqdns:
-#   image: atsigncompany/masqdns:prodvip
-#   ports:
-#     - "127.0.0.1:5380:8080"
-#     - "53:53/udp"
+#   masqdns:
+#     image: atsigncompany/masqdns:prodvip
+#     ports:
+#       - "127.0.0.1:5380:8080"
+#       - "53:53/udp"
