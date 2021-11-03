@@ -36,11 +36,8 @@ An @sign in technical terms is a digital identifier. When you pair your @sign wi
 
 #### Pricing
 
-On the @platform, infrastructure costs for most applications are free! Since every @sign has its own secondary server, the cost is based on the @sign you choose. On our [registrar site](https://my.atsign.com/) you can choose to get a free @sign, which is free forever! However if you would like a custom @sign, they are available at different prices depending on the @sign you choose. All custom @signs have a renewal fee of $10 per year.
-
-The only time you will need to pay for infrastructure costs beyond custom @signs, is if you decide to self host it using [dess](/docs/get-started/get-an-atsign/dess), it will be up to you to maintain the server.
-
+Read more [here](/docs/pricing/)
 
 ## Where should I go next?
 
-*To get started, follow through the guides listed below*
+_To get started, follow through the guides listed below_
