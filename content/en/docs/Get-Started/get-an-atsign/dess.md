@@ -174,3 +174,9 @@ docker service logs -f wolverine_secondary
 ```
 
 While this is running, you will be able to see the secondary in action.
+
+## Where should I go next?
+
+First, if you haven't setup Flutter, do that [here](/docs/get-started/setup-your-env/).
+
+Otherwise, continue to building your first app [here](/docs/get-started/create-a-project/).
