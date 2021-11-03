@@ -7,6 +7,17 @@ description ="The @platform is the fastest and easiest way to develop completely
 ogimage="/landing_page/logo.svg"
 social_image_path = "/landing_page/logo.svg"
 +++
+
+<style>
+	/* Only show the announcement bar on the home page */
+	#announcement-bar {
+		display: block;
+	}
+	#announcement-bar + .td-navbar {
+    margin-top: 35px;
+	}
+</style>
+
 {{< blocks/cover title="End-to-End Encrypted Everything" image_anchor="top" height="partial">}}
 
 Welcome to the free & open source @platform! 
