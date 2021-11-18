@@ -38,7 +38,7 @@ Data operations that involve writing data to the @persistence keystore can only 
 
 Naturally, the owner of an @persistence keystore has access to any and all data that is contained therein. After being authorized, your application can read the data that it needs from the keystore as well. Applications that prefer to rely on data within its own namespace can also store read data from the @persistence keystore with approval of the owner. As always, all data stored is owned and controlled by the owner of the @persistence keystore.
 
-For more information on how your application can create, update, or delete data, see the [@Persistence Keystore Guide](https://pub.dev/packages/at_persistence_spec) and the [@Protocol Verbs](verbs).
+For more information on how your application can create, update, or delete data, see the [@Persistence Keystore Guide](https://pub.dev/packages/at_persistence_spec) and the [@Protocol Verbs](https://atsign.dev/docs/functional_architecture/verbs).
 
 #### Accessing data shared by others
 
@@ -55,7 +55,7 @@ The @Client SDK provides the following capabilities that help to integrate data 
 - Data can be scanned for and read directly from another persons @persistence keystore
 - Shared data is cached for fast, reliable access to shared data with all privacy related parameters managed for you by the @Client SDK
 
-For more information on how your application can create, update, or delete data, see the [@Persistence Keystore Guide](Persistence Keystore Guide) and the [@Protocol Verbs](verbs).
+For more information on how your application can create, update, or delete data, see the [@Persistence Keystore Guide](Persistence Keystore Guide) and the [@Protocol Verbs](https://atsign.dev/docs/functional_architecture/verbs).
 
 #### Accessing and reasoning over data stored by other applications
 
@@ -76,4 +76,4 @@ If you would like to store application data, you are free to use the @persistenc
 If your application does not require data persistence on behalf of the person using it; for example, if you just want to make sure that your application is licensed to the person using it, then you do not need to get it certified. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps. 
 
 
-For more information about getting your application certified, see the [Certification page]().
+For more information about getting your application certified, see the [Certification page](https://atsign.dev/dev_tools/certification/).
