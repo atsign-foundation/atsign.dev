@@ -25,7 +25,7 @@ This will allow you to run both a [root server](/docs/resources/glossary/#root-s
 <div class="card-deck mb-8">
 
   <!-- Windows Card-->
-  <a class="card" id="install-windows" href="/docs/get-started/the-virtual-environment/#windows" style="border-style: solid;border-color: #F05F3E">
+  <a class="card" id="install-windows" href="#windows" style="border-style: solid;border-color: #F05F3E">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -37,7 +37,7 @@ This will allow you to run both a [root server](/docs/resources/glossary/#root-s
   </a>
 
   <!-- MacOs Card-->
-  <a class="card" id="install-macos" href="/docs/get-started/the-virtual-environment/#macos" style="border-style: solid;border-color: #F05F3E">
+  <a class="card" id="install-macos" href="#macos" style="border-style: solid;border-color: #F05F3E">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -49,7 +49,7 @@ This will allow you to run both a [root server](/docs/resources/glossary/#root-s
   </a>
 
   <!-- Linux Card-->
-  <a class="card" id="install-linux" href="/docs/get-started/the-virtual-environment/#linux" style="border-style: solid;border-color: #F05F3E">
+  <a class="card" id="install-linux" href="#linux" style="border-style: solid;border-color: #F05F3E">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
