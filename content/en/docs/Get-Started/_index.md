@@ -16,7 +16,7 @@ We’re excited to help you get your very own @platform environment up and runni
 
 As a developer on the @platform, there is some additional information you may want to know before getting started. This page will guide you through some of the decisions we've made when building the @platform, and some basic information on how it works.
 
-#### <a href="https://flutter.dev/"><img src="https://flutter.dev/assets/images/shared/brand/flutter/logo/flutter-lockup.png" alt="Flutter" height="10%" width="15%"></a>
+#### <a href="https://flutter.dev/"><img src="/landing_page/flutter-logo.png" alt="Flutter" height="2%" width="5%"></a>
 
 Why did we choose Flutter? Here are some of our favorite reasons:
 
