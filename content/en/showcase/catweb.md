@@ -30,6 +30,10 @@ Description: "Here you will find more information on the app: Catweb"
 
 <ms-store-badge productid="9nmrcngrd54z" size="large"></ms-store-badge>
 
+<a href="https://wavi.ng/@wavi">
+<img src="/Showcase/wavi-logo.png" target="_blank" style="height: 150px;" >
+</img>
+</a>
 </column>
 </row>
 
