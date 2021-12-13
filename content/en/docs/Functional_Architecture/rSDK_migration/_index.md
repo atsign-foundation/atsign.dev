@@ -1,7 +1,7 @@
 ---
-title: "What is rSDK?"
+title: "SDK?"
 SEOtitle: "How to migrate your project to latest rSDK changes."
-linkTitle: "rSDK Migration"
+linkTitle: "SDK "
 content: "Everything you need to know before migrating your apps to latest rSDK changes."
 weight: 7
 nav_children: section

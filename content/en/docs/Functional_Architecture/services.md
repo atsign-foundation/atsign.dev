@@ -1,7 +1,7 @@
 ---
 title: "Services provided by the @platform"
 SEOtitle: "Services provided by the  @platform (at_platform or AtPlatform)"
-linkTitle: "Services"
+linkTitle: "Architecture"
 content: Important services provided by the @platform
 description: Important services provided by the @platform
 parent: /Functional_Architecture/

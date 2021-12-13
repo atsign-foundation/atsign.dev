@@ -1,7 +1,7 @@
 ---
-title: 'Option 2: Host your own @sign with dess'
+title: 'Data Architecture'
 SEOtitle: 'dess : distributed edge secondary server  - @platform(at_platform or AtPlatform)'
-linkTitle: '2 : Self hosted'
+linkTitle: 'Data Architecture'
 weight: 2
 content: Run your @platform secondary server on your own infrastructure
 description: Run your @platform secondary server on your own infrastructure

@@ -4,7 +4,7 @@ SEOtitle: "How to get started with the @platform (at_platform or AtPlatform)"
 linkTitle: "Getting started"
 Description: "The fastest way to get started developing your privacy-first app on the @platform"
 content: "Everything you need to get started developing apps on the @platform"
-weight: 2
+weight: 1
 date: 2017-01-05
 ---
 

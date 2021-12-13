@@ -1,11 +1,11 @@
 ---
 title: 'Setup your Flutter development environment'
 SEOtitle: 'Setup your Flutter (Dart) development environment'
-linkTitle: 'Setup Flutter'
+linkTitle: 'New to Flutter?'
 Description: 'Get your environment ready to develop a Flutter app'
 content: 'Get your environment ready to develop a Flutter app'
-weight: 1
-date: 2021-11-03
+weight: 4
+date: 2021-12-12
 ---
 
 ## 1. Setting Up Flutter

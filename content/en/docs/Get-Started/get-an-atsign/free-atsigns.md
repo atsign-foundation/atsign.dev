@@ -1,7 +1,7 @@
 ---
-title: 'Option 1 : Set up an @sign(preferred)'
+title: 'Namespaces'
 SEOtitle: 'Set up the  @platform (at_platform or AtPlatform) with free @signs (AtSign or at_sign)'
-linkTitle: '1 : Get free @signs'
+linkTitle: 'Namespace'
 Description: 'Easily setup your own @platform secondary server for free!'
 content: 'Easily setup your own @platform secondary server for free!'
 

@@ -1,7 +1,7 @@
 ---
 title: "The @protocol verbs"
-linkTitle: "Verbs"
-weight: 0
+linkTitle: "Secondary Server"
+weight: 3
 content : Understand the @platform verbs and their functions
 description: >
   Understand the @platform verbs and their functions
