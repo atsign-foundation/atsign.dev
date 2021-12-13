@@ -1,8 +1,8 @@
 ---
 title: "Libraries"
-linkTitle: "Libraries"
+linkTitle: "The @protocol"
 parent: /Functional_Architecture/
-weight: 2
+weight: 5
 description: >
   Find the list of libraries the @platform has to offer here!
 ---

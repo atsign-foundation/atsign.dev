@@ -1,11 +1,11 @@
 ---
 title: 'Create your own @platform project'
 SEOtitle: 'How to create an @platform (at_platform or AtPlatform) project'
-linkTitle: 'Create an app'
+linkTitle: 'Try the @platform'
 Description: 'Taking one step closer to developing your privacy-first app on the @platform'
 content: 'What to do after creating your own @sign'
-weight: 3
-date: 2021-7-26
+weight: 1
+date: 2021-12-12
 ---
 
 If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a fresh application should look like. We've decided to create our own toolkit here on the @platform to make your 'Getting Started' experience that much smoother!

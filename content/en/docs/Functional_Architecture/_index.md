@@ -1,7 +1,7 @@
 ---
-title: "Architecture of the @platform"
-SEOtitle: "Architecture of the @platform (at_platform or AtPlatform)"
-linkTitle: "Platform Architecture"
+title: "Core Technology of the @platform"
+SEOtitle: "Core Technology of the @platform (at_platform or AtPlatform)"
+linkTitle: "Core Technology"
 weight: 3
 date: 2021-06-02
 nav_children: section
