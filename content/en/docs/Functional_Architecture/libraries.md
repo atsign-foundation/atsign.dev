@@ -1,8 +1,8 @@
 ---
 title: "Libraries"
-linkTitle: "The @protocol"
+linkTitle: "Libraries"
 parent: /Functional_Architecture/
-weight: 5
+weight: 2
 description: >
   Find the list of libraries the @platform has to offer here!
 ---
@@ -131,7 +131,7 @@ binary-to-text encoding schemes that represent binary data in an unicode string 
 
 ### at_follows_flutter
 
-A Flutter plugin project that provides a basic social "follows" functionality for any @sign. Provides a list of @signs that follow you (followers) as well as the @signs that you follow (following) with the option to unfollow them.
+A Flutter plugin project that provides a basic social "follows" functionality for @signs. Provides a list of followers and following for @signs with the option to unfollow them.
 
 [Learn more](https://pub.dev/packages/at_follows_flutter)
 
