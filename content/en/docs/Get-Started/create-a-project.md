@@ -1,22 +1,24 @@
 ---
-title: 'Create your own @platform project'
-SEOtitle: 'How to create an @platform (at_platform or AtPlatform) project'
-linkTitle: 'Try the @platform'
-Description: 'Taking one step closer to developing your privacy-first app on the @platform'
-content: 'What to do after creating your own @sign'
+title: "Create your own @platform project"
+SEOtitle: "How to create an @platform (at_platform or AtPlatform) project"
+linkTitle: "Try the @platform"
+Description: "Taking one step closer to developing your privacy-first app on the @platform"
+content: "What to do after creating your own @sign"
 weight: 1
 date: 2021-12-12
 ---
 
-If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a fresh application should look like. We've decided to create our own toolkit here on the @platform to make your 'Getting Started' experience that much smoother!
+<!-- If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a fresh application should look like. We've decided to create our own toolkit here on the @platform to make your 'Getting Started' experience that much smoother!
 
-As of now, the only way to use this toolkit is via the command line. In the future we plan on supporting IDE extensions, be sure to check for when those come out!
+As of now, the only way to use this toolkit is via the command line. In the future we plan on supporting IDE extensions, be sure to check for when those come out! -->
 
-## Getting started via the command line
+## Creating the Snackbar Sample App
+
+### Get started via the command line
 
 [at_app](https://pub.dev/packages/at_app) is our command line toolkit that can be installed via pub. Behind the scenes, it uses flutter create in order to create your project, and it completes the necessary steps to setup your @platform application for you!
 
-### Install the command line toolkit
+### Step 1) Install the command line toolkit (at_app)
 
 ```sh
 flutter pub global activate at_app
@@ -30,7 +32,7 @@ Verify your system PATH variable
 - Please complete those steps before continuing.
   {{% /pageinfo %}}
 
-### Run the program
+### Step 2) Create the project
 
 {{% pageinfo color="primary" %}}
 Note for Windows users
@@ -38,7 +40,7 @@ Note for Windows users
 - In the following commands you will see the `at_app` command, please replace it with `at_app.bat`.
   {{% /pageinfo %}}
 
-### Command Format
+Using command format:
 
 ```sh
 at_app create [...options] path/to/your/project
@@ -47,7 +49,7 @@ at_app create [...options] path/to/your/project
 In practice the command looks like this:
 
 ```sh
-at_app create --namespace=myatsign myproject
+at_app create --namespace=@myatsign myproject
 ```
 
 In addition to the same options available for flutter create, at_app create includes three new ones to help you automatically configure your application.
@@ -60,7 +62,7 @@ In addition to the same options available for flutter create, at_app create incl
 
 Note: at_app create **does not** include `--template`, `--sample`, or `--list-samples` (Coming soon).
 
-Okay great, we know what the flags are but what do they do?
+### Flag Information
 
 #### Namespace
 
@@ -83,21 +85,27 @@ When you are ready to publish your application, you can request an api-key for t
 
 You can specify this with `--api-key=YOUR_API_KEY_HERE`.
 
-### Updating your configuration
+#### Updating your configuration
 
 If you would like to update your environment at any point in time, it is safe to do so. Just specify the options you would like to change.
 
 {{% pageinfo color="primary" %}}
 Warning
 
-- Do not use the `--overwrite` flag when doing so, or it will overwrite the changes you have made to `lib/main.dart`
+- Be careful of using the `--overwrite` flag when updating your configuration. This will overwrite any changes you have made to `lib/main.dart`
   {{% /pageinfo %}}
 
-### Congratulations!
+### Step 3) Implement the Snackbar Receiver code
+
+You can git clone the project <a href="https://github.com/cconstab/snackeater" target="_blank">here</a>.
+
+<iframe src="https://cconstab.github.io/snackbar/#/" title="Snackbar Code" style="height: 350px; width: 62vw;"></iframe>
+
+#### Congratulations!
 
 You have successfully created your first @platform application!
 
-Time to start coding!
+Time to start coding your own end-to-end encrypted projects!
 
 ### Where should I go next?
 
