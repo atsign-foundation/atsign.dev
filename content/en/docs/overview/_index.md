@@ -1,7 +1,7 @@
 ---
 title: "The @sign foundation overview"
 SEOtitle : "atsign (@Sign or at_sign)-foundation Overview"
-linkTitle: "Learn everthing about the @platform"
+linkTitle: "Learn everything about the @platform"
 weight: 5
 date: 2021-06-02
 nav_children: section
