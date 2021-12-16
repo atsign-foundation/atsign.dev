@@ -12,25 +12,37 @@ description: >
   FAQs for at_app on the @platform
 ---
 
-## Flutter Issues
+### What are the different flags that can be used with at_app?
 
-{{% pageinfo color="primary" %}}
-Encountered Development Errors
+#### Namespace
 
-- The following two links are a temporary solution to easily finding/submitting error solutions, if you have any suggestions, we are happy to hear them!
-- If you have a bug/issue, feel free to search for it in this [spreadsheet](https://docs.google.com/spreadsheets/d/1e5eiKAHsVj-kVy91R5L_Y85sLD1bYzly1OUAnf1ny2s/edit?usp=sharing).
-- If the issue you are currently encountering does not exist within the spreadsheet linked above, feel free to submit a new error within this [error submission form](https://forms.gle/F9BFYMzoXe1wkva67).
+The namespace is the most important flag to include when creating your application.
 
-{{% /pageinfo %}}
+When storing keys on the secondary server, the namespace is used to filter the data produced by your app from the other @platform applications.
+To create a namespace for your app, make sure to register an @sign from [atsign.com](https://atsign.com) and use that as your namespace. By owning the @sign, you can ensure that you also own the namespace.
 
-### Flutter doctor says that Android Studio is not installed but it is
+You can specify the namespace with `--namespace=YOUR_NAMESPACE_HERE`.
 
-[Android Studio (not installed) , when run flutter doctor while Android Studio installed on machine - Stack Overflow](https://stackoverflow.com/questions/59647791/tag-android-studio-not-installed-when-run-flutter-doctor-while-android)
+#### Root Domain
 
-### Flutter doctor says that java needs to be installed
+By default the root domain is set to prod (production). In the production domain, you can use real @signs to test your application.
 
-Install Java - [Java SE Development Kit 16 - Downloads (oracle.com)](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html)
+Alternatively you can specify `--root-domain=ve` in the command to choose the virtual environment, and test with those @signs instead.
 
-### Flutter Doctor says you have to agree to licenses
+#### API Key
 
-But when you run ‘flutter doctor --android-licenses’ you get a load of errors that is fixed with - [windows - Flutter Doctor --android-licenses : Exception in thread "main"](https://stackoverflow.com/questions/64708446/flutter-doctor-android-licenses-exception-in-thread-main-java-lang-noclass)
+When you are ready to publish your application, you can request an api-key for the [Onboarding Widget](https://pub.dev/packages/at_onboarding_flutter). This api-key will authorize your app when attempting to generate a free @sign within the widget.
+
+You can specify this with `--api-key=YOUR_API_KEY_HERE`.
+
+<!-- ## Can I Update my at_app configuration?
+
+If you would like to update your environment at any point in time, it is safe to do so. Just specify the options you would like to change.
+
+You can reconfigure your at_app project simply by recalling the `at_app create` command with any of the new flags or adjustments you wish to make. -->
+
+<!-- {{% pageinfo color="primary" %}}
+Warning
+
+- Be careful of using the `--overwrite` flag when updating your configuration. This will overwrite any changes you have made to `lib/main.dart`
+  {{% /pageinfo %}} -->

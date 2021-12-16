@@ -52,7 +52,7 @@ In practice the command looks like this:
 at_app create --namespace=@myatsign myproject
 ```
 
-In addition to the same options available for flutter create, at_app create includes three new ones to help you automatically configure your application.
+In addition to the same options available for flutter create, at_app create includes three new ones to help you automatically configure your application. If you wish to learn more about these flags, read about them more in-depth [here](/docs/faqs/atapp/).
 
 | Flag           | Shorthand | Description                                             | Value                |
 | -------------- | --------- | ------------------------------------------------------- | -------------------- |
@@ -62,40 +62,9 @@ In addition to the same options available for flutter create, at_app create incl
 
 Note: at_app create **does not** include `--template`, `--sample`, or `--list-samples` (Coming soon).
 
-### Flag Information
-
-#### Namespace
-
-The namespace is the most important flag to include when creating your application.
-
-When storing keys on the secondary server, the namespace is used to filter the data produced by your app from the other @platform applications.
-To create a namespace for your app, make sure to register an @sign from [atsign.com](https://atsign.com) and use that as your namespace. By owning the @sign, you can ensure that you also own the namespace.
-
-You can specify the namespace with `--namespace=YOUR_NAMESPACE_HERE`.
-
-#### Root Domain
-
-By default the root domain is set to prod (production). In the production domain, you can use real @signs to test your application.
-
-Alternatively you can specify `--root-domain=ve` in the command to choose the virtual environment, and test with those @signs instead.
-
-#### API Key
-
-When you are ready to publish your application, you can request an api-key for the [Onboarding Widget](https://pub.dev/packages/at_onboarding_flutter). This api-key will authorize your app when attempting to generate a free @sign within the widget.
-
-You can specify this with `--api-key=YOUR_API_KEY_HERE`.
-
-#### Updating your configuration
-
-If you would like to update your environment at any point in time, it is safe to do so. Just specify the options you would like to change.
-
-{{% pageinfo color="primary" %}}
-Warning
-
-- Be careful of using the `--overwrite` flag when updating your configuration. This will overwrite any changes you have made to `lib/main.dart`
-  {{% /pageinfo %}}
-
 ### Step 3) Implement the Snackbar Receiver code
+
+### Step 3) Implement your own code
 
 You can git clone the project <a href="https://github.com/cconstab/snackeater" target="_blank">here</a>.
 
