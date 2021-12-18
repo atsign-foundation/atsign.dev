@@ -1,85 +1,112 @@
 ---
-title: "Create your own @platform project"
-SEOtitle: "How to create an @platform (at_platform or AtPlatform) project"
+title: "Try your own @platform project"
+SEOtitle: "Try an @platform (at_platform or AtPlatform) project"
 linkTitle: "Try the @platform"
-Description: "Taking one step closer to developing your privacy-first app on the @platform"
+Description: "Seeing the @platform in action with the Snackbar application"
 content: "What to do after creating your own @sign"
 weight: 1
 date: 2021-12-12
 ---
 
-<!-- If you've ever used Flutter and have gone through the process of creating a new Flutter Application Project, you're more than likely aware of what a fresh application should look like. We've decided to create our own toolkit here on the @platform to make your 'Getting Started' experience that much smoother!
+<style>
+  .column {
+  float: left;
+  width: 50%;
+}
 
-As of now, the only way to use this toolkit is via the command line. In the future we plan on supporting IDE extensions, be sure to check for when those come out! -->
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-## Creating the Snackbar Sample App
+.row {
+  display: flex;
+}
 
-### Get started via the command line
+.column {
+  flex: 50%;
+}
+</style>
 
-[at_app](https://pub.dev/packages/at_app) is our command line toolkit that can be installed via pub. Behind the scenes, it uses flutter create in order to create your project, and it completes the necessary steps to setup your @platform application for you!
+<script>
+function copyText(){
+  navigator.clipboard.writeText('flutter pub global activate at_app');
+  // document.getElementById("copyIcon").toggleClass("fas fa-copy fas fa-clipboard");
 
-### Step 1) Install the command line toolkit (at_app)
+  // document.getElementById("copyIcon").hasClass("fas fa-copy){
+  //   document.getElementById("copyIcon").addClass("fas fa-clipboard").removeClass("fas fa-copy");
+  // } else {
+  //   document.getElementById("copyIcon").addClass("fas fa-copy").removeClass("fas fa-clipboard");
+  // }
+  
+  /* Alert the copied text */
+  alert("Copied text");
+}
+function copyText2(){
+  navigator.clipboard.writeText('at_app create [...options] path/to/your/project');
+  /* Alert the copied text */
+  alert("Copied text");
+}
+</script>
 
-```sh
-flutter pub global activate at_app
-```
+Below are two columns, the left side includes steps in setting up an application that utilizes the @platform to send simple data to the right hand side which will display the simple data sent.
 
-{{% pageinfo color="primary" %}}
-Verify your system PATH variable
+<div class="row">
+  <div class="column" style="padding-left:15px;">
+  <!-- Step 1 -->
+  <h3>Create your own data sender app</h3>
+  <br>
+  <h4> Step 1: Install the command line toolkit (at_app) </h4>
+  <pre style="height:40px; width:400px;">
+  <div style="margin-left:-15px; margin-top:-50px;">
+  <code>flutter pub global activate at_app</code>
+  </div>
+  <div style="margin-top:-105px; margin-left:275px;"title="Copy to clipboard" onclick="copyText()">
+        <i id="copyIcon" class="fas fa-copy"></i>
+      </div>
+  </pre>
+  <!-- End of Step 1 -->
 
-- When you run the command above, it may prompt you that the pub cache bin is missing from the system PATH variable.
-- The prompts will tell you the appropriate steps to add it to the PATH variable.
-- Please complete those steps before continuing.
-  {{% /pageinfo %}}
+  <br>
 
-### Step 2) Create the project
+  <!-- Step 2 -->
 
-{{% pageinfo color="primary" %}}
-Note for Windows users
+<h4> Step 2: Create the project </h4>
+Using code format (Read more on at_app <a href="https://pub.dev/packages/at_app/example" target=_blank>here</a>):
+<pre style="height: 50px; width:400px;">
+  <div style="margin-left:-15px; margin-top:-50px;">
+  <code>at_app create [...options] </code> 
+  <div style="margin-left:-10px; margin-top:-45px;">
+  <code> path/to/your/project</code>
+  </div>
+  </div>
+  <div style="margin-top:-160px; margin-left:275px;"title="Copy to clipboard" onclick="copyText2()">
+        <i id="copyIcon" class="fas fa-copy"></i>
+      </div>
+  </pre>
+    <!-- End of Step 2 -->
 
-- In the following commands you will see the `at_app` command, please replace it with `at_app.bat`.
-  {{% /pageinfo %}}
+<br>
 
-Using command format:
+  <!-- Step 3 -->
 
-```sh
-at_app create [...options] path/to/your/project
-```
+<h4> Step 3: Onboard an @sign </h4>
 
-In practice the command looks like this:
+<img src="/Sample_Apps/croppedWT.gif" style="height:600px;">
 
-```sh
-at_app create --namespace=@myatsign myproject
-```
+  <!-- End of Step 3 -->
 
-In addition to the same options available for flutter create, at_app create includes three new ones to help you automatically configure your application. If you wish to learn more about these flags, read about them more in-depth [here](/docs/faqs/atapp/).
+  </div>
+  <!-- End of Steps column -->
 
-| Flag           | Shorthand | Description                                             | Value                |
-| -------------- | --------- | ------------------------------------------------------- | -------------------- |
-| -‎-namespace   | -n        | The @protocol app namespace to use for the application. | (defaults to "‎")    |
-| -‎-root-domain | -r        | The @protocol root domain to use for the application.   | [prod (default), ve] |
-| -‎-api-key     | -k        | The api key for at_onboarding_flutter.                  | (defaults to "‎")    |
-
-Note: at_app create **does not** include `--template`, `--sample`, or `--list-samples` (Coming soon).
-
-### Step 3) Implement the Snackbar Receiver code
-
-### Step 3) Implement your own code
-
-You can git clone the project <a href="https://github.com/cconstab/snackeater" target="_blank">here</a>.
-
-<iframe src="https://cconstab.github.io/snackbar/#/" title="Snackbar Code" style="height: 350px; width: 62vw;"></iframe>
-
-#### Congratulations!
-
-You have successfully created your first @platform application!
-
-Time to start coding your own end-to-end encrypted projects!
-
-### Where should I go next?
-
-We recommend checking out the demo apps that we have to offer! Reviewing these will greatly assist in your understanding of verb implementation on the @platform! It would also be a good idea to check out our @dev program which will show you how to have your app @certified and released to the market!
-
-- [Sample Apps](/docs/sample-apps/): See apps that show off the power of the @platform on your own machine!
-
-- [@dev Program](/dev_tools/): Read up on how to get your @certification and go to market with your privacy-focused application!
+  <div class="column" style="position:sticky;">
+  <h3>Receive your sent data </h3>
+  <b>
+  Send notifications to me by following the steps on the left hand side!
+  </b>
+  <div style="padding-left:25px;">
+  <iframe src="https://cconstab.github.io/snackbar/#/" title="Snackbar Code" style="height: 550px; width: 25vw;"></iframe>
+  </div>
+  </div>
