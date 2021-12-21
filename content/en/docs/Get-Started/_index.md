@@ -1,5 +1,5 @@
 ---
-title: "How to get started with the @platform"
+title: "This page needs rework : Need to describe the overall flow "
 SEOtitle: "How to get started with the @platform (at_platform or AtPlatform)"
 linkTitle: "Getting started"
 Description: "The fastest way to get started developing your privacy-first app on the @platform"

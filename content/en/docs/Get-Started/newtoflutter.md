@@ -1,12 +1,19 @@
 ---
-title: 'Setup your Flutter development environment'
-SEOtitle: 'Setup your Flutter (Dart) development environment'
-linkTitle: 'New to Flutter?'
-Description: 'Get your environment ready to develop a Flutter app'
-content: 'Get your environment ready to develop a Flutter app'
+title: "New to Flutter?"
+SEOtitle: "Flutter and the @platform or at_platform"
+linkTitle: "New to Flutter?"
+Description: "New to Flutter? No problem. Let's get you up to speed"
+content: "New to Flutter? No problem. Let's get you up to speed"
 weight: 4
 date: 2021-12-12
 ---
+
+## 0. What is Flutter and why did we choose it to build our apps on the @platform?
+
+[Flutter](https://flutter.dev/) is Google’s increasingly popular UI software framework. Flutter has taken the mobile app development ecosystem by storm over the last few years. The Flutter Developer Community is increasing multifold every day and we are proud to be a small part of it. As of Dec 2021, the Google Play Store has more than 375,000 apps built on Flutter.
+
+If you are new to Flutter, no problem! Many of our first developers knew nothing about these languages coming in. For guidance on Flutter installation and development, please visit [flutter.dev](https://flutter.dev).
+
 
 ## 1. Setting Up Flutter
 
@@ -53,4 +60,4 @@ Important Links for Visual Studio Code
 
 Follow [this guide](/docs/get-started/get-an-atsign/) to get an @sign.
 
-If you already have an @sign, follow [this guide](/docs/get-started/create-a-project/) to create your first app.
+If you already have an @sign, follow [this guide](/docs/Get-Started/create-a-project) to create your first app.
