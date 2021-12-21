@@ -61,7 +61,7 @@ void _notificationCallBack(var response) {
 ```dart
 /// **SDK 3.X**
 
-atClient!.notificationService.subscribe(regex: 'wavi').listen(_notificationCallBack);
+atClientManager.notificationService.subscribe(regex: 'wavi').listen(_notificationCallBack);
 
 void _notificationCallBack(AtNotification atNotification) {
     var notificationKey = atNotification.key;
