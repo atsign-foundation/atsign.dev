@@ -93,11 +93,19 @@ Using code format (Read more on at_app <a href="https://pub.dev/packages/at_app/
   <!-- Step 3 -->
 
 <h4> Step 3: Onboard an @sign </h4>
+Watch the GIF below to see how to get a free @sign within the app itself! If you'd like to purchase an @sign or would simply like to create and receive any type of @sign on the website, feel free to go to <a href="https://my.atsign.com/go">atsign.com</a>.
+<br></br>
 
 <img src="/Sample_Apps/croppedWT.gif" style="height:600px;">
 
   <!-- End of Step 3 -->
 
+  <!-- Step 4 -->
+
+<br></br>
+
+  <h4>Step 4: Send a snack! </h4>
+  Enter an @sign that will receive the sent snack. Be sure that it is the same @sign that you have entered in the receiver on the right hand side of this screen! 
   </div>
   <!-- End of Steps column -->
 
