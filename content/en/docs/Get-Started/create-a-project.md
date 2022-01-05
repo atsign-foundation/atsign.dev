@@ -9,6 +9,10 @@ date: 2021-12-12
 ---
 
 <style>
+  .receiver{
+  height: 550px; 
+  width: 25vw;
+}
 
 @media only screen and (min-width: 600px){
 .content{
@@ -33,6 +37,14 @@ date: 2021-12-12
   align-self:start;
 }
 }
+
+@media only screen and (max-width: 600px){
+  .receiver{
+  height: 550px; 
+  width: 100%;
+}
+}
+
 </style>
 
 <div class="content">
@@ -46,7 +58,7 @@ date: 2021-12-12
   <center>
   <h3>Receiver </h3>
   
-  <iframe src="https://cconstab.github.io/snackbar/#/" title="Snackbar Code" style="height: 550px; width: 25vw;"></iframe>
+  <iframe src="https://cconstab.github.io/snackbar/#/" title="Snackbar Code" class="receiver"></iframe>
   
   </center>
   </div>
