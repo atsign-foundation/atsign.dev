@@ -14,7 +14,7 @@ date: 2021-12-12
   width: 25vw;
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 950px){
 .content{
   row-gap:20px;
   display:grid;
@@ -38,7 +38,7 @@ date: 2021-12-12
 }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 950px){
   .receiver{
   height: 550px; 
   width: 100%;
