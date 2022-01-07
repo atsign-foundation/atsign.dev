@@ -29,7 +29,7 @@ Encountered Development Errors
 
 ### Flutter doctor says that java needs to be installed
 
-Install Java - [Java SE Development Kit 16 - Downloads (oracle.com)](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html)
+Install Java (Recommended version 8)- [Open JDK Downloads](https://www.openlogic.com/openjdk-downloads?field_java_parent_version_target_id=416&field_operating_system_target_id=All&field_architecture_target_id=391&field_java_package_target_id=396)
 
 ### Flutter Doctor says you have to agree to licenses
 
