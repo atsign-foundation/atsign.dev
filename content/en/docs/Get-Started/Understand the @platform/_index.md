@@ -1,16 +1,17 @@
 ---
 title: "Needs work : Explain the building blocks"
-SEOtitle : "atsign (@Sign or at_sign)-foundation Overview"
+SEOtitle: "atsign (@Sign or at_sign)-foundation Overview"
 linkTitle: "Understand the @platform"
-weight: 1
+weight: 4
 date: 2021-06-02
 nav_children: section
 notoc: true
 simple_list: true
-content : atsign-foundation overview
+content: atsign-foundation overview
 description: >
   Meet the atsign-foundation organization
 ---
+
 # The atsign-foundation
 
 This organization is the home for a number of open source projects and repositories. They generally fall into three basic categories:
