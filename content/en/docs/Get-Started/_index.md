@@ -1,43 +1,102 @@
 ---
 title: "This page needs rework : Need to describe the overall flow "
 SEOtitle: "How to get started with the @platform (at_platform or AtPlatform)"
-linkTitle: "Getting started"
+linkTitle: "Get started"
 Description: "The fastest way to get started developing your privacy-first app on the @platform"
 content: "Everything you need to get started developing apps on the @platform"
 weight: 1
 date: 2017-01-05
 ---
 
+<style>
+  .ItemCard{
+    width:200px;
+    height:150px;
+    border:1px solid #808080;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Column {
+    flex: 1 1 0px;
+  }
+</style>
+
 The [@platform](/docs/resources/glossary/#@platform) was open-sourced in November of 2020 and we’ve been working hard to make your onboarding experience as smooth as possible ever since.
 
 We’re excited to help you get your very own @platform environment up and running!
 
-### Overview
+## Not sure where to go next?
 
-As a developer on the @platform, there is some additional information you may want to know before getting started. This page will guide you through some of the decisions we've made when building the @platform, and some basic information on how it works.
+<div class="column">
+<div class="row">
+<a href="/docs/get-started/create-a-project/">
+<div class="ItemCard">
+<center>
+<h5><b>Try the @platform</b></h5>
+</center>
+<hr>
+<center>
+Seeing the platform in action is the best way to understand it!
+</center>
+</div>
+</a>
 
-#### <a href="https://flutter.dev/"><img src="/landing_page/flutter-logo.png" alt="Flutter" height="2%" width="5%"></a>
+<!-- Space between cards -->
+<div style="margin:10px;">
+</div>
 
-Why did we choose Flutter? Here are some of our favorite reasons:
+<a href="/docs/functional_architecture/">
+<div class="ItemCard">
+<center>
+<h5><b>Learn the SDK</b></h5>
+</center>
+<hr>
+<center>
+Interested in seeing what's behind the curtains?
+</center>
+</div>
+</a>
 
-• Beautiful User Interface that allows you to control every pixel in your app, bring your brand to life, and provide flawless People experiences.
+<!-- Space between cards -->
+<div style="margin:10px;">
+</div>
 
-• Apps directly compile to native ARM code for screaming fast and efficient project builds housing buttery-smooth animations that allow GPU acceleration.
+<a href="/docs/sample_apps/">
+<div class="ItemCard">
+<center>
+<h5><b>Our Sample Apps</b></h5>
+</center>
+<hr>
+<center>
+See some features and capabilities of the @platform!
+</center>
+</div>
+</a>
 
-• Hot Reload. Make an edit to your code and Flutter will update your source code files and automatically rebuild the widget tree, allowing you to see your edits almost immediately. No more rebuilding your application time and time again.
+<!-- Space between cards -->
+<div style="margin:10px;">
+</div>
 
-• It's free and open-source, just like the rest of the @protocol, and there are countless numbers of packages on [pub.dev](https://pub.dev) that any developer is free to use. The Flutter community is growing fast and would love to welcome you!
+<a href="https://docs.flutter.dev/get-started/install" target=_blank>
+<div class="ItemCard">
+<center>
+<h5><b>New to Flutter?</b></h5>
+</center>
+<hr>
+<center>
+Learn all about Flutter and have it installed on your machine!
+</center>
+</div>
+</a>
+<!--Row div-->
+</div>
 
-#### What is an @sign?
+<!--Column div-->
+</div>
 
-Check out [here](https://atsign.com/what-is-an-sign) for a basic overview.
-
-An @sign in technical terms is a digital identifier. When you pair your @sign with an @platform application, your device will spin up a small [Hive database](https://pub.dev/packages/hive) to store your information. Along with the @sign you get your own private "secondary server" which can be hosted by us, or on your own infrastructure. This secondary server is completely private and controlled by the owner of the @sign, it enables you to backup and synchronize your information across all of your devices. The secondary server is also used to share information to other @signs. For more information on how this works, please read our [whitepaper](https://atsign.com/resources/white-papers/the-platform-white-paper/) which covers the @platform and the underlying @protocol in full detail.
-
-#### Pricing
-
-Read more [here](/docs/pricing/)
-
-## Where should I go next?
-
-_To get started, follow through the guides listed below_
+<!-- _To get started, follow through the guides listed below_ -->
