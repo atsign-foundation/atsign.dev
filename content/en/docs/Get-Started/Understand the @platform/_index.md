@@ -1,5 +1,5 @@
 ---
-title: "Needs work : Explain the building blocks"
+title: "Explain the building blocks"
 SEOtitle: "atsign (@Sign or at_sign)-foundation Overview"
 linkTitle: "Understand the @platform"
 weight: 4

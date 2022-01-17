@@ -100,21 +100,22 @@ Using code format (Read more on at_app <a href="https://pub.dev/packages/at_app/
   </pre>
    <b> Note: </b>  Replace "..." with the folder you wish to create your project in.
    <br>
+     <br>
     <!-- End of Step 2 -->
 
  <!-- Step 3 -->
 <h4> Step 3: Run the project </h4>
-Using code format (Read more on at_app <a href="https://pub.dev/packages/at_app/example" target=_blank>here</a>):
-<pre style="height: 40px; width:400px; overflow:hidden;">
+<pre style="height: 60px; width:400px; overflow:hidden;">
   <div style="margin-left:-15px; margin-top:-50px;">
-  <code> at_app create -d snackbar_sender ... </code>
+  <code> cd ... </code>
+  <code> flutter run </code>
   <!-- </div> -->
   </div>
   </pre>
-   <b> Note: </b>  Replace "..." with the folder you wish to create your project in.
+   <b> Note: </b>  Replace "..." with the folder you created your project in.
    <br>
 
-  <!-- End of Step 2 -->
+  <!-- End of Step 3 -->
 
 <br>
 
