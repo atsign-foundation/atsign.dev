@@ -1,9 +1,9 @@
 ---
-title: "This page needs rework : Need to describe the overall flow "
+title: "Get Started"
 SEOtitle: "How to get started with the @platform (at_platform or AtPlatform)"
 linkTitle: "Get started"
-Description: "The fastest way to get started developing your privacy-first app on the @platform"
-content: "Everything you need to get started developing apps on the @platform"
+Description: "The fastest way to get started developing on the @platform"
+content: "Everything you need to get started developing on the @platform"
 weight: 1
 date: 2017-01-05
 ---
@@ -26,7 +26,7 @@ date: 2017-01-05
   }
 </style>
 
-The [@platform](/docs/resources/glossary/#@platform) was open-sourced in November of 2020 and we’ve been working hard to make your onboarding experience as smooth as possible ever since.
+The @platform was open-sourced in November of 2020 and we’ve been working hard to make your onboarding experience as smooth as possible ever since.
 
 We’re excited to help you get your very own @platform environment up and running!
 
