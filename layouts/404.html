@@ -1,10 +1,52 @@
 {{ define "main"}}
     <main id="main">
-      <div>
-       <h1 id="title">Not found</h1>
-       <p>Oops! This page doesn't exist. Try going back to our <a href="{{ "/" | relURL }}">home page</a>.</p>
-
-       <p>You can learn how to make a 404 page like this in <a href="https://gohugo.io/templates/404/">Custom 404 Pages</a>.</p>      
+      <div class="center">
+        <div class="content">
+          <h1 id="title">404 - Not Found</h1>
+          <br>
+          <h3>Oops... Someone messed up!</h3>
+          <h5>Click here to get back to the <a href="{{ "/" | relURL }}">home page</a>.</h5>
+        </div>
       </div>
     </main>
+    <style>
+      .center {
+        height: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        height: fit-content;
+        text-align: center;
+      }
+
+      /* the background image */
+      #main {
+        height: 100%;
+        margin: 0;
+        /* To enable the background image: add the image to static/assets/img and uncomment here */
+        /* background: url("/assets/img/404_bg.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100vw auto;
+        background-clip: border-box; */
+      }
+
+      /* override the padding and width on this page for full screen picture */
+      .container-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      /* hide content overflow when overriding .container-fluid padding */
+      /* this will disable the horizontal scrollbar */
+      html, body {
+        overflow-x: hidden;
+      }
+
+        /* If we want to change mobile layout */
+        /* @media screen and (max-width: 767px) {} */
+    </style>
 {{ end }}
