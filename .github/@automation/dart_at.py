@@ -12,8 +12,8 @@ COLRESET="\033[m"
 baseurl = 'https://pub.dev/api'
 headers = {"Content-Type": "application/json", "Accept": "application/vnd.pub.v2+json", "accept-encoding" : "gzip"}
 
-list_file = "./.github/@automation/at_pubdev.list"
-output_file = "./content/en/docs/Functional_Architecture/libraries.md"
+list_file = "./.github/@automation/at_dart.list"
+output_file = "./content/en/docs/Packages/dart.md"
 
 def detail_at_repos(package):
     # Get list of all repos in an org
@@ -34,12 +34,14 @@ def detail_at_repos(package):
 
 f = open(output_file, 'w')
 f.write('---\n')
-f.write('title: "Libraries"\n')
-f.write('linkTitle: "Libraries"\n')
-f.write('parent: /Functional_Architecture/\n')
-f.write('weight: 2\n')
-f.write('description: >\n')
-f.write('  Find the list of libraries the @platform has to offer here!\n')
+f.write("title: 'Dart packages'\n")
+f.write("SEOtitle: 'Setup your Flutter (Dart) development environment'\n")
+f.write("linkTitle: 'Dart packages'\n")
+f.write("Description: 'Get your environment ready to develop a Dart app'\n")
+f.write("content: 'Get your environment ready to develop a Dart app'\n")
+#f.write('parent: /Functional_Architecture/\n')
+f.write('weight: 1\n')
+f.write('date: 2021-12-12\n')
 f.write('---\n\n\n')
 at_list = open(list_file,'r')
 while(True):
