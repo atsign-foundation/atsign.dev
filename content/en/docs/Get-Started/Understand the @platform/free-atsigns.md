@@ -1,15 +1,21 @@
 ---
-title: 'Namespaces'
-SEOtitle: 'Set up the  @platform (at_platform or AtPlatform) with free @signs (AtSign or at_sign)'
-linkTitle: 'Namespace'
-Description: 'Easily setup your own @platform secondary server for free!'
-content: 'Easily setup your own @platform secondary server for free!'
+title: "Namespaces"
+SEOtitle: "Namespaces on the @platform (at_platform or AtPlatform) with free @signs (AtSign or at_sign)"
+linkTitle: "Namespace"
+Description: "An overview to namespaces and their importance"
+content: "Easily setup your own @platform secondary server for free!"
 
 weight: 1
-date: 2017-01-05
+date: 2022-01-17
 ---
 
-## Getting @signs and keys.
+## What are Namespaces?
+
+If you've spent enough time on our developer site, you are more than likely to have come across the word 'namespace'. But what are these, and why are they so important? We have published an article that answers both of these questions!
+
+Feel free to read all about namespaces [here](https://atsigncompany.medium.com/the-hidden-beauty-of-protocol-namespaces-6f5fab7f7a09).
+
+<!-- ## Getting @signs and keys.
 
 Your first step is to get a couple of @signs, it is best to get at least two, so you can experiment with sharing end-to-end
 encrypted data across the @platform.
@@ -74,4 +80,4 @@ or not working let us know or better still contribute with a PR!
 
 First, if you haven't setup Flutter, do that [here](/docs/get-started/setup-your-env/).
 
-Otherwise, continue to building your first app [here](/docs/get-started/create-a-project/).
+Otherwise, continue to building your first app [here](/docs/get-started/create-a-project/). -->

@@ -37,11 +37,15 @@ We’re excited to help you get your very own @platform environment up and runni
 <a href="/docs/get-started/create-a-project/">
 <div class="ItemCard">
 <center>
+<div  style="margin-top:15px;">
 <h5><b>Try the @platform</b></h5>
+</div>
 </center>
 <hr>
 <center>
+<div style="color:black;">
 Seeing the platform in action is the best way to understand it!
+</div>
 </center>
 </div>
 </a>
@@ -53,11 +57,15 @@ Seeing the platform in action is the best way to understand it!
 <a href="/docs/functional_architecture/">
 <div class="ItemCard">
 <center>
+<div  style="margin-top:15px;">
 <h5><b>Learn the SDK</b></h5>
+</div>
 </center>
 <hr>
 <center>
+<div style="color:black;">
 Interested in seeing what's behind the curtains?
+</div>
 </center>
 </div>
 </a>
@@ -69,11 +77,15 @@ Interested in seeing what's behind the curtains?
 <a href="/docs/sample_apps/">
 <div class="ItemCard">
 <center>
+<div  style="margin-top:15px;">
 <h5><b>Our Sample Apps</b></h5>
+</div>
 </center>
 <hr>
 <center>
+<div style="color:black;">
 See some features and capabilities of the @platform!
+</div>
 </center>
 </div>
 </a>
@@ -85,11 +97,15 @@ See some features and capabilities of the @platform!
 <a href="https://docs.flutter.dev/get-started/install" target=_blank>
 <div class="ItemCard">
 <center>
+<div  style="margin-top:15px;">
 <h5><b>New to Flutter?</b></h5>
+</div>
 </center>
 <hr>
 <center>
+<div style="color:black;">
 Learn all about Flutter and have it installed on your machine!
+</div>
 </center>
 </div>
 </a>
