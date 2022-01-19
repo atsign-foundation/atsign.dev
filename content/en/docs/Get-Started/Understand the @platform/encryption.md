@@ -16,3 +16,5 @@ This shared key uses the same encryption process as the Symmetric Key Encryption
 The @protocol specifically uses AES256 for Data Encryption Keys.
 
 The RSA (Rivest–Shamir–Adleman) encryption algorithm is then used to encrypt the shared key from the above example with @bob’s public key. The @protocl specifically utilizes RSA 2048. Note, that because the RSA algorithm is an Asymmetric Key Encryption method, a public and private key are generated.
+
+As this is a brief overview as to how encryption works on the @platform, you may read more [here](https://atsigncompany.medium.com/data-encryption-caching-with-the-protocol-debe9efc0f49).
