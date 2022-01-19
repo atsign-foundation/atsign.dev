@@ -1,6 +1,6 @@
 ---
-title: "Arrive"
-SEOtitle: "Arrive App on the @platform"
+title: "@rrive"
+SEOtitle: "@rrive App on the @platform"
 linkTitle: "@rrive"
 Description: "Understand the inner-workings of the @rrive app"
 content: "Understand the inner-workings of the @rrive app"
