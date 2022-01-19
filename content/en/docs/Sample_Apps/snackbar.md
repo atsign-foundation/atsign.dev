@@ -194,8 +194,8 @@ If you are looking to gain more understanding of the @platform, we have more dem
 
 [Chit_Chat](/docs/sample_apps/chitchat/) - Secure peer-to-peer messaging
 
-[@mosphere Pro]() - End-to-End encrypted file sharing
+[@mosphere Pro](/docs/sample_apps/atmosphere/) - End-to-End encrypted file sharing
 
-[@rrive]() - Peer-to-peer location sharing
+[@rrive](/docs/sample_apps/arrive/) - Peer-to-peer location sharing
 
 If you are in the mood for reading more on the @platform, click [here](/docs/get-started/understand-the-platform/).

@@ -11,7 +11,27 @@ date: 2022-01-17
 
 ## What are Namespaces?
 
-If you've spent enough time on our developer site, you are more than likely to have come across the word 'namespace'. But what are these, and why are they so important? We have published an article that answers both of these questions!
+The @sign namespace, unlike DNS, extends to Unicode (specifically UTF-8), which allows characters beyond the Latin script. Emojis and other Unicode character sets are allowed thus expanding the namespace1.
+
+There are however some rules when choosing a fully qualified @sign, like location@alice, it cannot include UTF-8 white space ,invisible characters, or control characters. @signs are also Latin case insensitive ensuring that @alice and @Alice refer to the same @sign.
+
+Following conventions set out in DNS and the URI internet RFCs, the following characters are reserved and cannot be used as part of an @sign.
+
+! \* ' ( ) ; : @ & = + $ , / ? # [ ] { }
+
+Whilst the @protocol itself has no real limits on the namespace being used, the @sign namespace has been constrained because of reasonable limits for the underlying keypair databases used in the clients of the @protocol. If needed in the future, this can be opened up further with no changes needed to the protocol, but it will need changes to client databases.
+
+In the persistence layer, UTF-8 characters in the namespace are translated to UTF-7 and the UTF-7 namespace is used to store data in key/value databases.
+
+Whilst the wire protocol uses UTF-8, the fully qualified @signs are translated to UTF-7 and need to fit in the namespace below.
+
+The @sign itself is unique, so it’s also usable as a unique identifier for the application namespace that makes up a composite key. For example, if an application was called @buzz then to ensure the application has no namespace clash, the application owner should own the @buzz @sign. In effect, if you own the @alice you also own alice@ in the namespace for every @sign.
+
+<center>
+<img src="/Func_Arch_images/namespace.png" style="height:300px;"></img>
+</center>
+
+While this may look limiting at first glance, the namespace is actually immense.
 
 Feel free to read more about namespaces [here](https://atsigncompany.medium.com/the-hidden-beauty-of-protocol-namespaces-6f5fab7f7a09).
 
