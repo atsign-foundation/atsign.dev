@@ -21,7 +21,8 @@ jobs:
           git config --global user.name 'Library Action'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git pull
-          ./.github/@automation/detail_at.py
+          ./.github/@automation/dart_at.py
+          ./.github/@automation/flutter_at.py
         env:
           GITHUB_API_TOKEN: ${{ secrets.REPO_TOKEN }}
           
