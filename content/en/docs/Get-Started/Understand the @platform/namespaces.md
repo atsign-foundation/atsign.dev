@@ -13,7 +13,7 @@ date: 2022-01-17
 
 If you've spent enough time on our developer site, you are more than likely to have come across the word 'namespace'. But what are these, and why are they so important? We have published an article that answers both of these questions!
 
-Feel free to read all about namespaces [here](https://atsigncompany.medium.com/the-hidden-beauty-of-protocol-namespaces-6f5fab7f7a09).
+Feel free to read more about namespaces [here](https://atsigncompany.medium.com/the-hidden-beauty-of-protocol-namespaces-6f5fab7f7a09).
 
 <!-- ## Getting @signs and keys.
 

@@ -94,7 +94,7 @@ See some features and capabilities of the @platform!
 <div style="margin:10px;">
 </div>
 
-<a href="https://docs.flutter.dev/get-started/install" target=_blank>
+<a href="/docs/overview/newtoflutter" >
 <div class="ItemCard">
 <center>
 <div  style="margin-top:15px;">
