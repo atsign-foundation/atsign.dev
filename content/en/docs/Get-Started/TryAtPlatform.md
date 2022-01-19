@@ -2,7 +2,7 @@
 title: "Try your own @platform project"
 SEOtitle: "Try an @platform (at_platform or AtPlatform) project"
 linkTitle: "Try the @platform"
-Description: "Seeing the @platform in action with the Snackbar application"
+Description: "Watch the @platform in action with the Snackbar application"
 content: "What to do after creating your own @sign"
 weight: 1
 date: 2021-12-12
