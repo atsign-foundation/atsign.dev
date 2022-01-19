@@ -30,11 +30,13 @@ The @platform was open-sourced in November of 2020 and we’ve been working hard
 
 We’re excited to help you get your very own @platform environment up and running!
 
-## Not sure where to go next?
+We believe that the best way to get started with the platform is to actually try and experience it first hand.
+
+## If you are new here, we recommend the following path
 
 <div class="column">
 <div class="row">
-<a href="/docs/get-started/create-a-project/">
+<a href="/docs/get-started/tryatplatform/">
 <div class="ItemCard">
 <center>
 <div  style="margin-top:15px;">
@@ -78,7 +80,7 @@ Interested in seeing what's behind the curtains?
 <div class="ItemCard">
 <center>
 <div  style="margin-top:15px;">
-<h5><b>Our Sample Apps</b></h5>
+<h5><b>Samples & Tutorials</b></h5>
 </div>
 </center>
 <hr>
@@ -94,7 +96,7 @@ See some features and capabilities of the @platform!
 <div style="margin:10px;">
 </div>
 
-<a href="https://docs.flutter.dev/get-started/install" target=_blank>
+<a href="/docs/overview/newtoflutter" target=_blank>
 <div class="ItemCard">
 <center>
 <div  style="margin-top:15px;">
