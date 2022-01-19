@@ -140,6 +140,12 @@ Watch the GIF below to see how to get a free @sign within the app itself! If you
 
 </div>
 
+<br>
+
+### What's next?
+
+If you are looking for a more advanced version of our Snackbar demo, look no further! Follow the step-by-step guide to send end-to-end encrypted snacks (chocolate bars!) to another device [here](/docs/sample_apps/snackbar/)!
+
 <script>
   function copyText(text, iconId){
   navigator.clipboard.writeText(text);
