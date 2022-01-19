@@ -12,11 +12,8 @@ description: >
   The @platform overview
 ---
 
-
 The @platform is designed to help developers create end-to-end encrypted mobile applications. A [full stack platform](https://github.com/atsign-foundation/) written in Dart and Flutter, it includes a wide range of libraries, services and widgets specifically designed for creating privacy-first applications on any platform.
 
 We have also build an SDK to make all of this super simple for developers so that you can get your apps up and running in no time.
 
 ![Platform Definition](/at_platform_images/platform_definition.svg)
-
-

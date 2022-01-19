@@ -95,7 +95,6 @@ See some features and capabilities of the @platform!
 <!-- Space between cards -->
 <div style="margin:10px;">
 </div>
-
 <a href="/docs/overview/newtoflutter" target=_blank>
 <div class="ItemCard">
 <center>
