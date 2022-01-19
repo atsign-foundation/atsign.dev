@@ -122,7 +122,7 @@ Using code format (Read more on at_app <a href="https://pub.dev/packages/at_app/
   <!-- Step 4 -->
 
 <h4> Step 4: Onboard an @sign </h4>
-Watch the GIF below to see how to get a free @sign within the app itself! If you'd like to purchase an @sign or would simply like to create and receive any type of @sign on the website, feel free to go to <a href="https://my.atsign.com/go">atsign.com</a>.
+Watch the GIF below to see how to get a free @sign within the app itself! If you'd like to purchase an @sign or would simply like to create and receive any type of @sign on the website, feel free to visit <a href="https://my.atsign.com/go">atsign.com</a>.
 <br></br>
 
 <img src="/Sample_Apps/croppedWT.gif" style="height:600px;">
