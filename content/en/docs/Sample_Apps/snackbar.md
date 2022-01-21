@@ -23,7 +23,10 @@ flutter pub activate at_app
 ```
 
 {{% pageinfo %}}
-Verify your system PATH variable
+<h3> Important note! 
+</h3>
+
+<h5>Verify your system PATH variable</h5>
 
 When you run the command above, it may prompt you that the pub cache bin is missing from the system PATH variable.
 The prompts will tell you the appropriate steps to add it to the PATH variable.
