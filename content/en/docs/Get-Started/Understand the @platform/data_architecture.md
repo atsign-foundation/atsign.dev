@@ -1,10 +1,13 @@
 ---
 title: 'Data Architecture'
-SEOtitle: 'dess : distributed edge secondary server  - @platform(at_platform or AtPlatform)'
+SEOtitle: 'No Backend Data Architecture Infrastructure Free'
 linkTitle: 'Data Architecture'
 weight: 2
 content: Run your @platform secondary server on your own infrastructure
 description: Run your @platform secondary server on your own infrastructure
+toc_hide: true
+hide_summary: true
+draft: true
 ---
 
 ## 1. What is dess?
