@@ -193,7 +193,7 @@ That's it! You have now securely sent a snack to another @sign on the @platform!
 
 ### Where do I go next?
 
-If you are looking to gain more understanding of the @platform, we have more demo applications to share with you! Each possesses a step-by-step guide and explanation to get you up and running on the @platform!
+<!-- If you are looking to gain more understanding of the @platform, we have more demo applications to share with you! Each possesses a step-by-step guide and explanation to get you up and running on the @platform!
 
 [Chit_Chat](/docs/sample_apps/chitchat/) - Secure peer-to-peer messaging
 
@@ -201,4 +201,8 @@ If you are looking to gain more understanding of the @platform, we have more dem
 
 [@rrive](/docs/sample_apps/arrive/) - Peer-to-peer location sharing
 
-If you are in the mood for reading more on the @platform, click [here](/docs/get-started/understand-the-platform/).
+If you are in the mood for reading more on the @platform, click [here](/docs/get-started/understand-the-platform/). -->
+
+If you are looking to gain more understanding of the @platform, we have more demo applications coming soon!
+
+For now, if you'd like to read more on the @platform, click [here](/docs/get-started/understand-the-platform/)
