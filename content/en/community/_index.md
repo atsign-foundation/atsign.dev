@@ -1,26 +1,40 @@
 ---
 title: The @platform community
 SEOtitle: The @platform (at_platform or AtPlatform) community
-linktitle : Community
-description : Community resources for the @platform including GitHub, Discord, Hashnode, and Reddit
-content : The @platform community resources, including GitHub, Discord, Hashnode, and Reddit
+linktitle: Community
+description: Community resources for the @platform including GitHub, Discord, Hashnode, and Reddit
+content: The @platform community resources, including GitHub, Discord, Hashnode, and Reddit
 menu:
   main:
     weight: 40
 ---
 
-<!-- add blocks of content here to add more sections to the community page
+<br>
+{{< card-grid >}}
 
-{{< blocks/section >}}
+{{< CL-MainCard >}}
+{{<figure src="/community/GitHubLogo.png" height="49px" width="204px">}}
 
-<div class="col-12">
-<h1 class="text-center">Events</h1>
+Start contributing <p>
+This is where the code hits the fan.
+
+<div style="margin-top: -90px;">
+{{<figure title="visit" src="/community/visitLink.png" link="https://github.com/atsign-foundation" >}}
 </div>
-{{< /blocks/section >}}
+{{< /CL-MainCard >}}
 
-{{< blocks/section >}}
+{{< CL-MainCard >}}
+{{<figure src="/community/DiscordLogo.png"  height="49px" width="204px">}}
+Learn how it works <p>
+Hangout with the core team and other developers.
 
-<div class="col-12">
-<h1 class="text-center">Advisors</h1>
+<div style="margin-top: -90px;">
+{{<figure title="visit" src="/community/visitLink.png" link="https://github.com/atsign-foundation">}}
+ 
 </div>
-{{< /blocks/section >}} -->
+
+{{< /CL-MainCard >}}
+
+{{< /card-grid >}}
+
+<br>
