@@ -48,7 +48,7 @@ As the heart of the @platform, we developed the @protocol in [Dart](https://dart
 
 Our Co-Founder/CTO, [Colin Constable](https://www.linkedin.com/in/colinconstable/), and Co-Founder/CPO, [Kevin Nickels](https://www.linkedin.com/in/nickelskevin/) discusses how the @platform has come to be and what it is, for you!
 
-<iframe src="https://player.vimeo.com/video/664406475?h=62b7237cf2&title=false&dnt=true&byline=false" class="video-frame video_box" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
+<iframe src="https://player.vimeo.com/video/670362764?h=62b7237cf2&title=false&dnt=true&byline=false" class="video-frame video_box" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
 
 ## Where should I go next?
 
