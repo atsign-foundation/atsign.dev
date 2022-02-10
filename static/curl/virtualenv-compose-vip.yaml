@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   virtualenv:
-    image: atsigncompany/virtualenv:prodvip
+    image: atsigncompany/virtualenv:vip
     ports:
       - '127.0.0.1:6379:6379'
       - '64:64'
@@ -14,7 +14,7 @@ services:
 # This enables you to code and test offline and use physical devices
 # connecting to your Virtual Environment
 #   masqdns:
-#     image: atsigncompany/masqdns:prodvip
+#     image: atsigncompany/masqdns:vip
 #     ports:
 #       - "127.0.0.1:5380:8080"
 #       - "53:53/udp"
