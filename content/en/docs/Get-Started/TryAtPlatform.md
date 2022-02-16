@@ -12,7 +12,7 @@ This tutorial will guide you through a 5 step process to install and run our dem
 
 {{% toggleblock title="Step 1: Install at_app" %}}
 Run the following command to install at_app, our developer toolkit:
-{{% codeblock id="1" %}}flutter pub global activate at_app{{% /codeblock %}}
+{{% codeblock id="1" %}}dart pub global activate at_app{{% /codeblock %}}
 {{% /toggleblock %}}
 
 {{% toggleblock title="Step 2: Install the demo app" %}}
