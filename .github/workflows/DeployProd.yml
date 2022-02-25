@@ -23,9 +23,9 @@ jobs:
           extended: true  # Complex themes need Hugo Extended
           
       - name: Setup Node
-        uses: actions/setup-node@v3.0.0
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache dependencies
         uses: actions/cache@v2.1.7
