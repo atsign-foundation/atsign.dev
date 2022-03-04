@@ -16,13 +16,69 @@ social_image_path = "/landing_page/logo.svg"
 	#announcement-bar + .td-navbar {
     margin-top: 35px;
 	}
-	GEC_logo {
-		
+	
+	.new-program img
+	{
+		width: 180px;
+		height: 180px;
 	}
-	@media only screen and (max-width: 400px) {
+	.img
+	{
+		width: 500px;
+		height: 180px;
+	}
+	img.img2
+	{
+		width: 500px;
+		height: 180px;
+	}
+	.col-md-7 order-md-2 > div
+	{
+		margin-top:50px;
+	}
+	a.new-program {
+		margin-left: 150px;
+	}
+	@media only screen and (max-width: 600px) {
 				.td-navbar {
         font-size: 15px;
       }
+	  a.new-program {
+		margin-left: 0px !important;
+	}
+	  .new-program 
+	  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	margin: 10px 0px;
+	}
+	.featurette-divider {
+		margin: 10px;
+	}
+	.new-program img
+	{
+		width: 130px;
+		height: 130px;
+	}
+	img.img2
+	{
+		margin-top: 20px;
+		width: 300px !important;
+		height: auto;
+	}
+	.col-md-7 order-md-2 > div
+	{
+		margin-top:20px 5pxs;
+	}
+	h2
+	{
+		font-size: 1.6rem;
+	}
+	p
+	{
+		font-size: 1.2rem;
+	}
     }
 </style>
 
@@ -75,14 +131,14 @@ Flip the Internet with the Free & Open Source @platform
 
     <div class="row featurette">
 		<div class="col-md-7 order-md-2">
-			<div style="margin-top:50px;">
+			<div>
 			<h2>Hear from our Developer Community </h2>
 			<p>Developer quotes and experiences</p>
 		</div>
 		</div>
-		<div class="col-md-5 order-md-1" align="right" >
+		<div class="new-program col-md-5 order-md-1" align="right" >
 			<!-- <a href="/docs/resources/dev_exp/"> -->
-				<img src="landing_page/DeveloperQuotes.png" alt="No Infrastructure needed" width="180" height="180" >
+				<img src="landing_page/DeveloperQuotes.png" alt="No Infrastructure needed" >
 			<!-- </a> -->
 				
 
@@ -93,13 +149,13 @@ Flip the Internet with the Free & Open Source @platform
 
 	<div class="row featurette">
 		<div class="col-md-7 order-md-2">
-			<div style="margin-top:50px;">
+			<div>
 			<h2>Check out the P2P & E2EE apps built on the @platform </h2>
 			<p>Apps showcase</p>
 		</div>
 	</div>
-		<div class="col-md-5 order-md-1" align="right">
-			<a href="showcase"><img src="landing_page/platformApp.png"  alt="No Infrastructure needed" width="180" height="180"></a>
+		<div class="new-program col-md-5 order-md-1" align="right">
+			<a href="showcase"><img src="landing_page/platformApp.png"  alt="No Infrastructure needed"></a>
 
 		</div>
 	</div>
@@ -108,13 +164,13 @@ Flip the Internet with the Free & Open Source @platform
 
 	<div class="row featurette">
 		<div class="col-md-7 order-md-2" align="left">
-			<div style="margin-top:50px;">
+			<div>
 			<h2>Want to talk to us? </h2>
 			<p>Join our developer community</p>
 		</div>
 	</div>
-		<div class="col-md-5 order-md-1" align="right">
-			<a href="community"> <img src="landing_page/SayHello.png" alt="No Infrastructure needed" width="180" height="180"></a>
+		<div class="new-program col-md-5 order-md-1" align="right">
+			<a href="community"> <img src="landing_page/SayHello.png" alt="No Infrastructure needed"></a>
 
 		</div>
 	</div>
@@ -124,18 +180,17 @@ Flip the Internet with the Free & Open Source @platform
 
 <div style="margin-bottom: 50px;">
 	<center>
-		<div style="margin-top: -50px;">
+		<div style="margin-bottom: 50px;">
 			<h2>
 			Proud Member Contributor:
 		</h2>
 		</div>
-		<br>
-		<a href="https://www.eff.org/" style="margin-right: 100px; margin-left: 200px;">
-			<img src="landing_page/2021-org-member-badge.png" alt="2021 EFF Member Badge" width="180" height="180">
+		<a class="new-program" href="https://www.eff.org/">
+			<img src="landing_page/2021-org-member-badge.png" alt="2021 EFF Member Badge">
 		</a>
 
-		<a href="https://www.globalencryption.org/">
-			<img src="landing_page/GEC-graphics-01.png"alt="Global Encryption Coalition" width="500" height="180"> 
+		<a class="new-program" href="https://www.globalencryption.org/">
+			<img class="img2" src="landing_page/GEC-graphics-01.png"alt="Global Encryption Coalition"> 
 		</a>
 	</center>
 </div>
