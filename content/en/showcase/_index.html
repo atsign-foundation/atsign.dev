@@ -248,10 +248,6 @@ menu:
     background-color: white;
     font-size: 22px;
     display: block;
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    height: 600px;
     padding: 1rem;
   }
 
@@ -261,41 +257,20 @@ menu:
 
   .dev_contr_wrapper {
     width: 100%;
-    height: 600px;
-    left: 0;
   }
 
-  @media only screen and (max-width: 1500px) {
-        .dev_contr_div {
-            height: 969px;
-        }
-        .dev_contr_wrapper {
-            height: 969px;
-        }
-    }
-
-    @media only screen and (max-width: 1015px) {
-        .dev_contr_div {
-            height: 1400px;
-        }
-        .dev_contr_wrapper {
-            height: 1400px;
-        }
-    }
-
-    @media only screen and (max-width: 681px) {
-        .dev_contr_div {
-            height: 2000px;
-        }
-        .dev_contr_wrapper {
-            height: 2000px;
-        }
+    @media only screen and (max-width: 800px) {
+        .td-block-padding, .td-default main section {
+          padding-bottom: 0rem;
+      }
     }
 
   .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .Column {
@@ -310,16 +285,23 @@ menu:
     justify-content: center;
     margin-top: 70px;
   }
+  .td-block-padding, .td-default main section {
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+}
+  .showcase__featured-company-cases {
+    margin-right: 0rem;
+    margin-left: 0rem;
+}
 </style>
+
 <div style="margin-top: -100px;">
 <div style="margin-top:200px;margin-bottom: -50px;">
-  <center>
+<center>
     <h2><strong>New experiences powered by the @platform</strong></h2>
   <h4>From the worldwide developer community</h4>
-
-  </center>
   </div>
-
+</center>
 <section class="showcase__featured-company-cases showcase__section">
   <div class="dev_contr_wrapper">
     <!--grey outer div-->
@@ -400,9 +382,9 @@ menu:
         </div>
         <!--/spacesignal-->
 
-        </div>
+      </div>
 
-        <div class="row">
+      <div class="row">
         <!--atmosphere-->
         <div class="column">
           <div class="div_contr_boxes">
@@ -434,8 +416,6 @@ menu:
         </div>
         <!--/atmosphere-->
 
-
-
           <!--takevote-->
           <div class="column">
             <div class="div_contr_boxes">
@@ -453,7 +433,6 @@ menu:
           </div>
           <!--/takevote-->
 
-
           <!--arrive-->
           <div class="column">
             <div class="div_contr_boxes">
@@ -470,11 +449,11 @@ menu:
             </div>
           </div>
           <!--/arrive-->
-</div>
-<center>
-  <div class="row">
-<!--catweb-->
-<div class="column">
+      </div>
+
+      <div class="row">
+        <!--catweb-->
+        <div class="column">
   <div class="div_contr_boxes">
     <div class="div_boxes_logo">
       <div class="catweb_title"><h3>CATWEB</h3></div>
@@ -497,10 +476,10 @@ menu:
       </div>
     </div>
   </div>
-</div>
-<!--/catweb-->
-  <!--atmospherePRO-->
-  <div class="column">
+        </div>
+        <!--/catweb-->
+        <!--atmospherePRO-->
+        <div class="column">
     <div class="div_contr_boxes">
       <div class="div_boxes_logo" id="atProCon">
         <div class="atmospherePRO_title"><h3>@mosphere Pro</h3></div>
@@ -520,12 +499,13 @@ menu:
         </div>
       </div>
     </div>
-  </div>
-  <!--/atmospherePRO-->
-</div>
-</center>
-
         </div>
+        <!--/atmospherePRO-->
+      </div>
+
+
+    </div>
+  </div>
 </section>
 </div>
 
@@ -539,6 +519,7 @@ We do have a [Pull Request](https://github.com/atsign-foundation) contributions 
 Keep up on all the latest news, releases, and more on [Twitter](http://twitter.com/atsigncompany).
 {{% /blocks/feature %}}
 {{% blocks/feature icon="fab fa-discord" title="Join us on Discord!"  %}}
+
 
 [Join](https://discord.gg/55sHTQFxfz) 2500+ developers in our growing Community.
 {{% /blocks/feature %}} {{< /blocks/section >}}
