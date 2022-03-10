@@ -37,44 +37,63 @@ social_image_path = "/landing_page/logo.svg"
 		width: 500px;
 		height: 180px;
 	}
-	.col-md-7 order-md-2 > div
+	.col-md-7> div
 	{
 		margin-top:50px;
 	}
 	a.new-program {
 		margin-left: 150px;
 	}
-	@media only screen and (max-width: 600px) {
+	.members,.members-whole
+	{
+		margin-bottom: 50px;
+	}
+	@media only screen and (max-width: 700px) {
 				.td-navbar {
         font-size: 15px;
       }
+	  .col-md-7 > div
+	  {
+		  text-align: center;
+	  }
 	  a.new-program {
-		margin-left: 0px !important;
+		margin-left: 0px;
 	}
 	  .new-program 
 	  {
     display: flex;
     align-items: center;
     justify-content: center;
-	margin: 10px 0px;
 	}
 	.featurette-divider {
-		margin: 10px;
+		margin: 0px;
 	}
 	.new-program img
 	{
-		width: 130px;
-		height: 130px;
+		width: 120px;
+		height: 120px;
+	}
+	.new-plat {
+		padding: 0px !important;
 	}
 	img.img2
 	{
-		margin-top: 20px;
+		margin: 30px 0px 50px;
 		width: 300px !important;
 		height: auto;
 	}
-	.col-md-7 order-md-2 > div
+	.col-md-7
 	{
-		margin-top:20px 5pxs;
+		padding: 0px 35px;
+	}
+	.members h2
+	{
+		font-weight: bolder;
+		margin: 50px 35px 20px;
+	}
+	.members,.members-whole
+	{
+		margin-bottom: 0px;
 	}
 	h2
 	{
@@ -83,6 +102,7 @@ social_image_path = "/landing_page/logo.svg"
 	p
 	{
 		font-size: 1.2rem;
+
 	}
     }
 </style>
@@ -132,7 +152,7 @@ Flip the Internet with the Free & Open Source @platform
 </div>
 
 <div class="container marketing">
-    <h2 class="text-center pb-5 py-5">New to our @platform? </h2>
+    <h2 class="new-plat text-center pb-5 py-5">New to our @platform? </h2>
 
     <div class="row featurette">
 		<div class="col-md-7 order-md-2">
@@ -142,9 +162,7 @@ Flip the Internet with the Free & Open Source @platform
 		</div>
 		</div>
 		<div class="new-program col-md-5 order-md-1" align="right" >
-			<!-- <a href="/docs/resources/dev_exp/"> -->
-				<img src="landing_page/DeveloperQuotes.png" alt="No Infrastructure needed" >
-			<!-- </a> -->
+			<a href='{{< relref "/community" >}}'><img src="landing_page/DeveloperQuotes.png" alt="No Infrastructure needed" ></a>
 				
 
 		</div>
@@ -160,7 +178,7 @@ Flip the Internet with the Free & Open Source @platform
 		</div>
 	</div>
 		<div class="new-program col-md-5 order-md-1" align="right">
-			<a href="showcase"><img src="landing_page/platformApp.png"  alt="No Infrastructure needed"></a>
+			<a href='{{< relref "/showcase" >}}'><img src="landing_page/platformApp.png"  alt="No Infrastructure needed"></a>
 
 		</div>
 	</div>
@@ -175,7 +193,7 @@ Flip the Internet with the Free & Open Source @platform
 		</div>
 	</div>
 		<div class="new-program col-md-5 order-md-1" align="right">
-			<a href="community"> <img src="landing_page/SayHello.png" alt="No Infrastructure needed"></a>
+			<a href='{{< relref "/community" >}}'> <img src="landing_page/SayHello.png" alt="No Infrastructure needed"></a>
 
 		</div>
 	</div>
@@ -183,9 +201,9 @@ Flip the Internet with the Free & Open Source @platform
   </div>
 
 
-<div style="margin-bottom: 50px;">
+<div class="members-whole">
 	<center>
-		<div style="margin-bottom: 50px;">
+		<div class="members">
 			<h2>
 			Proud Member Contributor:
 		</h2>
