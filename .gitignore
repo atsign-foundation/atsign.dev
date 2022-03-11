@@ -1,6 +1,7 @@
 public/
 .DS_Store
 .idea/
+node_modules/
 resources/_gen/
 content/en/_index.html
 content/en/docs/Get-Started/_index.md
