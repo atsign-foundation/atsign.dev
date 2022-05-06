@@ -15,7 +15,7 @@ The @platform was open-sourced in November of 2020 and we’ve been working hard
 
 We’re excited to help you get your very own @platform environment up and running!
 
-We believe that the best way to get started with the platform is to actually try and experience it first hand.
+We really believe that the best way to get started with the platform is to actually try and experience it first hand.
 
 ### If you are new here, we recommend the following path
 {{% card-grid %}}
