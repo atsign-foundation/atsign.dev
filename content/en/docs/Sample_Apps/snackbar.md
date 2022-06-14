@@ -36,7 +36,7 @@ Please complete this step before continuing.
 After successfully activating at_app on your machine, simply change directories to where you wish to have your snackbar application exist. After having your desired directory active, copy and paste the following command into your terminal:
 
 ```shell
-at_app create -d snackbar ...
+dart pub global activate at_app ...
 ```
 
 {{% pageinfo %}}
