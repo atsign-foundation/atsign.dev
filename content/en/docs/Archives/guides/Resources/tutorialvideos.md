@@ -3,8 +3,8 @@ title: "Tutorial Videos on the @ platform"
 SEOtitle: "Tutorial Videos   on the @ platform (AtPlatform or at_platform)"
 linkTitle: "Tutorial Videos "
 weight: 3
-content: The @ Company has created a Youtube channel that will help you quickly build your end-to-end encrypted app in a collection of useful videos!
-description: The @ Company has created a Youtube channel that will help you quickly build your end-to-end encrypted app in a collection of useful videos!
+content: Atsign has created a Youtube channel that will help you quickly build your end-to-end encrypted app in a collection of useful videos!
+description: Atsign has created a Youtube channel that will help you quickly build your end-to-end encrypted app in a collection of useful videos!
 date: 2021-11-01
 ---
 
@@ -70,5 +70,5 @@ date: 2021-11-01
   </div>
   </div>
 
-<h5> Subscribe to The @ Company's YouTube channel to be notified whenever a new video has been published! </h5>
+<h5> Subscribe to Atsign's YouTube channel to be notified whenever a new video has been published! </h5>
 <h5>Subscribe <a href="https://www.youtube.com/channel/UCzjSJbPmIEDXFbHb2RIj9Gg">here!</a></h5>

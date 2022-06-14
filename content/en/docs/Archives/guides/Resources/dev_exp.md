@@ -142,7 +142,7 @@ q {font-style: italic;}
 
   <!-- Full-width slides/quotes -->
   <div class="intiser">
-    <q>I remember seeing The @ Company on a flutter event page for the first time and being immediately captivated by its concept, eventually attending all meetings and workshops despite the time difference.
+    <q>I remember seeing Atsign on a flutter event page for the first time and being immediately captivated by its concept, eventually attending all meetings and workshops despite the time difference.
     </q>
   </div>
 
@@ -217,7 +217,7 @@ q {font-style: italic;}
 
   <!-- Full-width slides/quotes -->
   <div class="kudak">
-    <q>I remember seeing The @ Company on a flutter event page for the first time and being immediately captivated by its concept, eventually attending all meetings and workshops despite the time difference.
+    <q>I remember seeing Atsign on a flutter event page for the first time and being immediately captivated by its concept, eventually attending all meetings and workshops despite the time difference.
     </q>
   </div>
 
