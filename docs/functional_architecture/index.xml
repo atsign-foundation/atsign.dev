@@ -1,0 +1,614 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – Core Technology of the @platform</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/</link><description>Recent content in Core Technology of the @platform on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/functional_architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Services provided by the @platform</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/services/</guid><description>
+&lt;h3 id="data-caching--encryption">Data Caching &amp;amp; Encryption&lt;/h3>
+&lt;p>Data that others have shared with an @sign owner is cached on the @sign owner&amp;rsquo;s device’s local keystore if permitted.&lt;/p>
+&lt;p>&lt;a href="https://atsigncompany.medium.com/data-encryption-caching-with-the-protocol-debe9efc0f49">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="notification">Notification&lt;/h3>
+&lt;p>Notification is a mechanism which enables an @sign to share data with another @sign. The data shared is end to end encrypted. @sign owner can query the status of the notification.&lt;/p>
+&lt;p>&lt;a href="https://blog.atsign.dev/part-1-the-notify-verb-cko97bv8f00l5gws13umb0nvz">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="onboarding">Onboarding&lt;/h3>
+&lt;p>The onboarding process is responsible for creating the authenticating keys for a new @sign or retrieving the authenticating keys of an existing @sign from the keys file provided by the @sign owner. It also synchronizes the data between mobile apps and the cloud secondary server.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_onboarding_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="peer-to-peer-streams">Peer-to-Peer Streams&lt;/h3>
+&lt;p>Streams enable transferring of files between the @sign&amp;rsquo;s through a secure and dedicated socket between sender and receiver. The files can be a text documents, images, audio-video files etc. The stream transfers are end to end encrypted.&lt;/p>
+&lt;p>&lt;a href="https://blog.atsign.dev/the-stream-verb-protocol-ckmwi28is01aqd2s184bien2q">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="persistence">Persistence&lt;/h3>
+&lt;p>The persistence defines the interfaces on how the data in @protocol is stored.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_persistence_spec">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="synchronization">Synchronization&lt;/h3>
+&lt;p>Synchronization is a process to keep the data in mobile apps and @sign server identical.&lt;/p>
+&lt;p>&lt;a href="https://atsigncompany.medium.com/the-protocol-synchronization-77b00ca5341b">Learn more&lt;/a>&lt;/p></description></item><item><title>Docs: Libraries</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/libraries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/libraries/</guid><description>
+&lt;h3 id="at_persistence_spec">at_persistence_spec&lt;/h3>
+&lt;p>A Dart library containing abstract classes that defines what an implementation of the persistence layer is responsible for. This can be used to guide implementation of other persistence solutions for servers or SDKs as desired.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_persistence_spec">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_commons">at_commons&lt;/h3>
+&lt;p>A library of Dart and Flutter utility classes that are used across other components of the @‎platform.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_commons">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_common_flutter">at_common_flutter&lt;/h3>
+&lt;p>A Flutter package to provide common widgets used by other @‎platform Flutter packages.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_common_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_client">at_client&lt;/h3>
+&lt;p>The at_client library is the non-platform specific Client SDK which provides the essential methods for building an app using the @protocol.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_client">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_lookup">at_lookup&lt;/h3>
+&lt;p>A Dart library that contains the core commands that can be used with a secondary server (scan, update, lookup, llookup, plookup, etc.)&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_lookup">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_persistence_secondary_server">at_persistence_secondary_server&lt;/h3>
+&lt;p>A Dart library with the implementation classes for the persistence layer of the secondary server.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_persistence_secondary_server">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_server_status">at_server_status&lt;/h3>
+&lt;p>A Dart library that provides a means to check on the status of the @‎root server as well as the secondary server for any particular @‎sign.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_server_status">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_utils">at_utils&lt;/h3>
+&lt;p>A Dart library that contains various utility classes such as atSign, atmetadata, configuration, and logger.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_utils">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_backupkey_flutter">at_backupkey_flutter&lt;/h3>
+&lt;p>A Flutter plugin project for saving the backup key of any @‎sign that is being onboarded with @‎platform apps. The backup key can be used to authenticate in other @‎platform apps.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_backupkey_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_onboarding_flutter">at_onboarding_flutter&lt;/h3>
+&lt;p>A Flutter plugin project for onboarding any @‎sign in @‎platform apps with ease. Provides a QRscanner option and an upload key file option to authenticate.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_onboarding_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_client_mobile">at_client_mobile&lt;/h3>
+&lt;p>A Flutter extension to the at_client library which adds support for mobile, desktop and IoT devices.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_client_mobile">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_contacts_flutter">at_contacts_flutter&lt;/h3>
+&lt;p>A Flutter plugin project to provide ease of managing contacts for an @‎sign using @p‎latform.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_contacts_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_chat_flutter">at_chat_flutter&lt;/h3>
+&lt;p>A Flutter plugin project to provide a chat feature between @‎signs built on the @‎platform to any Flutter application.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_chat_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_demo_data">at_demo_data&lt;/h3>
+&lt;p>A Dart library that contains test data, testable @‎sign credentials and demo environment variables that can be used for writing demo apps and testing with the local test environment.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_demo_data">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_contacts_group_flutter">at_contacts_group_flutter&lt;/h3>
+&lt;p>A Flutter plugin project to provide group functionality with contacts using @‎platform.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_contacts_group_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_location_flutter">at_location_flutter&lt;/h3>
+&lt;p>A Flutter plugin project to share locations between two @‎signs and track them on OSM (OpenStreetMap).&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_location_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_utf7">at_utf7&lt;/h3>
+&lt;p>Provides methods to encode/decode strings to/from the utf7 format as defined in rfc 2152&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_utf7">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_contact">at_contact&lt;/h3>
+&lt;p>A Dart library for managing contact data that developers can use for their applications.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_contact">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_events_flutter">at_events_flutter&lt;/h3>
+&lt;p>A Flutter plugin project to manage events (time, place and attendees) using the @‎platform.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_events_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_base2e15">at_base2e15&lt;/h3>
+&lt;p>binary-to-text encoding schemes that represent binary data in an unicode string format, each unicode character represent 15 bits of binary data.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_base2e15">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_follows_flutter">at_follows_flutter&lt;/h3>
+&lt;p>A Flutter plugin project that provides a basic social &amp;ldquo;follows&amp;rdquo; functionality for @signs. Provides a list of followers and following for @signs with the option to unfollow them.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_follows_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_server_spec">at_server_spec&lt;/h3>
+&lt;p>A Dart library containing abstract classes that defines what implementations of the root and secondary servers are responsible for.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_server_spec">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_map">at_map&lt;/h3>
+&lt;p>A new Flutter plugin.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_map">Learn more&lt;/a>&lt;/p></description></item><item><title>Docs: The @platform widgets</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/widgets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/widgets/</guid><description>
+&lt;!-- Onboarding Widget -->
+&lt;h3 id="the-onboarding-widget">The Onboarding Widget&lt;/h3>
+&lt;p>Onboarding for the first time with the @platform isn’t as simple as choosing your @sign from a dropdown menu and clicking “Login” (after all, how would the application know where to retrieve your authentication keys from a given @sign?).&lt;/p>
+&lt;p>Implementing onboarding from scratch would be painstakingly difficult. Not only would you have to code the PKAM logic, but you would also have to build your own QR code scanner to extract the CRAM (Challenge-Response Authentication Mechanism) key from your @sign’s QR code generated on our website! Atsign realized this very quickly, so we developed the at_onboarding_flutter widget to help developers who want to build production-level apps that onboard real @signs (AKA @signs that you get from our .com site).&lt;/p>
+&lt;details>
+&lt;summary style="color: #F05F3E"> Learn more about the onboarding widget here!&lt;/summary>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This dependency value may not be up-to-date so be sure to check it out on our &lt;a href="https://pub.dev/packages/at_onboarding_flutter">pub.dev&lt;/a>!
+&lt;/div>
+&lt;h4 id="use-this-package-as-a-library">Use this package as a library&lt;/h4>
+&lt;pre>&lt;code>at_onboarding_flutter: ^1.0.0+4
+&lt;/code>&lt;/pre>&lt;p>The “Onboarding” widget is very handy in that you do not need to call the “onboard” or “authenticate” methods from the service file of the application to get it running. Instead, it will ask us to specify the following parameters (descriptions for each parameter are written in the comments):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">Onboarding&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///Required field as for navigation.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">BuildContext&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///Onboards the given [atsign] if not null.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///If [atsign] is null then it takes the atsign from keychain.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///If [atsign] is empty then it directly jumps into authenticate
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///without performing onboarding. (or)
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///If [atsign] is empty then it just presents pairAtSign screen
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///without onboarding the atsign. (or)
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///Just provide an empty string for ignoring existing atsign in
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///keychain or app&amp;#39;s atsign.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">atsign&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///The atClientPreference [required] to continue with the onboarding.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///atClientPreference is an instance of a class in the
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///at_client_mobile library that stores a number of important
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///attributes like the namespace of the application, the CRAM key of
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///an @sign, the root domain we want the project to communicate
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///with, and so on.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">AtClientPreference&lt;/span> &lt;span style="color:#000">atClientPreference&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///The root domain for our project. By default, the plugin connects
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///to [root.atsign.org] to perform onboarding.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">domain&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///The color of the screen to match with the app&amp;#39;s aesthetics.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///default it is [black].
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">Color&lt;/span> &lt;span style="color:#000">appColor&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///If logo is not null, then it displays the widget on the left side
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///of appbar. Else, it displays nothing.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">Widget&lt;/span> &lt;span style="color:#000">logo&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///Function returns atClientServiceMap on successful onboarding along
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///with onboarded @sign. Assign these returned values to the relevant
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///variables in your project’s service file.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">Function&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Map&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">String&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">AtClientService&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000">onboard&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///Function returns error if onboarding fails for an @sign.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">Function&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">Object&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000">onError&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///After successful onboarding, the app will be redirected to this
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///screen if it is not null.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">Widget&lt;/span> &lt;span style="color:#000">nextScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">///After the first successful onboarding, the app will get redirected
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">///to this screen if not null.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">Widget&lt;/span> &lt;span style="color:#000">fistTimeAuthNextScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">AtSignLogger&lt;/span> &lt;span style="color:#000">_logger&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtSignLogger&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;At Onboarding Flutter&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000">Onboarding&lt;/span>&lt;span style="color:#000;font-weight:bold">({&lt;/span>&lt;span style="color:#000">Key&lt;/span> &lt;span style="color:#000">key&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#a40000">@&lt;/span>&lt;span style="color:#000">required&lt;/span> &lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atsign&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#a40000">@&lt;/span>&lt;span style="color:#000">required&lt;/span> &lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">onboard&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#a40000">@&lt;/span>&lt;span style="color:#000">required&lt;/span> &lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">onError&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">nextScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">fistTimeAuthNextScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#a40000">@&lt;/span>&lt;span style="color:#000">required&lt;/span> &lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientPreference&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">appColor&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">logo&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">this&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">domain&lt;/span>&lt;span style="color:#000;font-weight:bold">})&lt;/span>
+&lt;span style="color:#000;font-weight:bold">...&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To see an actual implementation of the onboarding widget, let’s revisit the _login function in the at_hello_world app with some updated code:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// Return an “Onboarding” widget that walks the individual through
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">/// the onboarding procedure for any real @sign.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">_login&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#204a87;font-weight:bold">async&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">Onboarding&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">context:&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Ensure that the “root” attribute is assigned to
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// “root.atsign.org”
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#f57900">domain:&lt;/span> &lt;span style="color:#000">AtConfig&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">root&lt;/span>
+&lt;span style="color:#f57900">atClientPreference:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span>
+&lt;span style="color:#000">_serverDemoService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getAtClientPreference&lt;/span>&lt;span style="color:#000;font-weight:bold">(),&lt;/span>
+&lt;span style="color:#f57900">appColor:&lt;/span> &lt;span style="color:#000">Color&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">fromARGB&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">255&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">240&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">94&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">62&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#f57900">onboard:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">atClientServiceMap&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">atsign&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">_serverDemoService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientServiceMap&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientServiceMap&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">_serverDemoService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atSign&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atsign&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#f57900">onError:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">error&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">error&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Remove the constructor in HomeScreen. You can call the @sign
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// with the getAtSign() method in the service file.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#f57900">nextScreen:&lt;/span> &lt;span style="color:#000">HomeScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">(),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>All of the parameters in the “Onboarding” widget can be populated very easily with either methods from the project’s service file (e.g. getAtClientPreference()) or special variables from the app itself (e.g. context). “Onboarding” is capable of handling all instances of an @sign (e.g. a particular @sign does not exist, a particular @sign exists but needs to be paired with a QR code to the device, a particular @sign exists and its keys are already in the device’s keychain manager). By using this widget, what would have taken several screens and many lines of code can be completely bypassed with a single return statement!&lt;/p>
+&lt;p>That’s all for the “Onboarding” widget. Before moving on from this subsection, we highly recommend implementing the widget in your own application and onboarding a real @sign to understand its intended user journey. If you’re interested, these are the steps to implement the “Onboarding” widget in the at_hello_world project:&lt;/p>
+&lt;p>Update your Android Studio, Flutter SDK, and Dart SDK to their latest versions. Place the at&lt;em>onboarding_flutter dependency in pubspec.yaml.
+Follow the setup procedure for the “Onboarding” widget in the “AndroidManifest” (android -&amp;gt; app -&amp;gt; src -&amp;gt; main -&amp;gt; AndroidManifest.xml) and “gradle” file (android -&amp;gt; app -&amp;gt; build.gradle) of the at_hello_world project. You may also need to update the “classpath” of the android gradle build tool to 3.5.4 (this can be done by going to android -&amp;gt; gradle -&amp;gt; build.gradle and editing the first classpath in the “dependencies” brackets). This must be completed in order to set up the permission for the QR code scanner to access your camera. Find those steps on the pub.dev site for at_onboarding_flutter here.
+Get a free @sign from atsign.com. Generate its QR code, and drag/drop the created file directly into the emulator. Confirm that the QR code image appears in the “Files” or “Drive” app of the emulator you’re using (assuming that it is an Android emulator).
+In “at_conf.dart”, update the “root” variable from &amp;lsquo;vip.ve.atsign.zone&amp;rsquo; to &amp;lsquo;root.atsign.org&amp;rsquo;. This ensures that the project points to the domain that is used in production as opposed to the one for the virtual environment.
+Replace the existing code in the _login() function with what we wrote above. Double-check that no errors arise (you’ll likely have to tweak the names of a couple of methods in the service file, because some of them begin with the “&lt;/em>” private designation).
+Fire the app on your emulator. Although the dropdown menu will still appear (since we didn’t change any of that code), we will not be authenticating with any of the testable @signs. If you’d like, simply remove the “DropdownButton” widget so that we can eliminate the list of testable @signs. Click on the “Login” button.
+Assuming that you haven’t previously authenticated with a real @sign, the “Onboarding” widget should prompt you with a request to upload your QR code. Upload the QR code you saved onto the emulator earlier and wait for the authentication to complete.
+If no errors form, the “Onboarding” widget should take you seamlessly to the “Home” screen, where you can add &amp;amp; retrieve key/value pairs directly from your very own secondary server! The next time you authenticate (i.e. restart the application), the “Onboarding” widget should detect the authentication keys placed in your device’s keychain manager and guide you directly to the “Home” screen.&lt;/p>
+&lt;/details>
+&lt;!-- Onboarding Widget Ends-->
+&lt;!-- Chats Widget-->
+&lt;h3 id="the-chatting-widget">The Chatting Widget&lt;/h3>
+&lt;p>One of the many things you can do after successfully authenticating an @sign is providing one-to-one text messaging! To do this, you’ll need the at_chat_flutter widget.&lt;/p>
+&lt;p>The at_chat_flutter widget offers a messaging experience that is unique to the @platform. In a traditional messaging application, your texts are stored in a remote database and the person you’re pinging pulls the texts from there (a bit unsettling if you think about it). Of course, there is no such thing as a remote database in the @platform, so we had to be a bit clever coming up with a messaging scheme. In a nutshell, your text messages are not “sent” but rather “shared” with another @sign. All your texts are stored securely in your secondary server and never leave; if you decide to send a message to someone, that person is given permission to view that text via the notify verb, which will be covered in the next section on advanced @platform verbs.&lt;/p>
+&lt;details>
+&lt;summary style="color: #F05F3E"> Learn more about the chatting widget here! &lt;/summary>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This dependency value may not be up-to-date so be sure to check it out on our &lt;a href="https://pub.dev/packages/at_chat_flutter">pub.dev&lt;/a>!
+&lt;/div>
+&lt;h4 id="use-this-package-as-a-library-1">Use this package as a library&lt;/h4>
+&lt;pre>&lt;code>at_chat_flutter: ^1.0.1
+&lt;/code>&lt;/pre>&lt;p>Although this messaging dynamic might sound a bit involved, set up is quite easy! To get a feel for using the “Chatting” widget, it’s best to follow along with the at_chats demo application.&lt;/p>
+&lt;p>The general flow of all @platform widgets is onboarding an @sign =&amp;gt; initializing the service object =&amp;gt; creating the actual widgets. Assuming we’ve already onboarded an @sign, let’s look at the steps to initialize our chat service:&lt;/p>
+&lt;p>(The following code snippets are taken directly from at_chats. While there will be explanations, don’t worry too much about all the variables!)&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">getAtSignAndInitializeChat&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#204a87;font-weight:bold">async&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// In the at_chats app, the onboarded @sign is displayed at the top
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// of the Second Screen. We set that @sign to [currentAtSign].
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">currentAtSign&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">clientSdkService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Set [activeAtSign], which is the variable that gets displayed, to
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// [currentAtSign] using setState(() {}).
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">setState&lt;/span>&lt;span style="color:#000;font-weight:bold">(()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">activeAtSign&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">currentAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">});&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Initialize a List of Strings called [allAtSigns] that we will
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// eventually display in the dropdown on the Second Screen. Here, we
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// simply pull an existing List from the at_demo_data dependency.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">List&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">String&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">allAtSigns&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">at_demo_data&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">allAtsigns&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// We want to remove the [activeAtSign] from this List because we
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// can&amp;#39;t chat with ourselves!
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">allAtSigns&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">remove&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">activeAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Again, call setState(() {}) to assign [allAtSigns] to the
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// variable [atSigns] that will be used in the dropdown widget.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">setState&lt;/span>&lt;span style="color:#000;font-weight:bold">(()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">atSigns&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">allAtSigns&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">});&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// This is the only at_chat_flutter related function!
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// initializeChatService takes in an AtClientImpl instance, the
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// currently onboarded @sign, and the root domain for this project.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// As its name suggest, this function will prepare the chat service
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// for us.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">initializeChatService&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">clientSdkService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientServiceInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">activeAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">rootDomain:&lt;/span> &lt;span style="color:#000">MixedConstants&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ROOT_DOMAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000">Because&lt;/span> &lt;span style="color:#000">getAtSignandInitializeChat&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#204a87;font-weight:bold">is&lt;/span> &lt;span style="color:#000">an&lt;/span> &lt;span style="color:#000">initialization&lt;/span> &lt;span style="color:#000">function&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">it&lt;/span> &lt;span style="color:#204a87;font-weight:bold">is&lt;/span> &lt;span style="color:#000">best&lt;/span> &lt;span style="color:#000">to&lt;/span> &lt;span style="color:#000">call&lt;/span> &lt;span style="color:#000">it&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#000">the&lt;/span> &lt;span style="color:#000">initState&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000">function&lt;/span> &lt;span style="color:#000">at&lt;/span> &lt;span style="color:#000">the&lt;/span> &lt;span style="color:#000">top&lt;/span> &lt;span style="color:#000">of&lt;/span> &lt;span style="color:#000">the&lt;/span> &lt;span style="color:#000">_SecondScreenState&lt;/span> &lt;span style="color:#000">class&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#000">The&lt;/span> &lt;span style="color:#000">only&lt;/span> &lt;span style="color:#000">other&lt;/span> &lt;span style="color:#000">thing&lt;/span> &lt;span style="color:#000">we&lt;/span> &lt;span style="color:#000">need&lt;/span> &lt;span style="color:#000">to&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> &lt;span style="color:#000">before&lt;/span> &lt;span style="color:#000">calling&lt;/span> &lt;span style="color:#000">the&lt;/span> &lt;span style="color:#a40000">“&lt;/span>&lt;span style="color:#000">Chatting&lt;/span>&lt;span style="color:#a40000">”&lt;/span> &lt;span style="color:#000">widget&lt;/span> &lt;span style="color:#204a87;font-weight:bold">is&lt;/span> &lt;span style="color:#000">deciding&lt;/span> &lt;span style="color:#000">who&lt;/span> &lt;span style="color:#000">we&lt;/span>&lt;span style="color:#a40000">’&lt;/span>&lt;span style="color:#000">d&lt;/span> &lt;span style="color:#000">like&lt;/span> &lt;span style="color:#000">to&lt;/span> &lt;span style="color:#000">chat&lt;/span> &lt;span style="color:#204a87;font-weight:bold">with&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>
+&lt;span style="color:#000">setAtsignToChatWith&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// This function is as simple as calling the setChatWithAtSign()
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// function from the at_chat_flutter dependency with
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// [chatWithAtSign] passed in! [chatWithAtSign] is simply the @sign
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// that a user selects from the dropdown on the screen.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">setChatWithAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">chatWithAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We won’t want to call setAtsignToChatWith() in initState() because the function won’t know which @sign we’re communicating with until the individual selects it from the dropdown widget. Instead, it makes the most sense to place this function in the button (FlatButton for the at_chats app) that determines the navigation to the next screen. For at_chats, clicking the “Chat options” FlatButton will check to make sure that the “chatWithAtSign” variable is populated before it calls setAtsignToChatWith() and switches the “showOptions” variable to true, which allows the individual to see the two options for viewing the chatbox.&lt;/p>
+&lt;p>Now, for the moment of truth: once we’ve initialized the chat service, how do we create the actual chat screen? In most tutorials, you’ll probably be guided through a UI-heavy demo of different chatbox components and pairing a backend service. With the @platform, however, it’s really just one line of code:&lt;/p>
+&lt;p>(This snippet is directly from third_screen.dart in the at_chats project!)&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">_ThirdScreenState&lt;/span> &lt;span style="color:#204a87;font-weight:bold">extends&lt;/span> &lt;span style="color:#000">State&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">ThirdScreen&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#a40000">@&lt;/span>&lt;span style="color:#000">override&lt;/span>
+&lt;span style="color:#000">Widget&lt;/span> &lt;span style="color:#000">build&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BuildContext&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">Scaffold&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">appBar:&lt;/span> &lt;span style="color:#000">AppBar&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">title:&lt;/span> &lt;span style="color:#000">Text&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Chat&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// You can simply set the body parameter of Scaffold widget
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// to the ChatScreen widget from the at_chat_flutter dependency!
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#f57900">body:&lt;/span> &lt;span style="color:#000">ChatScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Optional parameters to customize your ChatScreen widget.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// You can find the full list of parameters in our Github
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// under the at_widgets repository.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#f57900">height:&lt;/span> &lt;span style="color:#000">MediaQuery&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">of&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">).&lt;/span>&lt;span style="color:#000">size&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">height&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">incomingMessageColor:&lt;/span> &lt;span style="color:#000">Colors&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">blue&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">100&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#f57900">outgoingMessageColor:&lt;/span> &lt;span style="color:#000">Colors&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">green&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">100&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#f57900">isScreen:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>By initializing the chat service and calling the ChatScreen() widget, you can make a fully-functioning one-to-one messaging application! While the ChatScreen widget offers a number of ways to customize your chatbox, if you’d like to build your own widget from scratch, you can use the at_chat_flutter dependency as a basis for creating your personal chat library that works with the @platform.&lt;/p>
+&lt;/details>
+&lt;!-- Chats Widget Ends-->
+&lt;!-- Contacts Widget-->
+&lt;h3 id="the-contacts-widget">The Contacts Widget&lt;/h3>
+&lt;p>Too many @signs to keep track of? That’s no problem with the at_contacts_flutter widget! Simply add the at_contacts_flutter dependency to your project, and you’ll be capable of performing several actions with your @sign contacts.&lt;/p>
+&lt;details>
+&lt;summary style="color: #F05F3E"> Learn more about the contacts widget here! &lt;/summary>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This dependency value may not be up-to-date so be sure to check it out on our &lt;a href="https://pub.dev/packages/at_contacts_flutter">pub.dev&lt;/a>!
+&lt;/div>
+&lt;h4 id="use-this-package-as-a-library-2">Use this package as a library&lt;/h4>
+&lt;pre>&lt;code>at_contacts_flutter: ^1.0.0
+&lt;/code>&lt;/pre>&lt;p>In order to implement the at_contacts_flutter widget, you must first, of course, create an AtClientService instance and authenticate an @sign.&lt;/p>
+&lt;p>After you have successfully onboarded an @sign, you can add a page where you may choose to show your contacts or show your blocked contacts. On load of this page, you will want to initialize the contacts service, similar to initializing the at_chats service. The contacts service needs to be initialised with the atClient from the AtClientService, current @sign, and the root domain.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">initializeContactsService&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">clientSdkService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientServiceInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">activeAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">rootDomain:&lt;/span> &lt;span style="color:#000">MixedConstants&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ROOT_DOMAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>After successfully initializing the contact service, you will now be capable of getting the list of contacts that exist for the authenticated @sign. This is as easy as simply passing the contacts into a variable.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">_result&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">_contactService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">fetchContacts&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This fetchContacts() function exists in the _contactService file, which can be found within the at_contact’s ‘services’ folder. If you want to do more than just get the list of contacts, you have the capability of adding more contacts to this list, in addition to removing or blocking any.
+In order to retrieve the list of blocked contacts, it is similar to retrieving the regular list of contacts. The code from the example app demonstrates this well.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">Class&lt;/span> &lt;span style="color:#000">BlockedScreen&lt;/span> &lt;span style="color:#204a87;font-weight:bold">extends&lt;/span> &lt;span style="color:#000">StatefulWidget&lt;/span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#a40000">@&lt;/span>&lt;span style="color:#000">override&lt;/span>
+&lt;span style="color:#000">_BlockedScreenState&lt;/span> &lt;span style="color:#000">createState&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#000">_BlockedScreenState&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">_BlockedScreenState&lt;/span> &lt;span style="color:#204a87;font-weight:bold">extends&lt;/span> &lt;span style="color:#000">State&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">BlockedScreen&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Here, we are initializing a ContactService object in order
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// to call our list of blocked contacts later within our widget.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Refer to how the list is populated within the example app
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">ContactService&lt;/span> &lt;span style="color:#000">_contactService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#a40000">@&lt;/span>&lt;span style="color:#000">override&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">initState&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">_contactService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">ContactService&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#000">_contactService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">fetchBlockContactList&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">super&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">initState&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To block a contact, it is as easy as calling the blockUnblock method. If a contact is blocked, it will unblock the contact. If the contact is not blocked, it will block it for you.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">_contactService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">blockUnblockContact&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">contact:&lt;/span> &lt;span style="color:#000">_atSign_you_wish_toBlockUnblock&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>After you block a contact, you may wish to have that contact removed from the list. All you have to do is simply implement the code below:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">_contactService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">deleteAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">atSign:&lt;/span> &lt;span style="color:#000">_atSign_you_wish_toRemove&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Along with the previously stated functionalities, the at_contacts_flutter package also provides the UI so there’s no need to set up a separate page to house these functions!&lt;/p>
+&lt;/details>
+&lt;h3 id="the-location-widget">The Location Widget&lt;/h3>
+&lt;p>One of the more common mobile application features is geolocation. Even if your app doesn’t explicitly use a map, with an individual’s permission, you can use their location for a variety of relevant recommendations like shops, restaurants, and nearby events. The at_location_flutter dependency is a powerful abstraction for geolocation with the @platform, and we’ll see some use cases of its most common functions.&lt;/p>
+&lt;details>
+&lt;summary style="color: #F05F3E"> Learn more about the contacts widget here! &lt;/summary>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This dependency value may not be up-to-date so be sure to check it out on our &lt;a href="https://pub.dev/packages/at_location_flutter">pub.dev&lt;/a>!
+&lt;/div>
+&lt;h4 id="use-this-package-as-a-library-3">Use this package as a library&lt;/h4>
+&lt;pre>&lt;code>at_location_flutter: ^1.0.3
+&lt;/code>&lt;/pre>&lt;p>Once we’ve successfully onboarded an @sign, let’s initialize our location service. For this subsection, we’ll base our code off of the example app in the Github directory for at_location_flutter.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">initService&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// A different way to call the currently onboarded @sign. In
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// practice, it is better to write a getAtSign() method in your
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// project&amp;#39;s service file. This variable is used to display the
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// onboarded @sign at the top of the screen.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">activeAtSign&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
+&lt;span style="color:#000">clientSdkService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientServiceInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">currentAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// initializeLocationService() is a function from
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// at_location_flutter that&amp;#39;s located in init_location_service.dart.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// This function takes in an AtClientImpl instance, the currently
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// onboarded @sign, a GlobalKey to access the NavigatorState (for
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// navigating between routes), and the domain we want to point our
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// project to.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">initializeLocationService&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">clientSdkService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientServiceInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">activeAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">NavService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">navKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">rootDomain:&lt;/span> &lt;span style="color:#000">MixedConstants&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ROOT_DOMAIN&lt;/span>
+&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>As is the case with most @platform widgets, you can call this initialization function in the initState() function of your class.&lt;/p>
+&lt;p>Once our location service is ready to go, you can let the authenticated individual freely send and request locations to/from other @sign customers. These capabilities are made possible with the “sendShareLocationNotification” and “send RequestLocationNotification” functions (which exist in the init_location_service.dart file).&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">ElevatedButton&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">onPressed:&lt;/span> &lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#204a87;font-weight:bold">async&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// checkAtsign() is a helper functions that ensures the entered
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// @sign (for sending/requesting a location) is valid. It is
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// unique to the example app in the at_location_flutter Github
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// directory.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">result&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">checkAtsign&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">!&lt;/span>&lt;span style="color:#000">result&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">CustomToast&lt;/span>&lt;span style="color:#000;font-weight:bold">().&lt;/span>&lt;span style="color:#000">show&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;@sign not valid&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">return&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// This function takes in the @sign receiving the location
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// notification as well as the duration (in minutes) of
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// how long this shared location persists on the receiving
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// @sign&amp;#39;s secondary server.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">sendShareLocationNotification&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">receiver&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">30&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#f57900">child:&lt;/span> &lt;span style="color:#000">Text&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Send Location&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000">ElevatedButton&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">onPressed:&lt;/span> &lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#204a87;font-weight:bold">async&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">result&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">checkAtsign&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">!&lt;/span>&lt;span style="color:#000">result&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">CustomToast&lt;/span>&lt;span style="color:#000;font-weight:bold">().&lt;/span>&lt;span style="color:#000">show&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;@sign not valid&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">return&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Similar to the previous function,
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// &amp;#34;sendRequestLocationNotification&amp;#34; needs the @sign to
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// request a location from.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">sendRequestLocationNotification&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">receiver&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#f57900">child:&lt;/span> &lt;span style="color:#000">Text&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Request Location&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>While the above two functions are certainly useful, there is another widget in the at_location_flutter dependency that offers a more elegant UI for sending your location, requesting locations, and even visualizing your current position. That widget is called “HomeScreen”.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// When an individual clicks on the ElevatedButton that says “Show
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">/// map”, the Navigator will lead them to the HomeScreen().
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">ElevatedButton&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">onPressed:&lt;/span> &lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">Navigator&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">of&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">).&lt;/span>&lt;span style="color:#000">push&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">MaterialPageRoute&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">builder:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">BuildContext&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#000">HomeScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">(),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">));&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#f57900">child:&lt;/span> &lt;span style="color:#000">Text&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Show map&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The HomeScreen displays a map with your location and offers two options (contained in “Task” widgets) that provide more user-friendly versions of the “sendShareLocationNotification” and “send RequestLocationNotification” functions (if you’re curious, these more elegant widgets are called ShareLocationSheet() and RequestLocationSheet() respectively). When you click on one of these tasks, a popup will appear to enter a receiving @sign (and duration for sharing a location), and any task you complete will appear in the bottom white region of the screen with its current status.&lt;/p>
+&lt;p>That’s all for the “Location” widget! If you want to test the at_location_flutter dependency for yourself, feel free to start by cloning the example app from the at_location_flutter Github repository. For more intricate functions like the location notification stream, our Github would be an excellent place to learn more.&lt;/p>
+&lt;/details>
+&lt;!-- End Location Widget-->
+&lt;!-- Events Widget-->
+&lt;h3 id="the-events-widget">The Events Widget&lt;/h3>
+&lt;p>Like how we regularly share calendar items between our friends, family, and colleagues, it would be very convenient to have a data structure for events that works with the @platform. This is where the at_events_flutter dependency comes into play.&lt;/p>
+&lt;details>
+&lt;summary style="color: #F05F3E"> Learn more about the events widget here! &lt;/summary>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This dependency value may not be up-to-date so be sure to check it out on our &lt;a href="https://pub.dev/packages/at_events_flutter">pub.dev&lt;/a>!
+&lt;/div>
+&lt;h4 id="use-this-package-as-a-library-4">Use this package as a library&lt;/h4>
+&lt;pre>&lt;code>at_events_flutter: ^1.0.0
+&lt;/code>&lt;/pre>&lt;p>The first step, as you very well may have guessed, is the initialization of the event service. Like the previous few widgets discussed above, we’ll be examining snippets from the &lt;a href="https://github.com/atsign-foundation/at_widgets/tree/trunk/at_events_flutter/example">example app&lt;/a> in the at_event_flutter Github directory throughout this subsection.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">initService&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">activeAtSign&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
+&lt;span style="color:#000">clientSdkService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientServiceInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">currentAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Unlike most of the initialization functions, our event
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// initializer only needs an AtClientImpl instance and an optional
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// argument for the root domain.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">initialiseEventService&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">clientSdkService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientServiceInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">rootDomain:&lt;/span> &lt;span style="color:#000">MixedConstants&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ROOT_DOMAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The most important function in the at_event_flutter library is CreateEvent(), which builds an instance of a CreateEvent that can be customized and shared across different @signs:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">TextButton&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">onPressed:&lt;/span> &lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// bottomSheet will return a pop up screen that takes up 90%
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// of the screen height.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">bottomSheet&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">CreateEvent&lt;/span>&lt;span style="color:#000;font-weight:bold">(),&lt;/span> &lt;span style="color:#000">MediaQuery&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">of&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">).&lt;/span>&lt;span style="color:#000">size&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">height&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">*&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0.9&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#f57900">child:&lt;/span> &lt;span style="color:#000">Container&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">height:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">40&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">child:&lt;/span>
+&lt;span style="color:#000">Text&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Create event&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#f57900">style:&lt;/span> &lt;span style="color:#000">TextStyle&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">color:&lt;/span> &lt;span style="color:#000">Colors&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">black&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CreateEvent() is a separate screen in the application that guides an individual through a list of fields they can populate to provide information about their event. If you look into the CreateEvent class, you’ll see that these fields are stored in an object called “eventData”, which is an instance of an &lt;a href="https://github.com/atsign-foundation/at_widgets/blob/trunk/at_events_flutter/lib/models/event_notification.dart">EventNotificationModel&lt;/a>. It’s full list of attributes is below (the ones with comments are used in the CreateEvent class):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">EventNotificationModel&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">EventNotificationModel&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">atsignCreator&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">isCancelled&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// The title of the event.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">title&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// A location serving as the event&amp;#39;s venue.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">Venue&lt;/span> &lt;span style="color:#000">venue&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// An object that stores info like event date, start time, and repeat duration.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">Event&lt;/span> &lt;span style="color:#000">event&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">key&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">AtGroup&lt;/span> &lt;span style="color:#000">group&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">isSharing&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">isUpdate&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">//when an event data is being updated , this should be true.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000;font-weight:bold">...&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>“eventData” is a crucial data structure that’s used not just in creating an event but updating and deleting events as well. The init_events_service.dart file illustrates a variety of functions that can be used to perform useful actions on these objects.&lt;/p>
+&lt;p>One important feature of the example app is its EventList class, which doesn’t come directly with the at_events_flutter dependency:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">TextButton&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">onPressed:&lt;/span> &lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">Navigator&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">push&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">MaterialPageRoute&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">builder:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#000">EventList&lt;/span>&lt;span style="color:#000;font-weight:bold">(),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This seemingly harmless class is actually doing quite a bit of work behind the scenes! EventList listens to an event stream that comes from an EventService object (a class within the at_event_flutter dependency) and displays them in a ListView format. Clicking on one of these events, you’ll be navigated to a popup of a CreateEvent instance with its “isUpdate” parameter set to true. This allows you to edit and save any event of your choice!&lt;/p>
+&lt;/details>
+&lt;h3 id="the-backup-keys-widget">The Backup Keys Widget&lt;/h3>
+&lt;p>When someone uses their @sign for the first time with an @platform app, it is important to have them authenticate with their generated QR code and create a set of backup keys just in case the ones in the keychain manager are lost or if you want to use the same @sign on a different device. The backup keys widget occurs during the “Onboarding” widget.&lt;/p>
+&lt;details>
+&lt;summary style="color: #F05F3E"> Learn more about the events widget here! &lt;/summary>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This dependency value may not be up-to-date so be sure to check it out on our &lt;a href="https://pub.dev/packages/at_backupkey_flutter">pub.dev&lt;/a>!
+&lt;/div>
+&lt;h4 id="use-this-package-as-a-library-5">Use this package as a library&lt;/h4>
+&lt;pre>&lt;code>at_onboarding_flutter: ^1.0.0+4
+&lt;/code>&lt;/pre>&lt;p>You may notice that in order to get the at_backupKeys_flutter package, you can simply pull from the at_onboarding_flutter widget which houses the at_backupkeys_flutter widget! See below the process of at_onboarding_flutter to see where at_backupkeys_flutter comes into play!&lt;/p>
+&lt;div class="row">
+&lt;div class="column" style="float: left;
+width: 33.33%; padding-left: 50px">
+&lt;img src="https://devstaging.atsign.wtf/Widgets/enterAtsign.png" alt="at_cookbook"style="width:89%;">
+&lt;/div>
+&lt;div class="column" style="float: left;
+width: 33.33%; padding-left: 25px">
+&lt;img src="https://devstaging.atsign.wtf/Widgets/qrCodeUpload.png" alt="at_cookbook" style="width:82%;">
+&lt;/div>
+&lt;div class="column"style="float: left;
+width: 33.33%;">
+&lt;img src="https://devstaging.atsign.wtf/Widgets/backupKeys_save.png" alt="at_cookbook"style="width:75%;">
+&lt;/div>
+&lt;/div>
+&lt;p>After inputting what @sign you wish to pair, you will need to upload the QR code retrieved from atsign.com. The emulator in the picture is not hooked up to a camera, so a small GIF of a house is there to fill where the camera would be. After successfully uploading and authenticating with the QR code, the backup key widget will be introduced to you! From the save option, you will be prompted to either save your keys to the files folder of the device or upload the keys to an associated Google Drive.&lt;/p>
+&lt;p>Fortunately, implementing the backup key widget is painless as it is a part of the onboarding widget! If you have already implemented the onboarding widget, there’s no code you need to write!&lt;/p>
+&lt;/details>
+&lt;h3 id="at_onboarding_flutter">at_onboarding_flutter&lt;/h3>
+&lt;p>A flutter plugin project for onboarding any @sign in @protocol apps with ease. Provides QRscanner and upload key file option to authenticate.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_onboarding_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_chat_flutter">at_chat_flutter&lt;/h3>
+&lt;p>A flutter plugin project to provide chat feature using atsigns and atprotocol.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_chat_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_common_flutter">at_common_flutter&lt;/h3>
+&lt;p>A flutter package to provide common widgets used by other atsign flutter packages.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_common_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_backupkey_flutter">at_backupkey_flutter&lt;/h3>
+&lt;p>A flutter plugin project for saving backup key of any @sign that is being onboarded with @protocol apps. Backup key can used to authenticate in any @protocol apps.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_backupkey_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_contacts_flutter">at_contacts_flutter&lt;/h3>
+&lt;p>A flutter plugin project to provide ease of managing contacts for an atsign using atprotocol.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_contacts_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_contacts_group_flutter">at_contacts_group_flutter&lt;/h3>
+&lt;p>A flutter plugin project to provide the group functionality with contacts using atprotocol.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_contacts_group_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_location_flutter">at_location_flutter&lt;/h3>
+&lt;p>A flutter plugin project to share location between two atsigns and track them on OSM (open street maps).&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_location_flutter">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_events_flutter">at_events_flutter&lt;/h3>
+&lt;p>A flutter plugin project to manage events using the atprotocol.&lt;/p>
+&lt;p>&lt;a href="https://pub.dev/packages/at_events_flutter">Learn more&lt;/a>&lt;/p></description></item><item><title>Docs: The @protocol verbs</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/verbs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/verbs/</guid><description>
+&lt;h3 id="from">from&lt;/h3>
+&lt;p>The “from” verb is used to tell the secondary server what @sign you claim to be, and the secondary server will respond with a challenge. The challenge will be in the form of a full @ address and a cookie to place at that address. Before giving the challenge it will verify the client SSL certificate. The client SSL certificate has to match the FQDN list in the root server for that @sign in either the CN or SAN fields in the certificate.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/From-class.html">Learn More&lt;/a>&lt;/p>
+&lt;h3 id="cram">cram&lt;/h3>
+&lt;p>The cram verb is used to authenticate the @sign to the secondary server. On successful request, binds the @sign to the secondary server. The secret is appended to the challenge (response of from verb) and gives a SHA512 digest which serves as an input to the CRAM verb. On successful cram verb request, the @sign is successfully authenticated to the secondary server and allows user to Add/Update, Delete and lookup the keys in their respective secondary servers.
+We use &amp;ldquo;cram&amp;rdquo; authentication for the first time and will create a public/private key pair for pkam authentication for subsequent logins.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Cram-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="pkam">pkam&lt;/h3>
+&lt;p>The pkam( Public Key Authentication Mechanism) verb is used to authenticate the @sign to the secondary server. This is similar to how ssh authentication works. On successful request, binds the @sign to the secondary server.On successful pkam verb request, the @sign is successfully authenticated to the secondary server and allows user to Add/Update, Delete and lookup the keys in their respective secondary servers.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Pkam-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="scan">scan&lt;/h3>
+&lt;p>The &amp;ldquo;scan&amp;rdquo; verb scans the available keys. The scan verb when used by unauthenticated @sign user, scans for keys that are publicly available to you.The scan when used by an authenticated user via the cram verb, scans all the available keys on the secondary server.
+You can use scan verb with regex if you want to get keys matches with the regex.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Scan-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="lookup">lookup&lt;/h3>
+&lt;p>The “lookup” verb allows the lookup of a particular address in the @ handles namespace. The “lookup” verb provides public lookups and specific key look ups when authenticated as a particular @ handle using the “from” and “pol” verbs. If a lookup is valid the resulting information is returned with the data: header and a carriage return and a further @ prompt ready for further commands. If the lookup is not valid then a null is returned again with the data: header.
+The @sign should be authenticated using the cram verb prior to use the lookup verb.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Lookup-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="plookup">plookup&lt;/h3>
+&lt;p>The &amp;ldquo;plookup&amp;rdquo; verb, provides a proxied public lookups for a resolver that perhaps is behind a firewall. This will allow a resolver to contact a @ server and have the @ server lookup both public @ handles information. This will be useful in large enterprise environments where they would want all lookups going through a single secondary server for the entity or where a single port needs to be opened through a firewall to lookup @ handles.
+The @sign should be authenticated using cram verb prior to use the plookup verb.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/ProxyLookup-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="llookup">llookup&lt;/h3>
+&lt;p>The &amp;ldquo;llookup&amp;rdquo; verb can be used to locally lookup keys stored on our secondary server. To perform local look up, the user should be successfully authenticated via the &amp;ldquo;cram&amp;rdquo; verb.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/LocalLookup-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="update">update&lt;/h3>
+&lt;p>The &amp;ldquo;update&amp;rdquo; verb is used to create/update the keys in the secondary server. We can create/update both public and private keys. kThe update verb is used to set public responses and specific responses for a particular authenticated users after using the pol verb.
+The @sign should be authenticated using cram verb prior to use the update verb.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Update-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="delete">delete&lt;/h3>
+&lt;p>The &amp;ldquo;update&amp;rdquo; verb is used to delete the keys in the secondary server. A delete request must contain the distinguished name of the key to be deleted. The @sign should be authenticated using the cram/pkam verb prior to use the delete verb.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Delete-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="notify">notify&lt;/h3>
+&lt;p>The “notify” verb used to notify a key to another atsign. The @sign should be authenticated using the cram/pkam verb prior to use the notify verb.
+You can send a notification to multiple users using &amp;ldquo;notify:all&amp;rdquo; command. Also you can list out all the notifications using &amp;ldquo;notify:list&amp;rdquo;.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Notify-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="monitor">monitor&lt;/h3>
+&lt;p>The “monitor:” verb is used to monitor either all or specific notification events that are sent using the “notify:” verb. Notifications are both queued and managed by the secondary server, and the status of an individual notification can also be seen.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Monitor-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="stats">stats&lt;/h3>
+&lt;p>The &amp;ldquo;stats&amp;rdquo; verb used to get all the available metrics. We can get specific metrics by providing &amp;lsquo;,&amp;rsquo; separated list like stats:1,2. If we didn&amp;rsquo;t provide anything it will return all the metrics information.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Stats-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="sync">sync&lt;/h3>
+&lt;p>The &amp;ldquo;sync&amp;rdquo; verb is used to fetch all the changes after a given commit sequence number from the commit log on the server. This verb is helpful when local and remote secondary servers are not in sync. We can sync only specific keys by providing regex pattern
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Sync-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="config">config&lt;/h3>
+&lt;p>The &amp;ldquo;config&amp;rdquo; verb is used for configuring or viewing an @sign&amp;rsquo;s block/allow list. &amp;lsquo;from&amp;rsquo; verb functionality is dertermined by using the configurations of &amp;lsquo;config&amp;rsquo; verb. If an atsign is in block list, secondary server won&amp;rsquo;t allow it for authentication.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Config-class.html">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="pol">pol&lt;/h3>
+&lt;p>The &amp;ldquo;pol&amp;rdquo; verb allows to switch as another @sign user. To switch as another user, use from:&amp;lt;@sign&amp;gt;(The another @sign user) verb which gives a response as proof:&lt;key>; then use pol verb. On successful authentication, the prompt changes to the another @sign user. If we authenticate to other atsign using pol, we can only access public information available.
+&lt;a href="https://pub.dev/documentation/at_server_spec/latest/verbs/Pol-class.html">Learn more&lt;/a>&lt;/p></description></item><item><title>Docs: SDK?</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/</guid><description>
+&lt;p>Resilient SDK (rSDK) is a new major release of the @platform with several
+changes to make apps using the SDK more resilient and fault tolerant. This
+guide is intended to help app developers with the use of rSDK.&lt;/p>
+&lt;h2 id="whats-new">What&amp;rsquo;s new?&lt;/h2>
+&lt;p>rSDK offers three major changes:&lt;/p>
+&lt;ol>
+&lt;li>Simpler abstractions&lt;/li>
+&lt;li>Better feedback on the status of an operation&lt;/li>
+&lt;li>Resilience from network failures&lt;/li>
+&lt;/ol>
+&lt;h2 id="high-level-architecture">High Level Architecture&lt;/h2>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/rSDK/high_level_architecture.png" alt="high level architecture">&lt;/p>
+&lt;h2 id="key-abstractions">Key Abstractions&lt;/h2>
+&lt;h4 id="atclientmanager">&lt;strong>AtClientManager&lt;/strong>&lt;/h4>
+&lt;p>Factory class responsible for giving the instances of AtClient and other
+services for a given @sign.&lt;/p>
+&lt;h4 id="atclient">&lt;strong>AtClient&lt;/strong>&lt;/h4>
+&lt;p>AtClient should be used to perform Create, Read, Update or Delete (CRUD)
+operations on the secondary server.&lt;/p>
+&lt;h4 id="notificationservice">&lt;strong>NotificationService&lt;/strong>&lt;/h4>
+&lt;p>NotificationService should be used to send and receive notifications from
+the secondary server.&lt;/p>
+&lt;h4 id="syncservice">&lt;strong>SyncService&lt;/strong>&lt;/h4>
+&lt;p>SyncService should be used to keep local and cloud secondary data in sync.&lt;/p>
+&lt;h2 id="sync">Sync&lt;/h2>
+&lt;p>Sync in the @protocol is a process to pull or push data between local and
+cloud secondary servers to make sure that the data is in sync.&lt;/p>
+&lt;p>For example, if an app creates a key called phone@bob and saves it to the
+local secondary, the Sync process will push that to the cloud secondary server
+and make it available to be consumed by another @app on another device.&lt;/p>
+&lt;h2 id="sync-triggers">Sync triggers&lt;/h2>
+&lt;p>Sync process is triggered in two ways:&lt;/p>
+&lt;ol>
+&lt;li>App sync&lt;/li>
+&lt;li>System sync&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>App sync&lt;/strong>&lt;/p>
+&lt;p>Apps on @protocol can request for an invocation of a Sync process by calling
+the “sync” method on “SyncService”. Calling “sync” would not immediately
+trigger the Sync process, rather it is taken as a request that needs to be
+fulfilled later. For example when a Sync process is requested an app could be
+offline but SyncService still accepts the request through the “sync” method
+call and fulfills it when the conditions are right for the data transfer.&lt;/p>
+&lt;p>&lt;strong>System sync&lt;/strong>&lt;/p>
+&lt;p>SDK initiates a Sync process without any apps requesting when SDK detects
+that the local and the cloud secondaries are out of sync.&lt;/p>
+&lt;p>Please look at &lt;a href="https://github.com/atsign-foundation/at_client_sdk/blob/trunk/at_client/lib/src/service/sync_service.dart">SyncService Dart code docs&lt;/a> for more details on the usage.&lt;/p>
+&lt;h2 id="sync-trigger-conditions">Sync trigger conditions&lt;/h2>
+&lt;p>When a sync request is submitted, SyncService waits for the following
+conditions to be fulfilled for the Sync process to be triggered:&lt;/p>
+&lt;ol>
+&lt;li>Number of sync requests should be greater than 3&lt;/li>
+&lt;li>Time difference between the first sync request and now is greater than 5 seconds&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Note:&lt;/strong> These internals are subject to change in future versions of SDK&lt;/p></description></item></channel></rss>

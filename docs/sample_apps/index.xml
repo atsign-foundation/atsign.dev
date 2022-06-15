@@ -1,0 +1,153 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – Sample Applications</title><link>https://devstaging.atsign.wtf/docs/sample_apps/</link><description>Recent content in Sample Applications on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/sample_apps/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: SnackBar</title><link>https://devstaging.atsign.wtf/docs/sample_apps/snackbar/</link><pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/sample_apps/snackbar/</guid><description>
+&lt;p>SnackBar is a simple end-to-end encrypted application that allows for securely sending snacks (chocolate bars!) to a receiving @sign. Below is the step-by-step process that will assist you in getting the SnackBar application up and running.&lt;/p>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>Note: This application demo works with two devices. A connected physical device and an emulator is suitable for this demo as well.&lt;/p>
+&lt;/div>
+&lt;h3 id="1-get-snackbar-running-on-your-machine">1. Get SnackBar Running on your Machine&lt;/h3>
+&lt;p>You are able to download application templates from our at_app project! Copy and paste the following code in your terminal to activate at_app on your machine:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dart pub global activate at_app
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;h3> Important note!
+&lt;/h3>
+&lt;h5>Verify your system PATH variable&lt;/h5>
+&lt;p>When you run the command above, it may prompt you that the pub cache bin is missing from the system PATH variable.
+The prompts will tell you the appropriate steps to add it to the PATH variable.
+Please complete this step before continuing.&lt;/p>
+&lt;/div>
+&lt;p>After successfully activating at_app on your machine, simply change directories to where you wish to have your snackbar application exist. After having your desired directory active, copy and paste the following command into your terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">at_app create -d snackbar ...
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>Note: Replace the above &amp;ldquo;&amp;hellip;&amp;rdquo; with the folder name you wish for the snackbar application to be built within.&lt;/p>
+&lt;/div>
+&lt;p>After creating the snackbar application, run the project on your physical device or emulator using the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">cd&lt;/span> ...
+flutter run
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>Note: Replace the above &amp;ldquo;&amp;hellip;&amp;rdquo; with the folder name you built the snackbar application.&lt;/p>
+&lt;/div>
+&lt;h3 id="2-understand-how-snackbar-works">2. Understand how SnackBar Works&lt;/h3>
+&lt;p>The first thing you will see when the SnackBar application is built and running on your device is the Onboarding screen.&lt;/p>
+&lt;center>
+&lt;img src="https://devstaging.atsign.wtf/Sample_Apps/onboardScreen.png" style="height:520px;">&lt;/img>
+&lt;/center>
+&lt;h4 id="how-does-onboarding-work">How does Onboarding work?&lt;/h4>
+&lt;p>Below is the snippet of code that houses the Onboarding method. After every line of code, documentation has been written to make the code as readable as possible.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">Onboarding&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#f57900">context:&lt;/span> &lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#8f5902;font-style:italic">//Build context of the screen
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#f57900">atClientPreference:&lt;/span> &lt;span style="color:#000">atClientPreference&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">!&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#8f5902;font-style:italic">//This specifies several
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// attributes such as domain and namespace
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#f57900">domain:&lt;/span> &lt;span style="color:#000">AtEnv&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">rootDomain&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is pointing the application&amp;#39;s connection to
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// the production level of the @protocol
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#f57900">rootEnvironment:&lt;/span> &lt;span style="color:#000">AtEnv&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">rootEnvironment&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">appAPIKey:&lt;/span> &lt;span style="color:#000">AtEnv&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">appApiKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This APIKey makes your application unique from
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// other applications created on the @platform
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#f57900">onboard:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">value&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">atsign&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">_logger&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">finer&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Successfully onboarded &lt;/span>&lt;span style="color:#4e9a06">$&lt;/span>&lt;span style="color:#000">atsign&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the onboard function which will take the map of atsigns (which
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// have been authenticated already)/atCLient preferences along with the current
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// atsign attempting to authenticate.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// If the authentication is successful, it will be logged and you will be taken
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// to the next screen
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#f57900">onError:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">error&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">_logger&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">severe&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Onboarding throws &lt;/span>&lt;span style="color:#4e9a06">$&lt;/span>&lt;span style="color:#000">error&lt;/span>&lt;span style="color:#4e9a06"> error&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// If the authentication process fails, an error is thrown
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#f57900">nextScreen:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">const&lt;/span> &lt;span style="color:#000">HomeScreen&lt;/span>&lt;span style="color:#000;font-weight:bold">(),&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// The next screen after successful
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// authentication will be the HomeScreen
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>After successfully onboarding, you are then taken to the &amp;lsquo;Share a Snack&amp;rsquo; screen. This is where you can enter an @sign to send a snack to.&lt;/p>
+&lt;center>
+&lt;img src="https://devstaging.atsign.wtf/Sample_Apps/shareSnack.png" style="height:520px;">&lt;/img>
+&lt;/center>
+&lt;h4 id="how-are-the-snacks-being-sent">How are the snacks being sent?&lt;/h4>
+&lt;p>The current snack that is being sent securely to a receiving atsign has its value stored and sent through what is known as an AtKey object. In its simplest terms, an atkey allows for secure data sharing on the @platform. If you wish to learn more about AtKey Objects, watch our quick YouTube video covering them
+&lt;a href="https://www.youtube.com/watch?v=jZ7oTnPZVxc&amp;t=10s" target="_blank">here&lt;/a>!&lt;/p>
+&lt;h5 id="creating-the-snack">Creating the snack&lt;/h5>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart"> &lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">metaData&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Metadata&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Metadata describes a few attributes that exists within an AtKey object
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">isPublic&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// If set to true, the atkey and its value can be looked
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// up from anywhere on the @platform
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">isEncrypted&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Will encrypt the entire object including its value
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">namespaceAware&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Appends the application’s namespace to the Atkey
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// object
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">ttl&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">100000&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// TTL (Time To Live) is a mechanism used to define the length
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// of time in which this object will exist on the @platform. After the
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// declared time has reached zero, the object will be permanently deleted.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This mechanism is declared in milliseconds
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtKey&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the AtKey object itself
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">keyAtsign&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the name of the object
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedBy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">currentAtsign&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the creator/original sender
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// of the object, us in this instance.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedWith&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">sendSnackTo&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is who the object will be shared with
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">metadata&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">metaData&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This will integrate all of the values we declared
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// earlier
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// The magic line to send the snack
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">put&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">key&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">snack&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// The put verb will take our object&amp;#39;s name, and the value of the object and
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// store it on our secondary server with all of the attributes we declared.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#204a87;font-weight:bold">sync&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// This will sync our secondary and primary servers so that the snack will be
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// sent to the receiving @sign
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000">popSnackBar&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;You just sent. A&lt;/span>&lt;span style="color:#4e9a06">$&lt;/span>&lt;span style="color:#000">snack&lt;/span>&lt;span style="color:#4e9a06">, to &lt;/span>&lt;span style="color:#4e9a06">$&lt;/span>&lt;span style="color:#000">sendSnackTo&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// This is the message that pops up when a snack is sent
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="receiving-the-snack">Receiving the snack&lt;/h5>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">metaData&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Metadata&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Metadata describes a few attributes that exists within an AtKey object
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">isPublic&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// If set to true, the atkey and its value can be looked
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// up from anywhere on the @platform
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">isEncrypted&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Will encrypt the entire object including its value
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">namespaceAware&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Appends the application’s namespace to the Atkey
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// object
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtKey&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the AtKey object itself
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">keyAtsign&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the name of the object
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedBy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">sharedByAtsign&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the creator/original sender
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// of the object
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedWith&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">currentAtsign&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is who the object has been shared with
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">metadata&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">metaData&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This will integrate all of the values we declared
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// earlier
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">snackKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#204a87;font-weight:bold">get&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">key&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// The magic line that receives the
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// snack from the @platform
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">snack&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">snackKey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">value&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">toString&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// Here is our snack&amp;#39;s value being
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// given to a declared variable
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000">popSnackBar&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">context&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;Yay! A &lt;/span>&lt;span style="color:#4e9a06">$&lt;/span>&lt;span style="color:#000">snack&lt;/span>&lt;span style="color:#4e9a06"> ! From &lt;/span>&lt;span style="color:#4e9a06">$&lt;/span>&lt;span style="color:#000">sharedByAtsign&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// This is the
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// message that pops up when a snack is received
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>That&amp;rsquo;s it! You have now securely sent a snack to another @sign on the @platform!&lt;/p>
+&lt;h3 id="where-do-i-go-next">Where do I go next?&lt;/h3>
+&lt;!-- If you are looking to gain more understanding of the @platform, we have more demo applications to share with you! Each possesses a step-by-step guide and explanation to get you up and running on the @platform!
+[Chit_Chat](/docs/sample_apps/chitchat/) - Secure peer-to-peer messaging
+[@mosphere Pro](/docs/sample_apps/atmosphere/) - End-to-End encrypted file sharing
+[@rrive](/docs/sample_apps/arrive/) - Peer-to-peer location sharing
+If you are in the mood for reading more on the @platform, click [here](/docs/get-started/understand-the-platform/). -->
+&lt;p>If you are looking to gain more understanding of the @platform, we have more demo applications coming soon!&lt;/p>
+&lt;p>For now, if you&amp;rsquo;d like to read more on the @platform, click &lt;a href="https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/">here&lt;/a>&lt;/p></description></item></channel></rss>

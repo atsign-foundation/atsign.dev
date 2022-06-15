@@ -1,0 +1,52 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – The @platform FAQs</title><link>https://devstaging.atsign.wtf/docs/overview/faqs/</link><description>Recent content in The @platform FAQs on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/overview/faqs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: The @platform FAQs</title><link>https://devstaging.atsign.wtf/docs/overview/faqs/about/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/overview/faqs/about/</guid><description>
+&lt;h3 id="our-mission">Our Mission&lt;/h3>
+&lt;p>Now&amp;rsquo;s your chance to bring your app idea to life. Our free, open source platform makes it easy to create end-to-end encrypted apps that are surveillance-free and private by design — no backend infrastructure required. Our entire community is here to help you build, launch and monetize an amazing app experience for your customers.&lt;/p>
+&lt;h4 id="why-should-i-trust-you-atsign-and-your-systems">Why should I trust you (Atsign) and your systems?&lt;/h4>
+&lt;p>Trust certainly has to be earned, so we have started with an open protocol specification and an open source reference implementation for the full stack platform that everyone can evaluate and contribute to. As a company, the only thing we are uniquely responsible for is the integrity of the namespace, which does not hold any private information.&lt;/p>
+&lt;p>The only thing that we have centralized is the verified location of where to go to request permission for access to information from someone. Our basis for trust in our company and the systems and services we provide relies on the fact that we do not have access by any means to anyone’s private data.&lt;/p>
+&lt;h4 id="what-makes-the-platform-secure">What makes the @platform secure?&lt;/h4>
+&lt;p>We do not want to be the Google of identity. We want each person to be able to own and control access to their own data. The first principle for us is:&lt;/p>
+&lt;p>“It is probably true that Atsign cannot access your private information without your explicit permission.”&lt;/p>
+&lt;p>The owners of @signs hold the keys for both access and encryption, and nobody else—including Atsign—has access to them. Thus, only two entities in the universe — the entity that shares information and the entity that receives it — can access private information that is shared between them.&lt;/p>
+&lt;h4 id="whats-to-prevent-a-malicious-app-from-misusing-the-data-produced-through-my-app">What’s to prevent a malicious app from misusing the data produced through my app?&lt;/h4>
+&lt;p>Our strategy for preventing a malicious app from screwing with data at the moment is to review and certify applications to eliminate such behavior. We also have an ambition to automate the process as much as we can. We are currently evaluating how to control app level access (read and write) to data using a namespace convention, which is already a part of the @protocol spec and reference implementation.&lt;/p>
+&lt;h4 id="who-would-you-regard-as-your-main-competitors-and-how-are-you-different">Who would you regard as your main competitors and how are you different?&lt;/h4>
+&lt;p>Notionally the blockchain cohort making similar claims would be the main ones, but we believe that they are more likely to become adopters over time to provide non-repudiation and to eliminate username/password authentication which has proven to be so risky. Technically, Solid/Inrupt is somewhat similar with their data pods, but they curiously have no built-in encryption at all and are enterprise focused where we are developer/apps/consumer focused.&lt;/p></description></item><item><title>Docs: Flutter FAQs</title><link>https://devstaging.atsign.wtf/docs/overview/faqs/flutter/</link><pubDate>Thu, 29 Jul 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/overview/faqs/flutter/</guid><description>
+&lt;h2 id="flutter-issues">Flutter Issues&lt;/h2>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>Encountered Development Errors&lt;/p>
+&lt;ul>
+&lt;li>The following two links are a temporary solution to easily finding/submitting error solutions, if you have any suggestions, we are happy to hear them!&lt;/li>
+&lt;li>If you have a bug/issue, feel free to search for it in this &lt;a href="https://docs.google.com/spreadsheets/d/1e5eiKAHsVj-kVy91R5L_Y85sLD1bYzly1OUAnf1ny2s/edit?usp=sharing">spreadsheet&lt;/a>.&lt;/li>
+&lt;li>If the issue you are currently encountering does not exist within the spreadsheet linked above, feel free to submit a new error within this &lt;a href="https://forms.gle/F9BFYMzoXe1wkva67">error submission form&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h3 id="flutter-doctor-says-that-android-studio-is-not-installed-but-it-is">Flutter doctor says that Android Studio is not installed but it is&lt;/h3>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/59647791/tag-android-studio-not-installed-when-run-flutter-doctor-while-android">Android Studio (not installed) , when run flutter doctor while Android Studio installed on machine - Stack Overflow&lt;/a>&lt;/p>
+&lt;h3 id="flutter-doctor-says-that-java-needs-to-be-installed">Flutter doctor says that java needs to be installed&lt;/h3>
+&lt;p>Install Java (Recommended version 8)- &lt;a href="https://www.openlogic.com/openjdk-downloads?field_java_parent_version_target_id=416&amp;amp;field_operating_system_target_id=All&amp;amp;field_architecture_target_id=391&amp;amp;field_java_package_target_id=396">Open JDK Downloads&lt;/a>&lt;/p>
+&lt;h3 id="flutter-doctor-says-you-have-to-agree-to-licenses">Flutter Doctor says you have to agree to licenses&lt;/h3>
+&lt;p>But when you run ‘flutter doctor &amp;ndash;android-licenses’ you get a load of errors that is fixed with - &lt;a href="https://stackoverflow.com/questions/64708446/flutter-doctor-android-licenses-exception-in-thread-main-java-lang-noclass">windows - Flutter Doctor &amp;ndash;android-licenses : Exception in thread &amp;ldquo;main&amp;rdquo;&lt;/a>&lt;/p></description></item><item><title>Docs: at_app FAQs</title><link>https://devstaging.atsign.wtf/docs/overview/faqs/atapp/</link><pubDate>Thu, 29 Jul 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/overview/faqs/atapp/</guid><description>
+&lt;h3 id="what-are-the-different-flags-that-can-be-used-with-at_app">What are the different flags that can be used with at_app?&lt;/h3>
+&lt;h4 id="namespace">Namespace&lt;/h4>
+&lt;p>The namespace is the most important flag to include when creating your application.&lt;/p>
+&lt;p>When storing keys on the secondary server, the namespace is used to filter the data produced by your app from the other @platform applications.
+To create a namespace for your app, make sure to register an @sign from &lt;a href="https://atsign.com">atsign.com&lt;/a> and use that as your namespace. By owning the @sign, you can ensure that you also own the namespace.&lt;/p>
+&lt;p>You can specify the namespace with &lt;code>--namespace=YOUR_NAMESPACE_HERE&lt;/code>.&lt;/p>
+&lt;h4 id="root-domain">Root Domain&lt;/h4>
+&lt;p>By default the root domain is set to prod (production). In the production domain, you can use real @signs to test your application.&lt;/p>
+&lt;p>Alternatively you can specify &lt;code>--root-domain=ve&lt;/code> in the command to choose the virtual environment, and test with those @signs instead.&lt;/p>
+&lt;h4 id="api-key">API Key&lt;/h4>
+&lt;p>When you are ready to publish your application, you can request an api-key for the &lt;a href="https://pub.dev/packages/at_onboarding_flutter">Onboarding Widget&lt;/a>. This api-key will authorize your app when attempting to generate a free @sign within the widget.&lt;/p>
+&lt;p>You can specify this with &lt;code>--api-key=YOUR_API_KEY_HERE&lt;/code>.&lt;/p>
+&lt;!-- ## Can I Update my at_app configuration?
+If you would like to update your environment at any point in time, it is safe to do so. Just specify the options you would like to change.
+You can reconfigure your at_app project simply by recalling the `at_app create` command with any of the new flags or adjustments you wish to make. -->
+&lt;!--
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>Warning&lt;/p>
+&lt;ul>
+&lt;li>Be careful of using the &lt;code>--overwrite&lt;/code> flag when updating your configuration. This will overwrite any changes you have made to &lt;code>lib/main.dart&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+--></description></item></channel></rss>

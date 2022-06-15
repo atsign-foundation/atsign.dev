@@ -1,0 +1,239 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – @platform Additional Resources</title><link>https://devstaging.atsign.wtf/docs/archives/guides/</link><description>Recent content in @platform Additional Resources on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/archives/guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Step-by-step dess guides</title><link>https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/</guid><description/></item><item><title>Docs: Set up the @platform virtual environment</title><link>https://devstaging.atsign.wtf/docs/archives/guides/the-virtual-environment/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/the-virtual-environment/</guid><description>
+&lt;p>Why is there a virtual environment to set up, and what does it do? Jumping directly into the deep end and creating projects on top of the @platform can be overwhelming, so we have made a simple way for you to run the @platform from your machine.&lt;/p>
+&lt;p>First, why is there a virtual environment to set up, and what does it do?&lt;/p>
+&lt;p>The virtual environment has two main benefits: you can monitor the status of your test secondary servers (by visiting localhost:9001), and you can bypass the traditional onboarding process completely.&lt;/p>
+&lt;p>Jumping directly into the deep-end and creating projects on top of the @platform can be overwhelming for some. To combat this overwhelming feeling, we have created a simple way to have you run the @protocol from your very own machine!&lt;/p>
+&lt;p>This will allow you to run both a &lt;a href="https://devstaging.atsign.wtf/docs/resources/glossary/#root-server">root server&lt;/a> and &lt;a href="https://devstaging.atsign.wtf/docs/resources/glossary/#secondary-server">secondary servers&lt;/a> of testable @signs. We have created demo apps that go over specific verbs and methods to help you get oriented.&lt;/p>
+&lt;h2 id="setup-virtual-environment">Setup Virtual Environment&lt;/h2>
+&lt;!-- Cards for different OS-->
+&lt;div class="card-deck mb-8">
+&lt;!-- Windows Card-->
+&lt;a class="card" id="install-windows" href="#windows" style="border-style: solid;border-color: #F05F3E">
+&lt;div class="card-body">
+&lt;header class="card-title text-center m-0">
+&lt;span class="d-block h1">
+&lt;i class="fab fa-windows" style="color: #F05F3E">&lt;/i>
+&lt;/span>
+&lt;span class="text-muted text-nowrap">Windows&lt;/span>
+&lt;/header>
+&lt;/div>
+&lt;/a>
+&lt;!-- MacOs Card-->
+&lt;a class="card" id="install-macos" href="#macos" style="border-style: solid;border-color: #F05F3E">
+&lt;div class="card-body">
+&lt;header class="card-title text-center m-0">
+&lt;span class="d-block h1">
+&lt;i class="fab fa-apple" style="color: #F05F3E">&lt;/i>
+&lt;/span>
+&lt;span class="text-muted text-nowrap">macOS&lt;/span>
+&lt;/header>
+&lt;/div>
+&lt;/a>
+&lt;!-- Linux Card-->
+&lt;a class="card" id="install-linux" href="#linux" style="border-style: solid;border-color: #F05F3E">
+&lt;div class="card-body">
+&lt;header class="card-title text-center m-0">
+&lt;span class="d-block h1">
+&lt;i class="fab fa-linux" style="color: #F05F3E">&lt;/i>
+&lt;/span>
+&lt;span class="text-muted text-nowrap">Linux&lt;/span>
+&lt;/header>
+&lt;/div>
+&lt;/a>
+&lt;/div>
+&lt;h3 id="windows">Windows&lt;/h3>
+&lt;p>Your machine&amp;rsquo;s BIOS may already have virtualization enabled. You can check &lt;a href="https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=Press%20the%20F10%20key%20for,to%20save%20changes%20and%20Reboot">here&lt;/a>.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Please ensure that you have &lt;a href="https://devstaging.atsign.wtf/docs/get-started/#docker-desktop">Docker&lt;/a> up and running before you proceed.
+&lt;/div>
+&lt;p>&lt;strong>Loopback adapter&lt;/strong>&lt;/p>
+&lt;p>Install the Microsoft loopback adapter and configure it. Here&amp;rsquo;s a video showing how:&lt;/p>
+&lt;iframe src="https://player.vimeo.com/video/506374699?title=0&amp;amp;byline=0&amp;amp;portrait=0" class="video-frame" style="position:relative;top:0;left:-20px;width:750px;height:400px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true">&lt;/iframe>
+&lt;p>&lt;strong>Start up the at_virtual_environment&lt;/strong>&lt;/p>
+&lt;p>Run cmd and enter the following commands. You can run cmd by using the Windows key and the r key then typing cmd.&lt;/p>
+&lt;pre>&lt;code>mkdir ve
+cd ve
+curl -L atsign.dev/curl/virtualenv-compose-vip.yaml -o docker-compose.yaml
+&lt;/code>&lt;/pre>&lt;p>Now you are ready to spin up the docker containers:&lt;/p>
+&lt;pre>&lt;code>docker-compose up -d
+&lt;/code>&lt;/pre>&lt;p>Okay, you&amp;rsquo;re up. Now you can check the &lt;a href="http://localhost:9001/">http://localhost:9001/&lt;/a>.&lt;/p>
+&lt;p>Not sure what to do now? Try &lt;a href="https://devstaging.atsign.wtf/docs/get-started/the-virtual-environment/#where-should-i-go-next">here&lt;/a>!&lt;/p>
+&lt;h3 id="macos">MacOS&lt;/h3>
+&lt;h4 id="configure-network-adapter">Configure Network Adapter&lt;/h4>
+&lt;p>Open the Terminal window and enter this command. This permanently puts the Virtual IP address in place. You only need to run this once!&lt;/p>
+&lt;pre>&lt;code>sudo curl -L atsign.dev/curl/atloop.plist -o /Library/LaunchDaemons/atloop.plist &amp;amp;&amp;amp; \
+&lt;/code>&lt;/pre>&lt;p>Once you enter the above command, an arrow “&amp;gt;” should show up to enter the next line:&lt;/p>
+&lt;pre>&lt;code>sudo launchctl load /Library/LaunchDaemons/atloop.plist
+&lt;/code>&lt;/pre>&lt;p>The command line may ask you to enter your password. Go ahead and fill it in if this happens.&lt;/p>
+&lt;h4 id="start-up-the-virtual-environment">Start up the Virtual Environment&lt;/h4>
+&lt;p>Make a new directory called “ve” and run the curl command inside of it:&lt;/p>
+&lt;pre>&lt;code>mkdir ve
+cd ve
+curl -L atsign.dev/curl/virtualenv-compose-vip.yaml -o docker-compose.yaml
+&lt;/code>&lt;/pre>&lt;p>Now you are ready to spin up the docker containers:&lt;/p>
+&lt;pre>&lt;code>docker-compose up -d
+&lt;/code>&lt;/pre>&lt;p>Not sure what to do now? Try &lt;a href="https://devstaging.atsign.wtf/docs/get-started/the-virtual-environment/#where-should-i-go-next">here&lt;/a>!&lt;/p>
+&lt;h3 id="linux">Linux&lt;/h3>
+&lt;p>&lt;strong>Configure Network Adapter&lt;/strong>&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Please ensure that you have &lt;a href="https://www.docker.com/">Docker&lt;/a> up and running before you proceed.
+&lt;/div>
+&lt;p>Open the Terminal window and enter this command. This permanently puts the Virtual IP address in place. You only need to run this once!&lt;/p>
+&lt;pre>&lt;code>curl -L atsign.dev/curl/rc.local -o setvip.sh
+sudo ip addr add 10.64.64.64/32 dev lo
+sudo nano /etc/rc.local
+&lt;/code>&lt;/pre>&lt;p>If the file “/etc/rc.local” is empty, then add the contents of the file “setvip.sh” to /etc/rc.local”. If rc.local already has content, then add the line “ip addr add 10.64.64.64/32 dev lo” above any lines that say “exit 0”. This will ensure that the virtual IP is in place even after a reboot. Ensure the permissions are correct with the following command:&lt;/p>
+&lt;pre>&lt;code>sudo chmod 744 /etc/rc.local
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Start up the Virtual Environment&lt;/strong>&lt;/p>
+&lt;p>Make a new directory called “ve” and run the curl command inside of it:&lt;/p>
+&lt;pre>&lt;code>cd ~
+mkdir ve
+cd ve
+curl -L atsign.dev/curl/virtualenv-compose-vip.yaml -o docker-compose.yaml
+&lt;/code>&lt;/pre>&lt;p>Now you are ready to spin up the docker containers:&lt;/p>
+&lt;pre>&lt;code>docker-compose up -d
+&lt;/code>&lt;/pre>&lt;p>Okay, you&amp;rsquo;re up. Now you can check the &lt;a href="http://localhost:9001/">http://localhost:9001/&lt;/a>.&lt;/p>
+&lt;p>Not sure what to do now? Try &lt;a href="https://devstaging.atsign.wtf/docs/get-started/the-virtual-environment/#where-should-i-go-next">here&lt;/a>!&lt;/p>
+&lt;h3 id="to-pull-latest-virtual-environment-version">To Pull Latest Virtual Environment Version&lt;/h3>
+&lt;pre>&lt;code>docker-compose down
+docker-compose pull
+docker-compose up -d
+&lt;/code>&lt;/pre>&lt;p>Congratulations! You’ve set up your virtual environment and can now experiment with the hello_world app. Now you can start building your very own privacy-conscious apps.&lt;/p>
+&lt;p>When writing code, the only change needed to run in the virtual environment is changing the ROOT_DOMAIN to point to vip.ve.atsign.zone. The production value is root.atsign.org.&lt;/p>
+&lt;h3 id="to-authenticate-with-demo-qr-codes">To Authenticate with Demo QR Codes&lt;/h3>
+&lt;p>You will need the PKAM and CRAM Key QR codes in order to properly authenticate your testable atsigns.&lt;/p>
+&lt;p>You will find the group of these keys on our GitHub &lt;a href="https://github.com/atsign-foundation/at_demos/tree/trunk/at_demo_data/lib/assets">here&lt;/a>&lt;/p>
+&lt;h2 id="where-should-i-go-next">Where should I go next?&lt;/h2>
+&lt;p>Give your users next steps from the Overview. For example:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://devstaging.atsign.wtf/docs/sample-apps/">Sample Apps&lt;/a>: See apps that show off the power of the @platform on your own machine!&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Sample apps created on the @platform</title><link>https://devstaging.atsign.wtf/docs/archives/guides/sample-apps/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/sample-apps/</guid><description>
+&lt;h3 id="at_hello_world">at_hello_world:&lt;/h3>
+&lt;p>Demonstrates some of the most common verbs and methods that can be found on the @platform. If you are new to the @platform, start here!&lt;/p>
+&lt;p>&lt;a href="https://devstaging.atsign.wtf/docs/sample-apps/at_hello_world/">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_chats">at_chats:&lt;/h3>
+&lt;p>Demonstrates peer-to-peer chatting capabilities and just how easy it is to implement into any project!&lt;/p>
+&lt;p>&lt;a href="https://devstaging.atsign.wtf/docs/sample-apps/at_chats/">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="at_cookbook">at_cookbook:&lt;/h3>
+&lt;p>Demonstrates some of the more complex verbs and methods that the @platform has to offer. Similar to at_chats in the sense of sending information to separate @signs. At_cookbook builds upon this allowing you to send objects such as recipes to separate @signs!&lt;/p>
+&lt;p>&lt;a href="https://devstaging.atsign.wtf/docs/sample-apps/at_cookbook/">Learn more&lt;/a>&lt;/p>
+&lt;h3 id="mosphere">@mosphere:&lt;/h3>
+&lt;p>Currently our most complex application on the @platform! This app sends entire files from one @sign to another with end-to-end encryption! We highly recommend having a strong understanding of all of the common verbs and methods of the @platform before dissecting @mosphere!&lt;/p>
+&lt;p>&lt;a href="https://devstaging.atsign.wtf/docs/sample-apps/mosphere/">Learn more&lt;/a>&lt;/p></description></item><item><title>Docs: The @platform data privacy &amp; permissions guide</title><link>https://devstaging.atsign.wtf/docs/archives/guides/data-privacy-and-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/data-privacy-and-permissions/</guid><description>
+&lt;h3 id="application-access-to-data">Application Access to Data&lt;/h3>
+&lt;p>There are three basic types of application data access:&lt;/p>
+&lt;ol>
+&lt;li>Storing and retrieving data for your application&lt;/li>
+&lt;li>Accessing data shared by others&lt;/li>
+&lt;li>Accessing and reasoning over data stored by other applications&lt;/li>
+&lt;/ol>
+&lt;h4 id="storing-and-retrieving-data-for-your-application">Storing and retrieving data for your application&lt;/h4>
+&lt;p>If your application needs to store data, you can use the @SDK to manage data securely and easily in the @persistence keystore. This SDK provides the following capabilities:&lt;/p>
+&lt;ul>
+&lt;li>Data is stored in an encrypted keystore locally for your application&lt;/li>
+&lt;li>Data access is in-memory and super-fast&lt;/li>
+&lt;li>Offline access with the device is supported&lt;/li>
+&lt;li>Data is synchronized and backed up to a cloud @server automatically&lt;/li>
+&lt;li>Data is synchronized across all the person’s devices automatically&lt;/li>
+&lt;li>Privacy is hardcoded: The owner of the data controls all access to it&lt;/li>
+&lt;/ul>
+&lt;p>Note: the cloud @server does not have access to the secret private key. This prevents bad actors from accessing or modifying private data not meant for them.&lt;/p>
+&lt;h5 id="creating-updating-and-deleting-data-with-your-application">Creating, updating and deleting data with your application&lt;/h5>
+&lt;p>Data operations that involve writing data to the @persistence keystore can only be done with the approval of the owner. Access to this data is cryptographically controlled. This is managed for your application by the @SDK and is remarkably easy. The types of access that can be set for each data record include:&lt;/p>
+&lt;ul>
+&lt;li>public: data that can be read by anyone without need for authentication&lt;/li>
+&lt;li>shared: data that the owner has explicitly granted the right to some entity to read it after proving they are who they claim to be&lt;/li>
+&lt;li>private: data that is only accessible to the owner (requires authentication)&lt;/li>
+&lt;li>hidden: publicly readable data that is not listed in a scan of the keystore.&lt;/li>
+&lt;/ul>
+&lt;p>Naturally, the owner of an @persistence keystore has access to any and all data that is contained therein. After being authorized, your application can read the data that it needs from the keystore as well. Applications that prefer to rely on data within its own namespace can also store read data from the @persistence keystore with approval of the owner. As always, all data stored is owned and controlled by the owner of the @persistence keystore.&lt;/p>
+&lt;p>For more information on how your application can create, update, or delete data, see the &lt;a href="https://pub.dev/packages/at_persistence_spec">@Persistence Keystore Guide&lt;/a> and the &lt;a href="https://atsign.dev/docs/functional_architecture/verbs">@Protocol Verbs&lt;/a>.&lt;/p>
+&lt;h4 id="accessing-data-shared-by-others">Accessing data shared by others&lt;/h4>
+&lt;p>Applications typically are a combination of an owner&amp;rsquo;s data and data that has been shared with them by others. This is a new feature and is what we’re referring to when we talk about P2P (Peer-to-Peer) applications.&lt;/p>
+&lt;p>For example, messaging applications available today involve a combination of data (messages) from various people but have no way to ensure that each individual message belongs to its creator. With the @protocol, messages that I create and share with other people are owned by me and likewise, messages that others create and share with me are owned by them. The messaging application is thus responsible for interleaving and presenting these messages while simultaneously maintaining privacy controls for the owner of the data (i.e. I own my messages to you and you own your messages to me).&lt;/p>
+&lt;p>While this may seem confusing and difficult at first, the @Client SDK and the Flutter UI Component libraries make it very simple to implement. This results in surveillance-free, privacy-compliant applications that are simple, cost-effective, and efficient, with better performance than backend server-based applications of the past.&lt;/p>
+&lt;p>The @Client SDK provides the following capabilities that help to integrate data shared by others in your application:&lt;/p>
+&lt;ul>
+&lt;li>Public data shared by others can be looked up&lt;/li>
+&lt;li>The notification verb alerts your application when new data shared by others is available&lt;/li>
+&lt;li>The monitor verb creates a persistent connection for real-time interactions&lt;/li>
+&lt;li>Data can be scanned for and read directly from another persons @persistence keystore&lt;/li>
+&lt;li>Shared data is cached for fast, reliable access to shared data with all privacy related parameters managed for you by the @Client SDK&lt;/li>
+&lt;/ul>
+&lt;p>For more information on how your application can create, update, or delete data, see the [@Persistence Keystore Guide](Persistence Keystore Guide) and the &lt;a href="https://atsign.dev/docs/functional_architecture/verbs">@Protocol Verbs&lt;/a>.&lt;/p>
+&lt;h4 id="accessing-and-reasoning-over-data-stored-by-other-applications">Accessing and reasoning over data stored by other applications&lt;/h4>
+&lt;p>One super interesting side effect of giving people control of their data and storing it all in one place is that any application that they authorize can reason over any data that they are allowed to access. Applications that are certified as @protocol compliant (@pps) can provide amazing new experiences because they have the ability to access and reason over all data stored in an @persistence keystore.&lt;/p>
+&lt;p>For example, a certified messaging app may contain a thread where a group of people are discussing which movie to go see on Wednesday night. If permitted, this information can also be presented as an event in their certified calendar application and similarly presented as a group in their certified contacts application.&lt;/p>
+&lt;h3 id="advanced-options">Advanced Options&lt;/h3>
+&lt;h4 id="create-a-separate-persistence-keystore-for-your-application-certification-not-required">Create a separate @persistence keystore for your application (certification not required)&lt;/h4>
+&lt;p>If you would like to store application data, you are free to use the @persistence keystore for your persistence if you want to. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps.&lt;/p>
+&lt;h4 id="authentication-only-without-the-persistence-keystore-certification-not-required">Authentication only, without the @persistence keystore (certification not required)&lt;/h4>
+&lt;p>If your application does not require data persistence on behalf of the person using it; for example, if you just want to make sure that your application is licensed to the person using it, then you do not need to get it certified. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps.&lt;/p>
+&lt;p>For more information about getting your application certified, see the &lt;a href="https://atsign.dev/dev_tools/certification/">Certification page&lt;/a>.&lt;/p></description></item><item><title>Docs: The @platform persistence keystore guide</title><link>https://devstaging.atsign.wtf/docs/archives/guides/persistence-keystore-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/persistence-keystore-guide/</guid><description>
+&lt;h3 id="application-data-storage">Application data storage&lt;/h3>
+&lt;p>Data for your application is the combination of the device owner’s data with data that has been shared by others.
+An @sign owner&amp;rsquo;s data is&amp;hellip;&lt;/p>
+&lt;ul>
+&lt;li>Stored in the the @sign owner&amp;rsquo;s device’s (local) @persistence keystore&lt;/li>
+&lt;li>Accessed by others via their internet addressable, always-on, secure, cloud (remote) @server&lt;/li>
+&lt;li>Backed up in their secure cloud (remote) @server&lt;/li>
+&lt;li>Synchronized between their cloud (remote) @server and any other devices that belong to the owner&lt;/li>
+&lt;li>Secured by secret keys which are only stored on the @sign owner&amp;rsquo;s device’s keychain&lt;/li>
+&lt;/ul>
+&lt;p>Note: The @sign owner&amp;rsquo;s cloud (remote) @server does not hold the owner’s secret key, which is required to make changes to the data. The local @server on the owner’s device must initialize any data changes.&lt;/p>
+&lt;p>Data that others have shared with an @sign owner is&amp;hellip;&lt;/p>
+&lt;ul>
+&lt;li>Accessed directly from their secure cloud (remote) @server with full privacy controls so it is always up to date&lt;/li>
+&lt;li>Cached on the @sign owner&amp;rsquo;s device’s local keystore if permitted&lt;/li>
+&lt;li>Removed from the @sign owner&amp;rsquo;s device’s local keystore automatically according to the permissions set by the owner of the data&lt;/li>
+&lt;li>Updated upon change automatically using the notification verb&lt;/li>
+&lt;/ul>
+&lt;h4 id="how-application-data-is-stored-and-retrieved">How application data is stored and retrieved&lt;/h4>
+&lt;p>As mentioned above, data is stored encrypted as a key/value pair. The @Client SDK supports a familiar set of methods to store and retrieve data from an @persistence keystore. You should always keep in mind that the @protocol includes strict privacy controls applied to all data in an @persistence keystore.&lt;/p>
+&lt;h4 id="application-access">Application Access&lt;/h4>
+&lt;h4 id="apps-can-reason-over-all-of-my-data-in-my-persistence-keystore">Apps can reason over all of my data in my @persistence keystore&lt;/h4>
+&lt;p>One super interesting side effect of giving people control of their data and storing it all in one place is that any application that they can choose to reason over any data that they are allowed to access in order to create altogether new user experiences.&lt;/p>
+&lt;p>For example, their certified messaging application may contain a thread where a group of people are discussing which movie to go see on Wednesday night. If permitted, this information can also be presented as an event in their certified calendar application as well as a group in their certified contacts application.&lt;/p>
+&lt;h4 id="access-within-an-application-namespace">Access within an application namespace&lt;/h4>
+&lt;p>Applications that only rely on data within its own namespace can also store data in the @persistence keystore if certified as @protocol compliant. If the data being stored rightfully belongs to the person creating it (which is the case most of the time), then they will have control of how it is used and shared with other entities and applications.&lt;/p>
+&lt;h4 id="use-a-separate-persistence-keystore-for-your-application-certification-not-required">Use a separate @persistence keystore for your application (certification not required)&lt;/h4>
+&lt;p>If you would like to store application data, you are free to use the @persistence keystore for your persistence if you want to. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps.&lt;/p>
+&lt;h4 id="authentication-only-no-need-to-use-the-persistence-keystore-certification-not-required">Authentication only, no need to use the @persistence keystore (certification not required)&lt;/h4>
+&lt;p>If your application does not require data persistence on behalf of the person using it; for example, if you just want to make sure that your application is licensed to the person using it, then you do not need to get it certified. You may want to get your application certified anyways to advertise that it is privacy compliant and have it included in our list of certified apps.&lt;/p>
+&lt;p>For more information about getting your application certified, please see the &lt;a href="https://devstaging.atsign.wtf/dev_tools/certification">Certification&lt;/a> page.&lt;/p></description></item><item><title>Docs: Privacy</title><link>https://devstaging.atsign.wtf/docs/archives/guides/privacy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/privacy/</guid><description>
+&lt;h3 id="todo---content">TODO - Content&lt;/h3></description></item><item><title>Docs: @platform Additional Resources</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/resources/</guid><description/></item><item><title>Docs: The @platform pricing</title><link>https://devstaging.atsign.wtf/docs/archives/guides/pricing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/pricing/</guid><description>
+&lt;style>
+.button {
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+background-color: #f05f3e;
+}
+&lt;/style>
+&lt;center>
+&lt;h2 id="start-for-free">Start for free,&lt;/h2>
+&lt;h2 id="continue-working-for-free">Continue working for free.&lt;/h2>
+&lt;/center>
+&lt;div style="width: fit-content">
+&lt;br>
+&lt;p>
+We have fully open sourced the @ platform so that everyone can contribute to make it better and also is FREE to use for the developers. The source code you see on &lt;a href="https://github.com/atsign-foundation">GitHub&lt;/a> is what we run on our production servers.
+&lt;/p>
+&lt;p>
+When the developers build apps on the @platform the people (you might call them users) using these apps also do not pay any fees for the infrastructure or the storage. Atsign takes that on. There are no pricing tiers, plans, renewals - None!
+&lt;/p>
+&lt;p>
+So, you might wonder, how does Atsign make money? As you might already know, everyone has an identity on the @platform - a.k.a &lt;a href="https://atsign.com/what-is-an-sign/">the @sign&lt;/a> - people can choose to use FREE, randomly generated @signs or they might choose to buy custom or vanity @signs with unique first/last/firstlast name combinations which have pricing tiers associated with them. So, when people choose to buy the paid @signs that is how we bring home the bacon. But there is more good news here. If your app is the first one they pair with, after buying their @sign, we pay you commission on that. Yep, you don’t pay us, we pay you.
+&lt;/p>
+&lt;/div>
+&lt;center>
+&lt;a class="btn button" href="https://devstaging.atsign.wtf/docs/get-started">Get started for free&lt;/a>
+&lt;/center></description></item></channel></rss>

@@ -1,0 +1,415 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – Step-by-step dess guides</title><link>https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/</link><description>Recent content in Step-by-step dess guides on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Setup dess on AWS (Amazon Web Services) Platform</title><link>https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/dess-aws/</link><pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/dess-aws/</guid><description>
+&lt;h1 id="step-by-step-setup-of-dess-in-aws">Step-by-Step setup of dess in AWS&lt;/h1>
+&lt;p>In this step-by-step guide I will walk you through all steps required to setup your own private dess using AWS. Please use the index to skip some steps in case you have already completed them.&lt;/p>
+&lt;h2 id="table-of-contents">Table of contents&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#pre-requisites">Pre-requisites&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#Registering"> Registering your @sign&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#sign_up"> Sign-up for AWS account&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#FQDN">Register your own fully qualified domain name&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#cloud_domain">Register domain name with AWS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#DNS_zone">Create Cloud DNS zone&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>&lt;a href="#prep_instance">Preparing AWS instance&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#networking">Preparing your instance for network access&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#static_IP">Assignment of Static IP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#domain2IP">Assignment of Domain name to your static IP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#firewall">Setting up Firewall&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#deployment">Instance setup and dess deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dess2@sign">Registration of @sign in your private dess&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#activation">Activation of @sign&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="pre-requisites-a-namepre-requisitesa">Pre-requisites &lt;a name="pre-requisites">&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Registered @sign(s) to setup&lt;/li>
+&lt;li>An AWS account&lt;/li>
+&lt;li>A Fully Qualified Domain Name (FQDN)&lt;/li>
+&lt;/ul>
+&lt;h3 id="1-registering-your-sign-a-nameregisteringa">1. Registering your @sign &lt;a name="Registering">&lt;/a>&lt;/h3>
+&lt;p>This topic is already well documented. Please follow the guidance of &lt;a href="https://atsign.com/faqs/">Our FAQs&lt;/a> and register via &lt;a href="https://atsign.com/get-an-sign/">the registrar site&lt;/a>.&lt;/p>
+&lt;h3 id="2-sign-up-for-aws-account-a-namesign_upa">2. Sign-up for AWS account &lt;a name="sign_up">&lt;/a>&lt;/h3>
+&lt;p>If you are new to AWS, signing up for an account is free! The cost of running dess is about 10$/month. You can create your account at &lt;a href="https://aws.amazon.com/">https://aws.amazon.com/&lt;/a> and as of June 6th, 2021 there is a “free tier” available which was used during the making of this guide.&lt;/p>
+&lt;p>&lt;img src="images/aws-free-trial.png" alt="aws-free-trial">&lt;/p>
+&lt;p>Follow the instructions on screen.&lt;/p>
+&lt;p>&lt;img src="images/aws-sign-up.png" alt="aws-sign-up">&lt;/p>
+&lt;p>Once you are done with registration, you will be able to login to your &lt;a href="http://aws.amazon.com/console">aws console&lt;/a>.&lt;/p>
+&lt;p>Make sure that you select the correct region in the top right corner.&lt;/p>
+&lt;p>&lt;img src="images/aws-region.png" alt="aws-region">&lt;/p>
+&lt;p>Select the region that is geographically closest to your location for best performance.&lt;/p>
+&lt;p>You are now setup on AWS and ready to prepare dess.&lt;/p>
+&lt;h3 id="3-register-your-own-fully-qualified-domain-name-fqdn-a-namefqdna">3. Register your own fully qualified domain name (FQDN) &lt;a name="FQDN">&lt;/a>&lt;/h3>
+&lt;p>This step can be performed at a variety of sites, all with different pricing models. You can use sites like &lt;a href="http://www.godaddy.com">Go Daddy&lt;/a>, &lt;a href="https://www.namecheap.com/">Namecheap&lt;/a>, and many others. However, since we have AWS account, we can use it to register our domain through the Route 53 service.&lt;/p>
+&lt;p>In your AWS console navigate to services in top left corner and select &lt;code>Route 53&lt;/code>.&lt;/p>
+&lt;h4 id="a-register-domain-name-with-aws-a-namecloud_domaina">a) Register domain name with AWS. &lt;a name="cloud_domain">&lt;/a>&lt;/h4>
+&lt;p>In your AWS console search for &lt;code>Route 53&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="images/aws-route53.png" alt="aws-route53">&lt;/p>
+&lt;p>You can start looking for your domain directly from here:&lt;/p>
+&lt;p>&lt;img src="images/image-20210726083635919.png" alt="image-20210726083635919">&lt;/p>
+&lt;p>Based on the domain name you search, AWS will give you similar options, and their pricing. As I am looking for the best deal, the .link domain seems like a good option at a cost of 5$ / year.&lt;/p>
+&lt;p>In my case 4atsign.link is free and I will register it by clicking “Add to cart” and continue.&lt;/p>
+&lt;p>&lt;img src="images/clip_image002.jpg" alt="img">&lt;/p>
+&lt;p>Fill out DNS registration form:&lt;/p>
+&lt;p>&lt;img src="images/clip_image004.jpg" alt="img">&lt;/p>
+&lt;p>Continue review details and order. At this point if all is fine you should see your domain request pending:&lt;/p>
+&lt;p>&lt;img src="images/clip_image006.jpg" alt="img">&lt;/p>
+&lt;p>This can take some time so why don’t we move on to next step!&lt;/p>
+&lt;h3 id="4-preparing-aws-instance-a-nameprep_instancea">4. Preparing AWS instance &lt;a name="prep_instance">&lt;/a>&lt;/h3>
+&lt;p>Now since I am new to AWS, the easiest way to get started is by using the LightSail service from service catalog. This will enable you to deploy small system which is more then capable of handling dess at pre-set price.&lt;/p>
+&lt;p>&lt;img src="images/clip_image002-16272842283471.jpg" alt="img">&lt;/p>
+&lt;p>Welcome to LightSail:&lt;/p>
+&lt;p>&lt;img src="images/clip_image004-16272842283482.jpg" alt="img">&lt;/p>
+&lt;p>First step is to create new instance. Fortunately, we have big orange button that can do just that!&lt;/p>
+&lt;p>There are several options we are presented at this moment. Since I am living in Europe I select “&lt;strong>Frankfurt, Zone A&lt;/strong> (eu-central-1a)” as my instance location. Instance region will dictate how well will your instance response based on your geographical location. People located in India should selects APAC region where as people in US should select North America region. You can leave availability zone set as default.&lt;/p>
+&lt;p>&lt;img src="images/clip_image006-16272842283483.jpg" alt="img">&lt;/p>
+&lt;p>Next up will be selection of operating system we want to deploy. We know that dess works well with Ubuntu 20.04 LTS so lets select just that.&lt;/p>
+&lt;p>&lt;img src="images/clip_image008.jpg" alt="img">&lt;/p>
+&lt;p>You are presented with couple more options, but unless you know what you are doing leave these as is.&lt;/p>
+&lt;p>&lt;img src="images/clip_image010.jpg" alt="img">&lt;/p>
+&lt;p>Now let’s select instance plan. dess is relatively light weight so for testing purposes I will select first instance plan for 3.5$/Month. This will provide us with 512 MB of RAM, 1vCPU, 20GB of storage and 1TB of data transfer. This is more then enough to run our dess.&lt;/p>
+&lt;p>&lt;img src="images/clip_image012.jpg" alt="img">&lt;/p>
+&lt;p>Lastly we have to name our instance. This is the name you will be presented with in your dashboard.&lt;/p>
+&lt;p>&lt;img src="images/clip_image014.jpg" alt="img">&lt;/p>
+&lt;p>Last but not least is to press “Create instance”&lt;/p>
+&lt;p>&lt;img src="images/clip_image015.png" alt="img">&lt;/p>
+&lt;p>After a couple of seconds you should be re-routed to your dashboard and see your instance up and running:&lt;/p>
+&lt;p>&lt;img src="images/clip_image016.png" alt="img">&lt;/p>
+&lt;h3 id="5-preparing-your-instance-for-network-access-a-namenetworkinga">5. Preparing your instance for network access &lt;a name="networking">&lt;/a>&lt;/h3>
+&lt;h4 id="a-assignment-of-static-ip-a-namestatic_ipa">a) Assignment of Static IP &lt;a name="static_IP">&lt;/a>&lt;/h4>
+&lt;p>Next up, is to provide our instance with a static IP and linking our domain to it.&lt;/p>
+&lt;p>When you click on your instance name, it will take you to the management console, which should look like this:&lt;/p>
+&lt;p>&lt;img src="images/clip_image002-16272853840264.jpg" alt="img">&lt;/p>
+&lt;p>This is where you control hardware, connectivity and if needed can delete your instance.&lt;/p>
+&lt;p>Lets configure a static IP address for your new instance. Navigate to Networking and click on Create static IP:&lt;/p>
+&lt;p>&lt;img src="images/clip_image003.png" alt="img">&lt;/p>
+&lt;p>Our region and instance is selected, so the only thing left is to name our static IP. I selected the name atsign-static, but it can be any name you like.&lt;/p>
+&lt;p>&lt;img src="images/clip_image005.jpg" alt="img">&lt;/p>
+&lt;p>Lets hit create:&lt;/p>
+&lt;p>&lt;img src="images/clip_image007.jpg" alt="img">&lt;/p>
+&lt;p>And voila, we now have a static IP address on the internet and it will not change. Now we can link our domain name with it.&lt;/p>
+&lt;p>&lt;img src="images/clip_image009.jpg" alt="img">&lt;/p>
+&lt;p>When you click on your instance name and navigate to Networking, the static IP is now assigned.&lt;/p>
+&lt;p>&lt;img src="images/clip_image011.jpg" alt="img">&lt;/p>
+&lt;h4 id="b-assignment-of-domain-name-to-your-static-ip-a-namedomain2ipa">b) Assignment of Domain name to your static IP &lt;a name="domain2IP">&lt;/a>&lt;/h4>
+&lt;p>We can now move on to linking our static IP address to our domain. This is done via the AWS console which can be accessed in the top right of Lightsail.&lt;/p>
+&lt;p>&lt;img src="images/clip_image001.png" alt="img">&lt;/p>
+&lt;p>Verify your email used for registering domain:&lt;/p>
+&lt;p>By now you should receive verification email that will confirm registration of your domain. Click this link before moving on.&lt;/p>
+&lt;p>Linking domain with your static address:&lt;/p>
+&lt;p>Lets navigate to “Route 53” from Services menu.&lt;/p>
+&lt;p>&lt;img src="images/clip_image003.jpg" alt="img">&lt;/p>
+&lt;p>From your dashboard click on “Domain” which will take you to the “Registered Domains” tab.&lt;/p>
+&lt;p>&lt;img src="images/clip_image005-16272854399076.jpg" alt="img">&lt;/p>
+&lt;p>Here you can click on your registered domain which will take you to overview page with domain status and contacts.&lt;/p>
+&lt;p>&lt;img src="images/clip_image007-16272854399087.jpg" alt="img">&lt;/p>
+&lt;p>Click on “Manage DNS”&lt;/p>
+&lt;p>&lt;img src="images/clip_image009-16272854399088.jpg" alt="img">&lt;/p>
+&lt;p>And click on your domain name.&lt;/p>
+&lt;p>This will show you your DNS records for your domain. We now need to link A type record to your domain linking it to IP address of your instance.&lt;/p>
+&lt;p>This is done simply by typing your static IP address from previous step into field “Value” and clicking Create record:&lt;/p>
+&lt;p>&lt;img src="images/clip_image011-16272854399089.jpg" alt="img">&lt;/p>
+&lt;p>If everything goes well you should see following in your domain dashboard:&lt;/p>
+&lt;p>&lt;img src="images/clip_image013.jpg" alt="img">&lt;/p>
+&lt;p>To test if you are successful open command line and ping your domain. You should see your instance static IP address. It will not respond which is normal due to IPv4 firewall. It is actually good thing!&lt;/p>
+&lt;p>&lt;img src="images/clip_image014.png" alt="img">&lt;/p>
+&lt;p>At this point we have created DNS record we will use to link our dess, we created instance name which will be running our dess and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.&lt;/p>
+&lt;h4 id="c-setting-up-firewall-a-namefirewalla">c) Setting up Firewall &lt;a name="firewall">&lt;/a>&lt;/h4>
+&lt;p>Next up we need to make sure we have ports open for our dess to communicate with root server and our apps. In Section networking go to section “IPv4 Firewall” and click “+ Add rule” Our rule will be “Custom” on TCP protocol with Port range in number higher then 1024. In my case I have selected port range 8000-8010. This will enable me to run up to 10 @signs in parallel.&lt;/p>
+&lt;p>&lt;img src="images/clip_image002-16272854074665.jpg" alt="img">&lt;/p>
+&lt;p>Click create and verify that your new rule is in list:&lt;/p>
+&lt;p>&lt;img src="images/clip_image002-16272854074665.jpg" alt="img">&lt;/p>
+&lt;h3 id="6-instance-setup-and-dess-deployment-a-namedeploymenta">6. Instance setup and dess deployment &lt;a name="deployment">&lt;/a>&lt;/h3>
+&lt;p>Open your &lt;a href="https://lightsail.aws.amazon.com/">LightSail console&lt;/a>&lt;/p>
+&lt;p>By now you should see your instance in “Running state”&lt;/p>
+&lt;p>&lt;img src="images/clip_image002-162728546025210.jpg" alt="img">&lt;/p>
+&lt;p>Open it and on tab Connect click on “Connect using SSH”&lt;/p>
+&lt;p>&lt;img src="images/clip_image003-162728546025211.png" alt="img">&lt;/p>
+&lt;p>You should be presented by a new window with command line:&lt;/p>
+&lt;p>&lt;img src="images/clip_image005-162728546025212.jpg" alt="img">&lt;/p>
+&lt;p>Before we do anything else, we should update the system:&lt;/p>
+&lt;pre>&lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade
+&lt;/code>&lt;/pre>&lt;p>This might take some time, but it will make sure we have latest repository information and the system is up to date.&lt;/p>
+&lt;p>Next make sure curl is installed, we will use curl to pull the dess installation file:&lt;/p>
+&lt;pre>&lt;code>sudo apt install curl
+&lt;/code>&lt;/pre>&lt;p>Finally, run the dess installer:&lt;/p>
+&lt;pre>&lt;code>curl -fsSL https://getdess.atsign.com | sudo bash
+&lt;/code>&lt;/pre>&lt;p>Once the installer is finished you should be prompted like so:&lt;/p>
+&lt;pre>&lt;code>Dess installed, please move on to the sudo dess-create command.
+&lt;/code>&lt;/pre>&lt;h3 id="7-registration-of-sign-in-your-private-dess-a-namedess2signa">7. Registration of @sign in your private dess &lt;a name="dess2@sign">&lt;/a>&lt;/h3>
+&lt;p>At this step you should already have your @sign registered at &lt;a href="http://atsign.com">http://atsign.com&lt;/a>. If not &lt;strong>go do it!&lt;/strong>&lt;/p>
+&lt;p>I have registered my own free @sign (@44likelycanary) which I will link to my dess.&lt;/p>
+&lt;p>In your instance console, navigate to dess folder. If you were following this guide it will be located in:&lt;/p>
+&lt;p>We now need to create the service that will host our @sign by executing the dess-create command:&lt;/p>
+&lt;pre>&lt;code>$ sudo dess-create @44likelycanary 4atsign.link 8000 &amp;lt;email address&amp;gt; likelycanary
+&lt;/code>&lt;/pre>&lt;p>To make it more understandable:&lt;/p>
+&lt;p>I will be registering my @sign &lt;strong>@44likelycanary&lt;/strong>.&lt;/p>
+&lt;p>I will be using my domain &lt;strong>4atsign.link&lt;/strong> which I have registered through AWS.&lt;/p>
+&lt;p>I am using port &lt;strong>8000&lt;/strong> which I have opened in my instance firewall.&lt;/p>
+&lt;p>My registration email address is &lt;strong>&amp;lt;email address&amp;gt;&lt;/strong> (this email is used to sign the SSL certificates).&lt;/p>
+&lt;p>The last &lt;strong>likelycanary&lt;/strong> is the name that docker will use to track the service.&lt;/p>
+&lt;p>If everything is successful you should see output like this:&lt;/p>
+&lt;p>&lt;img src="images/clip_image004-162728549379914.jpg" alt="img">&lt;/p>
+&lt;p>At this moment your @sign is registered on your dess.&lt;/p>
+&lt;h2 id="8-activation-of-signa-nameactivationa">8. Activation of @sign&lt;a name="activation">&lt;/a>&lt;/h2>
+&lt;p>Next up we need to activate it&lt;/p>
+&lt;p>Login to your dashboard at &lt;a href="https://my.atsign.com/dashboard">https://my.atsign.com/dashboard&lt;/a>&lt;/p>
+&lt;p>Open “my @signs”&lt;/p>
+&lt;p>&lt;img src="images/clip_image001-162728550968115.png" alt="img">&lt;/p>
+&lt;p>Open “managed” of @sign you are registering”&lt;/p>
+&lt;p>&lt;img src="images/clip_image003-162728550968116.jpg" alt="img">&lt;/p>
+&lt;p>Navigate to Advance settings:&lt;/p>
+&lt;p>&lt;img src="images/clip_image005-162728550968117.jpg" alt="img">&lt;/p>
+&lt;p>If you have already activated your @sign you will be prompted to erase all your data first&lt;/p>
+&lt;p>&lt;img src="images/clip_image007-162728550968118.jpg" alt="img">&lt;/p>
+&lt;p>Once done you are able to link your @sign with your private dess. Use your domain and port number with which you have created service on your cloude instance and press Activate.&lt;/p>
+&lt;p>&lt;img src="images/clip_image009-162728550968119.jpg" alt="img">&lt;/p>
+&lt;p>You should see that your @sign is being activated in your dashboard:&lt;/p>
+&lt;p>&lt;img src="images/clip_image011-162728550968120.jpg" alt="img">&lt;/p>
+&lt;p>This can take several minutes so go get cup of coffee, some tea maybe, stretch your body and pray you haven’t made any mistakes!&lt;/p>
+&lt;p>Once the activation process completes you are welcomed by green Activated.&lt;/p>
+&lt;p>&lt;img src="images/clip_image013-162728550968121.jpg" alt="img">&lt;/p>
+&lt;p>You can now open @buzz or @wavi and register your @sign via QR code and generate your keys!&lt;/p>
+&lt;p>&lt;strong>CONGRATULATIONS&lt;/strong>&lt;/p></description></item><item><title>Docs: Setup dess on GCP (Google Cloud Platform)</title><link>https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/dess-gcp/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/dess-setup/dess-gcp/</guid><description>
+&lt;p>dess stands for &amp;ldquo;Distributed Edge Secondary Server&amp;rdquo; and it is used to host your @signs on your own secondary server. Refer to the &lt;a href="https://devstaging.atsign.wtf/docs/get-started/get-an-atsign/dess/">Setup dess guide&lt;/a> under Options to learn more.&lt;/p>
+&lt;p>In this step-by-step guide we will walk you through all steps required to setup your own private dess in GCP cloud from scratch. Please use index to skip some steps in case you have done them in another way.&lt;/p>
+&lt;h2 id="table-of-contents">Table of contents&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#pre-requisites">Pre-requisites&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#Registering"> Registering your @sign&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#sign_up"> Sign-up for GCP account&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#create_account">Account creation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#FQDN">Register your own fully qualified domain name&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#cloud_domain">Register domain name with GCP.&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#DNS_zone">Create Cloud DNS zone&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>&lt;a href="#prep_instance">Preparing GCP instance&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#networking">Preparing your instance for network access&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#static_IP">Assignment of Static IP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#domain2IP">Assignment of Domain name to your static IP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#firewall">Setting up Firewall&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#deployment">Instance setup and dess deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dess2@sign">Registration of @sign in your private dess&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#activation">Activation of @sign&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="pre-requisites-a-namepre-requisitesa">Pre-requisites &lt;a name="pre-requisites">&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Register Atsign at &lt;a href="http://atsign.com">http://atsign.com&lt;/a>&lt;/li>
+&lt;li>Have google account&lt;/li>
+&lt;li>Have registered Fully Qualified Domain Name (FQDN)&lt;/li>
+&lt;/ul>
+&lt;h3 id="1-registering-your-sign-a-nameregisteringa">1. Registering your @sign &lt;a name="Registering">&lt;/a>&lt;/h3>
+&lt;p>This topic is already well documents. Please follow guidance of &lt;a href="https://atsign.com/faqs/">https://atsign.com/faqs/&lt;/a> and register via &lt;a href="https://atsign.com/get-an-sign/">https://atsign.com/get-an-sign/&lt;/a>.&lt;/p>
+&lt;h3 id="2-sign-up-for-gcp-account-a-namesign_upa">2. Sign-up for GCP account &lt;a name="sign_up">&lt;/a>&lt;/h3>
+&lt;h4 id="a-account-creation-a-namecreate_accounta">a) Account creation &lt;a name="create_account">&lt;/a>&lt;/h4>
+&lt;p>If you are new to cloud like me and need to create new GCP account, I have good news! The creation is for free. As promotion all new customer will also receive 300$ as credit. That is more than enough to run multiple dess’s for 3 months of offer validity.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-discount.png" alt="gcp-discount">&lt;/p>
+&lt;p>You can register with your gmail account or create new one by clicking “Get started for free” and follow instructions to register&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-get-started.png" alt="Get Started">&lt;/p>
+&lt;p>Once done with registration you will be able to login to your &lt;a href="https://console.cloud.google.com/">https://console.cloud.google.com/&lt;/a>
+And voila you have your GCP account up and running.&lt;/p>
+&lt;h4 id="b-setting-up-billing-a-namebillinga">b) Setting up billing &lt;a name="billing">&lt;/a>&lt;/h4>
+&lt;p>To be able to run some services you have to maintain billing account. Navigation Menu -&amp;gt; Billing&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-navigation-billing.png" alt="gcp-navigation-billing">&lt;/p>
+&lt;p>By default GCP creates “My Billing Account” which you can link to your project.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-billing_project.png" alt="gcp-billing_project">&lt;/p>
+&lt;p>Click “Link Billing account” and select “My billing account” from drop down&lt;/p>
+&lt;p>🔴 Its important to note that this account holds your 300$ free credits! 🔴&lt;/p>
+&lt;p>We are all setup and ready to go deploy!&lt;/p>
+&lt;h3 id="3-register-your-own-fully-qualified-domain-name-fqdn-a-namefqdna">3. Register your own fully qualified domain name (FQDN) &lt;a name="FQDN">&lt;/a>&lt;/h3>
+&lt;p>This step can be performed at range of different sites with different pricing models. You can use sites like &lt;a href="http://www.godaddy.com">http://www.godaddy.com&lt;/a>; &lt;a href="https://www.namecheap.com/;">https://www.namecheap.com/;&lt;/a> and many others. Since we have GCP account we can use it to register our domain through Cloud Domain.&lt;/p>
+&lt;h4 id="a-register-domain-name-with-gcp-a-namecloud_domaina">a) Register domain name with GCP. &lt;a name="cloud_domain">&lt;/a>&lt;/h4>
+&lt;p>In your GCP console search for &lt;code>Cloud Domain&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-search-domain.png" alt="gcp-search-domain">&lt;/p>
+&lt;p>We first need to enable this service.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-domain-api.png" alt="gcp-domain-api">&lt;/p>
+&lt;p>Once the service activates you will be presented with its dashboard.&lt;/p>
+&lt;p>Lets register our fully qualified domain name (FQDN) that will be used for registration of our dess.&lt;/p>
+&lt;p>Click on “Register Domain” and look for suitable name.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-domain-register.png" alt="gcp-domain-register">&lt;/p>
+&lt;p>Reviewing pricing options of GCP .pw is their cheapest option which will work for testing. For my test case I am selecting atsign.pw with price $0.75 / month by clicking add to cart button and continue.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-domain-lookup.png" alt="gcp-domain-lookup">&lt;/p>
+&lt;p>Next we can select where will our DNS record be hosted. Simply select “Use Google Domains” and DNSSEC “Enabled” and click continue.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-domain-config.png" alt="gcp-domain-config">&lt;/p>
+&lt;p>We have no options with Privacy protection so simply click continue.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-domain-privacy.png" alt="gcp-domain-privacy">&lt;/p>
+&lt;p>Fill out contact details and click register. This will trigger registration email you will have to verify.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-domain-contacts.png" alt="gcp-domain-contacts">&lt;/p>
+&lt;p>Once you verify your email your domain should be ready to use&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-domain-status.png" alt="gcp-domain-status">&lt;/p>
+&lt;h4 id="b-create-cloud-dns-zone-a-namedns_zonea">b) Create Cloud DNS zone &lt;a name="DNS_zone">&lt;/a>&lt;/h4>
+&lt;p>Next step is to enable Cloud DNS service. Search for DNS in search bar and select &lt;code>Cloud DNS&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-search-dns.png" alt="gcp-search-dns">&lt;/p>
+&lt;p>If its your first time activating this service you will have to enable the API. Press enable and wait for the activation to finish.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-api.png" alt="gcp-dns-api">&lt;/p>
+&lt;p>Lets crate new DNS zone by clicking “Create Zone”&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-create.png" alt="gcp-dns-create">&lt;/p>
+&lt;p>We will select zone type as Public since we will be connecting to our DNS from internet and provide your registered DNS name. In my case atsign.pw. DNSSEC will be set to off and provide some meaningful Description. Once you filled all your details press create.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-create-details.png" alt="gcp-dns-create-details">&lt;/p>
+&lt;p>You should receive following message:&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-confirm.png" alt="gcp-dns-confirm">&lt;/p>
+&lt;h3 id="4-preparing-gcp-instance-a-nameprep_instancea">4. Preparing GCP instance &lt;a name="prep_instance">&lt;/a>&lt;/h3>
+&lt;p>Now since I am new to GCP the easiest way to start using it is with prebuild solutions. This way you will deploy small system which is more then capable of handling dess at pre-set price.&lt;/p>
+&lt;p>We can use pre-build “Ubuntu 20”. In Search bar look for &lt;code>Ubuntu20&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-search-ubuntu20.png" alt="gcp-search-ubuntu20">&lt;/p>
+&lt;p>🔴 &lt;strong>Make sure to use “Ubuntu 20” and not “Hardened Ubuntu 20”. Although the Hardened version will work as well it requires additional manual steps to make work.&lt;/strong>🔴&lt;/p>
+&lt;p>​&lt;/p>
+&lt;p>This will take you to this prebuild solution overview page:&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-ubuntu20.png" alt="gcp-ubuntu20">&lt;/p>
+&lt;p>Select launch&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-ubuntu20-api-enable.png" alt="gcp-ubuntu20-api-enable">&lt;/p>
+&lt;p>And press enable all required API’s&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-ubuntu20-api-enabled.png" alt="gcp-ubuntu20-api-enabled">&lt;/p>
+&lt;p>Once all API’s are activated you are taken to configuration page:&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-ubuntu20-type.png" alt="gcp-ubuntu20-type">&lt;/p>
+&lt;p>Prices are based on region and power of selected Virtual Machine (VM). To cost optimize you can select US region / N1 / g1-small at cost of $15/Month.&lt;/p>
+&lt;p>Next up is boot disk which we can leave as is.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-ubuntu20-disk.png" alt="gcp-ubuntu20-disk">&lt;/p>
+&lt;p>This will deploy your Ubuntu 20.04 virtual machine.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-ubuntu20-confirmation.png" alt="gcp-ubuntu20-confirmation">&lt;/p>
+&lt;h3 id="5-preparing-your-instance-for-network-access-a-namenetworkinga">5. Preparing your instance for network access &lt;a name="networking">&lt;/a>&lt;/h3>
+&lt;h4 id="a-assignment-of-static-ip-a-namestatic_ipa">a) Assignment of Static IP &lt;a name="static_IP">&lt;/a>&lt;/h4>
+&lt;p>Next up our list of activities is providing our instance with static IP and linking our domain to it.&lt;/p>
+&lt;p>GCP assigned ephemeral IP address to our newly created VM. We need to change it to static IP.&lt;/p>
+&lt;p>In search bar look for &lt;code>External IP addresses&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-search-networking.png" alt="gcp-search-networking">&lt;/p>
+&lt;p>You should see your external IP address assigned to your VM&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-networking-overview.png" alt="gcp-networking-overview">&lt;/p>
+&lt;p>In column Type select ephemeral and change it to Static&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-networking-type.png" alt="gcp-networking-type">&lt;/p>
+&lt;p>Give your static IP name and some description.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-networking-static.png" alt="gcp-networking-static">&lt;/p>
+&lt;p>Type should now say Static&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-networking-type-change.png" alt="gcp-networking-type-change">&lt;/p>
+&lt;h4 id="b-assignment-of-domain-name-to-your-static-ip-a-namedomain2ipa">b) Assignment of Domain name to your static IP &lt;a name="domain2IP">&lt;/a>&lt;/h4>
+&lt;p>Next step is to point your domain to your virtual machine running dess.&lt;/p>
+&lt;p>Search for &lt;code>Cloud DNS&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-search-dns.png" alt="gcp-search-dns">&lt;/p>
+&lt;p>Open zone you have created in step &lt;a href="#DNS_zone">3.b Create Cloud DNS zone&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-status.png" alt="gcp-dns-status">&lt;/p>
+&lt;p>We now need to link A type record to your domain linking it to IP address of your Virtual machine.&lt;/p>
+&lt;p>This is done simply press “Add record set”&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-add-record.png" alt="gcp-dns-add-record">&lt;/p>
+&lt;p>Select Resource record type “A” and IPv4 address the address of your dess virtual machine.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-a.png" alt="gcp-dns-a">&lt;/p>
+&lt;p>If everything goes well you should see following in your domain dashboard:&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-status-final.png" alt="gcp-dns-status-final">&lt;/p>
+&lt;p>Next step is to update Google Name servers. You can follow Googles guide - step 5.&lt;/p>
+&lt;p>&lt;a href="https://cloud.google.com/dns/docs/tutorials/create-domain-tutorial#register-domain">https://cloud.google.com/dns/docs/tutorials/create-domain-tutorial#register-domain&lt;/a>&lt;/p>
+&lt;p>To test if you are successful open command line and ping your domain. You should see your instance static IP address.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-dns-test.png" alt="gcp-dns-test">&lt;/p>
+&lt;p>At this point we have created DNS record we will use to link our dess, we created instance name which will be running our dess and we have opened port range which is exposed to the internet and we can communicate with @sign root server and our apps with.&lt;/p>
+&lt;h4 id="c-setting-up-firewall-a-namefirewalla">c) Setting up Firewall &lt;a name="firewall">&lt;/a>&lt;/h4>
+&lt;p>Search for Firewall in search bar.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-search-firewall.png" alt="gcp-search-firewall">&lt;/p>
+&lt;p>Click on Create firewall rule&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-firewall-create.png" alt="gcp-firewall-create">&lt;/p>
+&lt;p>Lets create firewall rule that will enable the @sign root server communicate with our dess.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-networking-firewall-settings.png" alt="gcp-networking-firewall-settings">&lt;/p>
+&lt;p>Important things to note:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Ingress translates to incoming traffic.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Selecting IP range as &lt;code>0.0.0.0/0&lt;/code> will allow traffic from anywhere on the internet.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For my use case I will enable port range &lt;code>8000 – 8010&lt;/code> allowing me to register up to 10 @signs.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-firewall-ranges.png" alt="gcp-firewall-ranges">&lt;/p>
+&lt;p>Press &lt;code>create&lt;/code> and validate that your new rule appears in list of firewall rules.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-firewall-status.png" alt="gcp-firewall-status">&lt;/p>
+&lt;p>Second we need to create firewall rule that will enable your dess server to communicate with certification authority.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-networking-firewall-80.png" alt="gcp-networking-firewall-80">&lt;/p>
+&lt;p>Important things to note:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Ingress translates to incoming traffic.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Selecting IP range as &lt;code>0.0.0.0/0&lt;/code> will allow traffic from anywhere on the internet.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You need to enable port &lt;code>80&lt;/code> for communication with Certification authority.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-networking-firewall-range-80.png" alt="gcp-networking-firewall-range-80">&lt;/p>
+&lt;p>Press &lt;code>create&lt;/code> and validate that your new rule appears in list of firewall rules.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-firewall-status-both.png" alt="gcp-firewall-status">&lt;/p>
+&lt;h3 id="6-instance-setup-and-dess-deployment-a-namedeploymenta">6. Instance setup and dess deployment &lt;a name="deployment">&lt;/a>&lt;/h3>
+&lt;p>Open your GCP console at &lt;a href="https://console.cloud.google.com/compute/instances">https://console.cloud.google.com/compute/instances&lt;/a> and search for &lt;code>VM instances&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-search-vm.png" alt="gcp-search-vm">&lt;/p>
+&lt;p>By now you should see your instance in “Running state”&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-vm-status.png" alt="gcp-vm-status">&lt;/p>
+&lt;p>Click on the SSH button and connect to your instance.&lt;/p>
+&lt;p>You should be presented by new window with command line:&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-vm-connected.png" alt="gcp-vm-connected">&lt;/p>
+&lt;p>Before we do anything else, we should update the system:&lt;/p>
+&lt;pre>&lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade
+&lt;/code>&lt;/pre>&lt;p>This might take some time, but it will make sure we have latest repository information and the system is up to date.&lt;/p>
+&lt;p>Next make sure curl is installed, we will use curl to pull the dess installation file:&lt;/p>
+&lt;pre>&lt;code>sudo apt install curl
+&lt;/code>&lt;/pre>&lt;p>Finally, run the dess installer:&lt;/p>
+&lt;pre>&lt;code>curl -fsSL https://getdess.atsign.com | sudo bash
+&lt;/code>&lt;/pre>&lt;p>Once the installer is finished you should be prompted like so:&lt;/p>
+&lt;pre>&lt;code>Dess installed, please move on to the sudo dess-create command.
+&lt;/code>&lt;/pre>&lt;h3 id="7-registration-of-sign-in-your-private-dess-a-namedess2signa">7. Registration of @sign in your private dess &lt;a name="dess2@sign">&lt;/a>&lt;/h3>
+&lt;p>At this step you should already have your @sign registered at &lt;a href="http://atsign.com">http://atsign.com&lt;/a>. If not &lt;strong>go do it!&lt;/strong>&lt;/p>
+&lt;p>I have registered my own free @sign (@44likelycanary) which I will link to my dess.&lt;/p>
+&lt;p>In your instance console, navigate to dess folder. If you were following this guide it will be located in:&lt;/p>
+&lt;p>We now need to create the service that will host our @sign by executing the dess-create command:&lt;/p>
+&lt;pre>&lt;code>$ sudo dess-create @44likelycanary 4atsign.link 8000 &amp;lt;email address&amp;gt; likelycanary
+&lt;/code>&lt;/pre>&lt;p>To make it more understandable:&lt;/p>
+&lt;p>I will be registering my @sign &lt;strong>@44likelycanary&lt;/strong>.&lt;/p>
+&lt;p>I will be using my domain &lt;strong>4atsign.link&lt;/strong> which I have registered through AWS.&lt;/p>
+&lt;p>I am using port &lt;strong>8000&lt;/strong> which I have opened in my instance firewall.&lt;/p>
+&lt;p>My registration email address is &lt;strong>&amp;lt;email address&amp;gt;&lt;/strong> (this email is used to sign the SSL certificates).&lt;/p>
+&lt;p>The last &lt;strong>likelycanary&lt;/strong> is the name that docker will use to track the service.&lt;/p>
+&lt;p>If everything is successful you should see output like this:&lt;/p>
+&lt;p>&lt;img src="images/clip_image004-162728549379914.jpg" alt="img">&lt;/p>
+&lt;p>At this moment your @sign is registered on your dess.&lt;/p>
+&lt;h2 id="8-activation-of-signa-nameactivationa">8. Activation of @sign&lt;a name="activation">&lt;/a>&lt;/h2>
+&lt;p>Next up we need to activate it&lt;/p>
+&lt;p>Login to your dashboard at &lt;a href="https://my.atsign.com/dashboard">https://my.atsign.com/dashboard&lt;/a>&lt;/p>
+&lt;p>Open “my @signs”&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-dashboard.png" alt="gcp-atsign-dashboard">&lt;/p>
+&lt;p>Open “managed” of @sign you are registering”&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-nonactive.png" alt="gcp-atsign-nonactive">&lt;/p>
+&lt;p>Navigate to Advance settings:&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-active.png" alt="gcp-atsign-active">&lt;/p>
+&lt;p>If you have already activated your @sign you will be prompted to erase all your data first&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-erase.png" alt="gcp-atsign-erase">&lt;/p>
+&lt;p>Once done you are able to link your @sign with your private dess. Use your domain and port number with which you have created service on your cloud instance and press Activate&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-advance.png" alt="image-20210617111907819">&lt;/p>
+&lt;p>You should see that your @sign is being activated in your dashboard:&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-activating.png" alt="gcp-atsign-activating">&lt;/p>
+&lt;p>The activation will be completed once you have used your QR code from dess and retrieved your keys.&lt;/p>
+&lt;p>Once the activation process completes you are welcomed by green Activated.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/docs/guides/dess-setup/dess-gcp/images/gcp-atsign-activated.png" alt="gcp-atsign-activated">&lt;/p>
+&lt;p>&lt;u>&lt;strong>CONGRATULATIONS&lt;/strong>&lt;/u>&lt;/p></description></item></channel></rss>

@@ -1,0 +1,64 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – What is the @platform?</title><link>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/</link><description>Recent content in What is the @platform? on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Namespaces</title><link>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/namespaces/</link><pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/namespaces/</guid><description>
+&lt;p>Namespace is a common term that may occur when reading about the @platform. Luckily for you, we briefly explain what a namespace is here!&lt;/p>
+&lt;p>As our CTO, Colin Constable, delicately described it, &amp;quot; A namespace is a place to put a set of strings or characters together.&amp;quot; So how exactly is this relevant to our end-to-end encryption protocol?&lt;/p>
+&lt;p>Most people are familiar with DNS (Domain Name System): for example, if you type “cnn.com”, “fox.com”, or “bbc.com”, you get news sites. But you can’t just type in “news” and expect the Internet to tell you which particular flavor of news you want.&lt;/p>
+&lt;p>We need to create namespaces so that humans can remember the name and computers can translate it to Internet protocol. Once there is a namespace like “bbc.com,” you can reliably know that somebody owns that particular space, and it needs to be managed so that there are no clashes.&lt;/p>
+&lt;p>For instance, you don’t want to type “bbc.com” and get sent to Amazon’s home page. That’s why they have to be unique.&lt;/p>
+&lt;p>Feel free to read more on namespaces &lt;a href="https://atsigncompany.medium.com/the-hidden-beauty-of-protocol-namespaces-6f5fab7f7a09">here&lt;/a>.&lt;/p>
+&lt;!-- ## Getting @signs and keys.
+Your first step is to get a couple of @signs, it is best to get at least two, so you can experiment with sharing end-to-end
+encrypted data across the @platform.
+### There are two methods to get @signs.
+#### The first
+Go to [atsign.com](https://atsign.com) and clicking [Get an @sign](https://atsign.com/get-an-sign/). If you go
+this route then you have more influence on your free @sign or pay for one of your choosing. Once you have your @signs,
+do not forget to activate them.
+![activate @sign](/docs/Get-Started/get-an-atsign/images/activate-ui.png)
+Activating creates a microservice (we call the secondary server) and once
+that is spun up on Atsign infrastructure you will see a QR-Code to scan with an @ enabled application.
+![activated @sign](/docs/Get-Started/get-an-atsign/images/activated.png)
+The pairing consists of your device creating cryptographic
+keys and sharing the public keys to the secondary server, you will be asked to store your private keys.
+Storing your keys is vitally important as only you have the keys.
+#### The second
+The experience of getting a @sign via the website is great for developers as you have advanced options available, to reset
+@signs and to point your @sign to your own infrastructure. For getting people onboarded quickly, a better experience would
+be to get a free @sign within the app itself, this is option 2.
+![generate @sign](/docs/Get-Started/get-an-atsign/images/generate-free-@sign.png)
+The [onboarding widget](https://pub.dev/packages/at_onboarding_flutter) together with an API key provides a button
+marked "Generate Free @sign".
+![generate @sign-pair](/docs/Get-Started/get-an-atsign/images/generate-free-@sign-pair.png)
+When selected a number of free @signs given to chose from, once selected it is quickly activated,
+then once again you will be asked to store the cryptographic keys for the @sign.
+### Once you have your @signs and keys
+You are ready to start using the @platform! We have a number [demo apps](https://github.com/atsign-foundation/at_demos) that are constantly being updated, feel free to
+fork or clone and try them.
+There is also another nice app in development by [xavierchanth](https://github.com/XavierChanth/chit_chat) which is a
+chat app using the @platform. It is a nice example to follow as it uses the [contacts](https://pub.dev/packages/at_contact)
+combined with the [at_chat_flutter](https://pub.dev/packages/at_chat_flutter) widgets to create a simple chat app between
+@signs.
+![ChitCh@t](/docs/Get-Started/get-an-atsign/images/ChitCh@t-low.png)
+Each @ enabled application will ask you once for your @sign and then your keys, so it can synchronize with your secondary server.
+This means you might like to store your keys on a personal network drive or service (e.g. gdrive/idrive/onedrive) so
+you can connect other @ enabled apps to your @sign easily. Remember not to share and protect your keys.
+### Other widgets and the @platform/@protocol source code
+We have an ever-growing number of widgets on [pub.dev](https://pub.dev/publishers/atsign.org/packages)
+The @plaform and the @protocol are open source projects on [GitHub](https://github.com/atsign-foundation). If you see something missing,
+or not working let us know or better still contribute with a PR!
+## Where should I go next?
+First, if you haven't setup Flutter, do that [here](/docs/get-started/setup-your-env/).
+Otherwise, continue to building your first app [here](/docs/get-started/create-a-project/). --></description></item><item><title>Docs: Encryption</title><link>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/encryption/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/encryption/</guid><description>
+&lt;p>The @protocol supports end-to-end encryption for all the data handled through it. This is difficult to do, especially for information that is shared with a large number of people and very frequently, so we had to come up with a clever mechanism to make the technology work.&lt;/p>
+&lt;p>Let’s describe a simple use case: @alice wishes to share her phone number with her friend @bob. To do this, @alice, who is on her own device, prompts her own secondary server to direct phone@alice at her friend @bob’s secondary server. From here, a shared key is generated for @bob (@bob:shared_key@alice).&lt;/p>
+&lt;p>This shared key uses the same encryption process as the Symmetric Key Encryption, which is called AES (Advanced Encryption Standard) and involves three block ciphers: AES-128, AES-192 and AES-256.&lt;/p>
+&lt;p>The @protocol specifically uses AES256 for Data Encryption Keys.&lt;/p>
+&lt;p>The RSA (Rivest–Shamir–Adleman) encryption algorithm is then used to encrypt the shared key from the above example with @bob’s public key. The @protocl specifically utilizes RSA 2048. Note, that because the RSA algorithm is an Asymmetric Key Encryption method, a public and private key are generated.&lt;/p>
+&lt;p>As this is a brief overview as to how encryption works on the @platform, you may read more &lt;a href="https://atsigncompany.medium.com/data-encryption-caching-with-the-protocol-debe9efc0f49">here&lt;/a>.&lt;/p></description></item><item><title>Docs: Polymorphism</title><link>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/polymorphism/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/polymorphism/</guid><description>
+&lt;p>Polymorphism on the @platform is the ability to share different data depending on the context of who&amp;rsquo;s asking.
+@platform applications enable you to setup multiple personas for different areas of your life.
+When you share data with someone else, the value of that data may be different depending on the person receiving that data.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;p>@alice&amp;rsquo;s work persona may have a different value for email than her personal persona.
+When she shares her email to her colleagues, they will receive her work email, however when she shares it to her friends and family, they will see her personal email.
+As she updates the data in each of her personas, the changes will be reflected to each person that she has shared the data with.&lt;/p>
+&lt;p>To learn more about polymorphism see &lt;a href="https://medium.com/flutter-community/building-flutter-apps-with-no-backend-9715b764a81e#67d3">this article post&lt;/a>.&lt;/p></description></item></channel></rss>

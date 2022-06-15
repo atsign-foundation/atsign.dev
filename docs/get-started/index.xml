@@ -1,0 +1,89 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – Get Started</title><link>https://devstaging.atsign.wtf/docs/get-started/</link><description>Recent content in Get Started on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/get-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Try your own @platform project</title><link>https://devstaging.atsign.wtf/docs/get-started/tryatplatform/</link><pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/get-started/tryatplatform/</guid><description>
+&lt;p>This tutorial will guide you through a 5 step process to install and run our demo snackbar sender application. Please follow the steps below:&lt;/p>
+&lt;div class="toggleblock">
+&lt;h3 onclick="toggleBlock(this)">
+&lt;i class="fas fa-chevron-right">&lt;/i>Step 1: Install at_app
+&lt;/h3>
+&lt;div class="toggleblock-content">
+Run the following command to install at_app, our developer toolkit:
+&lt;div id="code-1" class="codeblock">
+&lt;pre>
+&lt;code>dart pub global activate at_app &lt;/code>
+&lt;i class="fas fa-copy" id="code-1-icon" onclick="copyCodeblock('dart pub global activate at_app', 'code-1-icon')">&lt;/i>
+&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="toggleblock">
+&lt;h3 onclick="toggleBlock(this)">
+&lt;i class="fas fa-chevron-right">&lt;/i>Step 2: Install the demo app
+&lt;/h3>
+&lt;div class="toggleblock-content">
+Next install the app like so:
+&lt;div id="code-2" class="codeblock">
+&lt;pre>
+&lt;code>at_app create -d snackbar_sender your-folder &lt;/code>
+&lt;i class="fas fa-copy" id="code-2-icon" onclick="copyCodeblock('at_app create -d snackbar_sender your-folder', 'code-2-icon')">&lt;/i>
+&lt;/pre>
+&lt;/div>
+&lt;p>(Read more on at_app &lt;a href="https://pub.dev/packages/at_app/example" target=_blank>here&lt;/a>)&lt;/p>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>&lt;b> Note: &lt;/b> Replace &amp;ldquo;your-folder&amp;rdquo; with the folder you created your project in.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="toggleblock">
+&lt;h3 onclick="toggleBlock(this)">
+&lt;i class="fas fa-chevron-right">&lt;/i>Step 3: Run the demo app
+&lt;/h3>
+&lt;div class="toggleblock-content">
+Then run the demo app:
+&lt;div id="code-3" class="codeblock">
+&lt;pre>
+&lt;code>&lt;p>cd your-folder&lt;br/>flutter run&lt;/p> &lt;/code>
+&lt;i class="fas fa-copy" id="code-3-icon" onclick="copyCodeblock('\u003cp\u003ecd your-folder\nflutter run\u003c\/p\u003e\n', 'code-3-icon')">&lt;/i>
+&lt;/pre>
+&lt;/div>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>&lt;b> Note: &lt;/b> Replace &amp;ldquo;your-folder&amp;rdquo; with the folder you created your project in.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="toggleblock">
+&lt;h3 onclick="toggleBlock(this)">
+&lt;i class="fas fa-chevron-right">&lt;/i>Step 4: Onboard an @sign
+&lt;/h3>
+&lt;div class="toggleblock-content">
+&lt;center>
+&lt;p>Watch the GIF below to see how to get a free @sign within the app itself!&lt;/p>
+&lt;img src="https://devstaging.atsign.wtf/Sample_Apps/croppedWT.gif" style="margin: auto; height:600px;">
+&lt;/center>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>If you&amp;rsquo;d like to purchase an @sign or would simply like to create and receive any type of @sign on the website, feel free to visit &lt;a href="https://my.atsign.com/go">atsign.com&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="toggleblock">
+&lt;h3 onclick="toggleBlock(this)">
+&lt;i class="fas fa-chevron-right">&lt;/i>Step 5: Send a snack!
+&lt;/h3>
+&lt;div class="toggleblock-content">
+&lt;center>
+&lt;p>
+Enter an @sign that will receive the sent snack. Be sure that it is the same @sign that you have entered in the receiver below!
+&lt;/p>
+&lt;iframe src="https://cconstab.github.io/snackbar/#/" title="Snackbar Code" class="receiver">&lt;/iframe>
+&lt;/center>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="whats-next">What&amp;rsquo;s next?&lt;/h3>
+&lt;p>If you are looking for a more advanced version of our Snackbar demo, look no further! Follow the step-by-step guide to send end-to-end encrypted snacks (chocolate bars!) to another device &lt;a href="https://devstaging.atsign.wtf/docs/sample_apps/snackbar/">here&lt;/a>!&lt;/p>
+&lt;style>
+.receiver {
+margin-top: 1rem;
+min-height: 400px;
+}
+&lt;/style></description></item><item><title>Docs: What is the @platform?</title><link>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/get-started/understand-the-platform/</guid><description>
+&lt;p>The @platform is designed to help developers create end-to-end encrypted mobile applications. A &lt;a href="https://github.com/atsign-foundation/">full stack platform&lt;/a> written in Dart and Flutter, it includes a wide range of libraries, services and widgets specifically designed for creating privacy-first applications on any platform.&lt;/p>
+&lt;p>We have also build an SDK to make all of this super simple for developers so that you can get your apps up and running in no time.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/at_platform_images/platform_definition.svg" alt="Platform Definition">&lt;/p></description></item></channel></rss>

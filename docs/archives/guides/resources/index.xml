@@ -1,0 +1,907 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – @platform Additional Resources</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/</link><description>Recent content in @platform Additional Resources on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/archives/guides/resources/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: The @client/AtClient SDK Cookbook</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/clientsdkcookbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/resources/clientsdkcookbook/</guid><description>
+&lt;h1 id="the-verb-tree">&lt;strong>The Verb tree&lt;/strong>&lt;/h1>
+&lt;p>Before we look at some of the sample code, the verb tree gives you a big picture of all of the verbs and what can be executed where.&lt;/p>
+&lt;p>&lt;img src="https://devstaging.atsign.wtf/Resources/verbtree.png" alt="alt_text" title="Verb Tree">&lt;/p>
+&lt;h2 id="1-scan">1. Scan&lt;/h2>
+&lt;p>The scan verb is used to scan the available @ addresses for you either at the public level or all authorized data once the pol process has been completed. This allows addresses to be discovered and perhaps be harvested so if an address has a _ character as its first character then it is omitted from the scan list although it can still be looked up if known. The following example shows just that.&lt;/p>
+&lt;p>Following are the steps to run the scan verb using the @Client SDK&lt;/p>
+&lt;ol>
+&lt;li>Get an instance of AtClient&lt;/li>
+&lt;li>Execute the scan verb using the AtClient&lt;/li>
+&lt;/ol>
+&lt;h4 id="11-get-an-instance-of-atclient">1.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the Client Impl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+// Namespace is mandatory to be passed. E.g me, buzz, etc.,
+await AtClientImpl.createClient('@bob','me', preference);
+var atClient = await AtClientImpl.getClient('@bob');
+}
+&lt;/code>&lt;/pre>&lt;h4 id="12-execute-the-scan-verb-using-atclient">1.2 Execute the scan verb using @AtClient&lt;/h4>
+&lt;h5 id="asimple-scan---returns-all-keys">a.Simple Scan - Returns all keys&lt;/h5>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob);
+// Scans keys stored in app storage
+await atClient.getKeys();
+&lt;/code>&lt;/pre>&lt;h5 id="bscan-keys-matching-a-regular-expression">b.Scan keys matching a regular expression&lt;/h5>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob);
+// Scans keys in .me namespace
+await atClient.getKeys(regex:'.me');
+&lt;/code>&lt;/pre>&lt;h5 id="cscan-keys-shared-with-another-atsign">c.Scan keys shared with another atSign&lt;/h5>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob);
+// Scans keys shared with @alice
+await atClient.getKeys(sharedWith:'alice');
+&lt;/code>&lt;/pre>&lt;h5 id="dscan-keys-shared-by-another-atsign">d.Scan keys shared by another atSign&lt;/h5>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob);
+// Scans keys shared by @alice. This performs authenticated scan on @alice's secondary.
+await atClient.getKeys(sharedBy:'alice');
+&lt;/code>&lt;/pre>&lt;h2 id="2-update">2. Update&lt;/h2>
+&lt;p>Update verb used to add entries in the @server. @signs have to be authenticated for one to run the update verb on the @server.&lt;/p>
+&lt;p>Following are the steps to run the scan verb using the @Client SDK&lt;/p>
+&lt;ol>
+&lt;li>Get an instance of AtClient&lt;/li>
+&lt;li>Execute the update verb using the AtClient&lt;/li>
+&lt;/ol>
+&lt;h4 id="21-get-an-instance-of-atclient">2.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+//create atClient
+var atClient = await AtClientImpl.createClient('@bob', 'me', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="22-execute-the-update-verb-using-atclient">2.2 Execute the update verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+// create phoneKey
+var phoneKey = AtKey()..key = 'phone';
+// Update a phone number visible only to @bob
+await atClient.put(phoneKey, ''+1-123-4567');
+// create emailKey
+var emailKey = AtKey()..key = 'email'
+..sharedWith = '@alice';
+// Update an email visible only to @alice
+await atClient.put(emailKey, 'bob@atsign.com');
+// Update an email visible only to everyone
+// create metadata with isPublic true
+var metadata = Metadata()..isPublic=true;
+// create emailKey and update metadata
+var emailKey = AtKey()..key = 'email'
+..metadata = metadata;
+await atClient.put(emailKey, 'bob@gmail.com');
+// Update a location that expires in 10 minutes
+var metadata = Metadata()..ttl=600000;
+var locationKey = AtKey()..key = 'current_location'
+..metadata = metadata;
+await atClient.put(locationKey, 'https://goo.gl/maps/Trs5Dao562tLFK5Q9');
+&lt;/code>&lt;/pre>&lt;h2 id="3-lookup">3. Lookup&lt;/h2>
+&lt;p>The lookup verb is used to lookup a value on a @server of another @sign. The following demonstrates the use of lookup verb.&lt;/p>
+&lt;p>Following are the steps to run the scan verb using the @Client SDK&lt;/p>
+&lt;h4 id="31-get-an-instance-of-atclient">3.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+// Get
+var atClient = await AtClientImpl.createClient('@bob', 'me', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="32-execute-the-lookup-verb-using-atclient">3.2 Execute the lookup verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+// Look up phone number sharedBy @alice
+//lookup:phone.me@alice
+var atKey = AtKey()..key = 'phone'
+..sharedBy = '@alice';
+await atClient.get(atKey);
+&lt;/code>&lt;/pre>&lt;h2 id="4-plookup">4. Plookup&lt;/h2>
+&lt;p>The plookup verb is used to lookup a public value on a @server of another @sign if the client is authenticated. Plookup verb can only be executed on a remote @server. The following demonstrates the use of plookup verb.&lt;/p>
+&lt;p>Following are the steps to run the scan verb using the @Client SDK&lt;/p>
+&lt;h4 id="41-get-an-instance-of-atclient">4.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+//Get
+var atClient = await AtClientImpl.createClient('@bob', 'me', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="42-execute-the-plookup-verb-using-atclient">4.2 Execute the plookup verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+// plookup public phone number of @alice
+var metadata = Metadata()..isPublic=true;
+var publicPhoneKey = AtKey()..key = 'phone'
+..sharedBy = '@alice'
+..metadata = metadata;
+await atClient.get(publicPhoneKey);
+&lt;/code>&lt;/pre>&lt;h2 id="5-llookup">5. Llookup&lt;/h2>
+&lt;p>The llookup verb is used to lookup a value on a local @server storage of current @sign. The following demonstrates the use of llookup verb.&lt;/p>
+&lt;h4 id="51-get-an-instance-of-atclient">5.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+//Get
+var atClient = await AtClientImpl.createClient('@bob', 'me', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="52-execute-the-llookup-verb-using-atclient">5.2 Execute the llookup verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+// Local lookup a self key e.g @bob:email.me@bob
+var privateEmailKey = AtKey()
+..key = 'email'
+..sharedWith = '@bob';
+var alicePrivateEmail = await atClient.get(privateEmailKey);
+// Local lookup phone shared with @alice e.g @alice:email.me@bob
+var phoneKey = AtKey()
+..key = 'phone'
+..sharedWith = '@alice';
+await atClient.get(phoneKey);
+// Local lookup a public key
+var metadata = Metadata()..isPublic=true;
+var firstnameKey = AtKey()
+..key = 'firstname'
+..metadata = metadata;
+await atClient.get(firstnameKey);
+// Local lookup a key ignoring namespace
+var metadata = Metadata()..namespaceAware=false;
+var firstnameKey = AtKey()
+..key = 'firstname'
+..metadata = metadata;
+await atClient.get(firstnameKey);
+&lt;/code>&lt;/pre>&lt;h2 id="6-delete">6. Delete&lt;/h2>
+&lt;p>The “delete” verb is used for deleting @addresses.&lt;/p>
+&lt;p>Following are the steps to run the scan verb using the @Client SDK&lt;/p>
+&lt;h4 id="61-get-an-instance-of-atclient">6.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+// create AtClient
+var atClient = await AtClientImpl.createClient('@bob', 'me', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="62-execute-the-delete-verb-using-atclient">6.2 Execute the delete verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+// delete self key e.g @bob:phone.me@bob
+var phoneKey = AtKey()..key = 'phone'
+..sharedWith = '@bob';
+await atClient.delete(phoneKey);
+// delete email shared with @alice e.g @alice:phone.me@bob
+var phoneKey = AtKey()..key = 'phone'
+..sharedWith = '@alice';
+await atClient.delete(phoneKey);
+// delete a public key e.g public:phone.me@bob
+var metadata = Metadata()..isPublic=true;
+var phoneKey = AtKey()
+..key = 'phone'
+..metadata = metadata;
+await atClient.delete(phoneKey);
+&lt;/code>&lt;/pre>&lt;h2 id="7-stats">7. Stats&lt;/h2>
+&lt;p>The “stats” verb is used to get certain predefined statistics from the @server.&lt;/p>
+&lt;h4 id="71-get-an-instance-of-atclient">7.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+// Get
+var atClient = await AtClientImpl.createClient('@bob', 'me', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="72-execute-the-stats-verb-using-atclient">7.2 Execute the stats verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+// Execute the verb e.g stats:1,stats:1,2 etc.,
+// You can use stats number from 1 to 10
+// If you want to request multiple types use as , separated values
+// Ex: stats:1,2,5
+await atClient.getRemoteSecondary().executeCommand('stats:1');
+&lt;/code>&lt;/pre>&lt;h2 id="8-config">8. Config&lt;/h2>
+&lt;p>The “config” verb is used to configure block list entries in the @server. If an @sign is added to the block list then connections to the @server will not be accepted.&lt;/p>
+&lt;p>Following are the steps to run the scan verb using the @Client SDK&lt;/p>
+&lt;ol>
+&lt;li>Get an instance of AtClient&lt;/li>
+&lt;li>Set up a ConfigVerbBuilder &amp;amp; execute the verb using the AtClient&lt;/li>
+&lt;/ol>
+&lt;h4 id="81-get-an-instance-of-atclient">8.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+// Get
+var atClient = await AtClientImpl.getClient('@bob', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="82-set-up-a-configverbbuilder--execute-the-verb-using-the-atclient">8.2 Set up a ConfigVerbBuilder &amp;amp; execute the verb using the AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob, AtClientPreference());
+var builder = ConfigVerbBuilder()..block = '@rachel';
+// Execute the verb
+await atClient.getLocalSecondary().executeVerb(builder);
+&lt;/code>&lt;/pre>&lt;h2 id="9-notify">9. Notify&lt;/h2>
+&lt;p>The “notify” verb is used to notify another @server of change related to a @address.&lt;/p>
+&lt;p>Following are the steps to run the notify verb using the @Client SDK&lt;/p>
+&lt;ol>
+&lt;li>Get an instance of AtClient&lt;/li>
+&lt;li>Set up a NotifyVerbBuilder&lt;/li>
+&lt;li>Execute the scan using the AtClient&lt;/li>
+&lt;/ol>
+&lt;h4 id="91-get-an-instance-of-atclient">9.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+// Get
+var atClient = await AtClientImpl.getClient('@bob');
+}
+&lt;/code>&lt;/pre>&lt;h4 id="92-execute-the-notify-verb-using-atclient">9.2 Execute the notify verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Create Atclient Instance
+await AtClientImpl.createClient('')
+// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob);
+var atKey = AtKey()
+..key = 'phone@bob'
+..sharedWith = '@alice'
+..sharedBy = '@bob'
+// Execute the verb
+await atClient.notify(atKey, '+1 987 986 2233', OperationEnum.update);
+// Sending Notification with Notification Strategy 'ALL'
+await atClient.notify(atKey, '+1 987 986 2233', OperationEnum.update,
+priority: PriorityEnum.low,
+strategy: StrategyEnum.all);
+// Sending Notification with Notification Strategy 'Latest N'
+await atClient.notify(atKey, '+1 987 986 2233', OperationEnum.update,
+priority: PriorityEnum.high,
+strategy: StrategyEnum.latest,
+latestN:3,
+Notifier: 'wavi');
+&lt;/code>&lt;/pre>&lt;h4 id="93-execute-the-notify-status-verb-using-atclient">9.3 Execute the notify status verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Create Atclient Instance
+await AtClientImpl.createClient('')
+// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob);
+var atKey = AtKey()
+..key = 'phone@bob'
+..sharedWith = '@alice'
+..sharedBy = '@bob'
+// Execute the notify verb
+var notiticationId = await atClient.notify(atKey, '+1 987 986 2233', OperationEnum.update);
+// get notification status of the above notificationId
+var status = await atClient.notifyStatus(notificationId);
+&lt;/code>&lt;/pre>&lt;h2 id="10-monitor">10. Monitor&lt;/h2>
+&lt;p>The “monitor” verb is used to stream incoming notifications from the @server to @Client.&lt;/p>
+&lt;p>Following are the steps to run the notify verb using the @Client SDK&lt;/p>
+&lt;ol>
+&lt;li>Get an instance of AtClient&lt;/li>
+&lt;li>Execute the monitor using the AtClient&lt;/li>
+&lt;/ol>
+&lt;h4 id="101-get-an-instance-of-atclient">10.1 Get an instance of AtClient&lt;/h4>
+&lt;p>To get an instance of the AtClient by calling the getClient method on the AtClientImpl class.&lt;/p>
+&lt;pre>&lt;code>import 'package:at_client/at_client.dart';
+import 'package:at_client/src/client/at_client_impl.dart';
+void main() async {
+// Construct AtClientPreference
+var preference = AtClientPreference();
+preference.hiveStoragePath = '/hive/storage/path';
+preference.commitLogPath = '/commit/log/path';
+// Get
+var atClient = await AtClientImpl.getClient('@bob', preference);
+}
+&lt;/code>&lt;/pre>&lt;h4 id="102-execute-the-monitor-verb-using-atclient">10.2 Execute the monitor verb using AtClient&lt;/h4>
+&lt;pre>&lt;code>// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+var builder = MonitorVerbBuilder();
+// Execute the verb
+await atClient.startMonitor(&amp;lt;privateKey&amp;gt;,&amp;lt;NotificationCallback&amp;gt;);
+&lt;/code>&lt;/pre>&lt;pre>&lt;code>//Using Regex on Monitor verb
+// Get an instance of AtClient for @bob
+var atClient = await AtClientImpl.getClient('@bob');
+var builder = MonitorVerbBuilder();
+// Execute the verb
+await atClient.startMonitor(&amp;lt;privateKey&amp;gt;,&amp;lt;NotificationCallback&amp;gt;,regex: '.wavi');
+&lt;/code>&lt;/pre>&lt;h2 id="verb-parameter-reference">Verb Parameter Reference&lt;/h2>
+&lt;p>&lt;em>&lt;em>required&lt;/em> optional’&lt;/em>*&lt;/p>
+&lt;table>
+&lt;tr>
+&lt;td>&lt;strong>Verb&lt;/strong>
+&lt;/td>
+&lt;td>&lt;strong>Parameters&lt;/strong>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>from&lt;/strong>
+&lt;/td>
+&lt;td>atSign&lt;strong>*&lt;/strong> - @ sign you claim to be
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>cram&lt;/strong>
+&lt;/td>
+&lt;td>digest&lt;strong>*&lt;/strong> - SHA512 digest
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>pkam&lt;/strong>
+&lt;/td>
+&lt;td>signature&lt;strong>*&lt;/strong> - Signed challenge
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>pol&lt;/strong>
+&lt;/td>
+&lt;td>NA
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>scan&lt;/strong>
+&lt;/td>
+&lt;td>forAtSign&lt;strong>’&lt;/strong> - Scans the keys shared by forAtSign
+&lt;p>
+regex&lt;strong>’&lt;/strong> - Regex to which the @addresses has to be matched to be returned as a result
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>update&lt;/strong>
+&lt;/td>
+&lt;td> ttl&lt;strong>’&lt;/strong> - Time to live in milliseconds. Value for the key won't be available after the ttl’
+&lt;p>
+ttb&lt;strong>’&lt;/strong> - Time to birth in milliseconds. Value for the key will be available after the ttb’
+&lt;p>
+Scope&lt;strong>’&lt;/strong> - Public vs Private
+&lt;p>
+forAtSign&lt;strong>*&lt;/strong> - For whom the value is being set
+&lt;p>
+atKey&lt;strong>*&lt;/strong> - Name of the @address
+&lt;p>
+value&lt;strong>*&lt;/strong> - Value for the @address
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>lookup&lt;/strong>
+&lt;/td>
+&lt;td>atKey&lt;strong>*&lt;/strong> - Name of the @address
+&lt;p>
+atSign&lt;strong>*&lt;/strong> - @ signs namespace
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>llookup&lt;/strong>
+&lt;/td>
+&lt;td>atKey&lt;strong>*&lt;/strong> - Name of the @address
+&lt;p>
+atSign&lt;strong>*&lt;/strong> - @ signs namespace
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>plookup&lt;/strong>
+&lt;/td>
+&lt;td>atKey&lt;strong>*&lt;/strong> - Name of the @address
+&lt;p>
+atSign&lt;strong>*&lt;/strong> - @ signs namespace
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>delete&lt;/strong>
+&lt;/td>
+&lt;td>atKey&lt;strong>*&lt;/strong> - Name of the @address
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>stats&lt;/strong>
+&lt;/td>
+&lt;td>statId&lt;strong>’&lt;/strong> - Id’s of the statistics to display
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>config&lt;/strong>
+&lt;/td>
+&lt;td>whatToConfig&lt;strong>*&lt;/strong> - Thing to configure
+&lt;p>
+configValue&lt;strong>*&lt;/strong> - Value of the thing to configure
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>notify&lt;/strong>
+&lt;/td>
+&lt;td>forAtSign&lt;strong>*&lt;/strong> - @sign to notify
+&lt;p>
+key&lt;strong>*&lt;/strong> - Key to which the change has happened
+&lt;p>
+change&lt;strong>*&lt;/strong> - Change it self
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>monitor&lt;/strong>
+&lt;/td>
+&lt;td>regex&lt;strong>’&lt;/strong> - Regex that needs to be matched for the value to be monitored
+&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Docs: The @platform Glossary of Terms</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/resources/glossary/</guid><description>
+&lt;h4 id="platform-">@platform :&lt;/h4>
+&lt;p>The @platform is an open development platform for developers who want to create applications that give people full control of their digital selves. The platform is based on the @protocol - a network protocol for the secure exchange of information only between known entities. It uses a unique identifier called an @sign that, combined with the @platform (which is based on the @protocol), allows people the freedom to share, withhold, or retract their information at will with minimal effort, and the developer no longer has to bear the cost and risk of storing and managing people’s personal data.&lt;/p>
+&lt;h4 id="protocol-">@protocol :&lt;/h4>
+&lt;p>The @protocol is the underlying network protocol used by the @platform.The @protocol&amp;rsquo;s objective is to provide end-to-end encrypted data transfer between two known @signs, but also provides access to publicly available data that is cryptographically signed by the creating @sign.&lt;/p>
+&lt;h4 id="sign">@sign&lt;/h4>
+&lt;p>Each participant in the @protocol has a unique identifier known as an @sign. @sign’s are centrally registered and the rest of the infrastructure is fully distributed.Every @sign has a unique secondary server microservice that is accessible on the Internet via a unique Fully Qualified Domain Name (FQDN) and TCP/IP port number and Secure Sockets Layer (SSL) certificate.&lt;/p>
+&lt;h4 id="root-server-">root server :&lt;/h4>
+&lt;p>The root servers are the only centralized part of the @protocol and are centralized to provide a single namespace and a globally dependable platform. No data beyond the @sign and responding authoritative secondary server is held on the root servers. This information is considered public, and no authentication is required to look up the secondary server for a particular @sign.&lt;/p>
+&lt;h4 id="secondary-server-">secondary server :&lt;/h4>
+&lt;p>Secondary servers provide the second tier of the @protocol architecture, and are responsible for answering lookups for specific @signs. Secondary servers are generally deployed as microservices running on orchestrators such as Docker Swarm or Kubernetes, but can also run as standalone executables. Secondary servers have to be uniquely Internet addressable through use of an FQDN &amp;amp; Port pair that can be translated via DNS to a unique IP &amp;amp; Port.&lt;/p>
+&lt;!-->
+&lt;h5 id="cram-challenge-response-authentication-mechanism-key">CRAM (Challenge-Response Authentication Mechanism) key&lt;/h5>
+&lt;h5 id="pkam-public-key-authentication-method-logic">PKAM (Public Key Authentication Method) logic&lt;/h5>
+&lt;h5 id="protocol-verbsmethods">@protocol verbs/methods&lt;/h5>
+&lt;h5 id="atkey">AtKey&lt;/h5>
+&lt;h5 id="virtual-environment">virtual environment&lt;/h5>
+&lt;h5 id="at_hello_world">at_hello_world&lt;/h5>
+&lt;h5 id="at_chats-application">at_chats (application)&lt;/h5>
+&lt;h5 id="at_cookbook-application">at_cookbook (application)&lt;/h5>
+&lt;h5 id="mosphere">@mosphere&lt;/h5>
+&lt;h5 id="server_demo_service">server_demo_service&lt;/h5>
+&lt;h5 id="clientsdk">clientSDK&lt;/h5></description></item><item><title>Docs: Tutorial Videos on the @ platform</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/tutorialvideos/</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/resources/tutorialvideos/</guid><description>
+&lt;style>
+/* Create two equal columns that floats next to each other */
+.column {
+float: left;
+width: 50%;
+padding: 10px;
+height: 300px; /* Should be removed. Only for demonstration */
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+&lt;/style>
+&lt;div class="row">
+&lt;div class="column">
+&lt;div id="CenterPNG">
+&lt;h4>Using Flutter create to build a secure app on the @platform - Runtime Ep.2&lt;/h4>
+&lt;center>
+&lt;iframe width="280" height="158" src="https://www.youtube.com/embed/6UMpnONLpHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;/iframe>
+&lt;/center>
+&lt;/div>
+&lt;/div>
+&lt;div class="column">
+&lt;div id="CenterPNG">
+&lt;h4>Easy Flutter App Onboarding/Login System on the @platform - Runtime Ep.1 &lt;/h4>
+&lt;center>
+&lt;iframe width="280" height="158" src="https://www.youtube.com/embed/SiYZ8FBJUKI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;/iframe>
+&lt;/center>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="row">
+&lt;div class="column">
+&lt;div id="CenterPNG">
+&lt;h4>Secure Flutter object storage/sharing on the @platform - Runtime Ep.3 &lt;/h4>
+&lt;center>
+&lt;iframe width="280" height="158" src="https://www.youtube.com/embed/jZ7oTnPZVxc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;/iframe>
+&lt;/center>
+&lt;/div>
+&lt;/div>
+&lt;div class="column">
+&lt;div id="CenterPNG">
+&lt;h4>Retrieve secure Flutter objects on the @platform - Runtime Ep.4&lt;/h4>
+&lt;center>
+&lt;iframe width="280" height="158" src="https://www.youtube.com/embed/pEa9SIh-8Vw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;/iframe>
+&lt;/center>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h5> Subscribe to Atsign's YouTube channel to be notified whenever a new video has been published! &lt;/h5>
+&lt;h5>Subscribe &lt;a href="https://www.youtube.com/channel/UCzjSJbPmIEDXFbHb2RIj9Gg">here!&lt;/a>&lt;/h5></description></item><item><title>Docs: Runtime Live</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/runtimelive/</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/resources/runtimelive/</guid><description>
+&lt;style>
+/* Create two equal columns that floats next to each other */
+.column {
+float: left;
+width: 50%;
+padding: 10px;
+height: 300px; /* Should be removed. Only for demonstration */
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+&lt;/style>
+&lt;div class="row">
+&lt;div class="column">
+&lt;center>
+&lt;h4>Build an End-to-End Encrypted Flutter Chat app on the @ platform&lt;/h4>
+&lt;div id="CenterPNG">
+&lt;iframe width="300" height="175" src="https://www.youtube.com/embed/COIVYFkjoDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;/iframe>
+&lt;/div>
+&lt;/div>
+&lt;/center>
+&lt;div class="column">
+&lt;center>
+&lt;h4>Build a Flutter App without Worrying about Backend on The @ platform &lt;/h4>
+&lt;div id="CenterPNG">
+&lt;iframe width="300" height="175" src="https://www.youtube.com/embed/QfvuHrtacHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;/iframe>
+&lt;/div>
+&lt;/center>
+&lt;/div>
+&lt;/div></description></item><item><title>Docs: Developer Experience</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/dev_exp/</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/resources/dev_exp/</guid><description>
+&lt;style>
+.int{
+width: 100px;
+height: 100px;
+border-radius: 500%;
+background-image: url("/dev_exp/intiser.png");
+background-repeat: no-repeat;
+background-size: contain;
+margin-left: 370px;
+}
+.xa{
+width: 100px;
+height: 100px;
+border-radius: 500%;
+background-image: url("/dev_exp/xavier.png");
+background-repeat: no-repeat;
+background-size: contain;
+margin-left: 400px;
+}
+.kudakwashe{
+width: 100px;
+height: 100px;
+border-radius: 500%;
+background-image: url("/dev_exp/kudakwashe.jpeg");
+background-repeat: no-repeat;
+background-size: contain;
+margin-left: 400px;
+}
+.atsign{
+margin-left: 360px;
+margin-top: 20px;
+margin-bottom: 60px;
+font-size: 25px;
+}
+.quotes{
+margin-left: 185px;
+margin-top: -30px;
+margin-bottom: 100px;
+width: 500px;
+font-size: 18px;
+}
+/* Slideshow container */
+.slideshow-container {
+position: relative;
+background: #f1f1f1f1;
+}
+/* Next &amp; previous buttons */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+margin-top: -30px;
+padding: 16px;
+color: #888;
+font-weight: bold;
+font-size: 20px;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+position: absolute;
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+color: white;
+}
+/* The dot/bullet/indicator container */
+.dot-container {
+text-align: center;
+padding: 20px;
+background: #ddd;
+}
+/* The dots/bullets/indicators */
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+//background-color: #717171;
+}
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+@media only screen and (max-width: 882px) {
+.slideshow-container{
+left: -250px;
+}
+}
+&lt;/style>
+&lt;div>
+&lt;h3>
+&lt;b
+>We &lt;i class="fas fa-heart" style="color: #f05f3e">&lt;/i> our Developer
+Community!
+&lt;/b>
+&lt;/h3>
+&lt;h4>
+&lt;p>See what they have to say about developing on the @platform.&lt;/p>
+&lt;/h4>
+&lt;br>
+&lt;div class="int">&lt;/div>
+&lt;div class="atsign">@intiser&lt;i class="fas fa-heart" style="color: #5dadec">&lt;/i>&lt;/div>
+&lt;div class="quotes">
+&lt;!-- Slideshow container -->
+&lt;div class="slideshow-container">
+&lt;!-- Full-width slides/quotes -->
+&lt;div class="intiser">
+&lt;q>I remember seeing Atsign on a flutter event page for the first time and being immediately captivated by its concept, eventually attending all meetings and workshops despite the time difference.
+&lt;/q>
+&lt;/div>
+&lt;div class="intiser" style="display:none">
+&lt;q>With the @protocol's unique infrastructure, in-design privacy and off-the-rack backend, a developer has it easy with focusing on other parts of app development and ultimately reduces the overall developemnt time.&lt;/q>
+&lt;/div>
+&lt;div class="intiser" style="display:none">
+&lt;q>After all this time, I think the @platform has come a long way and it will continue to get better and better as time passes. Data privacy will be the most important issue to tackle in the next decade. We are already getting a glimpse of that by seeing the tech giants’ trials. Indesign privacy of @platform makes it unique from others and ensures people are really the owner of their data.&lt;/q>
+&lt;/div>
+&lt;!-- Next/prev buttons -->
+&lt;p>&lt;a class="prev" onclick="plusSlides('intiser', -1)">❮&lt;/a>
+&lt;a class="next" onclick="plusSlides('intiser', 1)">❯&lt;/a>&lt;/p>
+&lt;/div>
+&lt;!-- Dots/bullets/indicators -->
+&lt;div class="dot-container">
+&lt;span class="dot-intiser dot active" onclick="currentSlide('intiser', 1)">&lt;/span>
+&lt;span class="dot-intiser dot" onclick="currentSlide('intiser', 2)">&lt;/span>
+&lt;span class="dot-intiser dot" onclick="currentSlide('intiser', 3)">&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;div class="xa">&lt;/div>
+&lt;div class="atsign">@xavierchanth&lt;i class="fas fa-heart" style="color: #5dadec">&lt;/i>&lt;/div>
+&lt;div class="quotes">
+&lt;!-- Slideshow container -->
+&lt;div class="slideshow-container">
+&lt;!-- Full-width slides/quotes -->
+&lt;div class="xavier">
+&lt;q>I started out as an @ppathon participant, and worked on my app, @famiy, which is still in production. The End-to-End Encryption and data ownership is the highlight for me. The biggest concern within a family is everything can be extremely private and no one from outside that family should be able to see that information. This is already taken care of for me on the @platform.
+&lt;/q>
+&lt;/div>
+&lt;div class="xavier" style="display:none">
+&lt;q>@family began development while the @protocol was still private and not yet open-source. As time progresses, and now the @protocol is public and is being worked on consistently and tirelessly, we’ve been able to revise accordingly to SDK changes and other incredible improvements. &lt;/q>
+&lt;/div>
+&lt;div class="xavier" style="display:none">
+&lt;q>The ecosystem of the @platform is my favourite part. Having hyper-connected applications is huge and makes life of both developers and consumers so much easier.&lt;/q>
+&lt;/div>
+&lt;!-- Next/prev buttons -->
+&lt;p>&lt;a class="prev" onclick="plusSlides('xavier', -1)">❮&lt;/a>
+&lt;a class="next" onclick="plusSlides('xavier', 1)">❯&lt;/a>&lt;/p>
+&lt;/div>
+&lt;!-- Dots/bullets/indicators -->
+&lt;div class="dot-container">
+&lt;span class="dot-xavier dot active" onclick="currentSlide('xavier', 1)">&lt;/span>
+&lt;span class="dot-xavier dot" onclick="currentSlide('xavier', 2)">&lt;/span>
+&lt;span class="dot-xavier dot" onclick="currentSlide('xavier', 3)">&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;div class="kudakwashe">
+&lt;/div>
+&lt;div class="atsign">@kudakwashe&lt;i class="fas fa-heart" style="color: #5dadec">&lt;/i>&lt;/div>
+&lt;div class="quotes">
+&lt;!-- Slideshow container -->
+&lt;div class="slideshow-container">
+&lt;!-- Full-width slides/quotes -->
+&lt;div class="kudak">
+&lt;q>I remember seeing Atsign on a flutter event page for the first time and being immediately captivated by its concept, eventually attending all meetings and workshops despite the time difference.
+&lt;/q>
+&lt;/div>
+&lt;div class="kudak" style="display:none">
+&lt;q>With the @protocol's unique infrastructure, in-design privacy and off-the-rack backend, a developer has it easy with focusing on other parts of app development and ultimately reduces the overall developemnt time.&lt;/q>
+&lt;/div>
+&lt;div class="kudak" style="display:none">
+&lt;q>After all this time, I think the @platform has come a long way and it will continue to get better and better as time passes. Data privacy will be the most important issue to tackle in the next decade. We are already getting a glimpse of that by seeing the tech giants’ trials. Indesign privacy of @platform makes it unique from others and ensures people are really the owner of their data&lt;/q>
+&lt;/div>
+&lt;!-- Next/prev buttons -->
+&lt;p>&lt;a class="prev" onclick="plusSlides('kudak', -1)">❮&lt;/a>
+&lt;a class="next" onclick="plusSlides('kudak', 1)">❯&lt;/a>&lt;/p>
+&lt;/div>
+&lt;!-- Dots/bullets/indicators -->
+&lt;div class="dot-container">
+&lt;span class="dot-kudak dot active" onclick="currentSlide('kudak', 1)">&lt;/span>
+&lt;span class="dot-kudak dot" onclick="currentSlide('kudak', 2)">&lt;/span>
+&lt;span class="dot-kudak dot" onclick="currentSlide('kudak', 3)">&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;br>
+&lt;script>
+var slideCounter = {
+xavier: 1,
+intiser: 1,
+kudak: 1,
+}
+// Object.keys(slideCounter).forEach((j) {
+// showSlides(j, 0);
+// console.log(j);
+// });
+function plusSlides(styleClass, n) {
+slideCounter[styleClass] += n;
+showSlides(styleClass, slideCounter[styleClass]);
+}
+function currentSlide(styleClass, n) {
+slideCounter[styleClass] = n;
+showSlides(styleClass, slideCounter[styleClass]);
+}
+function showSlides(styleClass, n) {
+var i;
+var slides = document.getElementsByClassName(styleClass);
+// console.log(`debug => ${slides.length}`);
+var dots = document.getElementsByClassName("dot-"+styleClass);
+// console.log(`debug => ${dots.length}`);
+if (n > slides.length) {slideCounter[styleClass] = 1}
+if (n &lt; 1) {slideCounter[styleClass] = slides.length}
+for (i = 0; i &lt; slides.length; i++) {
+slides[i].style.display = "none";
+dots[i].className = dots[i].className.replace(" active", "");
+}
+var slideIndex = slideCounter[styleClass];
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+// for(var [key, value] in slideCounter) {
+// showSlides(key, 1);
+// }
+&lt;/script></description></item><item><title>Docs: Our Flutter Community Advisors</title><link>https://devstaging.atsign.wtf/docs/archives/guides/resources/ouradvisors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/archives/guides/resources/ouradvisors/</guid><description>
+&lt;style>
+.row {
+display: flex;
+flex-direction: row;
+max-width: 100%;
+margin-left: -2px;
+}
+.icons{
+font-size:30px;
+padding:10px;
+color: #F05E3E;
+}
+.profile_pic {
+height: 200px;
+width: 200px;
+background-repeat: no-repeat;
+background-size: contain;
+text-align: left;
+align: middle;
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+}
+&lt;/style>
+&lt;!--Argel Content Start-->
+&lt;table >
+&lt;tr>
+&lt;td rowspan="2" >
+&lt;div class="profile_pic">&lt;img src="https://devstaging.atsign.wtf/Advisors/ArgelBejarano.png">&lt;/div>
+&lt;/td>
+&lt;td rowspan="2" >
+&lt;h4>Argel Bejarano&lt;/h4>
+&lt;img src="https://devstaging.atsign.wtf/Advisors/locationpin.png" height="2%" width="2%" align="left" padding="10px">&lt;h6>Hermosillo, Mexico&lt;/h6>
+Argel is a software engineer with over 10 years of experience. As a Google Developer Expert for Flutter and Dart, he has become a distinguished speaker, writer, and organizer in the Spanish developer communities, with over 30K members in the Flutter &amp; Dart Spanish Community he founded. When he is not on the computer hacking away, Argel is a father, sportsman, and Brazilian Jiu-jitsu practitioner.
+Argel contributes extensively to the @platform repository and helps grow the presence of the @platform in the Flutter community.
+&lt;div class="row">
+&lt;a href="https://twitter.com/ArkangelB">
+&lt;i class="fab fa-twitter icons" alt="Argel Twitter" id="Twitterlogo">&lt;/i>
+&lt;/a>
+&lt;a href="https://github.com/arkangel12">
+&lt;i class="fab fa-github icons" lt="Argel Github" id="GHlogo">&lt;/i>
+&lt;/a>
+&lt;a href="https://mx.linkedin.com/in/argelbejarano">
+&lt;i class="fab fa-linkedin icons" alt="Argel LinkedIn" id="LIlogo" >&lt;/i>
+&lt;/a>
+&lt;a href="https://www.youtube.com/c/communitybrainn">
+&lt;i class="fab fa-youtube icons" alt="Argel YouTube" id="YTlogo">&lt;/i>
+&lt;/a>
+&lt;/div>
+&lt;/td>
+&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;!--Argel Content End-->
+&lt;!--Majid Hajian Start-->
+&lt;table >
+&lt;tr>
+&lt;td rowspan="2" >
+&lt;div class="profile_pic">&lt;img src="https://devstaging.atsign.wtf/Advisors/MajidHajian.jpg">&lt;/div>
+&lt;/td>
+&lt;td rowspan="2" >
+&lt;h4>Majid Hajian&lt;/h4>
+&lt;img src="https://devstaging.atsign.wtf/Advisors/locationpin.png" height="2%" width="2%" align="left">&lt;h6>&lt;a> &lt;/a>Oslo, Norway&lt;/h6>
+Majid is a Google developer expert and passionate software developer with years of developing and architecting complex web and mobile applications through Flutter, Dart, PWA. He has become a noteworthy presence in the Flutter community by speaking at events, contributing to open source, and organizing meetups and conferences. He’s an award-winning author of Progressive Web Apps and Instructor at Pluralsight.
+With Majid's advice, we've built our community of developers and hosted global events to spread awareness of Atsign’s technology.
+&lt;div class="row">
+&lt;a href="https://twitter.com/mhadaily">
+&lt;i class="fab fa-twitter icons" alt="Majid Twitter" id="Twitterlogo">&lt;/i>
+&lt;/a>
+&lt;a href="http://github.com/mhadaily">
+&lt;i class="fab fa-github icons" lt="Majid Github" id="GHlogo">&lt;/i>
+&lt;/a>
+&lt;a href="https://www.linkedin.com/in/mhadaily/">
+&lt;p>&lt;i class="fab fa-linkedin icons" alt="Majid LinkedIn" id="LIlogo" >&lt;/i>&lt;/p>
+&lt;/a>
+&lt;a href="https://bit.ly/majid-youtube">
+&lt;p>&lt;i class="fab fa-youtube icons" alt="Majid YouTube" id="YTlogo">&lt;/i>
+&lt;/a>&lt;/p>
+&lt;/div>
+&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;!--/Majid Hajian-->
+&lt;!--Simon Lightfoot Start-->
+&lt;table >
+&lt;tr>
+&lt;td rowspan="2" >
+&lt;div class="profile_pic">&lt;img src="https://devstaging.atsign.wtf/Advisors/SimonLightfoot.jpeg">&lt;/div>
+&lt;/td>
+&lt;td rowspan="2" >
+&lt;h4>Simon Lightfoot&lt;/h4>
+&lt;img src="https://devstaging.atsign.wtf/Advisors/locationpin.png" height="2%" width="2%" align="left">&lt;h6> London, United Kingdom&lt;/h6>
+It is impossible to talk about the Flutter Community without mentioning Simon. His first encounter with Flutter was in October 2017, and the technology left such an impression on him that he has been working exclusively in Flutter ever since. Today, Simon is the co-founder of various communities such as &lt;a href="https://flutterstudygroup.com/"> Flutter Study Group&lt;/a> and &lt;a href ="https://flutter.dev/community"> Flutter Dev Community&lt;/a>. His efforts have made him one of the most prominent tech figures in the world of Flutter.
+He works with the core team at Atsign on developer experience and community building.
+&lt;div class="row">
+&lt;a href="https://twitter.com/devangelslondon">
+&lt;i class="fab fa-twitter icons" alt="Simon Twitter" id="Twitterlogo">&lt;/i>
+&lt;/a>
+&lt;a href="https://github.com/slightfoot">
+&lt;i class="fab fa-github icons" lt="Simon Github" id="GHlogo">&lt;/i>
+&lt;/a>
+&lt;a href="https://uk.linkedin.com/in/simonlightfoot">
+&lt;p>&lt;i class="fab fa-linkedin icons" alt="Simon LinkedIn" id="LIlogo" >&lt;/i>&lt;/p>
+&lt;/a>
+&lt;/div>
+&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;!--Simon Lightfoot --></description></item></channel></rss>

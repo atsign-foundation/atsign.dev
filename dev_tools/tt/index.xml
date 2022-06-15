@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – @dev Program Tools &amp; Templates</title><link>https://devstaging.atsign.wtf/dev_tools/tt/</link><description>Recent content in @dev Program Tools &amp; Templates on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/dev_tools/tt/index.xml" rel="self" type="application/rss+xml"/><item><title>Dev_tools: App Privacy Policy</title><link>https://devstaging.atsign.wtf/dev_tools/tt/privacy-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/dev_tools/tt/privacy-policy/</guid><description>
+&lt;p>This application contains private data either created by you or created by others and shared with you. It also may contain data that you or others have chosen to share publicly.&lt;/p>
+&lt;p>After being encrypted, this data is sent to a cloud server that provides backup and synchronization with other devices. But don’t worry — since the keys to this data remain on your device, whoever runs this cloud server won’t be able to access any data that you have not set as public.&lt;/p>
+&lt;p>In other words, all private data belongs to its creator, and can only be accessed by those with permission to view it. Nobody else, including us, can access any of this private data, resulting in:&lt;/p>
+&lt;ul>
+&lt;li>No surveillance&lt;/li>
+&lt;li>No snooping&lt;/li>
+&lt;li>No monetization of data&lt;/li>
+&lt;/ul>
+&lt;p>Remember, the data that you share publicly is public and therefore accessible to anyone, so take care with what you choose to share openly.&lt;/p>
+&lt;p>Welcome to a new way of thinking about data ownership and privacy. Regardless of how you choose to share it, your data should — and will — always belong to you.&lt;/p>
+&lt;p>How’s that for a privacy policy?&lt;/p></description></item></channel></rss>

@@ -1,0 +1,393 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build end-to-end encrypted apps quickly on the @platform – SDK?</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/</link><description>Recent content in SDK? on Build end-to-end encrypted apps quickly on the @platform</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: What are the changes?</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/changes/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/changes/</guid><description>
+&lt;h2 id="get-instances-of-atclient-and-other-services">Get instances of AtClient and other services.&lt;/h2>
+&lt;ol>
+&lt;li>To initialize AtClient Instance call setCurrentAtSign method on
+&lt;code>AtClientManager.getInstance()&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>setCurrentAtSign&lt;/code> accepts the following arguments: currentAtSign,
+namespace and the preferences.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">AtClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">().&lt;/span>&lt;span style="color:#000">setCurrentAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;@alice&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;wavi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">preferences&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>
+&lt;p>The &lt;code>AtClientManger&lt;/code> Instance has getter &lt;code>atClient&lt;/code> which returns an
+instance of &lt;code>AtClient&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">AtClient&lt;/span> &lt;span style="color:#000">atClient&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>AtClientManager&lt;/code> instance has a late initialized variable
+&lt;code>notificationService&lt;/code> which is for accessing notification service methods.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">NotificationService&lt;/span> &lt;span style="color:#000">notificationService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>AtClientManager&lt;/code> instance has a late initialized variable &lt;code>syncService&lt;/code>
+which is for invoking the sync.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">SyncService&lt;/span> &lt;span style="color:#000">syncService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Note&lt;/strong>: Above code should be executed every time when the @sign is switched to
+get the right instances representing the new @sign.&lt;/p>
+&lt;h2 id="sending-and-receiving-notifications">Sending and receiving notifications.&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Get the &lt;code>AtClientManager&lt;/code> instance initially.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Access the &lt;code>notificationService&lt;/code> variable using atClientManager instance.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Listen to notifications via callback and no filter. Ideally you don&amp;rsquo;t
+want to do this.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// AtClientManager instance.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">AtClientManager&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// NotificationService variable.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">NotificationService&lt;/span> &lt;span style="color:#000">notificationService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Listen to notifications.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">subscribe&lt;/span>&lt;span style="color:#000;font-weight:bold">().&lt;/span>&lt;span style="color:#000">listen&lt;/span>&lt;span style="color:#000;font-weight:bold">((&lt;/span>&lt;span style="color:#000">notification&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">_notificationCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notification&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">});&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Listen to notifications via callback and filter notification key by regex.
+You can also come up with regexes that match other types of keys. Ex:
+&amp;lsquo;wavi | buzz&amp;rsquo; or alternatively multiple listeners can also be registered.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">subscribe&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">regex:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;.wavi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">).&lt;/span>&lt;span style="color:#000">listen&lt;/span>&lt;span style="color:#000;font-weight:bold">((&lt;/span>&lt;span style="color:#000">notification&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">_notificationCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notification&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">});&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Send notification. Await variant.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// AtKey
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">AtKey&lt;/span> &lt;span style="color:#000">phoneKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtKey&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;phone&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedWith&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;@bob🛠&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedBy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;@alice🛠&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// AtKey&amp;#39;s Value (String)
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">atValue&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;+1 100 200 300&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Update the value and capture the notification result.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">NotificationResult&lt;/span> &lt;span style="color:#000">notificationResponse&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">notificationService&lt;/span>
+&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notify&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">NotificationParams&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">forUpdate&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">phoneKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#f57900">value:&lt;/span> &lt;span style="color:#000">atValue&lt;/span>&lt;span style="color:#000;font-weight:bold">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Validating if a notification failed in the await variant.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notificationResponse&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notificationStatusEnum&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span> &lt;span style="color:#000">NotificationStatusEnum&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">undelivered&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Do something on notification error.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notificationResponse&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientException&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span> &lt;span style="color:#204a87;font-weight:bold">else&lt;/span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Do something on successful delivery response.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Successfully delivered notification.&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>The other notifications are as follows -&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// Delete notification
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">NotificationResult&lt;/span> &lt;span style="color:#000">notificationResponse&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notify&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">NotificationParams&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">forDelete&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">phoneKey&lt;/span>&lt;span style="color:#000;font-weight:bold">));&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Text notify
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">NotificationResult&lt;/span> &lt;span style="color:#000">notificationResponse&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notify&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">NotificationParams&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">forText&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;phone&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;@bob🛠&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Send notification using Callback.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notify&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">NotificationParams&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">forUpdate&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">atKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#f57900">value:&lt;/span> &lt;span style="color:#000">atValue&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#f57900">onDone:&lt;/span> &lt;span style="color:#000">_onSuccessCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">onError:&lt;/span> &lt;span style="color:#000">_onErrorCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">_onSuccessCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notificationResult&lt;/span>&lt;span style="color:#000;font-weight:bold">){&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Do something on successful delivery response.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notificationResult&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">_onErrorCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notificationResult&lt;/span>&lt;span style="color:#000;font-weight:bold">){&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Do something on notification error
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">notificationResponse&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClientException&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="syncing-the-data">Syncing the data.&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>The &lt;code>atClientManger&lt;/code> instance has getter &lt;code>atClient&lt;/code> which returns an instance
+of &lt;code>AtClient&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">AtClient&lt;/span> &lt;span style="color:#000">atClient&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>CRUD operations&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">put&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">params&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">delete&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">params&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Syncing the data. Apps no longer have to use &lt;code>SyncStrategy&lt;/code> or
+&lt;code>isDedicated&lt;/code> flag or manually call &lt;code>sync&lt;/code>. All sync requests will be
+internally kept in a queue and synced to the server at periodic time
+interval (approx. 15 seconds). If remote server is updated from some other
+device, then those changes will be also synced at periodic intervals.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">syncService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Optionally, Register to onDone callbacks to get SyncResult when run asynchronously.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#204a87;font-weight:bold">sync&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">onDone:&lt;/span> &lt;span style="color:#000">_onSuccessCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">_onSuccessCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">syncResult&lt;/span>&lt;span style="color:#000;font-weight:bold">){&lt;/span>
+&lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">syncResult&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Optionally, call &lt;code>setOnDone&lt;/code> for global onDone callback. Call this method
+to set the Global onDone callback. This method will be called when a sync is
+completed. When a specific onDone function is passed to the sync function,
+then the specific onDone is called.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">setOnDone&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">onDone:&lt;/span> &lt;span style="color:#000">_onSuccessCallback&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol></description></item><item><title>Docs: How to migrate?</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/migration_uptake/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/migration_uptake/</guid><description>
+&lt;p>If you have gone through the &lt;a href="https://devstaging.atsign.wtf/docs/rsdk_migration/changes">rSDK changes&lt;/a>,
+migrating your app will be easy. If you are ready to migrate your project to
+latest rSDK changes, then you are good to go.&lt;/p>
+&lt;h2 id="get-instance-of-atclient">Get instance of atClient.&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>AtClientImpl&lt;/code> has been replace with &lt;code>AtClientManager&lt;/code> instance.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>createClient&lt;/code> method has been removed and replaced with &lt;code>setCurrentAtSign&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>atClient&lt;/code> instance can be obtained through &lt;code>atClientManager&lt;/code> instance.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 2.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">AtClientImpl&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">createClient&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;@alice&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;wavi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">preference&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">atClient&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">AtClientImpl&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getClient&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">atsign&lt;/span>&lt;span style="color:#000;font-weight:bold">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 3.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">AtClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">().&lt;/span>&lt;span style="color:#000">setCurrentAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;@alice&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;wavi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">preference&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">atClient&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="starting-listening-to-notifications">Starting listening to notifications.&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>startMonitor&lt;/code> method has been removed. With rSDK you must subscribe and listen to &lt;code>atClient&lt;/code> instance&amp;rsquo;s &lt;code>NotificationService&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>subscribe&lt;/code> method takes a optional parameter &lt;code>regex&lt;/code> to filter the notifications.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Decoding the response on callback function is not required.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 2.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">!&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">startMonitor&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">private_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_notificationCallBack&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#f57900">regex:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;atmosphere&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">_notificationCallBack&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">response&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">response&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">response&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">replaceFirst&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;notification:&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">responseJson&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">jsonDecode&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">response&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">notificationKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">responseJson&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;key&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">];&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">fromAtSign&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">responseJson&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;from&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">];&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// ....... REST CODE .......
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 3.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">subscribe&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">regex:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;wavi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">).&lt;/span>&lt;span style="color:#000">listen&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">_notificationCallBack&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">_notificationCallBack&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">AtNotification&lt;/span> &lt;span style="color:#000">atNotification&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">notificationKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atNotification&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">key&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">fromAtSign&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atNotification&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">from&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// ....... REST CODE .......
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="send-notifications">Send notifications.&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>To send notification, you must use &lt;code>AtClientManager&lt;/code> instance&amp;rsquo;s
+&lt;code>NotificationService&lt;/code> to access &lt;code>notify&lt;/code> method.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>notify&lt;/code> method takes a positional parameter &lt;code>NotificationParams&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>NotificationParams&lt;/code> has all the methods depending to the operation you
+do.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>forUpdate()&lt;/code> - To send update notification.&lt;/li>
+&lt;li>&lt;code>forDelete()&lt;/code> - To send delete notification.&lt;/li>
+&lt;li>&lt;code>forText()&lt;/code> - To send a text message to another atSign.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 2.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">AtClientImpl&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">createClient&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;@alice&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;wavi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">preference&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000">atClient&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">AtClientImpl&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getClient&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;@alice&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">));&lt;/span>
+&lt;span style="color:#000">AtKey&lt;/span> &lt;span style="color:#000">atKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtKey&lt;/span>&lt;span style="color:#000;font-weight:bold">()..&lt;/span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;phone&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedWith&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;@bob&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedBy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;@alice&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">atValue&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;+1 445 446 7879&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notify&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">atKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">atValue&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">OperationEnum&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">update&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 3.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#000">AtClientManager&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">AtClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">setCurrentAtSign&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#a40000">‘@&lt;/span>&lt;span style="color:#000">alice&lt;/span>&lt;span style="color:#a40000">’&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;wavi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">preference&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000">AtClient&lt;/span> &lt;span style="color:#000">atClient&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">AtKey&lt;/span> &lt;span style="color:#000">atKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtKey&lt;/span>&lt;span style="color:#000;font-weight:bold">()..&lt;/span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;phone&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedWith&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;@bob&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">..&lt;/span>&lt;span style="color:#000">sharedBy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;@alice&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">atValue&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;+1 445 446 7879&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">NotificationResult&lt;/span> &lt;span style="color:#000">result&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>
+&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notify&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">NotificationParams&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">forUpdate&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">atKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#f57900">value:&lt;/span> &lt;span style="color:#000">atValue&lt;/span>&lt;span style="color:#000;font-weight:bold">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="check-whether-local-and-remote-server-are-in-sync">Check whether local and remote server are in sync.&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Instead of using &lt;code>SyncManager&lt;/code>, use &lt;code>SyncService&lt;/code> to access &lt;code>isInSync&lt;/code>
+method.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You must use &lt;code>AtClientManager&lt;/code> instance&amp;rsquo;s &lt;code>SyncService&lt;/code> to access
+&lt;code>isInSync&lt;/code> method.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 2.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">syncManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getSyncManager&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">isInSync&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">syncManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">isInSync&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 3.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">syncService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">isInSync&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">isInSync&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="calling-on-demand-sync">Calling on demand sync.&lt;/h2>
+&lt;ul>
+&lt;li>This may not be needed by all apps with new SDK changes. sync is performed
+automatically on any update/delete operation on atClient.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 2.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">syncManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClient&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getSyncManager&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">await&lt;/span> &lt;span style="color:#000">syncManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#204a87;font-weight:bold">sync&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// **SDK 3.X**
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">syncService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#204a87;font-weight:bold">sync&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: What's new with rSDK?</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/enhancements/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/enhancements/</guid><description>
+&lt;h2 id="network-availability-callback-service">Network availability callback service.&lt;/h2>
+&lt;p>Apps can subscribe to the network availability callback service to know when
+the network goes off and on. Some of the services offered by SDK is
+subscribing to this service internally.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">final&lt;/span> &lt;span style="color:#000">ConnectivityListener&lt;/span> &lt;span style="color:#000">connectivityListener&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">ConnectivityListener&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#000">connectivityListener&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">subscribe&lt;/span>&lt;span style="color:#000;font-weight:bold">().&lt;/span>&lt;span style="color:#000">listen&lt;/span>&lt;span style="color:#000;font-weight:bold">((&lt;/span>&lt;span style="color:#000">isConnected&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">isConnected&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;connected&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span> &lt;span style="color:#204a87;font-weight:bold">else&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;disconnected&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">});&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// call this when app is closed or you no longer need the subscription
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">connectivityListener&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">unSubscribe&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="response-objects">Response objects.&lt;/h2>
+&lt;p>Notification Response Object.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">AtNotification&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">late&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">id&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">late&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">key&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">late&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">from&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">late&lt;/span> &lt;span style="color:#204a87;font-weight:bold">String&lt;/span> &lt;span style="color:#000">to&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">late&lt;/span> &lt;span style="color:#204a87;font-weight:bold">int&lt;/span> &lt;span style="color:#000">epochMillis&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">String&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">?&lt;/span> &lt;span style="color:#000">value&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">String&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">?&lt;/span> &lt;span style="color:#000">operation&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sync Response Object&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">SyncResult&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">SyncStatus&lt;/span> &lt;span style="color:#000">syncStatus&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">SyncStatus&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">not_started&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">AtClientException&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">?&lt;/span> &lt;span style="color:#000">atClientException&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">DateTime&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">?&lt;/span> &lt;span style="color:#000">lastSyncedOn&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">bool&lt;/span> &lt;span style="color:#000">dataChange&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000">enum&lt;/span> &lt;span style="color:#000">SyncStatus&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span> &lt;span style="color:#000">not_started&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">success&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">failure&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: What's deprecated in rSDK?</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/deprecations/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/deprecations/</guid><description>
+&lt;h2 id="isdedicated-flag">&lt;strong>isDedicated&lt;/strong> flag&lt;/h2>
+&lt;p>Apps no longer have to use the &lt;code>isDedicated&lt;/code> flag on &lt;code>at_client&lt;/code> methods. Sync
+will be called on a separate connection with the new SDK implementation. App
+developers can remove references to the &lt;code>isDedicated&lt;/code> flag.&lt;/p>
+&lt;h2 id="syncstrategy">SyncStrategy&lt;/h2>
+&lt;p>Apps no longer have to set &lt;code>SyncStrategy&lt;/code> in the preferences. Sync will be
+called automatically after any update or delete operation on the &lt;code>at_client&lt;/code>;
+Refer to the Sync section below for more details.&lt;/p>
+&lt;h2 id="notify-method">&lt;strong>notify&lt;/strong> method&lt;/h2>
+&lt;p>The method &lt;code>notify&lt;/code> from &lt;code>AtClient&lt;/code> is deprecated. Use
+&lt;code>AtClientManager.notificationService&lt;/code> instance to call &lt;code>notify&lt;/code> method instead.
+This method will be taking a positional argument of type &lt;code>NotificationParams&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Usage :&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// Get [AtClientManager] instance.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">AtClientManager&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// From the [AtClientManager] instance access the `notificationService` instance.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">/// Using `NotificationService` instance call the `notify` method.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notify&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// With respect to the operation type,
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/// the notification will be sent to the server.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">NotificationParams&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">forUpdate&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">atKey&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#f57900">value:&lt;/span> &lt;span style="color:#000">value&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="getsyncmanager-method">&lt;strong>getSyncManager&lt;/strong> method&lt;/h2>
+&lt;p>The method &lt;code>getSyncManager&lt;/code> used to get the instance of &lt;code>SynaManager&lt;/code> is
+deprecated in favor of &lt;code>SyncService&lt;/code>; Can be able to access from
+&lt;code>AtClientManager&lt;/code> instance.&lt;/p>
+&lt;p>&lt;strong>Usage :&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// Get [AtClientManager] instance.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">AtClientManager&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Get [SyncService] instance.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">/// Use this sync service instance wherever
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">/// you want to perform sync operations.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">SyncService&lt;/span> &lt;span style="color:#000">_syncServcie&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">syncService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="startmonitor-method">&lt;strong>startMonitor&lt;/strong> method&lt;/h2>
+&lt;p>The method &lt;code>startMonitor()&lt;/code> from &lt;code>AtClient&lt;/code> has been deprecated in favor
+of &lt;code>subscribe()&lt;/code> from &lt;code>NotificationService&lt;/code>. This method gives a back stream
+of notifications from the server to the subscribing client. Optionally pass a
+regex to filter notification keys matching the regex.&lt;/p>
+&lt;p>&lt;strong>Usage :&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dart" data-lang="dart">&lt;span style="color:#8f5902;font-style:italic">/// Get [AtClientManager] instance.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">AtClientManager&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">AtClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">getInstance&lt;/span>&lt;span style="color:#000;font-weight:bold">();&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Get [NotificationService] instance from [AtClientManager].
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">NotificationService&lt;/span> &lt;span style="color:#000">notificationService&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">atClientManager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">/// Subscribe to notificationService.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">/// Pass optional regex to filter notification
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">/// keys matching the regex as namespace.
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">notificationService&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">subscribe&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#f57900">regex:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;.myatapp&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: What are the best practices?</title><link>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/best_practices/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://devstaging.atsign.wtf/docs/functional_architecture/rsdk_migration/best_practices/</guid><description>
+&lt;ul>
+&lt;li>
+&lt;p>Do not cache instances of &lt;code>AtClient&lt;/code> or any other services in the app code.
+Always make use of &amp;ldquo;AtClientManager&amp;rdquo; to get the right instance.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Subscribe to only specific notifications.&lt;/p>
+&lt;ul>
+&lt;li>Secondary servers send certain system-level notifications to the SDK.
+All of these system notifications will not be of interest to the apps.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Use response parsers where the app has to deal with raw responses from the
+server.&lt;/p>
+&lt;ul>
+&lt;li>Secondary servers send responses in various forms for various verbs.
+Ideally, app developers should not have to know the specific response
+format. Response parsers are made available in SDK to parse these
+responses and give back simple beans that the app can operate on.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Build feedback loops into the apps when an operation fails&lt;/p>
+&lt;ul>
+&lt;li>For example, if @X wants to notify @Y, the operation might fail for
+many reasons. The SDK would let the caller know the reason for the
+failure. It is better to act on the failure in the app code. It could
+be as simple as logging it.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Do not write any services to optimize the SDK code. There is a good chance
+that we are already working on it. Make sure that you raise an enhancement
+request for any such requirement.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use sync with regex with caution. It is advised to use without regex unless
+you are sure about it.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
