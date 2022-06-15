@@ -9,16 +9,15 @@ weight: 1
 date: 2022-01-17
 ---
 
-Namespace is a common term that may occur when reading about the @platform. Luckily for you, we briefly explain what a namespace is here! 
+Namespace is a common term that may occur when reading about the @platform. Luckily for you, we briefly explain what a namespace is here!
 
 As our CTO, Colin Constable, delicately described it, " A namespace is a place to put a set of strings or characters together." So how exactly is this relevant to our end-to-end encryption protocol?
 
-Most people are familiar with DNS (Domain Name System): for example, if you type “cnn.com”, “fox.com”, or “bbc.com”, you get news sites. But you can’t just type in “news” and expect the Internet to tell you which particular flavor of news you want. 
+Most people are familiar with DNS (Domain Name System): for example, if you type “cnn.com”, “fox.com”, or “bbc.com”, you get news sites. But you can’t just type in “news” and expect the Internet to tell you which particular flavor of news you want.
 
-We need to create namespaces so that humans can remember the name and computers can translate it to Internet protocol. Once there is a namespace like “bbc.com,” you can reliably know that somebody owns that particular space, and it needs to be managed so that there are no clashes. 
+We need to create namespaces so that humans can remember the name and computers can translate it to Internet protocol. Once there is a namespace like “bbc.com,” you can reliably know that somebody owns that particular space, and it needs to be managed so that there are no clashes.
 
 For instance, you don’t want to type “bbc.com” and get sent to Amazon’s home page. That’s why they have to be unique.
-
 
 Feel free to read more on namespaces [here](https://atsigncompany.medium.com/the-hidden-beauty-of-protocol-namespaces-6f5fab7f7a09).
 
@@ -38,7 +37,7 @@ do not forget to activate them.
 ![activate @sign](/docs/Get-Started/get-an-atsign/images/activate-ui.png)
 
 Activating creates a microservice (we call the secondary server) and once
-that is spun up on The @ Company infrastructure you will see a QR-Code to scan with an @ enabled application.
+that is spun up on Atsign infrastructure you will see a QR-Code to scan with an @ enabled application.
 
 ![activated @sign](/docs/Get-Started/get-an-atsign/images/activated.png)
 

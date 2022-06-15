@@ -3,8 +3,8 @@ title: "Runtime Live"
 SEOtitle: "Runtime Live on the @ platform (AtPlatform or at_platform)"
 linkTitle: "Runtime Live"
 weight: 4
-content: The @ Company has hosted live sessions with Flutter Community leaders, join in on the fun!
-description: The @ Company has hosted live sessions with Flutter Community leaders, join in on the fun!
+content: Atsign has hosted live sessions with Flutter Community leaders, join in on the fun!
+description: Atsign has hosted live sessions with Flutter Community leaders, join in on the fun!
 date: 2021-11-01
 ---
 

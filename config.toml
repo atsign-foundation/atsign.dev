@@ -101,11 +101,11 @@ time_format_blog = "02.01.2006"
 # Everything below this are Site Params
 
 # Comment out if you don't want the "print entire section" link enabled.
-[outputs]
-section = ["HTML", "print"]
+# [outputs]
+# section = ["HTML", "print"]
 
 [params]
-copyright = "The @ Company"
+copyright = "Atsign"
 privacy_policy = "https://atsign.com/privacy-policy"
 
 # First one is picked as the Twitter card image if not set on page.

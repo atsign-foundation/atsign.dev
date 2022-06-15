@@ -72,9 +72,7 @@ Argel contributes extensively to the @platform repository and helps grow the pre
 
 <!--Argel Content End-->
 
-
 <!--Majid Hajian Start-->
-
 
 <table >
   <tr>
@@ -85,7 +83,7 @@ Argel contributes extensively to the @platform repository and helps grow the pre
     <h4>Majid Hajian</h4>
     <img src="/Advisors/locationpin.png" height="2%" width="2%" align="left"><h6><a>   </a>Oslo, Norway</h6>
    Majid is a Google developer expert and passionate software developer with years of developing and architecting complex web and mobile applications through Flutter, Dart, PWA. He has become a noteworthy presence in the Flutter community by speaking at events, contributing to open source, and organizing meetups and conferences. He’s an award-winning author of Progressive Web Apps and Instructor at Pluralsight.
-With Majid's advice, we've built our community of developers and hosted global events to spread awareness of The @ Company’s technology.
+With Majid's advice, we've built our community of developers and hosted global events to spread awareness of Atsign’s technology.
 <div class="row">
 
 <a href="https://twitter.com/mhadaily">
@@ -104,17 +102,16 @@ With Majid's advice, we've built our community of developers and hosted global e
 
 <i class="fab fa-youtube icons" alt="Majid YouTube" id="YTlogo"></i>
 </a>
+
 </div>
   </td>
   </tr>
  
 </table>
 
-
 <!--/Majid Hajian-->
 
 <!--Simon Lightfoot Start-->
-
 
 <table >
   <tr>
@@ -125,7 +122,7 @@ With Majid's advice, we've built our community of developers and hosted global e
     <h4>Simon Lightfoot</h4>
     <img src="/Advisors/locationpin.png" height="2%" width="2%" align="left"><h6> London, United Kingdom</h6>
    It is impossible to talk about the Flutter Community without mentioning Simon. His first encounter with Flutter was in October 2017, and the technology left such an impression on him that he has been working exclusively in Flutter ever since. Today, Simon is the co-founder of various communities such as <a href="https://flutterstudygroup.com/"> Flutter Study Group</a> and <a href ="https://flutter.dev/community"> Flutter Dev Community</a>. His efforts have made him one of the most prominent tech figures in the world of Flutter.
-              He works with the core team at The @ Company on developer experience and community building.
+              He works with the core team at Atsign on developer experience and community building.
 <div class="row">
 
 <a href="https://twitter.com/devangelslondon">
@@ -145,6 +142,5 @@ With Majid's advice, we've built our community of developers and hosted global e
   </tr>
  
 </table>
-
 
 <!--Simon Lightfoot -->

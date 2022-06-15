@@ -19,7 +19,7 @@ Note: This application demo works with two devices. A connected physical device 
 You are able to download application templates from our at_app project! Copy and paste the following code in your terminal to activate at_app on your machine:
 
 ```shell
-flutter pub activate at_app
+dart pub global activate at_app
 ```
 
 {{% pageinfo %}}

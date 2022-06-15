@@ -14,7 +14,7 @@ draft: true
 
 ## What are Namespaces?
 
-Namespace is a common term that may occur when reading about the @platform. 
+Namespace is a common term that may occur when reading about the @platform.
 
 Feel free to read all about namespaces [here](https://atsigncompany.medium.com/the-hidden-beauty-of-protocol-namespaces-6f5fab7f7a09).
 
@@ -34,7 +34,7 @@ do not forget to activate them.
 ![activate @sign](/docs/Get-Started/get-an-atsign/images/activate-ui.png)
 
 Activating creates a microservice (we call the secondary server) and once
-that is spun up on The @ Company infrastructure you will see a QR-Code to scan with an @ enabled application.
+that is spun up on Atsign infrastructure you will see a QR-Code to scan with an @ enabled application.
 
 ![activated @sign](/docs/Get-Started/get-an-atsign/images/activated.png)
 
