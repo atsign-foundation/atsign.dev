@@ -10,19 +10,19 @@ tracks your presence.
 ## Why is there an atsign.dev?
 
 We hope that this site has the A -> Z of everything you will need to develop
-with the @platform.
+with the atPlatform.
 
 If you are a developer, this is your site -  come join us and help us improve
 the content and the experience. We are always learning from you.
 
 ## What can you find in atsign.dev?
 
-If you are new to the @platform, learn about how the platform works and how
+If you are new to the atPlatform, learn about how the platform works and how
 this can make such a big difference for you by cutting down on time to develop
 and market applications.
 
 The site gives you all the tools, samples, examples and documentation needed
-to get started on the @platform and SDK. The site also provides access to
+to get started on the atPlatform and SDK. The site also provides access to
 the various communities where you can collaborate and talk to other developers
 working on the platform.
 
@@ -31,12 +31,12 @@ working on the platform.
 If this is your first time here, we strongly recommend navigating through
 our ‘[getting started](https://atsign.dev/docs/get-started/)’ page.
 There, you will find all of the steps you will need to take in order to
-start developing your very own @platform application. 
+start developing your very own atPlatform application. 
 
-If you’d like to see what an @platform application looks like, feel free to
+If you’d like to see what an atPlatform application looks like, feel free to
 visit our ‘[sample apps](https://atsign.dev/docs/sample-apps/)’ page! Here,
 you will find a list of demonstrative applications showing off the many
-verbs/methods that exist on the @platform. The most basic of this list is
+verbs/methods that exist on the atPlatform. The most basic of this list is
 ‘[at_hello_world](https://github.com/atsign-foundation/at_demos/tree/trunk/at_hello_world)’
 and the most advanced are
 ‘[at_cookbook](https://github.com/atsign-foundation/at_demos/tree/trunk/at_cookbook)’
