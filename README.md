@@ -1,5 +1,7 @@
 <img width=250px src="https://atsign.dev/assets/img/atPlatform_logo_gray.svg?sanitize=true">
 
+## This repo is no longer in use, please navigate to [docs.atsign.com](https://github.com/atsign-foundation/docs.atsign.com) to see most up-to-date code
+
 # atsign.dev
 
 The atsign.dev repo is home to the code behind our developer site. As
