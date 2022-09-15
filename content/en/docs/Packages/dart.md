@@ -23,7 +23,7 @@ Flutter app templates built using the @platform that can be generated using the 
 
 ### at_client
 
-The at_client library is the non-platform specific Client SDK which provides the essential methods for building an app using the @protocol.
+The at_client library is the non-platform specific Client SDK which provides the essential methods for building an app using the atProtocol.
 
 [Learn more](https://pub.dev/packages/at_client)
 
