@@ -29,19 +29,19 @@ A Flutter plugin project to provide a chat feature between @‎signs built on th
 
 ### at_common_flutter
 
-A Flutter package to provide common widgets used by other @‎platform Flutter packages.
+A Flutter package to provide common widgets used by other atPlatform Flutter packages.
 
 [Learn more](https://pub.dev/packages/at_common_flutter)
 
 ### at_contacts_flutter
 
-A Flutter plugin project to provide ease of managing contacts for an @‎sign using @p‎latform.
+A Flutter plugin project to provide ease of managing contacts for an atSign using atPlatform.
 
 [Learn more](https://pub.dev/packages/at_contacts_flutter)
 
 ### at_contacts_group_flutter
 
-A Flutter plugin project to provide group functionality with contacts using @‎platform.
+A Flutter plugin project to provide group functionality with contacts using atPlatform.
 
 [Learn more](https://pub.dev/packages/at_contacts_group_flutter)
 
@@ -77,13 +77,13 @@ A Flutter plugin project to send notification to any @‎sign in @‎platform ap
 
 ### at_onboarding_flutter
 
-A Flutter plugin project for onboarding any @‎sign in @‎platform apps with ease. Provides a QRscanner option and an upload key file option to authenticate.
+A Flutter plugin project for onboarding any atSign in atPlatform apps with ease. Provides a QRscanner option and an upload key file option to authenticate.
 
 [Learn more](https://pub.dev/packages/at_onboarding_flutter)
 
 ### at_sync_ui_flutter
 
-A Flutter plugin project to provide UI widgets for displaying status of sync process in @protocol apps.
+A Flutter plugin project to provide UI widgets for displaying status of sync process in atProtocol apps.
 
 [Learn more](https://pub.dev/packages/at_sync_ui_flutter)
 
